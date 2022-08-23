@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="diagrama" nsURI="http:///diagrama.ecore" nsPrefix="diagrama">
+  <eClassifiers xsi:type="ecore:EDataType" name="String" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EBooleanObject" instanceClassName="java.lang.Boolean"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EDoubleObject" instanceClassName="java.lang.Double"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EIntegerObject" instanceClassName="java.lang.Integer"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EList" instanceClassName="org.eclipse.emf.common.util.EList"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EChar" instanceClassName="char"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="ArrayList" instanceClassName="java.util.ArrayList"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelFactory">
+    <eOperations name="cargar" eType="#//ModelFactory">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="ModelFactory modelFactory = null;&#xA;org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createURI(&quot;platform:/resource/&quot;+ruta);&#xA;org.eclipse.emf.ecore.resource.ResourceSet resourceSet= new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();&#xA;org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);&#xA;try {&#xA;resource.load(java.util.Collections.EMPTY_MAP);&#xA;modelFactory = (ModelFactory) resource.getContents().get(0);&#xA;} catch (java.io.IOException e) {&#xA;// TO-DO Auto-generated catch block&#xA;e.printStackTrace();&#xA;}&#xA;&#xA;return modelFactory;&#xA;"/>
+      </eAnnotations>
+      <eParameters name="ruta" eType="#//String"/>
+    </eOperations>
+    <eOperations name="salvar">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="ModelFactory modelFactory = this;&#xA;org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createURI(&quot;platform:/resource/&quot;+ruta);&#xA;org.eclipse.emf.ecore.resource.ResourceSet resourceSet= new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();&#xA;org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);&#xA;resource.getContents().add(modelFactory);&#xA;try {&#xA;resource.save(java.util.Collections.EMPTY_MAP);&#xA;} catch (java.io.IOException e) {&#xA;// TO-DO Auto-generated catch block&#xA;e.printStackTrace();&#xA;}&#xA;&#xA;return;&#xA;"/>
+      </eAnnotations>
+      <eParameters name="ruta" eType="#//String"/>
+    </eOperations>
+    <eOperations name="implementarModelo">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="//TODO implementarModelo&#xA;"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="theDomain" eType="#//domain/Domain"
+        containment="true" eOpposite="#//domain/Domain/theModelFactory"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="theUI" eType="#//ui/UI"
+        containment="true" eOpposite="#//ui/UI/theModelFactory"/>
+  </eClassifiers>
+  <eSubpackages name="domain" nsURI="http:///diagrama/domain.ecore" nsPrefix="diagrama.domain">
+    <eClassifiers xsi:type="ecore:EClass" name="Domain">
+      <eOperations name="implementarModelo">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="//TODO implementarModelo&#xA;"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="theModelFactory" eType="#//ModelFactory"
+          eOpposite="#//ModelFactory/theDomain"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lstClassDiagram" upperBound="-1"
+          eType="#//domain/ClassDiagram" containment="true" eOpposite="#//domain/ClassDiagram/ownedByDomain"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="theUI" eType="#//ui/UI"
+          eOpposite="#//ui/UI/theDomain"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MAttributes">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"
+          defaultValueLiteral=" "/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataType" eType="#//String"
+          defaultValueLiteral=" "/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessModifier" eType="#//String"
+          defaultValueLiteral=" "/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="#//String"
+          defaultValueLiteral=" "/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="comments" eType="#//String"
+          defaultValueLiteral=" "/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByMClass" eType="#//domain/MClass"
+          eOpposite="#//domain/MClass/lstMAttributes"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MClass">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"
+          defaultValueLiteral=" "/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessModifier" eType="#//String"
+          defaultValueLiteral=" "/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="comments" eType="#//String"
+          defaultValueLiteral=" "/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lstMAttributes" upperBound="-1"
+          eType="#//domain/MAttributes" containment="true" eOpposite="#//domain/MAttributes/ownedByMClass"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lstMRelationshipSource"
+          upperBound="-1" eType="#//domain/MRelationship" eOpposite="#//domain/MRelationship/source"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lstMRelationshipTarget"
+          upperBound="-1" eType="#//domain/MRelationship" eOpposite="#//domain/MRelationship/target"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lstClassDiagram" eType="#//domain/ClassDiagram"
+          eOpposite="#//domain/ClassDiagram/lstMClass"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lstMFunction" upperBound="-1"
+          eType="#//domain/MFunction" containment="true" eOpposite="#//domain/MFunction/ownedByMClass"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MFunction">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"
+          defaultValueLiteral=" "/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessModifier" eType="#//String"
+          defaultValueLiteral=" "/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="#//String"
+          defaultValueLiteral=" "/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="semantics" eType="#//String"
+          defaultValueLiteral=" "/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="comments" eType="#//String"
+          defaultValueLiteral=" "/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameters" eType="#//String"
+          defaultValueLiteral=" "/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByMClass" eType="#//domain/MClass"
+          eOpposite="#//domain/MClass/lstMFunction"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MRelationship">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//domain/MClass"
+          eOpposite="#//domain/MClass/lstMRelationshipSource"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//domain/MClass"
+          eOpposite="#//domain/MClass/lstMRelationshipTarget"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="relationshipType" eType="#//String"
+          defaultValueLiteral=" "/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicitySource" eType="#//String"
+          defaultValueLiteral=" "/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicityTarget" eType="#//String"
+          defaultValueLiteral=" "/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceRole" eType="#//String"
+          defaultValueLiteral=" "/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetRole" eType="#//String"
+          defaultValueLiteral=" "/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lstRelationshipFactory"
+          eType="#//domain/RelationshipFactory" eOpposite="#//domain/RelationshipFactory/lstMRelationship"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RelationshipFactory">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lstMRelationship" upperBound="-1"
+          eType="#//domain/MRelationship" containment="true" eOpposite="#//domain/MRelationship/lstRelationshipFactory"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lstClassDiagram" eType="#//domain/ClassDiagram"
+          eOpposite="#//domain/ClassDiagram/theRelationshipFactory"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ClassDiagram">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lstMClass" upperBound="-1"
+          eType="#//domain/MClass" containment="true" eOpposite="#//domain/MClass/lstClassDiagram"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="theRelationshipFactory"
+          eType="#//domain/RelationshipFactory" containment="true" eOpposite="#//domain/RelationshipFactory/lstClassDiagram"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByDomain" eType="#//domain/Domain"
+          eOpposite="#//domain/Domain/lstClassDiagram"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="ui" nsURI="http:///diagrama/ui.ecore" nsPrefix="diagrama.ui">
+    <eClassifiers xsi:type="ecore:EClass" name="UI">
+      <eOperations name="implementarModelo">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="//TODO implementarModelo&#xA;"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="theModelFactory" eType="#//ModelFactory"
+          eOpposite="#//ModelFactory/theUI"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="theDomain" eType="#//domain/Domain"
+          eOpposite="#//domain/Domain/theUI"/>
+    </eClassifiers>
+    <eSubpackages name="viewmodels" nsURI="http:///diagrama/ui/viewmodels.ecore" nsPrefix="diagrama.ui.viewmodels"/>
+  </eSubpackages>
+</ecore:EPackage>
