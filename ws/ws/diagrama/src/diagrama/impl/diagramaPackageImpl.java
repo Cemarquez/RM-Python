@@ -8,6 +8,14 @@ import diagrama.diagramaPackage;
 
 import diagrama.domain.DomainPackage;
 
+import diagrama.domain.abstractsyntax.AbstractsyntaxPackage;
+
+import diagrama.domain.abstractsyntax.impl.AbstractsyntaxPackageImpl;
+
+import diagrama.domain.concretesyntax.ConcretesyntaxPackage;
+
+import diagrama.domain.concretesyntax.impl.ConcretesyntaxPackageImpl;
+
 import diagrama.domain.impl.DomainPackageImpl;
 
 import diagrama.ui.UiPackage;
@@ -137,16 +145,22 @@ public class diagramaPackageImpl extends EPackageImpl implements diagramaPackage
 
 		// Obtain or create and register interdependencies
 		DomainPackageImpl theDomainPackage = (DomainPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DomainPackage.eNS_URI) instanceof DomainPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DomainPackage.eNS_URI) : DomainPackage.eINSTANCE);
+		AbstractsyntaxPackageImpl theAbstractsyntaxPackage = (AbstractsyntaxPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AbstractsyntaxPackage.eNS_URI) instanceof AbstractsyntaxPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AbstractsyntaxPackage.eNS_URI) : AbstractsyntaxPackage.eINSTANCE);
+		ConcretesyntaxPackageImpl theConcretesyntaxPackage = (ConcretesyntaxPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConcretesyntaxPackage.eNS_URI) instanceof ConcretesyntaxPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConcretesyntaxPackage.eNS_URI) : ConcretesyntaxPackage.eINSTANCE);
 		UiPackageImpl theUiPackage = (UiPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UiPackage.eNS_URI) instanceof UiPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UiPackage.eNS_URI) : UiPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		thediagramaPackage.createPackageContents();
 		theDomainPackage.createPackageContents();
+		theAbstractsyntaxPackage.createPackageContents();
+		theConcretesyntaxPackage.createPackageContents();
 		theUiPackage.createPackageContents();
 
 		// Initialize created meta-data
 		thediagramaPackage.initializePackageContents();
 		theDomainPackage.initializePackageContents();
+		theAbstractsyntaxPackage.initializePackageContents();
+		theConcretesyntaxPackage.initializePackageContents();
 		theUiPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed

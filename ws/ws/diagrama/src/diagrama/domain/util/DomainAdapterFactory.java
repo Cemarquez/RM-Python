@@ -72,30 +72,6 @@ public class DomainAdapterFactory extends AdapterFactoryImpl {
 				return createDomainAdapter();
 			}
 			@Override
-			public Adapter caseMAttributes(MAttributes object) {
-				return createMAttributesAdapter();
-			}
-			@Override
-			public Adapter caseMClass(MClass object) {
-				return createMClassAdapter();
-			}
-			@Override
-			public Adapter caseMFunction(MFunction object) {
-				return createMFunctionAdapter();
-			}
-			@Override
-			public Adapter caseMRelationship(MRelationship object) {
-				return createMRelationshipAdapter();
-			}
-			@Override
-			public Adapter caseRelationshipFactory(RelationshipFactory object) {
-				return createRelationshipFactoryAdapter();
-			}
-			@Override
-			public Adapter caseClassDiagram(ClassDiagram object) {
-				return createClassDiagramAdapter();
-			}
-			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -126,90 +102,6 @@ public class DomainAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDomainAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link diagrama.domain.MAttributes <em>MAttributes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see diagrama.domain.MAttributes
-	 * @generated
-	 */
-	public Adapter createMAttributesAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link diagrama.domain.MClass <em>MClass</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see diagrama.domain.MClass
-	 * @generated
-	 */
-	public Adapter createMClassAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link diagrama.domain.MFunction <em>MFunction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see diagrama.domain.MFunction
-	 * @generated
-	 */
-	public Adapter createMFunctionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link diagrama.domain.MRelationship <em>MRelationship</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see diagrama.domain.MRelationship
-	 * @generated
-	 */
-	public Adapter createMRelationshipAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link diagrama.domain.RelationshipFactory <em>Relationship Factory</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see diagrama.domain.RelationshipFactory
-	 * @generated
-	 */
-	public Adapter createRelationshipFactoryAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link diagrama.domain.ClassDiagram <em>Class Diagram</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see diagrama.domain.ClassDiagram
-	 * @generated
-	 */
-	public Adapter createClassDiagramAdapter() {
 		return null;
 	}
 

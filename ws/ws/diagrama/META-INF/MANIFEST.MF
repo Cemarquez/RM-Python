@@ -9,6 +9,12 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: diagrama,
  diagrama.domain,
+ diagrama.domain.abstractsyntax,
+ diagrama.domain.abstractsyntax.impl,
+ diagrama.domain.abstractsyntax.util,
+ diagrama.domain.concretesyntax,
+ diagrama.domain.concretesyntax.impl,
+ diagrama.domain.concretesyntax.util,
  diagrama.domain.impl,
  diagrama.domain.util,
  diagrama.impl,

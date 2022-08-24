@@ -72,42 +72,6 @@ public class DomainSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DomainPackage.MATTRIBUTES: {
-				MAttributes mAttributes = (MAttributes)theEObject;
-				T result = caseMAttributes(mAttributes);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DomainPackage.MCLASS: {
-				MClass mClass = (MClass)theEObject;
-				T result = caseMClass(mClass);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DomainPackage.MFUNCTION: {
-				MFunction mFunction = (MFunction)theEObject;
-				T result = caseMFunction(mFunction);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DomainPackage.MRELATIONSHIP: {
-				MRelationship mRelationship = (MRelationship)theEObject;
-				T result = caseMRelationship(mRelationship);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DomainPackage.RELATIONSHIP_FACTORY: {
-				RelationshipFactory relationshipFactory = (RelationshipFactory)theEObject;
-				T result = caseRelationshipFactory(relationshipFactory);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DomainPackage.CLASS_DIAGRAM: {
-				ClassDiagram classDiagram = (ClassDiagram)theEObject;
-				T result = caseClassDiagram(classDiagram);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -124,96 +88,6 @@ public class DomainSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDomain(Domain object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>MAttributes</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>MAttributes</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMAttributes(MAttributes object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>MClass</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>MClass</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMClass(MClass object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>MFunction</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>MFunction</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMFunction(MFunction object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>MRelationship</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>MRelationship</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMRelationship(MRelationship object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Relationship Factory</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Relationship Factory</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRelationshipFactory(RelationshipFactory object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Class Diagram</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Class Diagram</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseClassDiagram(ClassDiagram object) {
 		return null;
 	}
 

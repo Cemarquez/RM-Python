@@ -3,6 +3,8 @@ import diagrama.view.*;
 import diagrama.view.views.*;
 import diagrama.*;
 import diagrama.domain.*;
+import diagrama.domain.abstractsyntax.*;
+import diagrama.domain.concretesyntax.*;
 import diagrama.ui.*;
 
 

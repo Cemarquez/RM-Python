@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <diagrama:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagrama="http:///diagrama.ecore">
   <theDomain>
-    <lstClassDiagram>
-      <lstMClass lstMRelationshipSource="//@theDomain/@lstClassDiagram.0/@theRelationshipFactory/@lstMRelationship.0">
-        <lstMFunction/>
-      </lstMClass>
-      <theRelationshipFactory>
-        <lstMRelationship source="//@theDomain/@lstClassDiagram.0/@lstMClass.0" multiplicitySource="1" multiplicityTarget="*" sourceRole=" theClass" targetRole=" LstClass"/>
-      </theRelationshipFactory>
-    </lstClassDiagram>
+    <lstAbstractSyntax>
+      <lstMClassDiagram/>
+    </lstAbstractSyntax>
+    <lstConcreteSyntax/>
   </theDomain>
 </diagrama:ModelFactory>

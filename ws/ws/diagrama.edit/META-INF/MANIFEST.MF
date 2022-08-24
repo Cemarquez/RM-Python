@@ -8,7 +8,9 @@ Bundle-Activator: diagrama.provider.ModelEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: diagrama.domain.provider,
+Export-Package: diagrama.domain.abstractsyntax.provider,
+ diagrama.domain.concretesyntax.provider,
+ diagrama.domain.provider,
  diagrama.provider,
  diagrama.ui.provider
 Require-Bundle: org.eclipse.core.runtime,

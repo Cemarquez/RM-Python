@@ -6,6 +6,14 @@ import diagrama.diagramaPackage;
 
 import diagrama.domain.DomainPackage;
 
+import diagrama.domain.abstractsyntax.AbstractsyntaxPackage;
+
+import diagrama.domain.abstractsyntax.impl.AbstractsyntaxPackageImpl;
+
+import diagrama.domain.concretesyntax.ConcretesyntaxPackage;
+
+import diagrama.domain.concretesyntax.impl.ConcretesyntaxPackageImpl;
+
 import diagrama.domain.impl.DomainPackageImpl;
 
 import diagrama.impl.diagramaPackageImpl;
@@ -82,16 +90,22 @@ public class UiPackageImpl extends EPackageImpl implements UiPackage {
 		// Obtain or create and register interdependencies
 		diagramaPackageImpl thediagramaPackage = (diagramaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(diagramaPackage.eNS_URI) instanceof diagramaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(diagramaPackage.eNS_URI) : diagramaPackage.eINSTANCE);
 		DomainPackageImpl theDomainPackage = (DomainPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DomainPackage.eNS_URI) instanceof DomainPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DomainPackage.eNS_URI) : DomainPackage.eINSTANCE);
+		AbstractsyntaxPackageImpl theAbstractsyntaxPackage = (AbstractsyntaxPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AbstractsyntaxPackage.eNS_URI) instanceof AbstractsyntaxPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AbstractsyntaxPackage.eNS_URI) : AbstractsyntaxPackage.eINSTANCE);
+		ConcretesyntaxPackageImpl theConcretesyntaxPackage = (ConcretesyntaxPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConcretesyntaxPackage.eNS_URI) instanceof ConcretesyntaxPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConcretesyntaxPackage.eNS_URI) : ConcretesyntaxPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theUiPackage.createPackageContents();
 		thediagramaPackage.createPackageContents();
 		theDomainPackage.createPackageContents();
+		theAbstractsyntaxPackage.createPackageContents();
+		theConcretesyntaxPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theUiPackage.initializePackageContents();
 		thediagramaPackage.initializePackageContents();
 		theDomainPackage.initializePackageContents();
+		theAbstractsyntaxPackage.initializePackageContents();
+		theConcretesyntaxPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theUiPackage.freeze();

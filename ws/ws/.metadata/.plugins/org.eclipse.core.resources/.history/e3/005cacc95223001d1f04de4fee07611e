@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:tooldataform.core="http:///tooldataform/core.ecore" xmlns:tooldataform.pmoo="http:///tooldataform/pmoo.ecore" xsi:schemaLocation="http:///tooldataform/core.ecore http:///tooldataform.ecore#//core http:///tooldataform/pmoo.ecore http:///tooldataform.ecore#//pmoo">
+  <tooldataform.core:Datos_Diagram xmi:id="_SWQBgCNQEe2_je-Vja5ofQ">
+    <listClase xmi:type="tooldataform.pmoo:Clase" xmi:id="_wUK74CNSEe2_je-Vja5ofQ" name="MClassDiagram" id="_XgwGYCMiEe2KsdRWqq7mtw" type="System" description="" pathElementRoot="diagrama.domain.abstractSyntax" typeElement="Class" urlIcon="platform:/plugin/tooldataform.datosdiagram/icons/Clase.gif" nameSpace="(from: abstractSyntax)" nameSpaceElement="(from: abstractSyntax)" nombreArchivo=""/>
+    <listClase xmi:type="tooldataform.pmoo:Clase" xmi:id="_yag9UCNSEe2_je-Vja5ofQ" name="MClass" id="_wOrJICDnEe2cHO0lOehZqQ" type="System" pathElementRoot="diagrama.domain.abstractSyntax" typeElement="Class" urlIcon="platform:/plugin/tooldataform.datosdiagram/icons/Clase.gif" nameSpace="(from: abstractSyntax)" nameSpaceElement="(from: abstractSyntax)"/>
+    <listRelacion_Data xmi:type="tooldataform.pmoo:Relacion_Data" xmi:id="_yajZkCNSEe2_je-Vja5ofQ" id="_esMNACDrEe2cHO0lOehZqQ" aRol="lstMClass" bRol="ownedByClassDiagram" bMultiplicidad="_1" multiplicidadB=" " multiplicidadA="*" aContainment="si" aAgregacion="si" source="_yag9UCNSEe2_je-Vja5ofQ" target="_wUK74CNSEe2_je-Vja5ofQ"/>
+  </tooldataform.core:Datos_Diagram>
+  <notation:Diagram xmi:id="_SW3skCNQEe2_je-Vja5ofQ" type="MetamodelodataformDatosDiagram" element="_SWQBgCNQEe2_je-Vja5ofQ" name="containment" measurementUnit="Pixel">
+    <children xmi:type="notation:Node" xmi:id="_wUK74SNSEe2_je-Vja5ofQ" type="2002" element="_wUK74CNSEe2_je-Vja5ofQ">
+      <children xmi:type="notation:DecorationNode" xmi:id="_wUK75iNSEe2_je-Vja5ofQ" type="5003"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_wUK75yNSEe2_je-Vja5ofQ" type="5004"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_wUK76CNSEe2_je-Vja5ofQ" type="7001">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_wUK76SNSEe2_je-Vja5ofQ"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_wUK76iNSEe2_je-Vja5ofQ"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_wUK76yNSEe2_je-Vja5ofQ" type="7002">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_wUK77CNSEe2_je-Vja5ofQ"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_wUK77SNSEe2_je-Vja5ofQ"/>
+      </children>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_wUK74iNSEe2_je-Vja5ofQ"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_wUK74yNSEe2_je-Vja5ofQ" fontName="Segoe UI"/>
+      <styles xmi:type="notation:FillStyle" xmi:id="_wUK75CNSEe2_je-Vja5ofQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wUK75SNSEe2_je-Vja5ofQ" x="335" y="120"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_yahkYCNSEe2_je-Vja5ofQ" type="2002" element="_yag9UCNSEe2_je-Vja5ofQ">
+      <children xmi:type="notation:DecorationNode" xmi:id="_yahkZSNSEe2_je-Vja5ofQ" type="5003"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_yahkZiNSEe2_je-Vja5ofQ" type="5004"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_yahkZyNSEe2_je-Vja5ofQ" type="7001">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_yahkaCNSEe2_je-Vja5ofQ"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_yahkaSNSEe2_je-Vja5ofQ"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_yahkaiNSEe2_je-Vja5ofQ" type="7002">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_yahkayNSEe2_je-Vja5ofQ"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_yahkbCNSEe2_je-Vja5ofQ"/>
+      </children>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_yahkYSNSEe2_je-Vja5ofQ"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_yahkYiNSEe2_je-Vja5ofQ" fontName="Segoe UI"/>
+      <styles xmi:type="notation:FillStyle" xmi:id="_yahkYyNSEe2_je-Vja5ofQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yahkZCNSEe2_je-Vja5ofQ" x="172" y="229"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_SW3skSNQEe2_je-Vja5ofQ"/>
+  </notation:Diagram>
+</xmi:XMI>

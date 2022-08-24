@@ -4,8 +4,11 @@ package diagrama.domain.provider;
 
 
 import diagrama.domain.Domain;
-import diagrama.domain.DomainFactory;
 import diagrama.domain.DomainPackage;
+
+import diagrama.domain.abstractsyntax.AbstractsyntaxFactory;
+
+import diagrama.domain.concretesyntax.ConcretesyntaxFactory;
 
 import diagrama.provider.ModelEditPlugin;
 
@@ -103,7 +106,8 @@ public class DomainItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DomainPackage.Literals.DOMAIN__LST_CLASS_DIAGRAM);
+			childrenFeatures.add(DomainPackage.Literals.DOMAIN__LST_ABSTRACT_SYNTAX);
+			childrenFeatures.add(DomainPackage.Literals.DOMAIN__LST_CONCRETE_SYNTAX);
 		}
 		return childrenFeatures;
 	}
@@ -156,7 +160,8 @@ public class DomainItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Domain.class)) {
-			case DomainPackage.DOMAIN__LST_CLASS_DIAGRAM:
+			case DomainPackage.DOMAIN__LST_ABSTRACT_SYNTAX:
+			case DomainPackage.DOMAIN__LST_CONCRETE_SYNTAX:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -176,8 +181,13 @@ public class DomainItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(DomainPackage.Literals.DOMAIN__LST_CLASS_DIAGRAM,
-				 DomainFactory.eINSTANCE.createClassDiagram()));
+				(DomainPackage.Literals.DOMAIN__LST_ABSTRACT_SYNTAX,
+				 AbstractsyntaxFactory.eINSTANCE.createAbstractSyntax()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DomainPackage.Literals.DOMAIN__LST_CONCRETE_SYNTAX,
+				 ConcretesyntaxFactory.eINSTANCE.createConcreteSyntax()));
 	}
 
 	/**

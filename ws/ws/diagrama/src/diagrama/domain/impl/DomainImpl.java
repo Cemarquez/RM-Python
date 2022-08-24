@@ -5,9 +5,14 @@ package diagrama.domain.impl;
 import diagrama.ModelFactory;
 import diagrama.diagramaPackage;
 
-import diagrama.domain.ClassDiagram;
 import diagrama.domain.Domain;
 import diagrama.domain.DomainPackage;
+
+import diagrama.domain.abstractsyntax.AbstractSyntax;
+import diagrama.domain.abstractsyntax.AbstractsyntaxPackage;
+
+import diagrama.domain.concretesyntax.ConcreteSyntax;
+import diagrama.domain.concretesyntax.ConcretesyntaxPackage;
 
 import diagrama.ui.UI;
 import diagrama.ui.UiPackage;
@@ -38,7 +43,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link diagrama.domain.impl.DomainImpl#getTheModelFactory <em>The Model Factory</em>}</li>
- *   <li>{@link diagrama.domain.impl.DomainImpl#getLstClassDiagram <em>Lst Class Diagram</em>}</li>
+ *   <li>{@link diagrama.domain.impl.DomainImpl#getLstAbstractSyntax <em>Lst Abstract Syntax</em>}</li>
+ *   <li>{@link diagrama.domain.impl.DomainImpl#getLstConcreteSyntax <em>Lst Concrete Syntax</em>}</li>
  *   <li>{@link diagrama.domain.impl.DomainImpl#getTheUI <em>The UI</em>}</li>
  * </ul>
  *
@@ -46,14 +52,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class DomainImpl extends EObjectImpl implements Domain {
 	/**
-	 * The cached value of the '{@link #getLstClassDiagram() <em>Lst Class Diagram</em>}' containment reference list.
+	 * The cached value of the '{@link #getLstAbstractSyntax() <em>Lst Abstract Syntax</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLstClassDiagram()
+	 * @see #getLstAbstractSyntax()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ClassDiagram> lstClassDiagram;
+	protected EList<AbstractSyntax> lstAbstractSyntax;
+
+	/**
+	 * The cached value of the '{@link #getLstConcreteSyntax() <em>Lst Concrete Syntax</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLstConcreteSyntax()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ConcreteSyntax> lstConcreteSyntax;
 
 	/**
 	 * The cached value of the '{@link #getTheUI() <em>The UI</em>}' reference.
@@ -130,11 +146,23 @@ public class DomainImpl extends EObjectImpl implements Domain {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ClassDiagram> getLstClassDiagram() {
-		if (lstClassDiagram == null) {
-			lstClassDiagram = new EObjectContainmentWithInverseEList<ClassDiagram>(ClassDiagram.class, this, DomainPackage.DOMAIN__LST_CLASS_DIAGRAM, DomainPackage.CLASS_DIAGRAM__OWNED_BY_DOMAIN);
+	public EList<AbstractSyntax> getLstAbstractSyntax() {
+		if (lstAbstractSyntax == null) {
+			lstAbstractSyntax = new EObjectContainmentWithInverseEList<AbstractSyntax>(AbstractSyntax.class, this, DomainPackage.DOMAIN__LST_ABSTRACT_SYNTAX, AbstractsyntaxPackage.ABSTRACT_SYNTAX__OWNED_BY_DOMAIN);
 		}
-		return lstClassDiagram;
+		return lstAbstractSyntax;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ConcreteSyntax> getLstConcreteSyntax() {
+		if (lstConcreteSyntax == null) {
+			lstConcreteSyntax = new EObjectContainmentWithInverseEList<ConcreteSyntax>(ConcreteSyntax.class, this, DomainPackage.DOMAIN__LST_CONCRETE_SYNTAX, ConcretesyntaxPackage.CONCRETE_SYNTAX__OWNED_BY_DOMAIN);
+		}
+		return lstConcreteSyntax;
 	}
 
 	/**
@@ -220,8 +248,10 @@ public class DomainImpl extends EObjectImpl implements Domain {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetTheModelFactory((ModelFactory)otherEnd, msgs);
-			case DomainPackage.DOMAIN__LST_CLASS_DIAGRAM:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLstClassDiagram()).basicAdd(otherEnd, msgs);
+			case DomainPackage.DOMAIN__LST_ABSTRACT_SYNTAX:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLstAbstractSyntax()).basicAdd(otherEnd, msgs);
+			case DomainPackage.DOMAIN__LST_CONCRETE_SYNTAX:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLstConcreteSyntax()).basicAdd(otherEnd, msgs);
 			case DomainPackage.DOMAIN__THE_UI:
 				if (theUI != null)
 					msgs = ((InternalEObject)theUI).eInverseRemove(this, UiPackage.UI__THE_DOMAIN, UI.class, msgs);
@@ -240,8 +270,10 @@ public class DomainImpl extends EObjectImpl implements Domain {
 		switch (featureID) {
 			case DomainPackage.DOMAIN__THE_MODEL_FACTORY:
 				return basicSetTheModelFactory(null, msgs);
-			case DomainPackage.DOMAIN__LST_CLASS_DIAGRAM:
-				return ((InternalEList<?>)getLstClassDiagram()).basicRemove(otherEnd, msgs);
+			case DomainPackage.DOMAIN__LST_ABSTRACT_SYNTAX:
+				return ((InternalEList<?>)getLstAbstractSyntax()).basicRemove(otherEnd, msgs);
+			case DomainPackage.DOMAIN__LST_CONCRETE_SYNTAX:
+				return ((InternalEList<?>)getLstConcreteSyntax()).basicRemove(otherEnd, msgs);
 			case DomainPackage.DOMAIN__THE_UI:
 				return basicSetTheUI(null, msgs);
 		}
@@ -272,8 +304,10 @@ public class DomainImpl extends EObjectImpl implements Domain {
 		switch (featureID) {
 			case DomainPackage.DOMAIN__THE_MODEL_FACTORY:
 				return getTheModelFactory();
-			case DomainPackage.DOMAIN__LST_CLASS_DIAGRAM:
-				return getLstClassDiagram();
+			case DomainPackage.DOMAIN__LST_ABSTRACT_SYNTAX:
+				return getLstAbstractSyntax();
+			case DomainPackage.DOMAIN__LST_CONCRETE_SYNTAX:
+				return getLstConcreteSyntax();
 			case DomainPackage.DOMAIN__THE_UI:
 				if (resolve) return getTheUI();
 				return basicGetTheUI();
@@ -293,9 +327,13 @@ public class DomainImpl extends EObjectImpl implements Domain {
 			case DomainPackage.DOMAIN__THE_MODEL_FACTORY:
 				setTheModelFactory((ModelFactory)newValue);
 				return;
-			case DomainPackage.DOMAIN__LST_CLASS_DIAGRAM:
-				getLstClassDiagram().clear();
-				getLstClassDiagram().addAll((Collection<? extends ClassDiagram>)newValue);
+			case DomainPackage.DOMAIN__LST_ABSTRACT_SYNTAX:
+				getLstAbstractSyntax().clear();
+				getLstAbstractSyntax().addAll((Collection<? extends AbstractSyntax>)newValue);
+				return;
+			case DomainPackage.DOMAIN__LST_CONCRETE_SYNTAX:
+				getLstConcreteSyntax().clear();
+				getLstConcreteSyntax().addAll((Collection<? extends ConcreteSyntax>)newValue);
 				return;
 			case DomainPackage.DOMAIN__THE_UI:
 				setTheUI((UI)newValue);
@@ -315,8 +353,11 @@ public class DomainImpl extends EObjectImpl implements Domain {
 			case DomainPackage.DOMAIN__THE_MODEL_FACTORY:
 				setTheModelFactory((ModelFactory)null);
 				return;
-			case DomainPackage.DOMAIN__LST_CLASS_DIAGRAM:
-				getLstClassDiagram().clear();
+			case DomainPackage.DOMAIN__LST_ABSTRACT_SYNTAX:
+				getLstAbstractSyntax().clear();
+				return;
+			case DomainPackage.DOMAIN__LST_CONCRETE_SYNTAX:
+				getLstConcreteSyntax().clear();
 				return;
 			case DomainPackage.DOMAIN__THE_UI:
 				setTheUI((UI)null);
@@ -335,8 +376,10 @@ public class DomainImpl extends EObjectImpl implements Domain {
 		switch (featureID) {
 			case DomainPackage.DOMAIN__THE_MODEL_FACTORY:
 				return getTheModelFactory() != null;
-			case DomainPackage.DOMAIN__LST_CLASS_DIAGRAM:
-				return lstClassDiagram != null && !lstClassDiagram.isEmpty();
+			case DomainPackage.DOMAIN__LST_ABSTRACT_SYNTAX:
+				return lstAbstractSyntax != null && !lstAbstractSyntax.isEmpty();
+			case DomainPackage.DOMAIN__LST_CONCRETE_SYNTAX:
+				return lstConcreteSyntax != null && !lstConcreteSyntax.isEmpty();
 			case DomainPackage.DOMAIN__THE_UI:
 				return theUI != null;
 		}

@@ -35,6 +35,32 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated diagrama -->
       <factory
+            uri="http:///diagrama/domain/abstractsyntax.ecore"
+            class="diagrama.domain.abstractsyntax.provider.AbstractsyntaxItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated diagrama -->
+      <factory
+            uri="http:///diagrama/domain/concretesyntax.ecore"
+            class="diagrama.domain.concretesyntax.provider.ConcretesyntaxItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated diagrama -->
+      <factory
             uri="http:///diagrama/ui.ecore"
             class="diagrama.ui.provider.UiItemProviderAdapterFactory"
             supportedTypes=

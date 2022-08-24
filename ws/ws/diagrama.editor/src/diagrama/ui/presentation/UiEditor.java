@@ -156,6 +156,10 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import diagrama.ui.provider.UiItemProviderAdapterFactory;
 
+import diagrama.domain.abstractsyntax.provider.AbstractsyntaxItemProviderAdapterFactory;
+
+import diagrama.domain.concretesyntax.provider.ConcretesyntaxItemProviderAdapterFactory;
+
 import diagrama.domain.provider.DomainItemProviderAdapterFactory;
 
 import diagrama.presentation.ModelEditorPlugin;
@@ -706,6 +710,8 @@ public class UiEditor
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new diagramaItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new DomainItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new AbstractsyntaxItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ConcretesyntaxItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new UiItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 

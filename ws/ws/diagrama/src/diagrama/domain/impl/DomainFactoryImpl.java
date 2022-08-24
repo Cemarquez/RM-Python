@@ -57,12 +57,6 @@ public class DomainFactoryImpl extends EFactoryImpl implements DomainFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case DomainPackage.DOMAIN: return createDomain();
-			case DomainPackage.MATTRIBUTES: return createMAttributes();
-			case DomainPackage.MCLASS: return createMClass();
-			case DomainPackage.MFUNCTION: return createMFunction();
-			case DomainPackage.MRELATIONSHIP: return createMRelationship();
-			case DomainPackage.RELATIONSHIP_FACTORY: return createRelationshipFactory();
-			case DomainPackage.CLASS_DIAGRAM: return createClassDiagram();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -76,66 +70,6 @@ public class DomainFactoryImpl extends EFactoryImpl implements DomainFactory {
 	public Domain createDomain() {
 		DomainImpl domain = new DomainImpl();
 		return domain;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MAttributes createMAttributes() {
-		MAttributesImpl mAttributes = new MAttributesImpl();
-		return mAttributes;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MClass createMClass() {
-		MClassImpl mClass = new MClassImpl();
-		return mClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MFunction createMFunction() {
-		MFunctionImpl mFunction = new MFunctionImpl();
-		return mFunction;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MRelationship createMRelationship() {
-		MRelationshipImpl mRelationship = new MRelationshipImpl();
-		return mRelationship;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RelationshipFactory createRelationshipFactory() {
-		RelationshipFactoryImpl relationshipFactory = new RelationshipFactoryImpl();
-		return relationshipFactory;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ClassDiagram createClassDiagram() {
-		ClassDiagramImpl classDiagram = new ClassDiagramImpl();
-		return classDiagram;
 	}
 
 	/**

@@ -21,6 +21,22 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated diagrama -->
       <package
+            uri="http:///diagrama/domain/abstractsyntax.ecore"
+            class="diagrama.domain.abstractsyntax.AbstractsyntaxPackage"
+            genModel="model/diagrama.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated diagrama -->
+      <package
+            uri="http:///diagrama/domain/concretesyntax.ecore"
+            class="diagrama.domain.concretesyntax.ConcretesyntaxPackage"
+            genModel="model/diagrama.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated diagrama -->
+      <package
             uri="http:///diagrama/ui.ecore"
             class="diagrama.ui.UiPackage"
             genModel="model/diagrama.genmodel"/>

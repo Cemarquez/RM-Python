@@ -40,91 +40,138 @@
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="theModelFactory" eType="#//ModelFactory"
           eOpposite="#//ModelFactory/theDomain"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="lstClassDiagram" upperBound="-1"
-          eType="#//domain/ClassDiagram" containment="true" eOpposite="#//domain/ClassDiagram/ownedByDomain"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lstAbstractSyntax" upperBound="-1"
+          eType="#//domain/abstractsyntax/AbstractSyntax" containment="true" eOpposite="#//domain/abstractsyntax/AbstractSyntax/ownedByDomain"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lstConcreteSyntax" upperBound="-1"
+          eType="#//domain/concretesyntax/ConcreteSyntax" containment="true" eOpposite="#//domain/concretesyntax/ConcreteSyntax/ownedByDomain"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="theUI" eType="#//ui/UI"
           eOpposite="#//ui/UI/theDomain"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MAttributes">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"
-          defaultValueLiteral=" "/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataType" eType="#//String"
-          defaultValueLiteral=" "/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessModifier" eType="#//String"
-          defaultValueLiteral=" "/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="#//String"
-          defaultValueLiteral=" "/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="comments" eType="#//String"
-          defaultValueLiteral=" "/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByMClass" eType="#//domain/MClass"
-          eOpposite="#//domain/MClass/lstMAttributes"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MClass">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"
-          defaultValueLiteral=" "/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessModifier" eType="#//String"
-          defaultValueLiteral=" "/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="comments" eType="#//String"
-          defaultValueLiteral=" "/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="lstMAttributes" upperBound="-1"
-          eType="#//domain/MAttributes" containment="true" eOpposite="#//domain/MAttributes/ownedByMClass"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="lstMRelationshipSource"
-          upperBound="-1" eType="#//domain/MRelationship" eOpposite="#//domain/MRelationship/source"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="lstMRelationshipTarget"
-          upperBound="-1" eType="#//domain/MRelationship" eOpposite="#//domain/MRelationship/target"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="lstClassDiagram" eType="#//domain/ClassDiagram"
-          eOpposite="#//domain/ClassDiagram/lstMClass"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="lstMFunction" upperBound="-1"
-          eType="#//domain/MFunction" containment="true" eOpposite="#//domain/MFunction/ownedByMClass"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MFunction">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"
-          defaultValueLiteral=" "/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessModifier" eType="#//String"
-          defaultValueLiteral=" "/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="#//String"
-          defaultValueLiteral=" "/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="semantics" eType="#//String"
-          defaultValueLiteral=" "/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="comments" eType="#//String"
-          defaultValueLiteral=" "/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameters" eType="#//String"
-          defaultValueLiteral=" "/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByMClass" eType="#//domain/MClass"
-          eOpposite="#//domain/MClass/lstMFunction"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MRelationship">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//domain/MClass"
-          eOpposite="#//domain/MClass/lstMRelationshipSource"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//domain/MClass"
-          eOpposite="#//domain/MClass/lstMRelationshipTarget"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="relationshipType" eType="#//String"
-          defaultValueLiteral=" "/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicitySource" eType="#//String"
-          defaultValueLiteral=" "/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicityTarget" eType="#//String"
-          defaultValueLiteral=" "/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceRole" eType="#//String"
-          defaultValueLiteral=" "/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetRole" eType="#//String"
-          defaultValueLiteral=" "/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="lstRelationshipFactory"
-          eType="#//domain/RelationshipFactory" eOpposite="#//domain/RelationshipFactory/lstMRelationship"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RelationshipFactory">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="lstMRelationship" upperBound="-1"
-          eType="#//domain/MRelationship" containment="true" eOpposite="#//domain/MRelationship/lstRelationshipFactory"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="lstClassDiagram" eType="#//domain/ClassDiagram"
-          eOpposite="#//domain/ClassDiagram/theRelationshipFactory"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ClassDiagram">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="lstMClass" upperBound="-1"
-          eType="#//domain/MClass" containment="true" eOpposite="#//domain/MClass/lstClassDiagram"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="theRelationshipFactory"
-          eType="#//domain/RelationshipFactory" containment="true" eOpposite="#//domain/RelationshipFactory/lstClassDiagram"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByDomain" eType="#//domain/Domain"
-          eOpposite="#//domain/Domain/lstClassDiagram"/>
-    </eClassifiers>
+    <eSubpackages name="abstractsyntax" nsURI="http:///diagrama/domain/abstractsyntax.ecore"
+        nsPrefix="diagrama.domain.abstractsyntax">
+      <eClassifiers xsi:type="ecore:EClass" name="MClassDiagram">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByAbstractSyntax"
+            eType="#//domain/abstractsyntax/AbstractSyntax" eOpposite="#//domain/abstractsyntax/AbstractSyntax/lstMClassDiagram"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByConcreteSyntax"
+            eType="#//domain/concretesyntax/ConcreteSyntax" eOpposite="#//domain/concretesyntax/ConcreteSyntax/lstMClassDiagram"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstMClass" upperBound="-1"
+            eType="#//domain/abstractsyntax/MClass" containment="true" eOpposite="#//domain/abstractsyntax/MClass/ownedByClassDiagram"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstMPackage" upperBound="-1"
+            eType="#//domain/abstractsyntax/MPackage" containment="true" eOpposite="#//domain/abstractsyntax/MPackage/ownedByMClassDiagram"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="theRelationshipFactory"
+            eType="#//domain/abstractsyntax/RelationshipFactory" containment="true"
+            eOpposite="#//domain/abstractsyntax/RelationshipFactory/lstClassDiagram"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="MAttribute">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataType" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessModifier" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="comments" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByMClass" eType="#//domain/abstractsyntax/MClass"
+            eOpposite="#//domain/abstractsyntax/MClass/lstMAttributes"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="MClass">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessModifier" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="comments" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="stereotype" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByClassDiagram"
+            eType="#//domain/abstractsyntax/MClassDiagram" eOpposite="#//domain/abstractsyntax/MClassDiagram/lstMClass"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstMAttributes" upperBound="-1"
+            eType="#//domain/abstractsyntax/MAttribute" containment="true" eOpposite="#//domain/abstractsyntax/MAttribute/ownedByMClass"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstMRelationshipSource"
+            upperBound="-1" eType="#//domain/abstractsyntax/MRelationship" eOpposite="#//domain/abstractsyntax/MRelationship/source"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstMRelationshipTarget"
+            upperBound="-1" eType="#//domain/abstractsyntax/MRelationship" eOpposite="#//domain/abstractsyntax/MRelationship/target"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByMPackage" eType="#//domain/abstractsyntax/MPackage"
+            eOpposite="#//domain/abstractsyntax/MPackage/lstMClass"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstMRelationship" upperBound="-1"
+            eType="#//domain/abstractsyntax/MRelationship" containment="true" eOpposite="#//domain/abstractsyntax/MRelationship/ownedByMClass"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstMFunction" upperBound="-1"
+            eType="#//domain/abstractsyntax/MFunction" containment="true" eOpposite="#//domain/abstractsyntax/MFunction/ownedByMClass"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="MFunction">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessModifier" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="semantics" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="comments" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameters" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByMClass" eType="#//domain/abstractsyntax/MClass"
+            eOpposite="#//domain/abstractsyntax/MClass/lstMFunction"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="MPackage">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstMClass" upperBound="-1"
+            eType="#//domain/abstractsyntax/MClass" containment="true" eOpposite="#//domain/abstractsyntax/MClass/ownedByMPackage"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByMClassDiagram"
+            eType="#//domain/abstractsyntax/MClassDiagram" eOpposite="#//domain/abstractsyntax/MClassDiagram/lstMPackage"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="MRelationship">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//domain/abstractsyntax/MClass"
+            eOpposite="#//domain/abstractsyntax/MClass/lstMRelationshipSource"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//domain/abstractsyntax/MClass"
+            eOpposite="#//domain/abstractsyntax/MClass/lstMRelationshipTarget"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByMClass" eType="#//domain/abstractsyntax/MClass"
+            eOpposite="#//domain/abstractsyntax/MClass/lstMRelationship"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="relationshipType" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicitySource"
+            eType="#//String" defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicityTarget"
+            eType="#//String" defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceRole" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetRole" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstRelationshipFactory"
+            eType="#//domain/abstractsyntax/RelationshipFactory" eOpposite="#//domain/abstractsyntax/RelationshipFactory/lstMRelationship"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RelationshipFactory">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstMRelationship" upperBound="-1"
+            eType="#//domain/abstractsyntax/MRelationship" containment="true" eOpposite="#//domain/abstractsyntax/MRelationship/lstRelationshipFactory"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstClassDiagram" eType="#//domain/abstractsyntax/MClassDiagram"
+            eOpposite="#//domain/abstractsyntax/MClassDiagram/theRelationshipFactory"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="AbstractSyntax">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstMClassDiagram" upperBound="-1"
+            eType="#//domain/abstractsyntax/MClassDiagram" containment="true" eOpposite="#//domain/abstractsyntax/MClassDiagram/ownedByAbstractSyntax"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByDomain" eType="#//domain/Domain"
+            eOpposite="#//domain/Domain/lstAbstractSyntax"/>
+      </eClassifiers>
+    </eSubpackages>
+    <eSubpackages name="concretesyntax" nsURI="http:///diagrama/domain/concretesyntax.ecore"
+        nsPrefix="diagrama.domain.concretesyntax">
+      <eClassifiers xsi:type="ecore:EClass" name="ConcreteSyntax">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstMClassDiagram" upperBound="-1"
+            eType="#//domain/abstractsyntax/MClassDiagram" containment="true" eOpposite="#//domain/abstractsyntax/MClassDiagram/ownedByConcreteSyntax"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByDomain" eType="#//domain/Domain"
+            eOpposite="#//domain/Domain/lstConcreteSyntax"/>
+      </eClassifiers>
+    </eSubpackages>
   </eSubpackages>
   <eSubpackages name="ui" nsURI="http:///diagrama/ui.ecore" nsPrefix="diagrama.ui">
     <eClassifiers xsi:type="ecore:EClass" name="UI">

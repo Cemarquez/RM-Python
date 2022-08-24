@@ -68,6 +68,62 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
+            id="diagrama.domain.abstractsyntax.presentation.AbstractsyntaxModelWizardID"
+            name="%_UI_AbstractsyntaxModelWizard_label"
+            class="diagrama.domain.abstractsyntax.presentation.AbstractsyntaxModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AbstractsyntaxModelFile.gif">
+         <description>%_UI_AbstractsyntaxModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated diagrama -->
+      <editor
+            id="diagrama.domain.abstractsyntax.presentation.AbstractsyntaxEditorID"
+            name="%_UI_AbstractsyntaxEditor_label"
+            icon="icons/full/obj16/AbstractsyntaxModelFile.gif"
+            extensions="abstractsyntax"
+            class="diagrama.domain.abstractsyntax.presentation.AbstractsyntaxEditor"
+            contributorClass="diagrama.domain.abstractsyntax.presentation.AbstractsyntaxActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated diagrama -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="diagrama.domain.concretesyntax.presentation.ConcretesyntaxModelWizardID"
+            name="%_UI_ConcretesyntaxModelWizard_label"
+            class="diagrama.domain.concretesyntax.presentation.ConcretesyntaxModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ConcretesyntaxModelFile.gif">
+         <description>%_UI_ConcretesyntaxModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated diagrama -->
+      <editor
+            id="diagrama.domain.concretesyntax.presentation.ConcretesyntaxEditorID"
+            name="%_UI_ConcretesyntaxEditor_label"
+            icon="icons/full/obj16/ConcretesyntaxModelFile.gif"
+            extensions="concretesyntax"
+            class="diagrama.domain.concretesyntax.presentation.ConcretesyntaxEditor"
+            contributorClass="diagrama.domain.concretesyntax.presentation.ConcretesyntaxActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated diagrama -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
             id="diagrama.ui.presentation.UiModelWizardID"
             name="%_UI_UiModelWizard_label"
             class="diagrama.ui.presentation.UiModelWizard"
