@@ -1,6 +1,6 @@
-# RM-Python
+# RM-Ruby
 
-Resonance Metamodel Python
+Resonance Metamodel Ruby
 
 EMD diagram class project
 
