@@ -1,0 +1,64 @@
+@namespace(uri="abstract", prefix="abstract")
+@gmf
+package abstracts;
+
+class MClassDiagram{
+	attr String name;
+	val MPackage[*] lstMPackage;
+	val MClass[*] lstMClass;
+	val MRelationship[*] lstMRelationship;
+}
+
+class MPackage{
+	attr String name;
+	attr String path;
+	val MClass[*] lstMClass;
+	val MPackage[*] lstMPackage;
+}
+
+class MClass{
+	attr String name;
+	attr String accessModifier;
+	attr String comments;
+	attr boolean abstracts;
+	attr String stereoType;
+	attr String path;
+	val MRelationship[*] ltsMRelationships ;
+	@gmf.compartment
+	val MAttribute[*] lstMAttribute;
+	@gmf.compartment
+	val MFunction[*] lstMFunction;
+}
+
+class MRelationship{
+	attr String relationshipType;
+	attr String multiplicitySource;
+	attr String multiplicityTarget;
+	attr String sourceRole;
+	attr String targetRole;
+	attr String navegabilitySource;
+	attr String navegabilityTarget;
+}
+
+class MAttribute{
+	attr String name;
+	attr String dataType;
+	attr String accessModifier;
+	attr String defaultValue;
+	attr String comments;
+}
+
+class MFunction{
+	attr String name;
+	attr String accessModifier;
+	attr String returnType;
+	attr String semantics;
+	attr String comments;
+	val MParameter[*] lstMParameter;
+}
+
+class MParameter{
+	attr String name;
+	attr String dataType;
+}
+

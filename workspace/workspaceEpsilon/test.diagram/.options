@@ -1,0 +1,7 @@
+# Tracing options for the test.diagram plug-in
+
+# Common issues
+test.diagram/debug=false
+
+# Visual IDs
+test.diagram/debug/visualID=false
