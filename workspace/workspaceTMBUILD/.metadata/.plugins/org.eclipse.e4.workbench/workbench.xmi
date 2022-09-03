@@ -64,9 +64,10 @@
           <tags>persp.actionSet:org.eclipse.ui.actionSet.keyBindings</tags>
           <tags>persp.actionSet:org.eclipse.ui.actionSet.openFiles</tags>
           <tags>persp.actionSet:org.eclipse.wb.core.ui.actionset</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_wyMDkSMkEe2KsdRWqq7mtw" selectedElement="_wyMDlyMkEe2KsdRWqq7mtw" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_wyMDkSMkEe2KsdRWqq7mtw" selectedElement="_wyMDkiMkEe2KsdRWqq7mtw" horizontal="true">
             <children xsi:type="basic:PartSashContainer" xmi:id="_wyMDkiMkEe2KsdRWqq7mtw" containerData="2793" selectedElement="_wyMDkyMkEe2KsdRWqq7mtw">
               <children xsi:type="basic:PartStack" xmi:id="_wyMDkyMkEe2KsdRWqq7mtw" elementId="left" containerData="5000" selectedElement="_wyMDlCMkEe2KsdRWqq7mtw">
+                <tags>active</tags>
                 <children xsi:type="advanced:Placeholder" xmi:id="_wyMDlCMkEe2KsdRWqq7mtw" elementId="org.uniquindio.sinfoci.tool.browser.ui.views.BrowserView" ref="_wyMsKiMkEe2KsdRWqq7mtw">
                   <tags>NoClose</tags>
                 </children>
@@ -131,18 +132,9 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_wyMroyMkEe2KsdRWqq7mtw" elementId="org.eclipse.ui.editorss" selectedElement="_wyMrpCMkEe2KsdRWqq7mtw">
-      <children xsi:type="basic:PartStack" xmi:id="_wyMrpCMkEe2KsdRWqq7mtw" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_UGcfACk-Ee2Ga_MmMFlJHQ">
+      <children xsi:type="basic:PartStack" xmi:id="_wyMrpCMkEe2KsdRWqq7mtw" elementId="org.eclipse.e4.primaryDataStack">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
-        <tags>active</tags>
-        <children xsi:type="basic:Part" xmi:id="_UGcfACk-Ee2Ga_MmMFlJHQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="concreteSyntax/containment" iconURI="platform:/plugin/tooldataform.datosdiagram/icons/DataModel.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;tooldataform.datosdiagram.part.MetamodelodataformDiagramEditorID&quot; name=&quot;concreteSyntax/containment&quot; partName=&quot;concreteSyntax/containment&quot; title=&quot;concreteSyntax/containment&quot; tooltip=&quot;platform:/resource/diagrama/diagramas/_9f92f8.datosdiagram#_SW3skCNQEe2_je-Vja5ofQ&quot;>&#xD;&#xA;&lt;input bundle=&quot;org.eclipse.emf.common.ui&quot; class=&quot;org.eclipse.emf.common.ui.URIEditorInput&quot; factoryID=&quot;org.eclipse.emf.common.ui.URIEditorInputFactory&quot; name=&quot;concreteSyntax/containment&quot; uri=&quot;platform:/resource/diagrama/diagramas/_9f92f8.datosdiagram#_SW3skCNQEe2_je-Vja5ofQ&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>tooldataform.datosdiagram.part.MetamodelodataformDiagramEditorID</tags>
-          <tags>removeOnHide</tags>
-          <tags>active</tags>
-          <tags>activeOnClose</tags>
-        </children>
       </children>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_wyMsDyMkEe2KsdRWqq7mtw" elementId="org.eclipse.sirius.ui.tools.views.model.explorer" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Model Explorer" iconURI="platform:/plugin/org.eclipse.sirius.ui.ext/icons/full/others/ModelExplorer.gif" tooltip="" closeable="true">
@@ -193,6 +185,8 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
       <tags>View</tags>
       <tags>categoryTag:Browser Tool</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_wyMsKyMkEe2KsdRWqq7mtw" elementId="org.uniquindio.sinfoci.tool.browser.ui.views.BrowserView">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -254,7 +248,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_wyMstSMkEe2KsdRWqq7mtw" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_fgyYMCk6Ee2Ga_MmMFlJHQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_wyOiXyMkEe2KsdRWqq7mtw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_QiFKECozEe23H-yGRTIvCA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_wyOiXyMkEe2KsdRWqq7mtw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_wyMswyMkEe2KsdRWqq7mtw" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -272,7 +266,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_wyNRsyMkEe2KsdRWqq7mtw" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_fg00cCk6Ee2Ga_MmMFlJHQ" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_wyOh4CMkEe2KsdRWqq7mtw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_QiG_QyozEe23H-yGRTIvCA" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_wyOh4CMkEe2KsdRWqq7mtw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_wyNR0yMkEe2KsdRWqq7mtw" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -851,33 +845,33 @@
     <bindings xmi:id="_wyNTmCMkEe2KsdRWqq7mtw" keySequence="ALT+SHIFT+F2" command="_wyOhWyMkEe2KsdRWqq7mtw"/>
     <bindings xmi:id="_wyNTmSMkEe2KsdRWqq7mtw" keySequence="ALT+SHIFT+F3" command="_wyOibyMkEe2KsdRWqq7mtw"/>
     <bindings xmi:id="_wyNTmiMkEe2KsdRWqq7mtw" keySequence="CTRL+F10" command="_wyOhDSMkEe2KsdRWqq7mtw"/>
-    <bindings xmi:id="_fWJ1gSk6Ee2Ga_MmMFlJHQ" elementId="org.eclipse.e4.tools.bundles.spy.BundleSpyPart.binding" contributorURI="platform:/plugin/org.eclipse.e4.tools.spy" keySequence="M2+M3+F12" command="_wyOjZSMkEe2KsdRWqq7mtw">
+    <bindings xmi:id="_QTKkUSozEe23H-yGRTIvCA" elementId="org.eclipse.e4.tools.bundles.spy.BundleSpyPart.binding" contributorURI="platform:/plugin/org.eclipse.e4.tools.spy" keySequence="M2+M3+F12" command="_wyOjZSMkEe2KsdRWqq7mtw">
       <persistedState key="persistState" value="false"/>
-      <parameters xmi:id="_fWJ1gik6Ee2Ga_MmMFlJHQ" name="org.eclipse.e4.tools.spy.command.partID" value="org.eclipse.e4.tools.bundles.spy.BundleSpyPart"/>
+      <parameters xmi:id="_QTKkUiozEe23H-yGRTIvCA" name="org.eclipse.e4.tools.spy.command.partID" value="org.eclipse.e4.tools.bundles.spy.BundleSpyPart"/>
     </bindings>
-    <bindings xmi:id="_fWKckCk6Ee2Ga_MmMFlJHQ" elementId="org.eclipse.e4.tools.context.spy.ContextSpyPart.binding" contributorURI="platform:/plugin/org.eclipse.e4.tools.spy" keySequence="M2+M3+F10" command="_wyOjZSMkEe2KsdRWqq7mtw">
+    <bindings xmi:id="_QTLLYCozEe23H-yGRTIvCA" elementId="org.eclipse.e4.tools.context.spy.ContextSpyPart.binding" contributorURI="platform:/plugin/org.eclipse.e4.tools.spy" keySequence="M2+M3+F10" command="_wyOjZSMkEe2KsdRWqq7mtw">
       <persistedState key="persistState" value="false"/>
-      <parameters xmi:id="_fWKckSk6Ee2Ga_MmMFlJHQ" name="org.eclipse.e4.tools.spy.command.partID" value="org.eclipse.e4.tools.context.spy.ContextSpyPart"/>
+      <parameters xmi:id="_QTLLYSozEe23H-yGRTIvCA" name="org.eclipse.e4.tools.spy.command.partID" value="org.eclipse.e4.tools.context.spy.ContextSpyPart"/>
     </bindings>
-    <bindings xmi:id="_fWLqsCk6Ee2Ga_MmMFlJHQ" elementId="org.eclipse.e4.tools.css.spy.CssSpyPart.binding" contributorURI="platform:/plugin/org.eclipse.e4.tools.spy" keySequence="M2+M3+F5" command="_wyOjZSMkEe2KsdRWqq7mtw">
+    <bindings xmi:id="_QTLycCozEe23H-yGRTIvCA" elementId="org.eclipse.e4.tools.css.spy.CssSpyPart.binding" contributorURI="platform:/plugin/org.eclipse.e4.tools.spy" keySequence="M2+M3+F5" command="_wyOjZSMkEe2KsdRWqq7mtw">
       <persistedState key="persistState" value="false"/>
-      <parameters xmi:id="_fWLqsSk6Ee2Ga_MmMFlJHQ" name="org.eclipse.e4.tools.spy.command.partID" value="org.eclipse.e4.tools.css.spy.CssSpyPart"/>
+      <parameters xmi:id="_QTLycSozEe23H-yGRTIvCA" name="org.eclipse.e4.tools.spy.command.partID" value="org.eclipse.e4.tools.css.spy.CssSpyPart"/>
     </bindings>
-    <bindings xmi:id="_fWLqsik6Ee2Ga_MmMFlJHQ" elementId="org.eclipse.e4.tools.css.spy.CSSScratchPadPart.binding" contributorURI="platform:/plugin/org.eclipse.e4.tools.spy" keySequence="M2+M3+F6" command="_wyOjZSMkEe2KsdRWqq7mtw">
+    <bindings xmi:id="_QTMZgCozEe23H-yGRTIvCA" elementId="org.eclipse.e4.tools.css.spy.CSSScratchPadPart.binding" contributorURI="platform:/plugin/org.eclipse.e4.tools.spy" keySequence="M2+M3+F6" command="_wyOjZSMkEe2KsdRWqq7mtw">
       <persistedState key="persistState" value="false"/>
-      <parameters xmi:id="_fWLqsyk6Ee2Ga_MmMFlJHQ" name="org.eclipse.e4.tools.spy.command.partID" value="org.eclipse.e4.tools.css.spy.CSSScratchPadPart"/>
+      <parameters xmi:id="_QTMZgSozEe23H-yGRTIvCA" name="org.eclipse.e4.tools.spy.command.partID" value="org.eclipse.e4.tools.css.spy.CSSScratchPadPart"/>
     </bindings>
-    <bindings xmi:id="_fWMRwCk6Ee2Ga_MmMFlJHQ" elementId="org.eclipse.e4.tools.event.spy.internal.ui.EventSpyPart.binding" contributorURI="platform:/plugin/org.eclipse.e4.tools.spy" keySequence="M2+M3+F8" command="_wyOjZSMkEe2KsdRWqq7mtw">
+    <bindings xmi:id="_QTNAkCozEe23H-yGRTIvCA" elementId="org.eclipse.e4.tools.event.spy.internal.ui.EventSpyPart.binding" contributorURI="platform:/plugin/org.eclipse.e4.tools.spy" keySequence="M2+M3+F8" command="_wyOjZSMkEe2KsdRWqq7mtw">
       <persistedState key="persistState" value="false"/>
-      <parameters xmi:id="_fWMRwSk6Ee2Ga_MmMFlJHQ" name="org.eclipse.e4.tools.spy.command.partID" value="org.eclipse.e4.tools.event.spy.internal.ui.EventSpyPart"/>
+      <parameters xmi:id="_QTNAkSozEe23H-yGRTIvCA" name="org.eclipse.e4.tools.spy.command.partID" value="org.eclipse.e4.tools.event.spy.internal.ui.EventSpyPart"/>
     </bindings>
-    <bindings xmi:id="_fWM40Ck6Ee2Ga_MmMFlJHQ" elementId="org.eclipse.e4.tools.model.spy.ModelSpyPart.binding" contributorURI="platform:/plugin/org.eclipse.e4.tools.spy" keySequence="M2+M3+F9" command="_wyOjZSMkEe2KsdRWqq7mtw">
+    <bindings xmi:id="_QTNAkiozEe23H-yGRTIvCA" elementId="org.eclipse.e4.tools.model.spy.ModelSpyPart.binding" contributorURI="platform:/plugin/org.eclipse.e4.tools.spy" keySequence="M2+M3+F9" command="_wyOjZSMkEe2KsdRWqq7mtw">
       <persistedState key="persistState" value="false"/>
-      <parameters xmi:id="_fWM40Sk6Ee2Ga_MmMFlJHQ" name="org.eclipse.e4.tools.spy.command.partID" value="org.eclipse.e4.tools.model.spy.ModelSpyPart"/>
+      <parameters xmi:id="_QTNAkyozEe23H-yGRTIvCA" name="org.eclipse.e4.tools.spy.command.partID" value="org.eclipse.e4.tools.model.spy.ModelSpyPart"/>
     </bindings>
-    <bindings xmi:id="_fWM40ik6Ee2Ga_MmMFlJHQ" elementId="org.eclipse.e4.tools.preference.spy.parts.PreferenceSpyPart.binding" contributorURI="platform:/plugin/org.eclipse.e4.tools.spy" keySequence="M2+M3+F11" command="_wyOjZSMkEe2KsdRWqq7mtw">
+    <bindings xmi:id="_QTNnoCozEe23H-yGRTIvCA" elementId="org.eclipse.e4.tools.preference.spy.parts.PreferenceSpyPart.binding" contributorURI="platform:/plugin/org.eclipse.e4.tools.spy" keySequence="M2+M3+F11" command="_wyOjZSMkEe2KsdRWqq7mtw">
       <persistedState key="persistState" value="false"/>
-      <parameters xmi:id="_fWM40yk6Ee2Ga_MmMFlJHQ" name="org.eclipse.e4.tools.spy.command.partID" value="org.eclipse.e4.tools.preference.spy.parts.PreferenceSpyPart"/>
+      <parameters xmi:id="_QTNnoSozEe23H-yGRTIvCA" name="org.eclipse.e4.tools.spy.command.partID" value="org.eclipse.e4.tools.preference.spy.parts.PreferenceSpyPart"/>
     </bindings>
   </bindingTables>
   <bindingTables xmi:id="_wyNTqSMkEe2KsdRWqq7mtw" bindingContext="_wyNUASMkEe2KsdRWqq7mtw"/>

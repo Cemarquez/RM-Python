@@ -1,7 +1,8 @@
-@namespace(uri="abstract", prefix="abstract")
+@namespace(uri="concrete", prefix="concrete")
 @gmf
-package abstracts;
+package concrete;
 
+@gmf.diagram
 class MClassDiagram{
 	attr String name;
 	val MPackage[*] lstMPackage;
@@ -9,6 +10,7 @@ class MClassDiagram{
 	val MRelationship[*] lstMRelationship;
 }
 
+@gmf.node(label = "name" )
 class MPackage{
 	attr String name;
 	attr String path;
@@ -16,6 +18,7 @@ class MPackage{
 	val MPackage[*] lstMPackage;
 }
 
+@gmf.node(label = "name" )
 class MClass{
 	attr String name;
 	attr String accessModifier;
@@ -30,7 +33,10 @@ class MClass{
 	val MFunction[*] lstMFunction;
 }
 
+@gmf.link(source = "source", target = "target", style = "dot", width = "2")
 class MRelationship{
+	ref MClass source;
+	ref MClass target;
 	attr String relationshipType;
 	attr String multiplicitySource;
 	attr String multiplicityTarget;
@@ -40,6 +46,7 @@ class MRelationship{
 	attr String navegabilityTarget;
 }
 
+@gmf.node(label = "name" )
 class MAttribute{
 	attr String name;
 	attr String dataType;
@@ -48,6 +55,7 @@ class MAttribute{
 	attr String comments;
 }
 
+@gmf.node(label = "name" )
 class MFunction{
 	attr String name;
 	attr String accessModifier;
@@ -61,4 +69,3 @@ class MParameter{
 	attr String name;
 	attr String dataType;
 }
-

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="concrete">
+  <figures name="Default">
+    <descriptors name="MPackageFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="MPackageFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="MPackageLabelFigure" text="MPackage"/>
+      </actualFigure>
+      <accessors accessor="getFigureMPackageLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="MClassFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="MClassFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="MClassLabelFigure" text="MClass">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="MClassLstMAttributeCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="MClassLstMFunctionCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureMClassLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors accessor="getMClassLstMAttributeCompartmentFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+      <accessors accessor="getMClassLstMFunctionCompartmentFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors name="MAttributeFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="MAttributeFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="MAttributeLabelFigure" text="MAttribute"/>
+      </actualFigure>
+      <accessors accessor="getFigureMAttributeLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="MFunctionFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="MFunctionFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="MFunctionLabelFigure" text="MFunction"/>
+      </actualFigure>
+      <accessors accessor="getFigureMFunctionLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="MRelationshipFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="MRelationshipFigure" lineWidth="2" lineKind="LINE_DOT"/>
+    </descriptors>
+  </figures>
+  <nodes name="MPackage" figure="MPackageFigure"/>
+  <nodes name="MClass" figure="MClassFigure"/>
+  <nodes name="MAttribute" figure="MAttributeFigure"/>
+  <nodes name="MFunction" figure="MFunctionFigure"/>
+  <connections name="MRelationship" figure="MRelationshipFigure"/>
+  <compartments name="MClassLstMAttributeCompartment" figure="MClassFigure" collapsible="true" accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <compartments name="MClassLstMFunctionCompartment" figure="MClassFigure" collapsible="true" accessor="//@figures.0/@descriptors.1/@accessors.2"/>
+  <labels name="MPackageLabel" figure="MPackageFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="MClassLabel" figure="MClassFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="MAttributeLabel" figure="MAttributeFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels name="MFunctionLabel" figure="MFunctionFigure" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+</gmfgraph:Canvas>
