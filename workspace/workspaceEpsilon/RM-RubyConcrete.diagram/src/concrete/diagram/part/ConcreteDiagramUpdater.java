@@ -17,21 +17,24 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 
 import concrete.ConcretePackage;
+import concrete.MAssociation;
 import concrete.MAttribute;
 import concrete.MClass;
 import concrete.MClassDiagram;
+import concrete.MContainment;
 import concrete.MFunction;
+import concrete.MInheritance;
 import concrete.MPackage;
-import concrete.MRelationship;
+import concrete.diagram.edit.parts.MAssociationEditPart;
 import concrete.diagram.edit.parts.MAttributeEditPart;
 import concrete.diagram.edit.parts.MClassDiagramEditPart;
 import concrete.diagram.edit.parts.MClassEditPart;
 import concrete.diagram.edit.parts.MClassMClassLstMAttributeCompartmentEditPart;
 import concrete.diagram.edit.parts.MClassMClassLstMFunctionCompartmentEditPart;
+import concrete.diagram.edit.parts.MContainmentEditPart;
 import concrete.diagram.edit.parts.MFunctionEditPart;
+import concrete.diagram.edit.parts.MInheritanceEditPart;
 import concrete.diagram.edit.parts.MPackageEditPart;
-import concrete.diagram.edit.parts.MRelationship2EditPart;
-import concrete.diagram.edit.parts.MRelationshipEditPart;
 import concrete.diagram.providers.ConcreteElementTypes;
 
 /**
@@ -152,10 +155,12 @@ public class ConcreteDiagramUpdater {
 			return getMAttribute_3001ContainedLinks(view);
 		case MFunctionEditPart.VISUAL_ID:
 			return getMFunction_3002ContainedLinks(view);
-		case MRelationshipEditPart.VISUAL_ID:
-			return getMRelationship_4001ContainedLinks(view);
-		case MRelationship2EditPart.VISUAL_ID:
-			return getMRelationship_4002ContainedLinks(view);
+		case MAssociationEditPart.VISUAL_ID:
+			return getMAssociation_4003ContainedLinks(view);
+		case MInheritanceEditPart.VISUAL_ID:
+			return getMInheritance_4004ContainedLinks(view);
+		case MContainmentEditPart.VISUAL_ID:
+			return getMContainment_4005ContainedLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -173,10 +178,12 @@ public class ConcreteDiagramUpdater {
 			return getMAttribute_3001IncomingLinks(view);
 		case MFunctionEditPart.VISUAL_ID:
 			return getMFunction_3002IncomingLinks(view);
-		case MRelationshipEditPart.VISUAL_ID:
-			return getMRelationship_4001IncomingLinks(view);
-		case MRelationship2EditPart.VISUAL_ID:
-			return getMRelationship_4002IncomingLinks(view);
+		case MAssociationEditPart.VISUAL_ID:
+			return getMAssociation_4003IncomingLinks(view);
+		case MInheritanceEditPart.VISUAL_ID:
+			return getMInheritance_4004IncomingLinks(view);
+		case MContainmentEditPart.VISUAL_ID:
+			return getMContainment_4005IncomingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -194,10 +201,12 @@ public class ConcreteDiagramUpdater {
 			return getMAttribute_3001OutgoingLinks(view);
 		case MFunctionEditPart.VISUAL_ID:
 			return getMFunction_3002OutgoingLinks(view);
-		case MRelationshipEditPart.VISUAL_ID:
-			return getMRelationship_4001OutgoingLinks(view);
-		case MRelationship2EditPart.VISUAL_ID:
-			return getMRelationship_4002OutgoingLinks(view);
+		case MAssociationEditPart.VISUAL_ID:
+			return getMAssociation_4003OutgoingLinks(view);
+		case MInheritanceEditPart.VISUAL_ID:
+			return getMInheritance_4004OutgoingLinks(view);
+		case MContainmentEditPart.VISUAL_ID:
+			return getMContainment_4005OutgoingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -208,7 +217,9 @@ public class ConcreteDiagramUpdater {
 	public static List<ConcreteLinkDescriptor> getMClassDiagram_1000ContainedLinks(View view) {
 		MClassDiagram modelElement = (MClassDiagram) view.getElement();
 		LinkedList<ConcreteLinkDescriptor> result = new LinkedList<ConcreteLinkDescriptor>();
-		result.addAll(getContainedTypeModelFacetLinks_MRelationship_4001(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_MAssociation_4003(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_MInheritance_4004(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_MContainment_4005(modelElement));
 		return result;
 	}
 
@@ -223,10 +234,7 @@ public class ConcreteDiagramUpdater {
 	 * @generated
 	 */
 	public static List<ConcreteLinkDescriptor> getMClass_2002ContainedLinks(View view) {
-		MClass modelElement = (MClass) view.getElement();
-		LinkedList<ConcreteLinkDescriptor> result = new LinkedList<ConcreteLinkDescriptor>();
-		result.addAll(getContainedTypeModelFacetLinks_MRelationship_4002(modelElement));
-		return result;
+		return Collections.emptyList();
 	}
 
 	/**
@@ -246,14 +254,21 @@ public class ConcreteDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<ConcreteLinkDescriptor> getMRelationship_4001ContainedLinks(View view) {
+	public static List<ConcreteLinkDescriptor> getMAssociation_4003ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<ConcreteLinkDescriptor> getMRelationship_4002ContainedLinks(View view) {
+	public static List<ConcreteLinkDescriptor> getMInheritance_4004ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcreteLinkDescriptor> getMContainment_4005ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -272,8 +287,9 @@ public class ConcreteDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<ConcreteLinkDescriptor> result = new LinkedList<ConcreteLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_MRelationship_4001(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_MRelationship_4002(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_MAssociation_4003(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_MInheritance_4004(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_MContainment_4005(modelElement, crossReferences));
 		return result;
 	}
 
@@ -294,14 +310,21 @@ public class ConcreteDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<ConcreteLinkDescriptor> getMRelationship_4001IncomingLinks(View view) {
+	public static List<ConcreteLinkDescriptor> getMAssociation_4003IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<ConcreteLinkDescriptor> getMRelationship_4002IncomingLinks(View view) {
+	public static List<ConcreteLinkDescriptor> getMInheritance_4004IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcreteLinkDescriptor> getMContainment_4005IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -318,8 +341,9 @@ public class ConcreteDiagramUpdater {
 	public static List<ConcreteLinkDescriptor> getMClass_2002OutgoingLinks(View view) {
 		MClass modelElement = (MClass) view.getElement();
 		LinkedList<ConcreteLinkDescriptor> result = new LinkedList<ConcreteLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_MRelationship_4001(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_MRelationship_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_MAssociation_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_MInheritance_4004(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_MContainment_4005(modelElement));
 		return result;
 	}
 
@@ -340,36 +364,43 @@ public class ConcreteDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<ConcreteLinkDescriptor> getMRelationship_4001OutgoingLinks(View view) {
+	public static List<ConcreteLinkDescriptor> getMAssociation_4003OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<ConcreteLinkDescriptor> getMRelationship_4002OutgoingLinks(View view) {
+	public static List<ConcreteLinkDescriptor> getMInheritance_4004OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcreteLinkDescriptor> getMContainment_4005OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	* @generated
 	*/
-	private static Collection<ConcreteLinkDescriptor> getContainedTypeModelFacetLinks_MRelationship_4001(
+	private static Collection<ConcreteLinkDescriptor> getContainedTypeModelFacetLinks_MAssociation_4003(
 			MClassDiagram container) {
 		LinkedList<ConcreteLinkDescriptor> result = new LinkedList<ConcreteLinkDescriptor>();
-		for (Iterator<?> links = container.getLstMRelationship().iterator(); links.hasNext();) {
+		for (Iterator<?> links = container.getLstMAssoctiation().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof MRelationship) {
+			if (false == linkObject instanceof MAssociation) {
 				continue;
 			}
-			MRelationship link = (MRelationship) linkObject;
-			if (MRelationshipEditPart.VISUAL_ID != ConcreteVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			MAssociation link = (MAssociation) linkObject;
+			if (MAssociationEditPart.VISUAL_ID != ConcreteVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			MClass dst = link.getTarget();
 			MClass src = link.getSource();
-			result.add(new ConcreteLinkDescriptor(src, dst, link, ConcreteElementTypes.MRelationship_4001,
-					MRelationshipEditPart.VISUAL_ID));
+			result.add(new ConcreteLinkDescriptor(src, dst, link, ConcreteElementTypes.MAssociation_4003,
+					MAssociationEditPart.VISUAL_ID));
 		}
 		return result;
 	}
@@ -377,68 +408,22 @@ public class ConcreteDiagramUpdater {
 	/**
 	* @generated
 	*/
-	private static Collection<ConcreteLinkDescriptor> getContainedTypeModelFacetLinks_MRelationship_4002(
-			MClass container) {
+	private static Collection<ConcreteLinkDescriptor> getContainedTypeModelFacetLinks_MInheritance_4004(
+			MClassDiagram container) {
 		LinkedList<ConcreteLinkDescriptor> result = new LinkedList<ConcreteLinkDescriptor>();
-		for (Iterator<?> links = container.getLtsMRelationships().iterator(); links.hasNext();) {
+		for (Iterator<?> links = container.getLstMInheritance().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof MRelationship) {
+			if (false == linkObject instanceof MInheritance) {
 				continue;
 			}
-			MRelationship link = (MRelationship) linkObject;
-			if (MRelationship2EditPart.VISUAL_ID != ConcreteVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			MInheritance link = (MInheritance) linkObject;
+			if (MInheritanceEditPart.VISUAL_ID != ConcreteVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			MClass dst = link.getTarget();
 			MClass src = link.getSource();
-			result.add(new ConcreteLinkDescriptor(src, dst, link, ConcreteElementTypes.MRelationship_4002,
-					MRelationship2EditPart.VISUAL_ID));
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private static Collection<ConcreteLinkDescriptor> getIncomingTypeModelFacetLinks_MRelationship_4001(MClass target,
-			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
-		LinkedList<ConcreteLinkDescriptor> result = new LinkedList<ConcreteLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
-		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != ConcretePackage.eINSTANCE.getMRelationship_Target()
-					|| false == setting.getEObject() instanceof MRelationship) {
-				continue;
-			}
-			MRelationship link = (MRelationship) setting.getEObject();
-			if (MRelationshipEditPart.VISUAL_ID != ConcreteVisualIDRegistry.getLinkWithClassVisualID(link)) {
-				continue;
-			}
-			MClass src = link.getSource();
-			result.add(new ConcreteLinkDescriptor(src, target, link, ConcreteElementTypes.MRelationship_4001,
-					MRelationshipEditPart.VISUAL_ID));
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private static Collection<ConcreteLinkDescriptor> getIncomingTypeModelFacetLinks_MRelationship_4002(MClass target,
-			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
-		LinkedList<ConcreteLinkDescriptor> result = new LinkedList<ConcreteLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
-		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != ConcretePackage.eINSTANCE.getMRelationship_Target()
-					|| false == setting.getEObject() instanceof MRelationship) {
-				continue;
-			}
-			MRelationship link = (MRelationship) setting.getEObject();
-			if (MRelationship2EditPart.VISUAL_ID != ConcreteVisualIDRegistry.getLinkWithClassVisualID(link)) {
-				continue;
-			}
-			MClass src = link.getSource();
-			result.add(new ConcreteLinkDescriptor(src, target, link, ConcreteElementTypes.MRelationship_4002,
-					MRelationship2EditPart.VISUAL_ID));
+			result.add(new ConcreteLinkDescriptor(src, dst, link, ConcreteElementTypes.MInheritance_4004,
+					MInheritanceEditPart.VISUAL_ID));
 		}
 		return result;
 	}
@@ -446,7 +431,99 @@ public class ConcreteDiagramUpdater {
 	/**
 	* @generated
 	*/
-	private static Collection<ConcreteLinkDescriptor> getOutgoingTypeModelFacetLinks_MRelationship_4001(MClass source) {
+	private static Collection<ConcreteLinkDescriptor> getContainedTypeModelFacetLinks_MContainment_4005(
+			MClassDiagram container) {
+		LinkedList<ConcreteLinkDescriptor> result = new LinkedList<ConcreteLinkDescriptor>();
+		for (Iterator<?> links = container.getLstMContainment().iterator(); links.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof MContainment) {
+				continue;
+			}
+			MContainment link = (MContainment) linkObject;
+			if (MContainmentEditPart.VISUAL_ID != ConcreteVisualIDRegistry.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			MClass dst = link.getTarget();
+			MClass src = link.getSource();
+			result.add(new ConcreteLinkDescriptor(src, dst, link, ConcreteElementTypes.MContainment_4005,
+					MContainmentEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<ConcreteLinkDescriptor> getIncomingTypeModelFacetLinks_MAssociation_4003(MClass target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<ConcreteLinkDescriptor> result = new LinkedList<ConcreteLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() != ConcretePackage.eINSTANCE.getMAssociation_Target()
+					|| false == setting.getEObject() instanceof MAssociation) {
+				continue;
+			}
+			MAssociation link = (MAssociation) setting.getEObject();
+			if (MAssociationEditPart.VISUAL_ID != ConcreteVisualIDRegistry.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			MClass src = link.getSource();
+			result.add(new ConcreteLinkDescriptor(src, target, link, ConcreteElementTypes.MAssociation_4003,
+					MAssociationEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<ConcreteLinkDescriptor> getIncomingTypeModelFacetLinks_MInheritance_4004(MClass target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<ConcreteLinkDescriptor> result = new LinkedList<ConcreteLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() != ConcretePackage.eINSTANCE.getMInheritance_Target()
+					|| false == setting.getEObject() instanceof MInheritance) {
+				continue;
+			}
+			MInheritance link = (MInheritance) setting.getEObject();
+			if (MInheritanceEditPart.VISUAL_ID != ConcreteVisualIDRegistry.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			MClass src = link.getSource();
+			result.add(new ConcreteLinkDescriptor(src, target, link, ConcreteElementTypes.MInheritance_4004,
+					MInheritanceEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<ConcreteLinkDescriptor> getIncomingTypeModelFacetLinks_MContainment_4005(MClass target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<ConcreteLinkDescriptor> result = new LinkedList<ConcreteLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() != ConcretePackage.eINSTANCE.getMContainment_Target()
+					|| false == setting.getEObject() instanceof MContainment) {
+				continue;
+			}
+			MContainment link = (MContainment) setting.getEObject();
+			if (MContainmentEditPart.VISUAL_ID != ConcreteVisualIDRegistry.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			MClass src = link.getSource();
+			result.add(new ConcreteLinkDescriptor(src, target, link, ConcreteElementTypes.MContainment_4005,
+					MContainmentEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	private static Collection<ConcreteLinkDescriptor> getOutgoingTypeModelFacetLinks_MAssociation_4003(MClass source) {
 		MClassDiagram container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
@@ -460,13 +537,13 @@ public class ConcreteDiagramUpdater {
 			return Collections.emptyList();
 		}
 		LinkedList<ConcreteLinkDescriptor> result = new LinkedList<ConcreteLinkDescriptor>();
-		for (Iterator<?> links = container.getLstMRelationship().iterator(); links.hasNext();) {
+		for (Iterator<?> links = container.getLstMAssoctiation().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof MRelationship) {
+			if (false == linkObject instanceof MAssociation) {
 				continue;
 			}
-			MRelationship link = (MRelationship) linkObject;
-			if (MRelationshipEditPart.VISUAL_ID != ConcreteVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			MAssociation link = (MAssociation) linkObject;
+			if (MAssociationEditPart.VISUAL_ID != ConcreteVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			MClass dst = link.getTarget();
@@ -474,8 +551,8 @@ public class ConcreteDiagramUpdater {
 			if (src != source) {
 				continue;
 			}
-			result.add(new ConcreteLinkDescriptor(src, dst, link, ConcreteElementTypes.MRelationship_4001,
-					MRelationshipEditPart.VISUAL_ID));
+			result.add(new ConcreteLinkDescriptor(src, dst, link, ConcreteElementTypes.MAssociation_4003,
+					MAssociationEditPart.VISUAL_ID));
 		}
 		return result;
 	}
@@ -483,27 +560,27 @@ public class ConcreteDiagramUpdater {
 	/**
 	* @generated
 	*/
-	private static Collection<ConcreteLinkDescriptor> getOutgoingTypeModelFacetLinks_MRelationship_4002(MClass source) {
-		MClass container = null;
+	private static Collection<ConcreteLinkDescriptor> getOutgoingTypeModelFacetLinks_MInheritance_4004(MClass source) {
+		MClassDiagram container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null && container == null; element = element.eContainer()) {
-			if (element instanceof MClass) {
-				container = (MClass) element;
+			if (element instanceof MClassDiagram) {
+				container = (MClassDiagram) element;
 			}
 		}
 		if (container == null) {
 			return Collections.emptyList();
 		}
 		LinkedList<ConcreteLinkDescriptor> result = new LinkedList<ConcreteLinkDescriptor>();
-		for (Iterator<?> links = container.getLtsMRelationships().iterator(); links.hasNext();) {
+		for (Iterator<?> links = container.getLstMInheritance().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof MRelationship) {
+			if (false == linkObject instanceof MInheritance) {
 				continue;
 			}
-			MRelationship link = (MRelationship) linkObject;
-			if (MRelationship2EditPart.VISUAL_ID != ConcreteVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			MInheritance link = (MInheritance) linkObject;
+			if (MInheritanceEditPart.VISUAL_ID != ConcreteVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			MClass dst = link.getTarget();
@@ -511,8 +588,45 @@ public class ConcreteDiagramUpdater {
 			if (src != source) {
 				continue;
 			}
-			result.add(new ConcreteLinkDescriptor(src, dst, link, ConcreteElementTypes.MRelationship_4002,
-					MRelationship2EditPart.VISUAL_ID));
+			result.add(new ConcreteLinkDescriptor(src, dst, link, ConcreteElementTypes.MInheritance_4004,
+					MInheritanceEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	private static Collection<ConcreteLinkDescriptor> getOutgoingTypeModelFacetLinks_MContainment_4005(MClass source) {
+		MClassDiagram container = null;
+		// Find container element for the link.
+		// Climb up by containment hierarchy starting from the source
+		// and return the first element that is instance of the container class.
+		for (EObject element = source; element != null && container == null; element = element.eContainer()) {
+			if (element instanceof MClassDiagram) {
+				container = (MClassDiagram) element;
+			}
+		}
+		if (container == null) {
+			return Collections.emptyList();
+		}
+		LinkedList<ConcreteLinkDescriptor> result = new LinkedList<ConcreteLinkDescriptor>();
+		for (Iterator<?> links = container.getLstMContainment().iterator(); links.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof MContainment) {
+				continue;
+			}
+			MContainment link = (MContainment) linkObject;
+			if (MContainmentEditPart.VISUAL_ID != ConcreteVisualIDRegistry.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			MClass dst = link.getTarget();
+			MClass src = link.getSource();
+			if (src != source) {
+				continue;
+			}
+			result.add(new ConcreteLinkDescriptor(src, dst, link, ConcreteElementTypes.MContainment_4005,
+					MContainmentEditPart.VISUAL_ID));
 		}
 		return result;
 	}

@@ -68,20 +68,40 @@ public class AbstractsAdapterFactory extends AdapterFactoryImpl {
 	protected AbstractsSwitch<Adapter> modelSwitch =
 		new AbstractsSwitch<Adapter>() {
 			@Override
-			public Adapter caseMClassDiagram(MClassDiagram object) {
-				return createMClassDiagramAdapter();
+			public Adapter caseModelFactory(ModelFactory object) {
+				return createModelFactoryAdapter();
 			}
 			@Override
 			public Adapter caseMPackage(MPackage object) {
 				return createMPackageAdapter();
 			}
 			@Override
+			public Adapter caseMClassDiagram(MClassDiagram object) {
+				return createMClassDiagramAdapter();
+			}
+			@Override
 			public Adapter caseMClass(MClass object) {
 				return createMClassAdapter();
 			}
 			@Override
-			public Adapter caseMRelationship(MRelationship object) {
-				return createMRelationshipAdapter();
+			public Adapter caseMAssociation(MAssociation object) {
+				return createMAssociationAdapter();
+			}
+			@Override
+			public Adapter caseMInheritance(MInheritance object) {
+				return createMInheritanceAdapter();
+			}
+			@Override
+			public Adapter caseMContainment(MContainment object) {
+				return createMContainmentAdapter();
+			}
+			@Override
+			public Adapter caseMAttribute(MAttribute object) {
+				return createMAttributeAdapter();
+			}
+			@Override
+			public Adapter caseMFunction(MFunction object) {
+				return createMFunctionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -102,6 +122,20 @@ public class AbstractsAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link abstracts.ModelFactory <em>Model Factory</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see abstracts.ModelFactory
+	 * @generated
+	 */
+	public Adapter createModelFactoryAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link abstracts.MClassDiagram <em>MClass Diagram</em>}'.
@@ -146,16 +180,72 @@ public class AbstractsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link abstracts.MRelationship <em>MRelationship</em>}'.
+	 * Creates a new adapter for an object of class '{@link abstracts.MAssociation <em>MAssociation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see abstracts.MRelationship
+	 * @see abstracts.MAssociation
 	 * @generated
 	 */
-	public Adapter createMRelationshipAdapter() {
+	public Adapter createMAssociationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link abstracts.MInheritance <em>MInheritance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see abstracts.MInheritance
+	 * @generated
+	 */
+	public Adapter createMInheritanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link abstracts.MContainment <em>MContainment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see abstracts.MContainment
+	 * @generated
+	 */
+	public Adapter createMContainmentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link abstracts.MAttribute <em>MAttribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see abstracts.MAttribute
+	 * @generated
+	 */
+	public Adapter createMAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link abstracts.MFunction <em>MFunction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see abstracts.MFunction
+	 * @generated
+	 */
+	public Adapter createMFunctionAdapter() {
 		return null;
 	}
 

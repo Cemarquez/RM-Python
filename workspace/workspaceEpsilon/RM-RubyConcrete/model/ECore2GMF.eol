@@ -1,0 +1,59 @@
+var cajaAtributos = GmfGraph!Rectangle.all.selectOne(r|r.name = 'MClassLstMAttributeCompartmentFigure');
+cajaAtributos.layout = new GmfGraph!StackLayout;
+
+
+
+var cajaFunciones = GmfGraph!Rectangle.all.selectOne(r|r.name = 'MClassLstMFunctionCompartmentFigure');
+cajaFunciones.layout = new GmfGraph!StackLayout;
+
+
+var figuraAtributo = GmfGraph!Rectangle.all.selectOne(r|r.name = 'MAttributeFigure');
+delete figuraAtributo.border;
+figuraAtributo.outline = false;
+
+
+var figuraFuncion = GmfGraph!Rectangle.all.selectOne(r|r.name = 'MFunctionFigure');
+delete figuraFuncion.border;
+figuraFuncion.outline = false;
+
+var preferredSize = new GmfGraph!Dimension;
+preferredSize.dx = 100;
+preferredSize.dy = 20;
+
+var preferredSize2 = new GmfGraph!Dimension;
+preferredSize2.dx = 100;
+preferredSize2.dy = 20;
+
+figuraAtributo.preferredSize = preferredSize;
+figuraFuncion.preferredSize = preferredSize2;
+
+var figuraClase = GmfGraph!Rectangle.all.selectOne(r|r.name = 'MClassFigure');
+//labelClase.layoutData = new GmfGraph!CenterLayout;
+
+
+
+
+/*
+var shape = findShape('MClassFigure');
+shape.layout = new GmfGraph!GridLayout;
+
+var label = shape.children.first;
+label.layoutData = new GmfGraph!GridLayoutData;
+label.layoutData.grabExcessVerticalSpace = true;
+label.layoutData.grabExcessHorizontalSpace = true;
+
+operation findShape(name : String) {
+  return GmfGraph!Shape.all.selectOne(s|s.name = name);
+}
+findShape('MClassFigure').layout = createCentredLayout();
+
+operation findShape(name : String) {
+  return GmfGraph!Shape.all.selectOne(s|s.name = name);
+}
+
+operation createCentredLayout() : GmfGraph!CustomLayout {
+  var layout = new GmfGraph!CustomLayout;
+  layout.qualifiedClassName = 'widgets.custom.layouts.CentredLayout';
+  return layout;
+}
+

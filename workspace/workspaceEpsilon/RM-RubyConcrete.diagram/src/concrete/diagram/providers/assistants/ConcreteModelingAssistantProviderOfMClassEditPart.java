@@ -25,6 +25,18 @@ public class ConcreteModelingAssistantProviderOfMClassEditPart extends ConcreteM
 	*/
 	@Override
 
+	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
+		List<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(ConcreteElementTypes.MAttribute_3001);
+		types.add(ConcreteElementTypes.MFunction_3002);
+		return types;
+	}
+
+	/**
+	* @generated
+	*/
+	@Override
+
 	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		return doGetRelTypesOnSource((MClassEditPart) sourceEditPart);
@@ -34,9 +46,10 @@ public class ConcreteModelingAssistantProviderOfMClassEditPart extends ConcreteM
 	* @generated
 	*/
 	public List<IElementType> doGetRelTypesOnSource(MClassEditPart source) {
-		List<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(ConcreteElementTypes.MRelationship_4001);
-		types.add(ConcreteElementTypes.MRelationship_4002);
+		List<IElementType> types = new ArrayList<IElementType>(3);
+		types.add(ConcreteElementTypes.MAssociation_4003);
+		types.add(ConcreteElementTypes.MInheritance_4004);
+		types.add(ConcreteElementTypes.MContainment_4005);
 		return types;
 	}
 
@@ -57,10 +70,13 @@ public class ConcreteModelingAssistantProviderOfMClassEditPart extends ConcreteM
 	public List<IElementType> doGetRelTypesOnSourceAndTarget(MClassEditPart source, IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof MClassEditPart) {
-			types.add(ConcreteElementTypes.MRelationship_4001);
+			types.add(ConcreteElementTypes.MAssociation_4003);
 		}
 		if (targetEditPart instanceof MClassEditPart) {
-			types.add(ConcreteElementTypes.MRelationship_4002);
+			types.add(ConcreteElementTypes.MInheritance_4004);
+		}
+		if (targetEditPart instanceof MClassEditPart) {
+			types.add(ConcreteElementTypes.MContainment_4005);
 		}
 		return types;
 	}
@@ -80,9 +96,11 @@ public class ConcreteModelingAssistantProviderOfMClassEditPart extends ConcreteM
 	*/
 	public List<IElementType> doGetTypesForTarget(MClassEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == ConcreteElementTypes.MRelationship_4001) {
+		if (relationshipType == ConcreteElementTypes.MAssociation_4003) {
 			types.add(ConcreteElementTypes.MClass_2002);
-		} else if (relationshipType == ConcreteElementTypes.MRelationship_4002) {
+		} else if (relationshipType == ConcreteElementTypes.MInheritance_4004) {
+			types.add(ConcreteElementTypes.MClass_2002);
+		} else if (relationshipType == ConcreteElementTypes.MContainment_4005) {
 			types.add(ConcreteElementTypes.MClass_2002);
 		}
 		return types;
@@ -102,9 +120,10 @@ public class ConcreteModelingAssistantProviderOfMClassEditPart extends ConcreteM
 	* @generated
 	*/
 	public List<IElementType> doGetRelTypesOnTarget(MClassEditPart target) {
-		List<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(ConcreteElementTypes.MRelationship_4001);
-		types.add(ConcreteElementTypes.MRelationship_4002);
+		List<IElementType> types = new ArrayList<IElementType>(3);
+		types.add(ConcreteElementTypes.MAssociation_4003);
+		types.add(ConcreteElementTypes.MInheritance_4004);
+		types.add(ConcreteElementTypes.MContainment_4005);
 		return types;
 	}
 
@@ -123,9 +142,11 @@ public class ConcreteModelingAssistantProviderOfMClassEditPart extends ConcreteM
 	*/
 	public List<IElementType> doGetTypesForSource(MClassEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == ConcreteElementTypes.MRelationship_4001) {
+		if (relationshipType == ConcreteElementTypes.MAssociation_4003) {
 			types.add(ConcreteElementTypes.MClass_2002);
-		} else if (relationshipType == ConcreteElementTypes.MRelationship_4002) {
+		} else if (relationshipType == ConcreteElementTypes.MInheritance_4004) {
+			types.add(ConcreteElementTypes.MClass_2002);
+		} else if (relationshipType == ConcreteElementTypes.MContainment_4005) {
 			types.add(ConcreteElementTypes.MClass_2002);
 		}
 		return types;

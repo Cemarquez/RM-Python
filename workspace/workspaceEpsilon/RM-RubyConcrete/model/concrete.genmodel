@@ -5,46 +5,60 @@
     copyrightFields="false">
   <foreignModel>concrete.emf</foreignModel>
   <genPackages prefix="Concrete" disposableProviderFactory="true" ecorePackage="concrete.ecore#/">
+    <genClasses ecoreClass="concrete.ecore#//ModelFactory">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//ModelFactory/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//ModelFactory/ruta"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concrete.ecore#//ModelFactory/lstMDiagrams"/>
+    </genClasses>
     <genClasses ecoreClass="concrete.ecore#//MClassDiagram">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MClassDiagram/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MClassDiagram/description"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concrete.ecore#//MClassDiagram/lstMPackage"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concrete.ecore#//MClassDiagram/lstMClass"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concrete.ecore#//MClassDiagram/lstMRelationship"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concrete.ecore#//MClassDiagram/lstMAssoctiation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concrete.ecore#//MClassDiagram/lstMInheritance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concrete.ecore#//MClassDiagram/lstMContainment"/>
     </genClasses>
     <genClasses ecoreClass="concrete.ecore#//MPackage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MPackage/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MPackage/path"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concrete.ecore#//MPackage/lstMClass"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concrete.ecore#//MPackage/lstMPackage"/>
     </genClasses>
     <genClasses ecoreClass="concrete.ecore#//MClass">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MClass/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MClass/accessModifier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MClass/comments"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MClass/abstracts"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MClass/stereoType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MClass/path"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concrete.ecore#//MClass/ltsMRelationships"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concrete.ecore#//MClass/lstMAttribute"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concrete.ecore#//MClass/lstMFunction"/>
     </genClasses>
-    <genClasses ecoreClass="concrete.ecore#//MRelationship">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concrete.ecore#//MRelationship/source"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concrete.ecore#//MRelationship/target"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MRelationship/relationshipType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MRelationship/multiplicitySource"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MRelationship/multiplicityTarget"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MRelationship/sourceRole"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MRelationship/targetRole"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MRelationship/navegabilitySource"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MRelationship/navegabilityTarget"/>
-    </genClasses>
     <genClasses ecoreClass="concrete.ecore#//MAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAttribute/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAttribute/dataType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAttribute/accessModifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAttribute/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAttribute/defaultValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAttribute/comments"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAttribute/constant"/>
+    </genClasses>
+    <genClasses ecoreClass="concrete.ecore#//MAssociation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concrete.ecore#//MAssociation/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concrete.ecore#//MAssociation/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAssociation/relationshipType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAssociation/multiplicitySource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAssociation/multiplicityTarget"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAssociation/sourceRole"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAssociation/targetRole"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAssociation/navegabilitySource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAssociation/navegabilityTarget"/>
+    </genClasses>
+    <genClasses ecoreClass="concrete.ecore#//MInheritance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concrete.ecore#//MInheritance/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concrete.ecore#//MInheritance/target"/>
+    </genClasses>
+    <genClasses ecoreClass="concrete.ecore#//MContainment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concrete.ecore#//MContainment/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concrete.ecore#//MContainment/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MContainment/multiplicityTarget"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MContainment/sourceRole"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MContainment/targetRole"/>
     </genClasses>
     <genClasses ecoreClass="concrete.ecore#//MFunction">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MFunction/name"/>
@@ -52,11 +66,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MFunction/returnType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MFunction/semantics"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MFunction/comments"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concrete.ecore#//MFunction/lstMParameter"/>
-    </genClasses>
-    <genClasses ecoreClass="concrete.ecore#//MParameter">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MParameter/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MParameter/dataType"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

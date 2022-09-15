@@ -14,14 +14,14 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link concrete.MAttribute#getName <em>Name</em>}</li>
- *   <li>{@link concrete.MAttribute#getDataType <em>Data Type</em>}</li>
- *   <li>{@link concrete.MAttribute#getAccessModifier <em>Access Modifier</em>}</li>
+ *   <li>{@link concrete.MAttribute#getType <em>Type</em>}</li>
  *   <li>{@link concrete.MAttribute#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link concrete.MAttribute#getComments <em>Comments</em>}</li>
+ *   <li>{@link concrete.MAttribute#isConstant <em>Constant</em>}</li>
  * </ul>
  *
  * @see concrete.ConcretePackage#getMAttribute()
- * @model annotation="gmf.node label='name'"
+ * @model annotation="gmf.node label='name,type' figure='rectangle' label.icon='false' label.pattern='{0} : {1}' color='255,216,208' tool.description='A\361ade un atributo a una clase'"
  * @generated
  */
 public interface MAttribute extends EObject {
@@ -48,48 +48,26 @@ public interface MAttribute extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Data Type</b></em>' attribute.
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Type</em>' attribute.
-	 * @see #setDataType(String)
-	 * @see concrete.ConcretePackage#getMAttribute_DataType()
+	 * @return the value of the '<em>Type</em>' attribute.
+	 * @see #setType(String)
+	 * @see concrete.ConcretePackage#getMAttribute_Type()
 	 * @model
 	 * @generated
 	 */
-	String getDataType();
+	String getType();
 
 	/**
-	 * Sets the value of the '{@link concrete.MAttribute#getDataType <em>Data Type</em>}' attribute.
+	 * Sets the value of the '{@link concrete.MAttribute#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Type</em>' attribute.
-	 * @see #getDataType()
+	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see #getType()
 	 * @generated
 	 */
-	void setDataType(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Access Modifier</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Access Modifier</em>' attribute.
-	 * @see #setAccessModifier(String)
-	 * @see concrete.ConcretePackage#getMAttribute_AccessModifier()
-	 * @model
-	 * @generated
-	 */
-	String getAccessModifier();
-
-	/**
-	 * Sets the value of the '{@link concrete.MAttribute#getAccessModifier <em>Access Modifier</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Access Modifier</em>' attribute.
-	 * @see #getAccessModifier()
-	 * @generated
-	 */
-	void setAccessModifier(String value);
+	void setType(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Default Value</b></em>' attribute.
@@ -134,5 +112,27 @@ public interface MAttribute extends EObject {
 	 * @generated
 	 */
 	void setComments(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Constant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Constant</em>' attribute.
+	 * @see #setConstant(boolean)
+	 * @see concrete.ConcretePackage#getMAttribute_Constant()
+	 * @model
+	 * @generated
+	 */
+	boolean isConstant();
+
+	/**
+	 * Sets the value of the '{@link concrete.MAttribute#isConstant <em>Constant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Constant</em>' attribute.
+	 * @see #isConstant()
+	 * @generated
+	 */
+	void setConstant(boolean value);
 
 } // MAttribute

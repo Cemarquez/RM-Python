@@ -21,10 +21,10 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link concrete.impl.MAttributeImpl#getName <em>Name</em>}</li>
- *   <li>{@link concrete.impl.MAttributeImpl#getDataType <em>Data Type</em>}</li>
- *   <li>{@link concrete.impl.MAttributeImpl#getAccessModifier <em>Access Modifier</em>}</li>
+ *   <li>{@link concrete.impl.MAttributeImpl#getType <em>Type</em>}</li>
  *   <li>{@link concrete.impl.MAttributeImpl#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link concrete.impl.MAttributeImpl#getComments <em>Comments</em>}</li>
+ *   <li>{@link concrete.impl.MAttributeImpl#isConstant <em>Constant</em>}</li>
  * </ul>
  *
  * @generated
@@ -51,44 +51,24 @@ public class MAttributeImpl extends EObjectImpl implements MAttribute {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDataType() <em>Data Type</em>}' attribute.
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDataType()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DATA_TYPE_EDEFAULT = null;
+	protected static final String TYPE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' attribute.
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDataType()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected String dataType = DATA_TYPE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAccessModifier() <em>Access Modifier</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccessModifier()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ACCESS_MODIFIER_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAccessModifier() <em>Access Modifier</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccessModifier()
-	 * @generated
-	 * @ordered
-	 */
-	protected String accessModifier = ACCESS_MODIFIER_EDEFAULT;
+	protected String type = TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDefaultValue() <em>Default Value</em>}' attribute.
@@ -129,6 +109,26 @@ public class MAttributeImpl extends EObjectImpl implements MAttribute {
 	 * @ordered
 	 */
 	protected String comments = COMMENTS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isConstant() <em>Constant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isConstant()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean CONSTANT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isConstant() <em>Constant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isConstant()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean constant = CONSTANT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,8 +178,8 @@ public class MAttributeImpl extends EObjectImpl implements MAttribute {
 	 * @generated
 	 */
 	@Override
-	public String getDataType() {
-		return dataType;
+	public String getType() {
+		return type;
 	}
 
 	/**
@@ -188,34 +188,11 @@ public class MAttributeImpl extends EObjectImpl implements MAttribute {
 	 * @generated
 	 */
 	@Override
-	public void setDataType(String newDataType) {
-		String oldDataType = dataType;
-		dataType = newDataType;
+	public void setType(String newType) {
+		String oldType = type;
+		type = newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConcretePackage.MATTRIBUTE__DATA_TYPE, oldDataType, dataType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getAccessModifier() {
-		return accessModifier;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setAccessModifier(String newAccessModifier) {
-		String oldAccessModifier = accessModifier;
-		accessModifier = newAccessModifier;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConcretePackage.MATTRIBUTE__ACCESS_MODIFIER, oldAccessModifier, accessModifier));
+			eNotify(new ENotificationImpl(this, Notification.SET, ConcretePackage.MATTRIBUTE__TYPE, oldType, type));
 	}
 
 	/**
@@ -270,18 +247,41 @@ public class MAttributeImpl extends EObjectImpl implements MAttribute {
 	 * @generated
 	 */
 	@Override
+	public boolean isConstant() {
+		return constant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setConstant(boolean newConstant) {
+		boolean oldConstant = constant;
+		constant = newConstant;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConcretePackage.MATTRIBUTE__CONSTANT, oldConstant, constant));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ConcretePackage.MATTRIBUTE__NAME:
 				return getName();
-			case ConcretePackage.MATTRIBUTE__DATA_TYPE:
-				return getDataType();
-			case ConcretePackage.MATTRIBUTE__ACCESS_MODIFIER:
-				return getAccessModifier();
+			case ConcretePackage.MATTRIBUTE__TYPE:
+				return getType();
 			case ConcretePackage.MATTRIBUTE__DEFAULT_VALUE:
 				return getDefaultValue();
 			case ConcretePackage.MATTRIBUTE__COMMENTS:
 				return getComments();
+			case ConcretePackage.MATTRIBUTE__CONSTANT:
+				return isConstant();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -297,17 +297,17 @@ public class MAttributeImpl extends EObjectImpl implements MAttribute {
 			case ConcretePackage.MATTRIBUTE__NAME:
 				setName((String)newValue);
 				return;
-			case ConcretePackage.MATTRIBUTE__DATA_TYPE:
-				setDataType((String)newValue);
-				return;
-			case ConcretePackage.MATTRIBUTE__ACCESS_MODIFIER:
-				setAccessModifier((String)newValue);
+			case ConcretePackage.MATTRIBUTE__TYPE:
+				setType((String)newValue);
 				return;
 			case ConcretePackage.MATTRIBUTE__DEFAULT_VALUE:
 				setDefaultValue((String)newValue);
 				return;
 			case ConcretePackage.MATTRIBUTE__COMMENTS:
 				setComments((String)newValue);
+				return;
+			case ConcretePackage.MATTRIBUTE__CONSTANT:
+				setConstant((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -324,17 +324,17 @@ public class MAttributeImpl extends EObjectImpl implements MAttribute {
 			case ConcretePackage.MATTRIBUTE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case ConcretePackage.MATTRIBUTE__DATA_TYPE:
-				setDataType(DATA_TYPE_EDEFAULT);
-				return;
-			case ConcretePackage.MATTRIBUTE__ACCESS_MODIFIER:
-				setAccessModifier(ACCESS_MODIFIER_EDEFAULT);
+			case ConcretePackage.MATTRIBUTE__TYPE:
+				setType(TYPE_EDEFAULT);
 				return;
 			case ConcretePackage.MATTRIBUTE__DEFAULT_VALUE:
 				setDefaultValue(DEFAULT_VALUE_EDEFAULT);
 				return;
 			case ConcretePackage.MATTRIBUTE__COMMENTS:
 				setComments(COMMENTS_EDEFAULT);
+				return;
+			case ConcretePackage.MATTRIBUTE__CONSTANT:
+				setConstant(CONSTANT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -350,14 +350,14 @@ public class MAttributeImpl extends EObjectImpl implements MAttribute {
 		switch (featureID) {
 			case ConcretePackage.MATTRIBUTE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ConcretePackage.MATTRIBUTE__DATA_TYPE:
-				return DATA_TYPE_EDEFAULT == null ? dataType != null : !DATA_TYPE_EDEFAULT.equals(dataType);
-			case ConcretePackage.MATTRIBUTE__ACCESS_MODIFIER:
-				return ACCESS_MODIFIER_EDEFAULT == null ? accessModifier != null : !ACCESS_MODIFIER_EDEFAULT.equals(accessModifier);
+			case ConcretePackage.MATTRIBUTE__TYPE:
+				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case ConcretePackage.MATTRIBUTE__DEFAULT_VALUE:
 				return DEFAULT_VALUE_EDEFAULT == null ? defaultValue != null : !DEFAULT_VALUE_EDEFAULT.equals(defaultValue);
 			case ConcretePackage.MATTRIBUTE__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
+			case ConcretePackage.MATTRIBUTE__CONSTANT:
+				return constant != CONSTANT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -374,14 +374,14 @@ public class MAttributeImpl extends EObjectImpl implements MAttribute {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", dataType: ");
-		result.append(dataType);
-		result.append(", accessModifier: ");
-		result.append(accessModifier);
+		result.append(", type: ");
+		result.append(type);
 		result.append(", defaultValue: ");
 		result.append(defaultValue);
 		result.append(", comments: ");
 		result.append(comments);
+		result.append(", constant: ");
+		result.append(constant);
 		result.append(')');
 		return result.toString();
 	}

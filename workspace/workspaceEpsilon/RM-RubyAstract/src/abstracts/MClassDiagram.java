@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link abstracts.MClassDiagram#getName <em>Name</em>}</li>
  *   <li>{@link abstracts.MClassDiagram#getLstMPackage <em>Lst MPackage</em>}</li>
  *   <li>{@link abstracts.MClassDiagram#getLstMClass <em>Lst MClass</em>}</li>
- *   <li>{@link abstracts.MClassDiagram#getLstMRelationship <em>Lst MRelationship</em>}</li>
  * </ul>
  *
  * @see abstracts.AbstractsPackage#getMClassDiagram()
@@ -71,17 +70,5 @@ public interface MClassDiagram extends EObject {
 	 * @generated
 	 */
 	EList<MClass> getLstMClass();
-
-	/**
-	 * Returns the value of the '<em><b>Lst MRelationship</b></em>' containment reference list.
-	 * The list contents are of type {@link abstracts.MRelationship}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Lst MRelationship</em>' containment reference list.
-	 * @see abstracts.AbstractsPackage#getMClassDiagram_LstMRelationship()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<MRelationship> getLstMRelationship();
 
 } // MClassDiagram

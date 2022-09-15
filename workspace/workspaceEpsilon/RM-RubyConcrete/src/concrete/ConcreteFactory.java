@@ -22,6 +22,15 @@ public interface ConcreteFactory extends EFactory {
 	ConcreteFactory eINSTANCE = concrete.impl.ConcreteFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Model Factory</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Model Factory</em>'.
+	 * @generated
+	 */
+	ModelFactory createModelFactory();
+
+	/**
 	 * Returns a new object of class '<em>MClass Diagram</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -49,15 +58,6 @@ public interface ConcreteFactory extends EFactory {
 	MClass createMClass();
 
 	/**
-	 * Returns a new object of class '<em>MRelationship</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MRelationship</em>'.
-	 * @generated
-	 */
-	MRelationship createMRelationship();
-
-	/**
 	 * Returns a new object of class '<em>MAttribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,6 +67,33 @@ public interface ConcreteFactory extends EFactory {
 	MAttribute createMAttribute();
 
 	/**
+	 * Returns a new object of class '<em>MAssociation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MAssociation</em>'.
+	 * @generated
+	 */
+	MAssociation createMAssociation();
+
+	/**
+	 * Returns a new object of class '<em>MInheritance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MInheritance</em>'.
+	 * @generated
+	 */
+	MInheritance createMInheritance();
+
+	/**
+	 * Returns a new object of class '<em>MContainment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MContainment</em>'.
+	 * @generated
+	 */
+	MContainment createMContainment();
+
+	/**
 	 * Returns a new object of class '<em>MFunction</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,15 +101,6 @@ public interface ConcreteFactory extends EFactory {
 	 * @generated
 	 */
 	MFunction createMFunction();
-
-	/**
-	 * Returns a new object of class '<em>MParameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MParameter</em>'.
-	 * @generated
-	 */
-	MParameter createMParameter();
 
 	/**
 	 * Returns the package supported by this factory.

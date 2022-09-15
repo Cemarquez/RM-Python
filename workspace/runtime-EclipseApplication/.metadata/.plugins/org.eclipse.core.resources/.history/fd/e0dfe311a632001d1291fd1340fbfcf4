@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<concrete:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:concrete="concrete">
+  <lstMDiagrams name="diagrsmsa1">
+    <lstMClass/>
+    <lstMClass>
+      <ltsMRelationships source="//@lstMDiagrams.0/@lstMClass.1" target="//@lstMDiagrams.0/@lstMClass.2"/>
+    </lstMClass>
+    <lstMClass/>
+    <lstMRelationship source="//@lstMDiagrams.0/@lstMClass.0" target="//@lstMDiagrams.0/@lstMClass.1"/>
+    <lstMRelationship source="//@lstMDiagrams.0/@lstMClass.1" target="//@lstMDiagrams.0/@lstMClass.2"/>
+  </lstMDiagrams>
+</concrete:ModelFactory>

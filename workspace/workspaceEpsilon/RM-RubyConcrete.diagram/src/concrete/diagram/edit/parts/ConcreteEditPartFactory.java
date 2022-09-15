@@ -43,14 +43,14 @@ public class ConcreteEditPartFactory implements EditPartFactory {
 			case MAttributeEditPart.VISUAL_ID:
 				return new MAttributeEditPart(view);
 
-			case MAttributeNameEditPart.VISUAL_ID:
-				return new MAttributeNameEditPart(view);
+			case MAttributeNameTypeEditPart.VISUAL_ID:
+				return new MAttributeNameTypeEditPart(view);
 
 			case MFunctionEditPart.VISUAL_ID:
 				return new MFunctionEditPart(view);
 
-			case MFunctionNameEditPart.VISUAL_ID:
-				return new MFunctionNameEditPart(view);
+			case MFunctionNameReturnTypeEditPart.VISUAL_ID:
+				return new MFunctionNameReturnTypeEditPart(view);
 
 			case MClassMClassLstMAttributeCompartmentEditPart.VISUAL_ID:
 				return new MClassMClassLstMAttributeCompartmentEditPart(view);
@@ -58,11 +58,14 @@ public class ConcreteEditPartFactory implements EditPartFactory {
 			case MClassMClassLstMFunctionCompartmentEditPart.VISUAL_ID:
 				return new MClassMClassLstMFunctionCompartmentEditPart(view);
 
-			case MRelationshipEditPart.VISUAL_ID:
-				return new MRelationshipEditPart(view);
+			case MAssociationEditPart.VISUAL_ID:
+				return new MAssociationEditPart(view);
 
-			case MRelationship2EditPart.VISUAL_ID:
-				return new MRelationship2EditPart(view);
+			case MInheritanceEditPart.VISUAL_ID:
+				return new MInheritanceEditPart(view);
+
+			case MContainmentEditPart.VISUAL_ID:
+				return new MContainmentEditPart(view);
 
 			}
 		}

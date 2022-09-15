@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<concrete:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:concrete="concrete">
+  <lstMDiagrams name="diagrsmsa1">
+    <lstMPackage name="pagos" path="empresa.pagos"/>
+    <lstMPackage name="personal" path="empresa.personal"/>
+    <lstMClass name="Empresa" path="">
+      <lstMAttribute name="amigo" type="string"/>
+    </lstMClass>
+    <lstMClass name="Empleado">
+      <ltsMRelationships source="//@lstMDiagrams.0/@lstMClass.1" target="//@lstMDiagrams.0/@lstMClass.2"/>
+    </lstMClass>
+    <lstMClass name="Carro"/>
+    <lstMRelationship source="//@lstMDiagrams.0/@lstMClass.0" target="//@lstMDiagrams.0/@lstMClass.1" relationshipType="containment" multiplicitySource="1" multiplicityTarget="n" sourceRole="ownedByEmpresa" targetRole="ltsEmpleado" navegabilitySource=""/>
+    <lstMRelationship source="//@lstMDiagrams.0/@lstMClass.1" target="//@lstMDiagrams.0/@lstMClass.2"/>
+  </lstMDiagrams>
+</concrete:ModelFactory>

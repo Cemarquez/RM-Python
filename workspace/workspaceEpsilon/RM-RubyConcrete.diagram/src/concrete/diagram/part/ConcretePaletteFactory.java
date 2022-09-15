@@ -4,14 +4,12 @@
  */
 package concrete.diagram.part;
 
-import java.util.ArrayList;
 import java.util.Collections;
 
 import org.eclipse.gef.palette.PaletteContainer;
 import org.eclipse.gef.palette.PaletteDrawer;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.ToolEntry;
-import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry;
 import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
 
@@ -51,7 +49,9 @@ public class ConcretePaletteFactory {
 	private PaletteContainer createConnections2Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.Connections2Group_title);
 		paletteContainer.setId("createConnections2Group"); //$NON-NLS-1$
-		paletteContainer.add(createMRelationship1CreationTool());
+		paletteContainer.add(createMAssociation1CreationTool());
+		paletteContainer.add(createMContainment2CreationTool());
+		paletteContainer.add(createMInheritance3CreationTool());
 		return paletteContainer;
 	}
 
@@ -106,14 +106,38 @@ public class ConcretePaletteFactory {
 	/**
 	* @generated
 	*/
-	private ToolEntry createMRelationship1CreationTool() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(ConcreteElementTypes.MRelationship_4001);
-		types.add(ConcreteElementTypes.MRelationship_4002);
-		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(Messages.MRelationship1CreationTool_title,
-				Messages.MRelationship1CreationTool_desc, types);
-		entry.setId("createMRelationship1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(ConcreteElementTypes.getImageDescriptor(ConcreteElementTypes.MRelationship_4001));
+	private ToolEntry createMAssociation1CreationTool() {
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(Messages.MAssociation1CreationTool_title,
+				Messages.MAssociation1CreationTool_desc,
+				Collections.singletonList(ConcreteElementTypes.MAssociation_4003));
+		entry.setId("createMAssociation1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ConcreteElementTypes.getImageDescriptor(ConcreteElementTypes.MAssociation_4003));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createMContainment2CreationTool() {
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(Messages.MContainment2CreationTool_title,
+				Messages.MContainment2CreationTool_desc,
+				Collections.singletonList(ConcreteElementTypes.MContainment_4005));
+		entry.setId("createMContainment2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ConcreteElementTypes.getImageDescriptor(ConcreteElementTypes.MContainment_4005));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createMInheritance3CreationTool() {
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(Messages.MInheritance3CreationTool_title,
+				Messages.MInheritance3CreationTool_desc,
+				Collections.singletonList(ConcreteElementTypes.MInheritance_4004));
+		entry.setId("createMInheritance3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ConcreteElementTypes.getImageDescriptor(ConcreteElementTypes.MInheritance_4004));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

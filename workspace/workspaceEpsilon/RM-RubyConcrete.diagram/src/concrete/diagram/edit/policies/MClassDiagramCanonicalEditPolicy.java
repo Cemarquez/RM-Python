@@ -35,13 +35,14 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
 
 import concrete.ConcretePackage;
+import concrete.diagram.edit.parts.MAssociationEditPart;
 import concrete.diagram.edit.parts.MAttributeEditPart;
 import concrete.diagram.edit.parts.MClassDiagramEditPart;
 import concrete.diagram.edit.parts.MClassEditPart;
+import concrete.diagram.edit.parts.MContainmentEditPart;
 import concrete.diagram.edit.parts.MFunctionEditPart;
+import concrete.diagram.edit.parts.MInheritanceEditPart;
 import concrete.diagram.edit.parts.MPackageEditPart;
-import concrete.diagram.edit.parts.MRelationship2EditPart;
-import concrete.diagram.edit.parts.MRelationshipEditPart;
 import concrete.diagram.part.ConcreteDiagramUpdater;
 import concrete.diagram.part.ConcreteLinkDescriptor;
 import concrete.diagram.part.ConcreteNodeDescriptor;
@@ -297,16 +298,23 @@ public class MClassDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case MRelationshipEditPart.VISUAL_ID: {
+		case MAssociationEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ConcreteDiagramUpdater.getMRelationship_4001ContainedLinks(view));
+				result.addAll(ConcreteDiagramUpdater.getMAssociation_4003ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case MRelationship2EditPart.VISUAL_ID: {
+		case MInheritanceEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ConcreteDiagramUpdater.getMRelationship_4002ContainedLinks(view));
+				result.addAll(ConcreteDiagramUpdater.getMInheritance_4004ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case MContainmentEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(ConcreteDiagramUpdater.getMContainment_4005ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

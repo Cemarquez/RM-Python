@@ -64,6 +64,7 @@ public class MClassDiagramItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -91,6 +92,28 @@ public class MClassDiagramItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Description feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MClassDiagram_description_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MClassDiagram_description_feature", "_UI_MClassDiagram_type"),
+				 ConcretePackage.Literals.MCLASS_DIAGRAM__DESCRIPTION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -104,7 +127,9 @@ public class MClassDiagramItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ConcretePackage.Literals.MCLASS_DIAGRAM__LST_MPACKAGE);
 			childrenFeatures.add(ConcretePackage.Literals.MCLASS_DIAGRAM__LST_MCLASS);
-			childrenFeatures.add(ConcretePackage.Literals.MCLASS_DIAGRAM__LST_MRELATIONSHIP);
+			childrenFeatures.add(ConcretePackage.Literals.MCLASS_DIAGRAM__LST_MASSOCTIATION);
+			childrenFeatures.add(ConcretePackage.Literals.MCLASS_DIAGRAM__LST_MINHERITANCE);
+			childrenFeatures.add(ConcretePackage.Literals.MCLASS_DIAGRAM__LST_MCONTAINMENT);
 		}
 		return childrenFeatures;
 	}
@@ -161,11 +186,14 @@ public class MClassDiagramItemProvider
 
 		switch (notification.getFeatureID(MClassDiagram.class)) {
 			case ConcretePackage.MCLASS_DIAGRAM__NAME:
+			case ConcretePackage.MCLASS_DIAGRAM__DESCRIPTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ConcretePackage.MCLASS_DIAGRAM__LST_MPACKAGE:
 			case ConcretePackage.MCLASS_DIAGRAM__LST_MCLASS:
-			case ConcretePackage.MCLASS_DIAGRAM__LST_MRELATIONSHIP:
+			case ConcretePackage.MCLASS_DIAGRAM__LST_MASSOCTIATION:
+			case ConcretePackage.MCLASS_DIAGRAM__LST_MINHERITANCE:
+			case ConcretePackage.MCLASS_DIAGRAM__LST_MCONTAINMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -195,8 +223,18 @@ public class MClassDiagramItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ConcretePackage.Literals.MCLASS_DIAGRAM__LST_MRELATIONSHIP,
-				 ConcreteFactory.eINSTANCE.createMRelationship()));
+				(ConcretePackage.Literals.MCLASS_DIAGRAM__LST_MASSOCTIATION,
+				 ConcreteFactory.eINSTANCE.createMAssociation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ConcretePackage.Literals.MCLASS_DIAGRAM__LST_MINHERITANCE,
+				 ConcreteFactory.eINSTANCE.createMInheritance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ConcretePackage.Literals.MCLASS_DIAGRAM__LST_MCONTAINMENT,
+				 ConcreteFactory.eINSTANCE.createMContainment()));
 	}
 
 	/**

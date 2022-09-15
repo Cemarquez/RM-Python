@@ -4,7 +4,7 @@ package abstracts.tests;
 
 import abstracts.AbstractsFactory;
 import abstracts.AbstractsPackage;
-import abstracts.MClassDiagram;
+import abstracts.ModelFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -60,7 +60,7 @@ public class AbstractsExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.abstracts"));
-				MClassDiagram root = AbstractsFactory.eINSTANCE.createMClassDiagram();
+				ModelFactory root = AbstractsFactory.eINSTANCE.createModelFactory();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

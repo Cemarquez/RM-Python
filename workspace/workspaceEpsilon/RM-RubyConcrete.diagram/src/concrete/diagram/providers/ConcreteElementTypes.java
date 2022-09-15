@@ -18,13 +18,14 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 
 import concrete.ConcretePackage;
+import concrete.diagram.edit.parts.MAssociationEditPart;
 import concrete.diagram.edit.parts.MAttributeEditPart;
 import concrete.diagram.edit.parts.MClassDiagramEditPart;
 import concrete.diagram.edit.parts.MClassEditPart;
+import concrete.diagram.edit.parts.MContainmentEditPart;
 import concrete.diagram.edit.parts.MFunctionEditPart;
+import concrete.diagram.edit.parts.MInheritanceEditPart;
 import concrete.diagram.edit.parts.MPackageEditPart;
-import concrete.diagram.edit.parts.MRelationship2EditPart;
-import concrete.diagram.edit.parts.MRelationshipEditPart;
 import concrete.diagram.part.ConcreteDiagramEditorPlugin;
 
 /**
@@ -77,11 +78,15 @@ public class ConcreteElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType MRelationship_4001 = getElementType("RM-RubyConcrete.diagram.MRelationship_4001"); //$NON-NLS-1$
+	public static final IElementType MAssociation_4003 = getElementType("RM-RubyConcrete.diagram.MAssociation_4003"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType MRelationship_4002 = getElementType("RM-RubyConcrete.diagram.MRelationship_4002"); //$NON-NLS-1$
+	public static final IElementType MInheritance_4004 = getElementType("RM-RubyConcrete.diagram.MInheritance_4004"); //$NON-NLS-1$
+	/**
+	* @generated
+	*/
+	public static final IElementType MContainment_4005 = getElementType("RM-RubyConcrete.diagram.MContainment_4005"); //$NON-NLS-1$
 
 	/**
 	* @generated
@@ -131,9 +136,11 @@ public class ConcreteElementTypes {
 
 			elements.put(MFunction_3002, ConcretePackage.eINSTANCE.getMFunction());
 
-			elements.put(MRelationship_4001, ConcretePackage.eINSTANCE.getMRelationship());
+			elements.put(MAssociation_4003, ConcretePackage.eINSTANCE.getMAssociation());
 
-			elements.put(MRelationship_4002, ConcretePackage.eINSTANCE.getMRelationship());
+			elements.put(MInheritance_4004, ConcretePackage.eINSTANCE.getMInheritance());
+
+			elements.put(MContainment_4005, ConcretePackage.eINSTANCE.getMContainment());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -156,8 +163,9 @@ public class ConcreteElementTypes {
 			KNOWN_ELEMENT_TYPES.add(MClass_2002);
 			KNOWN_ELEMENT_TYPES.add(MAttribute_3001);
 			KNOWN_ELEMENT_TYPES.add(MFunction_3002);
-			KNOWN_ELEMENT_TYPES.add(MRelationship_4001);
-			KNOWN_ELEMENT_TYPES.add(MRelationship_4002);
+			KNOWN_ELEMENT_TYPES.add(MAssociation_4003);
+			KNOWN_ELEMENT_TYPES.add(MInheritance_4004);
+			KNOWN_ELEMENT_TYPES.add(MContainment_4005);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -177,10 +185,12 @@ public class ConcreteElementTypes {
 			return MAttribute_3001;
 		case MFunctionEditPart.VISUAL_ID:
 			return MFunction_3002;
-		case MRelationshipEditPart.VISUAL_ID:
-			return MRelationship_4001;
-		case MRelationship2EditPart.VISUAL_ID:
-			return MRelationship_4002;
+		case MAssociationEditPart.VISUAL_ID:
+			return MAssociation_4003;
+		case MInheritanceEditPart.VISUAL_ID:
+			return MInheritance_4004;
+		case MContainmentEditPart.VISUAL_ID:
+			return MContainment_4005;
 		}
 		return null;
 	}

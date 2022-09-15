@@ -2,8 +2,6 @@
  */
 package concrete;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -17,12 +15,10 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link concrete.MPackage#getName <em>Name</em>}</li>
  *   <li>{@link concrete.MPackage#getPath <em>Path</em>}</li>
- *   <li>{@link concrete.MPackage#getLstMClass <em>Lst MClass</em>}</li>
- *   <li>{@link concrete.MPackage#getLstMPackage <em>Lst MPackage</em>}</li>
  * </ul>
  *
  * @see concrete.ConcretePackage#getMPackage()
- * @model annotation="gmf.node label='name'"
+ * @model annotation="gmf.node label='name' color='255,240,237'"
  * @generated
  */
 public interface MPackage extends EObject {
@@ -69,29 +65,5 @@ public interface MPackage extends EObject {
 	 * @generated
 	 */
 	void setPath(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Lst MClass</b></em>' containment reference list.
-	 * The list contents are of type {@link concrete.MClass}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Lst MClass</em>' containment reference list.
-	 * @see concrete.ConcretePackage#getMPackage_LstMClass()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<MClass> getLstMClass();
-
-	/**
-	 * Returns the value of the '<em><b>Lst MPackage</b></em>' containment reference list.
-	 * The list contents are of type {@link concrete.MPackage}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Lst MPackage</em>' containment reference list.
-	 * @see concrete.ConcretePackage#getMPackage_LstMPackage()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<MPackage> getLstMPackage();
 
 } // MPackage

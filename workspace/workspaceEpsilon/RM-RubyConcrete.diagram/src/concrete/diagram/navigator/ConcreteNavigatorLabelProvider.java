@@ -20,19 +20,21 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
+import concrete.MAssociation;
 import concrete.MClassDiagram;
-import concrete.MRelationship;
+import concrete.MContainment;
+import concrete.diagram.edit.parts.MAssociationEditPart;
 import concrete.diagram.edit.parts.MAttributeEditPart;
-import concrete.diagram.edit.parts.MAttributeNameEditPart;
+import concrete.diagram.edit.parts.MAttributeNameTypeEditPart;
 import concrete.diagram.edit.parts.MClassDiagramEditPart;
 import concrete.diagram.edit.parts.MClassEditPart;
 import concrete.diagram.edit.parts.MClassNameEditPart;
+import concrete.diagram.edit.parts.MContainmentEditPart;
 import concrete.diagram.edit.parts.MFunctionEditPart;
-import concrete.diagram.edit.parts.MFunctionNameEditPart;
+import concrete.diagram.edit.parts.MFunctionNameReturnTypeEditPart;
+import concrete.diagram.edit.parts.MInheritanceEditPart;
 import concrete.diagram.edit.parts.MPackageEditPart;
 import concrete.diagram.edit.parts.MPackageNameEditPart;
-import concrete.diagram.edit.parts.MRelationship2EditPart;
-import concrete.diagram.edit.parts.MRelationshipEditPart;
 import concrete.diagram.part.ConcreteDiagramEditorPlugin;
 import concrete.diagram.part.ConcreteVisualIDRegistry;
 import concrete.diagram.providers.ConcreteElementTypes;
@@ -109,10 +111,12 @@ public class ConcreteNavigatorLabelProvider extends LabelProvider
 			return getImage("Navigator?Node?concrete?MAttribute", ConcreteElementTypes.MAttribute_3001); //$NON-NLS-1$
 		case MFunctionEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?concrete?MFunction", ConcreteElementTypes.MFunction_3002); //$NON-NLS-1$
-		case MRelationshipEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?concrete?MRelationship", ConcreteElementTypes.MRelationship_4001); //$NON-NLS-1$
-		case MRelationship2EditPart.VISUAL_ID:
-			return getImage("Navigator?Link?concrete?MRelationship", ConcreteElementTypes.MRelationship_4002); //$NON-NLS-1$
+		case MAssociationEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?concrete?MAssociation", ConcreteElementTypes.MAssociation_4003); //$NON-NLS-1$
+		case MInheritanceEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?concrete?MInheritance", ConcreteElementTypes.MInheritance_4004); //$NON-NLS-1$
+		case MContainmentEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?concrete?MContainment", ConcreteElementTypes.MContainment_4005); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -181,10 +185,12 @@ public class ConcreteNavigatorLabelProvider extends LabelProvider
 			return getMAttribute_3001Text(view);
 		case MFunctionEditPart.VISUAL_ID:
 			return getMFunction_3002Text(view);
-		case MRelationshipEditPart.VISUAL_ID:
-			return getMRelationship_4001Text(view);
-		case MRelationship2EditPart.VISUAL_ID:
-			return getMRelationship_4002Text(view);
+		case MAssociationEditPart.VISUAL_ID:
+			return getMAssociation_4003Text(view);
+		case MInheritanceEditPart.VISUAL_ID:
+			return getMInheritance_4004Text(view);
+		case MContainmentEditPart.VISUAL_ID:
+			return getMContainment_4005Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -240,7 +246,7 @@ public class ConcreteNavigatorLabelProvider extends LabelProvider
 	private String getMAttribute_3001Text(View view) {
 		IParser parser = ConcreteParserProvider.getParser(ConcreteElementTypes.MAttribute_3001,
 				view.getElement() != null ? view.getElement() : view,
-				ConcreteVisualIDRegistry.getType(MAttributeNameEditPart.VISUAL_ID));
+				ConcreteVisualIDRegistry.getType(MAttributeNameTypeEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
@@ -256,7 +262,7 @@ public class ConcreteNavigatorLabelProvider extends LabelProvider
 	private String getMFunction_3002Text(View view) {
 		IParser parser = ConcreteParserProvider.getParser(ConcreteElementTypes.MFunction_3002,
 				view.getElement() != null ? view.getElement() : view,
-				ConcreteVisualIDRegistry.getType(MFunctionNameEditPart.VISUAL_ID));
+				ConcreteVisualIDRegistry.getType(MFunctionNameReturnTypeEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
@@ -269,12 +275,12 @@ public class ConcreteNavigatorLabelProvider extends LabelProvider
 	/**
 	* @generated
 	*/
-	private String getMRelationship_4001Text(View view) {
-		MRelationship domainModelElement = (MRelationship) view.getElement();
+	private String getMAssociation_4003Text(View view) {
+		MAssociation domainModelElement = (MAssociation) view.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getRelationshipType();
 		} else {
-			ConcreteDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4001); //$NON-NLS-1$
+			ConcreteDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4003); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -282,12 +288,19 @@ public class ConcreteNavigatorLabelProvider extends LabelProvider
 	/**
 	* @generated
 	*/
-	private String getMRelationship_4002Text(View view) {
-		MRelationship domainModelElement = (MRelationship) view.getElement();
+	private String getMInheritance_4004Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	* @generated
+	*/
+	private String getMContainment_4005Text(View view) {
+		MContainment domainModelElement = (MContainment) view.getElement();
 		if (domainModelElement != null) {
-			return domainModelElement.getRelationshipType();
+			return domainModelElement.getMultiplicityTarget();
 		} else {
-			ConcreteDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4002); //$NON-NLS-1$
+			ConcreteDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4005); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

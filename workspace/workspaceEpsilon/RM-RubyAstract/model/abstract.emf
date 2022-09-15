@@ -2,11 +2,10 @@
 @gmf
 package abstracts;
 
-class MClassDiagram{
-	attr String name;
-	val MPackage[*] lstMPackage;
-	val MClass[*] lstMClass;
-	val MRelationship[*] lstMRelationship;
+class ModelFactory{
+	attr String nombre;
+	attr String ruta;
+	val MPackage[*] lstPackages;
 }
 
 class MPackage{
@@ -16,17 +15,29 @@ class MPackage{
 	val MPackage[*] lstMPackage;
 }
 
+class MClassDiagram{
+	attr String name;
+	val MPackage[*] lstMPackage;
+	val MClass[*] lstMClass;
+}
+
+
+
 class MClass{
 	attr String name;
 	attr String accessModifier;
 	attr String comments;
-	attr boolean abstracts;
-	attr String stereoType;
 	attr String path;
-	val MRelationship[*] ltsMRelationships ;
+	val MAssociation[*] lstMAssoctiation;
+	val MInheritance[*] lstMInheritance;
+	val MContainment[*] lstMContainment;
+	val MAttribute[*] lstAttributes;
+	val MFunction[*] lstFunction;
 }
 
-class MRelationship{
+class MAssociation{
+	ref MClass source;
+	ref MClass target;
 	attr String relationshipType;
 	attr String multiplicitySource;
 	attr String multiplicityTarget;
@@ -34,5 +45,36 @@ class MRelationship{
 	attr String targetRole;
 	attr String navegabilitySource;
 	attr String navegabilityTarget;
+}
+class MInheritance{
+	ref MClass source;
+	ref MClass target;
+	
+}
+
+class MContainment{
+	ref MClass source;
+	ref MClass target;
+	attr String multiplicityTarget;
+	attr String sourceRole;
+	attr String targetRole;
+}
+
+class MAttribute{
+	attr String name;
+	attr String type;
+	attr String defaultValue;
+	attr String comments;
+	attr boolean constant;
+	
+}
+
+class MFunction{
+	attr String name;
+	attr String accessModifier; 
+	attr String returnType;
+	attr String semantics;
+	attr String comments;
+	
 }
 

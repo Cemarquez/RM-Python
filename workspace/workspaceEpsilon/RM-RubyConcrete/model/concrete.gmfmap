@@ -53,11 +53,16 @@
           <domainMetaElement
               href="concrete.ecore#//MAttribute"/>
           <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="{0} : {1}"
+              editorPattern="{0} : {1}"
+              editPattern="{0} : {1}">
             <diagramLabel
                 href="concrete.gmfgraph#MAttributeLabel"/>
             <features
                 href="concrete.ecore#//MAttribute/name"/>
+            <features
+                href="concrete.ecore#//MAttribute/type"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -74,11 +79,16 @@
           <domainMetaElement
               href="concrete.ecore#//MFunction"/>
           <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="{0}() : {1}"
+              editorPattern="{0}() : {1}"
+              editPattern="{0}() : {1}">
             <diagramLabel
                 href="concrete.gmfgraph#MFunctionLabel"/>
             <features
                 href="concrete.ecore#//MFunction/name"/>
+            <features
+                href="concrete.ecore#//MFunction/returnType"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -101,37 +111,54 @@
   </nodes>
   <links>
     <domainMetaElement
-        href="concrete.ecore#//MRelationship"/>
+        href="concrete.ecore#//MAssociation"/>
     <containmentFeature
-        href="concrete.ecore#//MClassDiagram/lstMRelationship"/>
+        href="concrete.ecore#//MClassDiagram/lstMAssoctiation"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="concrete.gmftool#//@palette/@tools.1/@tools.0"/>
     <diagramLink
-        href="concrete.gmfgraph#MRelationship"/>
+        href="concrete.gmfgraph#MAssociation"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="concrete.ecore#//MRelationship/source"/>
+        href="concrete.ecore#//MAssociation/source"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="concrete.ecore#//MRelationship/target"/>
+        href="concrete.ecore#//MAssociation/target"/>
   </links>
   <links>
     <domainMetaElement
-        href="concrete.ecore#//MRelationship"/>
+        href="concrete.ecore#//MInheritance"/>
     <containmentFeature
-        href="concrete.ecore#//MClass/ltsMRelationships"/>
+        href="concrete.ecore#//MClassDiagram/lstMInheritance"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="concrete.gmftool#//@palette/@tools.1/@tools.0"/>
+        href="concrete.gmftool#//@palette/@tools.1/@tools.2"/>
     <diagramLink
-        href="concrete.gmfgraph#MRelationship"/>
+        href="concrete.gmfgraph#MInheritance"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="concrete.ecore#//MRelationship/source"/>
+        href="concrete.ecore#//MInheritance/source"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="concrete.ecore#//MRelationship/target"/>
+        href="concrete.ecore#//MInheritance/target"/>
+  </links>
+  <links>
+    <domainMetaElement
+        href="concrete.ecore#//MContainment"/>
+    <containmentFeature
+        href="concrete.ecore#//MClassDiagram/lstMContainment"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="concrete.gmftool#//@palette/@tools.1/@tools.1"/>
+    <diagramLink
+        href="concrete.gmfgraph#MContainment"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="concrete.ecore#//MContainment/source"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="concrete.ecore#//MContainment/target"/>
   </links>
   <diagram>
     <diagramCanvas

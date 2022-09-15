@@ -4,7 +4,7 @@ package concrete.tests;
 
 import concrete.ConcreteFactory;
 import concrete.ConcretePackage;
-import concrete.MClassDiagram;
+import concrete.ModelFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -60,7 +60,7 @@ public class ConcreteExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.concrete"));
-				MClassDiagram root = ConcreteFactory.eINSTANCE.createMClassDiagram();
+				ModelFactory root = ConcreteFactory.eINSTANCE.createModelFactory();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

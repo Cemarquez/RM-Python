@@ -56,10 +56,15 @@ public class AbstractsFactoryImpl extends EFactoryImpl implements AbstractsFacto
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case AbstractsPackage.MCLASS_DIAGRAM: return createMClassDiagram();
+			case AbstractsPackage.MODEL_FACTORY: return createModelFactory();
 			case AbstractsPackage.MPACKAGE: return createMPackage();
+			case AbstractsPackage.MCLASS_DIAGRAM: return createMClassDiagram();
 			case AbstractsPackage.MCLASS: return createMClass();
-			case AbstractsPackage.MRELATIONSHIP: return createMRelationship();
+			case AbstractsPackage.MASSOCIATION: return createMAssociation();
+			case AbstractsPackage.MINHERITANCE: return createMInheritance();
+			case AbstractsPackage.MCONTAINMENT: return createMContainment();
+			case AbstractsPackage.MATTRIBUTE: return createMAttribute();
+			case AbstractsPackage.MFUNCTION: return createMFunction();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -71,9 +76,9 @@ public class AbstractsFactoryImpl extends EFactoryImpl implements AbstractsFacto
 	 * @generated
 	 */
 	@Override
-	public MClassDiagram createMClassDiagram() {
-		MClassDiagramImpl mClassDiagram = new MClassDiagramImpl();
-		return mClassDiagram;
+	public ModelFactory createModelFactory() {
+		ModelFactoryImpl modelFactory = new ModelFactoryImpl();
+		return modelFactory;
 	}
 
 	/**
@@ -93,6 +98,17 @@ public class AbstractsFactoryImpl extends EFactoryImpl implements AbstractsFacto
 	 * @generated
 	 */
 	@Override
+	public MClassDiagram createMClassDiagram() {
+		MClassDiagramImpl mClassDiagram = new MClassDiagramImpl();
+		return mClassDiagram;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public MClass createMClass() {
 		MClassImpl mClass = new MClassImpl();
 		return mClass;
@@ -104,9 +120,53 @@ public class AbstractsFactoryImpl extends EFactoryImpl implements AbstractsFacto
 	 * @generated
 	 */
 	@Override
-	public MRelationship createMRelationship() {
-		MRelationshipImpl mRelationship = new MRelationshipImpl();
-		return mRelationship;
+	public MAssociation createMAssociation() {
+		MAssociationImpl mAssociation = new MAssociationImpl();
+		return mAssociation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MInheritance createMInheritance() {
+		MInheritanceImpl mInheritance = new MInheritanceImpl();
+		return mInheritance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MContainment createMContainment() {
+		MContainmentImpl mContainment = new MContainmentImpl();
+		return mContainment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MAttribute createMAttribute() {
+		MAttributeImpl mAttribute = new MAttributeImpl();
+		return mAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MFunction createMFunction() {
+		MFunctionImpl mFunction = new MFunctionImpl();
+		return mFunction;
 	}
 
 	/**

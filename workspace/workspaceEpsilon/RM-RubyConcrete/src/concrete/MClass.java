@@ -18,16 +18,13 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link concrete.MClass#getName <em>Name</em>}</li>
  *   <li>{@link concrete.MClass#getAccessModifier <em>Access Modifier</em>}</li>
  *   <li>{@link concrete.MClass#getComments <em>Comments</em>}</li>
- *   <li>{@link concrete.MClass#isAbstracts <em>Abstracts</em>}</li>
- *   <li>{@link concrete.MClass#getStereoType <em>Stereo Type</em>}</li>
  *   <li>{@link concrete.MClass#getPath <em>Path</em>}</li>
- *   <li>{@link concrete.MClass#getLtsMRelationships <em>Lts MRelationships</em>}</li>
  *   <li>{@link concrete.MClass#getLstMAttribute <em>Lst MAttribute</em>}</li>
  *   <li>{@link concrete.MClass#getLstMFunction <em>Lst MFunction</em>}</li>
  * </ul>
  *
  * @see concrete.ConcretePackage#getMClass()
- * @model annotation="gmf.node label='name'"
+ * @model annotation="gmf.node label='name' figure='rounded' label.layout='center' color='255,216,208' tool.description='A\361ade una clase al diagrama'"
  * @generated
  */
 public interface MClass extends EObject {
@@ -98,50 +95,6 @@ public interface MClass extends EObject {
 	void setComments(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Abstracts</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Abstracts</em>' attribute.
-	 * @see #setAbstracts(boolean)
-	 * @see concrete.ConcretePackage#getMClass_Abstracts()
-	 * @model
-	 * @generated
-	 */
-	boolean isAbstracts();
-
-	/**
-	 * Sets the value of the '{@link concrete.MClass#isAbstracts <em>Abstracts</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Abstracts</em>' attribute.
-	 * @see #isAbstracts()
-	 * @generated
-	 */
-	void setAbstracts(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Stereo Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Stereo Type</em>' attribute.
-	 * @see #setStereoType(String)
-	 * @see concrete.ConcretePackage#getMClass_StereoType()
-	 * @model
-	 * @generated
-	 */
-	String getStereoType();
-
-	/**
-	 * Sets the value of the '{@link concrete.MClass#getStereoType <em>Stereo Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Stereo Type</em>' attribute.
-	 * @see #getStereoType()
-	 * @generated
-	 */
-	void setStereoType(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -164,18 +117,6 @@ public interface MClass extends EObject {
 	void setPath(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Lts MRelationships</b></em>' containment reference list.
-	 * The list contents are of type {@link concrete.MRelationship}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Lts MRelationships</em>' containment reference list.
-	 * @see concrete.ConcretePackage#getMClass_LtsMRelationships()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<MRelationship> getLtsMRelationships();
-
-	/**
 	 * Returns the value of the '<em><b>Lst MAttribute</b></em>' containment reference list.
 	 * The list contents are of type {@link concrete.MAttribute}.
 	 * <!-- begin-user-doc -->
@@ -183,7 +124,7 @@ public interface MClass extends EObject {
 	 * @return the value of the '<em>Lst MAttribute</em>' containment reference list.
 	 * @see concrete.ConcretePackage#getMClass_LstMAttribute()
 	 * @model containment="true"
-	 *        annotation="gmf.compartment"
+	 *        annotation="gmf.compartment layout='list' collapsible='false'"
 	 * @generated
 	 */
 	EList<MAttribute> getLstMAttribute();
@@ -196,7 +137,7 @@ public interface MClass extends EObject {
 	 * @return the value of the '<em>Lst MFunction</em>' containment reference list.
 	 * @see concrete.ConcretePackage#getMClass_LstMFunction()
 	 * @model containment="true"
-	 *        annotation="gmf.compartment"
+	 *        annotation="gmf.compartment layout='list' collapsible='false'"
 	 * @generated
 	 */
 	EList<MFunction> getLstMFunction();

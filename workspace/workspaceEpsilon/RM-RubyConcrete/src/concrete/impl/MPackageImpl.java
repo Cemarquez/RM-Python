@@ -3,24 +3,14 @@
 package concrete.impl;
 
 import concrete.ConcretePackage;
-import concrete.MClass;
 import concrete.MPackage;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,8 +22,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link concrete.impl.MPackageImpl#getName <em>Name</em>}</li>
  *   <li>{@link concrete.impl.MPackageImpl#getPath <em>Path</em>}</li>
- *   <li>{@link concrete.impl.MPackageImpl#getLstMClass <em>Lst MClass</em>}</li>
- *   <li>{@link concrete.impl.MPackageImpl#getLstMPackage <em>Lst MPackage</em>}</li>
  * </ul>
  *
  * @generated
@@ -78,26 +66,6 @@ public class MPackageImpl extends EObjectImpl implements MPackage {
 	 * @ordered
 	 */
 	protected String path = PATH_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getLstMClass() <em>Lst MClass</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLstMClass()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<MClass> lstMClass;
-
-	/**
-	 * The cached value of the '{@link #getLstMPackage() <em>Lst MPackage</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLstMPackage()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<MPackage> lstMPackage;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -170,58 +138,12 @@ public class MPackageImpl extends EObjectImpl implements MPackage {
 	 * @generated
 	 */
 	@Override
-	public EList<MClass> getLstMClass() {
-		if (lstMClass == null) {
-			lstMClass = new EObjectContainmentEList<MClass>(MClass.class, this, ConcretePackage.MPACKAGE__LST_MCLASS);
-		}
-		return lstMClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<MPackage> getLstMPackage() {
-		if (lstMPackage == null) {
-			lstMPackage = new EObjectContainmentEList<MPackage>(MPackage.class, this, ConcretePackage.MPACKAGE__LST_MPACKAGE);
-		}
-		return lstMPackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ConcretePackage.MPACKAGE__LST_MCLASS:
-				return ((InternalEList<?>)getLstMClass()).basicRemove(otherEnd, msgs);
-			case ConcretePackage.MPACKAGE__LST_MPACKAGE:
-				return ((InternalEList<?>)getLstMPackage()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ConcretePackage.MPACKAGE__NAME:
 				return getName();
 			case ConcretePackage.MPACKAGE__PATH:
 				return getPath();
-			case ConcretePackage.MPACKAGE__LST_MCLASS:
-				return getLstMClass();
-			case ConcretePackage.MPACKAGE__LST_MPACKAGE:
-				return getLstMPackage();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -231,7 +153,6 @@ public class MPackageImpl extends EObjectImpl implements MPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -240,14 +161,6 @@ public class MPackageImpl extends EObjectImpl implements MPackage {
 				return;
 			case ConcretePackage.MPACKAGE__PATH:
 				setPath((String)newValue);
-				return;
-			case ConcretePackage.MPACKAGE__LST_MCLASS:
-				getLstMClass().clear();
-				getLstMClass().addAll((Collection<? extends MClass>)newValue);
-				return;
-			case ConcretePackage.MPACKAGE__LST_MPACKAGE:
-				getLstMPackage().clear();
-				getLstMPackage().addAll((Collection<? extends MPackage>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -267,12 +180,6 @@ public class MPackageImpl extends EObjectImpl implements MPackage {
 			case ConcretePackage.MPACKAGE__PATH:
 				setPath(PATH_EDEFAULT);
 				return;
-			case ConcretePackage.MPACKAGE__LST_MCLASS:
-				getLstMClass().clear();
-				return;
-			case ConcretePackage.MPACKAGE__LST_MPACKAGE:
-				getLstMPackage().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -289,10 +196,6 @@ public class MPackageImpl extends EObjectImpl implements MPackage {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ConcretePackage.MPACKAGE__PATH:
 				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
-			case ConcretePackage.MPACKAGE__LST_MCLASS:
-				return lstMClass != null && !lstMClass.isEmpty();
-			case ConcretePackage.MPACKAGE__LST_MPACKAGE:
-				return lstMPackage != null && !lstMPackage.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

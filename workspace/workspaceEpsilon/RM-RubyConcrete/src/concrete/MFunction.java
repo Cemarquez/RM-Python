@@ -2,8 +2,6 @@
  */
 package concrete;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -20,11 +18,10 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link concrete.MFunction#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link concrete.MFunction#getSemantics <em>Semantics</em>}</li>
  *   <li>{@link concrete.MFunction#getComments <em>Comments</em>}</li>
- *   <li>{@link concrete.MFunction#getLstMParameter <em>Lst MParameter</em>}</li>
  * </ul>
  *
  * @see concrete.ConcretePackage#getMFunction()
- * @model annotation="gmf.node label='name'"
+ * @model annotation="gmf.node label='name,returnType' figure='rectangle' label.icon='false' label.pattern='{0}() : {1}' color='255,216,208' tool.description='A\361ade una funci\363n a una clase'"
  * @generated
  */
 public interface MFunction extends EObject {
@@ -137,17 +134,5 @@ public interface MFunction extends EObject {
 	 * @generated
 	 */
 	void setComments(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Lst MParameter</b></em>' containment reference list.
-	 * The list contents are of type {@link concrete.MParameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Lst MParameter</em>' containment reference list.
-	 * @see concrete.ConcretePackage#getMFunction_LstMParameter()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<MParameter> getLstMParameter();
 
 } // MFunction

@@ -3,8 +3,12 @@
 package abstracts.impl;
 
 import abstracts.AbstractsPackage;
+import abstracts.MAssociation;
+import abstracts.MAttribute;
 import abstracts.MClass;
-import abstracts.MRelationship;
+import abstracts.MContainment;
+import abstracts.MFunction;
+import abstracts.MInheritance;
 
 import java.util.Collection;
 
@@ -33,10 +37,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link abstracts.impl.MClassImpl#getName <em>Name</em>}</li>
  *   <li>{@link abstracts.impl.MClassImpl#getAccessModifier <em>Access Modifier</em>}</li>
  *   <li>{@link abstracts.impl.MClassImpl#getComments <em>Comments</em>}</li>
- *   <li>{@link abstracts.impl.MClassImpl#isAbstracts <em>Abstracts</em>}</li>
- *   <li>{@link abstracts.impl.MClassImpl#getStereoType <em>Stereo Type</em>}</li>
  *   <li>{@link abstracts.impl.MClassImpl#getPath <em>Path</em>}</li>
- *   <li>{@link abstracts.impl.MClassImpl#getLtsMRelationships <em>Lts MRelationships</em>}</li>
+ *   <li>{@link abstracts.impl.MClassImpl#getLstMAssoctiation <em>Lst MAssoctiation</em>}</li>
+ *   <li>{@link abstracts.impl.MClassImpl#getLstMInheritance <em>Lst MInheritance</em>}</li>
+ *   <li>{@link abstracts.impl.MClassImpl#getLstMContainment <em>Lst MContainment</em>}</li>
+ *   <li>{@link abstracts.impl.MClassImpl#getLstAttributes <em>Lst Attributes</em>}</li>
+ *   <li>{@link abstracts.impl.MClassImpl#getLstFunction <em>Lst Function</em>}</li>
  * </ul>
  *
  * @generated
@@ -103,46 +109,6 @@ public class MClassImpl extends EObjectImpl implements MClass {
 	protected String comments = COMMENTS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isAbstracts() <em>Abstracts</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isAbstracts()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean ABSTRACTS_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isAbstracts() <em>Abstracts</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isAbstracts()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean abstracts = ABSTRACTS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getStereoType() <em>Stereo Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStereoType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STEREO_TYPE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStereoType() <em>Stereo Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStereoType()
-	 * @generated
-	 * @ordered
-	 */
-	protected String stereoType = STEREO_TYPE_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -163,14 +129,54 @@ public class MClassImpl extends EObjectImpl implements MClass {
 	protected String path = PATH_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getLtsMRelationships() <em>Lts MRelationships</em>}' containment reference list.
+	 * The cached value of the '{@link #getLstMAssoctiation() <em>Lst MAssoctiation</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLtsMRelationships()
+	 * @see #getLstMAssoctiation()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MRelationship> ltsMRelationships;
+	protected EList<MAssociation> lstMAssoctiation;
+
+	/**
+	 * The cached value of the '{@link #getLstMInheritance() <em>Lst MInheritance</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLstMInheritance()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MInheritance> lstMInheritance;
+
+	/**
+	 * The cached value of the '{@link #getLstMContainment() <em>Lst MContainment</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLstMContainment()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MContainment> lstMContainment;
+
+	/**
+	 * The cached value of the '{@link #getLstAttributes() <em>Lst Attributes</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLstAttributes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MAttribute> lstAttributes;
+
+	/**
+	 * The cached value of the '{@link #getLstFunction() <em>Lst Function</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLstFunction()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MFunction> lstFunction;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -266,52 +272,6 @@ public class MClassImpl extends EObjectImpl implements MClass {
 	 * @generated
 	 */
 	@Override
-	public boolean isAbstracts() {
-		return abstracts;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setAbstracts(boolean newAbstracts) {
-		boolean oldAbstracts = abstracts;
-		abstracts = newAbstracts;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractsPackage.MCLASS__ABSTRACTS, oldAbstracts, abstracts));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getStereoType() {
-		return stereoType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setStereoType(String newStereoType) {
-		String oldStereoType = stereoType;
-		stereoType = newStereoType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractsPackage.MCLASS__STEREO_TYPE, oldStereoType, stereoType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String getPath() {
 		return path;
 	}
@@ -335,11 +295,63 @@ public class MClassImpl extends EObjectImpl implements MClass {
 	 * @generated
 	 */
 	@Override
-	public EList<MRelationship> getLtsMRelationships() {
-		if (ltsMRelationships == null) {
-			ltsMRelationships = new EObjectContainmentEList<MRelationship>(MRelationship.class, this, AbstractsPackage.MCLASS__LTS_MRELATIONSHIPS);
+	public EList<MAssociation> getLstMAssoctiation() {
+		if (lstMAssoctiation == null) {
+			lstMAssoctiation = new EObjectContainmentEList<MAssociation>(MAssociation.class, this, AbstractsPackage.MCLASS__LST_MASSOCTIATION);
 		}
-		return ltsMRelationships;
+		return lstMAssoctiation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<MInheritance> getLstMInheritance() {
+		if (lstMInheritance == null) {
+			lstMInheritance = new EObjectContainmentEList<MInheritance>(MInheritance.class, this, AbstractsPackage.MCLASS__LST_MINHERITANCE);
+		}
+		return lstMInheritance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<MContainment> getLstMContainment() {
+		if (lstMContainment == null) {
+			lstMContainment = new EObjectContainmentEList<MContainment>(MContainment.class, this, AbstractsPackage.MCLASS__LST_MCONTAINMENT);
+		}
+		return lstMContainment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<MAttribute> getLstAttributes() {
+		if (lstAttributes == null) {
+			lstAttributes = new EObjectContainmentEList<MAttribute>(MAttribute.class, this, AbstractsPackage.MCLASS__LST_ATTRIBUTES);
+		}
+		return lstAttributes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<MFunction> getLstFunction() {
+		if (lstFunction == null) {
+			lstFunction = new EObjectContainmentEList<MFunction>(MFunction.class, this, AbstractsPackage.MCLASS__LST_FUNCTION);
+		}
+		return lstFunction;
 	}
 
 	/**
@@ -350,8 +362,16 @@ public class MClassImpl extends EObjectImpl implements MClass {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case AbstractsPackage.MCLASS__LTS_MRELATIONSHIPS:
-				return ((InternalEList<?>)getLtsMRelationships()).basicRemove(otherEnd, msgs);
+			case AbstractsPackage.MCLASS__LST_MASSOCTIATION:
+				return ((InternalEList<?>)getLstMAssoctiation()).basicRemove(otherEnd, msgs);
+			case AbstractsPackage.MCLASS__LST_MINHERITANCE:
+				return ((InternalEList<?>)getLstMInheritance()).basicRemove(otherEnd, msgs);
+			case AbstractsPackage.MCLASS__LST_MCONTAINMENT:
+				return ((InternalEList<?>)getLstMContainment()).basicRemove(otherEnd, msgs);
+			case AbstractsPackage.MCLASS__LST_ATTRIBUTES:
+				return ((InternalEList<?>)getLstAttributes()).basicRemove(otherEnd, msgs);
+			case AbstractsPackage.MCLASS__LST_FUNCTION:
+				return ((InternalEList<?>)getLstFunction()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -370,14 +390,18 @@ public class MClassImpl extends EObjectImpl implements MClass {
 				return getAccessModifier();
 			case AbstractsPackage.MCLASS__COMMENTS:
 				return getComments();
-			case AbstractsPackage.MCLASS__ABSTRACTS:
-				return isAbstracts();
-			case AbstractsPackage.MCLASS__STEREO_TYPE:
-				return getStereoType();
 			case AbstractsPackage.MCLASS__PATH:
 				return getPath();
-			case AbstractsPackage.MCLASS__LTS_MRELATIONSHIPS:
-				return getLtsMRelationships();
+			case AbstractsPackage.MCLASS__LST_MASSOCTIATION:
+				return getLstMAssoctiation();
+			case AbstractsPackage.MCLASS__LST_MINHERITANCE:
+				return getLstMInheritance();
+			case AbstractsPackage.MCLASS__LST_MCONTAINMENT:
+				return getLstMContainment();
+			case AbstractsPackage.MCLASS__LST_ATTRIBUTES:
+				return getLstAttributes();
+			case AbstractsPackage.MCLASS__LST_FUNCTION:
+				return getLstFunction();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -400,18 +424,28 @@ public class MClassImpl extends EObjectImpl implements MClass {
 			case AbstractsPackage.MCLASS__COMMENTS:
 				setComments((String)newValue);
 				return;
-			case AbstractsPackage.MCLASS__ABSTRACTS:
-				setAbstracts((Boolean)newValue);
-				return;
-			case AbstractsPackage.MCLASS__STEREO_TYPE:
-				setStereoType((String)newValue);
-				return;
 			case AbstractsPackage.MCLASS__PATH:
 				setPath((String)newValue);
 				return;
-			case AbstractsPackage.MCLASS__LTS_MRELATIONSHIPS:
-				getLtsMRelationships().clear();
-				getLtsMRelationships().addAll((Collection<? extends MRelationship>)newValue);
+			case AbstractsPackage.MCLASS__LST_MASSOCTIATION:
+				getLstMAssoctiation().clear();
+				getLstMAssoctiation().addAll((Collection<? extends MAssociation>)newValue);
+				return;
+			case AbstractsPackage.MCLASS__LST_MINHERITANCE:
+				getLstMInheritance().clear();
+				getLstMInheritance().addAll((Collection<? extends MInheritance>)newValue);
+				return;
+			case AbstractsPackage.MCLASS__LST_MCONTAINMENT:
+				getLstMContainment().clear();
+				getLstMContainment().addAll((Collection<? extends MContainment>)newValue);
+				return;
+			case AbstractsPackage.MCLASS__LST_ATTRIBUTES:
+				getLstAttributes().clear();
+				getLstAttributes().addAll((Collection<? extends MAttribute>)newValue);
+				return;
+			case AbstractsPackage.MCLASS__LST_FUNCTION:
+				getLstFunction().clear();
+				getLstFunction().addAll((Collection<? extends MFunction>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -434,17 +468,23 @@ public class MClassImpl extends EObjectImpl implements MClass {
 			case AbstractsPackage.MCLASS__COMMENTS:
 				setComments(COMMENTS_EDEFAULT);
 				return;
-			case AbstractsPackage.MCLASS__ABSTRACTS:
-				setAbstracts(ABSTRACTS_EDEFAULT);
-				return;
-			case AbstractsPackage.MCLASS__STEREO_TYPE:
-				setStereoType(STEREO_TYPE_EDEFAULT);
-				return;
 			case AbstractsPackage.MCLASS__PATH:
 				setPath(PATH_EDEFAULT);
 				return;
-			case AbstractsPackage.MCLASS__LTS_MRELATIONSHIPS:
-				getLtsMRelationships().clear();
+			case AbstractsPackage.MCLASS__LST_MASSOCTIATION:
+				getLstMAssoctiation().clear();
+				return;
+			case AbstractsPackage.MCLASS__LST_MINHERITANCE:
+				getLstMInheritance().clear();
+				return;
+			case AbstractsPackage.MCLASS__LST_MCONTAINMENT:
+				getLstMContainment().clear();
+				return;
+			case AbstractsPackage.MCLASS__LST_ATTRIBUTES:
+				getLstAttributes().clear();
+				return;
+			case AbstractsPackage.MCLASS__LST_FUNCTION:
+				getLstFunction().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -464,14 +504,18 @@ public class MClassImpl extends EObjectImpl implements MClass {
 				return ACCESS_MODIFIER_EDEFAULT == null ? accessModifier != null : !ACCESS_MODIFIER_EDEFAULT.equals(accessModifier);
 			case AbstractsPackage.MCLASS__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
-			case AbstractsPackage.MCLASS__ABSTRACTS:
-				return abstracts != ABSTRACTS_EDEFAULT;
-			case AbstractsPackage.MCLASS__STEREO_TYPE:
-				return STEREO_TYPE_EDEFAULT == null ? stereoType != null : !STEREO_TYPE_EDEFAULT.equals(stereoType);
 			case AbstractsPackage.MCLASS__PATH:
 				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
-			case AbstractsPackage.MCLASS__LTS_MRELATIONSHIPS:
-				return ltsMRelationships != null && !ltsMRelationships.isEmpty();
+			case AbstractsPackage.MCLASS__LST_MASSOCTIATION:
+				return lstMAssoctiation != null && !lstMAssoctiation.isEmpty();
+			case AbstractsPackage.MCLASS__LST_MINHERITANCE:
+				return lstMInheritance != null && !lstMInheritance.isEmpty();
+			case AbstractsPackage.MCLASS__LST_MCONTAINMENT:
+				return lstMContainment != null && !lstMContainment.isEmpty();
+			case AbstractsPackage.MCLASS__LST_ATTRIBUTES:
+				return lstAttributes != null && !lstAttributes.isEmpty();
+			case AbstractsPackage.MCLASS__LST_FUNCTION:
+				return lstFunction != null && !lstFunction.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -492,10 +536,6 @@ public class MClassImpl extends EObjectImpl implements MClass {
 		result.append(accessModifier);
 		result.append(", comments: ");
 		result.append(comments);
-		result.append(", abstracts: ");
-		result.append(abstracts);
-		result.append(", stereoType: ");
-		result.append(stereoType);
 		result.append(", path: ");
 		result.append(path);
 		result.append(')');

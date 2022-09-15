@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<abstract:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:abstract="abstract">
+  <lstPackages name="nullempresa" path=""/>
+  <lstPackages name="empresa" path="">
+    <lstMPackage name="empleado" path="empresa/">
+      <lstMPackage name="pagos" path="empresa/empleado/"/>
+    </lstMPackage>
+  </lstPackages>
+</abstract:ModelFactory>

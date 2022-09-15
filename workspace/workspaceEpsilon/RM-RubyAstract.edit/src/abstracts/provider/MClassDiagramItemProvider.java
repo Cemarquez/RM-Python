@@ -104,7 +104,6 @@ public class MClassDiagramItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(AbstractsPackage.Literals.MCLASS_DIAGRAM__LST_MPACKAGE);
 			childrenFeatures.add(AbstractsPackage.Literals.MCLASS_DIAGRAM__LST_MCLASS);
-			childrenFeatures.add(AbstractsPackage.Literals.MCLASS_DIAGRAM__LST_MRELATIONSHIP);
 		}
 		return childrenFeatures;
 	}
@@ -165,7 +164,6 @@ public class MClassDiagramItemProvider
 				return;
 			case AbstractsPackage.MCLASS_DIAGRAM__LST_MPACKAGE:
 			case AbstractsPackage.MCLASS_DIAGRAM__LST_MCLASS:
-			case AbstractsPackage.MCLASS_DIAGRAM__LST_MRELATIONSHIP:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -192,11 +190,6 @@ public class MClassDiagramItemProvider
 			(createChildParameter
 				(AbstractsPackage.Literals.MCLASS_DIAGRAM__LST_MCLASS,
 				 AbstractsFactory.eINSTANCE.createMClass()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(AbstractsPackage.Literals.MCLASS_DIAGRAM__LST_MRELATIONSHIP,
-				 AbstractsFactory.eINSTANCE.createMRelationship()));
 	}
 
 	/**

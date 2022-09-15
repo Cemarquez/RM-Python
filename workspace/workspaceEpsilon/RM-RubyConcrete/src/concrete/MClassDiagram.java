@@ -16,9 +16,12 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link concrete.MClassDiagram#getName <em>Name</em>}</li>
+ *   <li>{@link concrete.MClassDiagram#getDescription <em>Description</em>}</li>
  *   <li>{@link concrete.MClassDiagram#getLstMPackage <em>Lst MPackage</em>}</li>
  *   <li>{@link concrete.MClassDiagram#getLstMClass <em>Lst MClass</em>}</li>
- *   <li>{@link concrete.MClassDiagram#getLstMRelationship <em>Lst MRelationship</em>}</li>
+ *   <li>{@link concrete.MClassDiagram#getLstMAssoctiation <em>Lst MAssoctiation</em>}</li>
+ *   <li>{@link concrete.MClassDiagram#getLstMInheritance <em>Lst MInheritance</em>}</li>
+ *   <li>{@link concrete.MClassDiagram#getLstMContainment <em>Lst MContainment</em>}</li>
  * </ul>
  *
  * @see concrete.ConcretePackage#getMClassDiagram()
@@ -49,6 +52,28 @@ public interface MClassDiagram extends EObject {
 	void setName(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see concrete.ConcretePackage#getMClassDiagram_Description()
+	 * @model
+	 * @generated
+	 */
+	String getDescription();
+
+	/**
+	 * Sets the value of the '{@link concrete.MClassDiagram#getDescription <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
+	 * @generated
+	 */
+	void setDescription(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Lst MPackage</b></em>' containment reference list.
 	 * The list contents are of type {@link concrete.MPackage}.
 	 * <!-- begin-user-doc -->
@@ -73,15 +98,39 @@ public interface MClassDiagram extends EObject {
 	EList<MClass> getLstMClass();
 
 	/**
-	 * Returns the value of the '<em><b>Lst MRelationship</b></em>' containment reference list.
-	 * The list contents are of type {@link concrete.MRelationship}.
+	 * Returns the value of the '<em><b>Lst MAssoctiation</b></em>' containment reference list.
+	 * The list contents are of type {@link concrete.MAssociation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Lst MRelationship</em>' containment reference list.
-	 * @see concrete.ConcretePackage#getMClassDiagram_LstMRelationship()
+	 * @return the value of the '<em>Lst MAssoctiation</em>' containment reference list.
+	 * @see concrete.ConcretePackage#getMClassDiagram_LstMAssoctiation()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<MRelationship> getLstMRelationship();
+	EList<MAssociation> getLstMAssoctiation();
+
+	/**
+	 * Returns the value of the '<em><b>Lst MInheritance</b></em>' containment reference list.
+	 * The list contents are of type {@link concrete.MInheritance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lst MInheritance</em>' containment reference list.
+	 * @see concrete.ConcretePackage#getMClassDiagram_LstMInheritance()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<MInheritance> getLstMInheritance();
+
+	/**
+	 * Returns the value of the '<em><b>Lst MContainment</b></em>' containment reference list.
+	 * The list contents are of type {@link concrete.MContainment}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lst MContainment</em>' containment reference list.
+	 * @see concrete.ConcretePackage#getMClassDiagram_LstMContainment()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<MContainment> getLstMContainment();
 
 } // MClassDiagram

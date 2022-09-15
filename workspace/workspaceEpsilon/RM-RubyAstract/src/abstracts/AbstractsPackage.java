@@ -57,6 +57,52 @@ public interface AbstractsPackage extends EPackage {
 	AbstractsPackage eINSTANCE = abstracts.impl.AbstractsPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link abstracts.impl.ModelFactoryImpl <em>Model Factory</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see abstracts.impl.ModelFactoryImpl
+	 * @see abstracts.impl.AbstractsPackageImpl#getModelFactory()
+	 * @generated
+	 */
+	int MODEL_FACTORY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Nombre</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_FACTORY__NOMBRE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Ruta</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_FACTORY__RUTA = 1;
+
+	/**
+	 * The feature id for the '<em><b>Lst Packages</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_FACTORY__LST_PACKAGES = 2;
+
+	/**
+	 * The number of structural features of the '<em>Model Factory</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_FACTORY_FEATURE_COUNT = 3;
+
+	/**
 	 * The meta object id for the '{@link abstracts.impl.MClassDiagramImpl <em>MClass Diagram</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,52 +110,7 @@ public interface AbstractsPackage extends EPackage {
 	 * @see abstracts.impl.AbstractsPackageImpl#getMClassDiagram()
 	 * @generated
 	 */
-	int MCLASS_DIAGRAM = 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MCLASS_DIAGRAM__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Lst MPackage</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MCLASS_DIAGRAM__LST_MPACKAGE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Lst MClass</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MCLASS_DIAGRAM__LST_MCLASS = 2;
-
-	/**
-	 * The feature id for the '<em><b>Lst MRelationship</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MCLASS_DIAGRAM__LST_MRELATIONSHIP = 3;
-
-	/**
-	 * The number of structural features of the '<em>MClass Diagram</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MCLASS_DIAGRAM_FEATURE_COUNT = 4;
+	int MCLASS_DIAGRAM = 2;
 
 	/**
 	 * The meta object id for the '{@link abstracts.impl.MPackageImpl <em>MPackage</em>}' class.
@@ -167,6 +168,42 @@ public interface AbstractsPackage extends EPackage {
 	int MPACKAGE_FEATURE_COUNT = 4;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCLASS_DIAGRAM__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Lst MPackage</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCLASS_DIAGRAM__LST_MPACKAGE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Lst MClass</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCLASS_DIAGRAM__LST_MCLASS = 2;
+
+	/**
+	 * The number of structural features of the '<em>MClass Diagram</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCLASS_DIAGRAM_FEATURE_COUNT = 3;
+
+	/**
 	 * The meta object id for the '{@link abstracts.impl.MClassImpl <em>MClass</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -174,7 +211,7 @@ public interface AbstractsPackage extends EPackage {
 	 * @see abstracts.impl.AbstractsPackageImpl#getMClass()
 	 * @generated
 	 */
-	int MCLASS = 2;
+	int MCLASS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -204,40 +241,58 @@ public interface AbstractsPackage extends EPackage {
 	int MCLASS__COMMENTS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Abstracts</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MCLASS__ABSTRACTS = 3;
-
-	/**
-	 * The feature id for the '<em><b>Stereo Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MCLASS__STEREO_TYPE = 4;
-
-	/**
 	 * The feature id for the '<em><b>Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MCLASS__PATH = 5;
+	int MCLASS__PATH = 3;
 
 	/**
-	 * The feature id for the '<em><b>Lts MRelationships</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Lst MAssoctiation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MCLASS__LTS_MRELATIONSHIPS = 6;
+	int MCLASS__LST_MASSOCTIATION = 4;
+
+	/**
+	 * The feature id for the '<em><b>Lst MInheritance</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCLASS__LST_MINHERITANCE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Lst MContainment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCLASS__LST_MCONTAINMENT = 6;
+
+	/**
+	 * The feature id for the '<em><b>Lst Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCLASS__LST_ATTRIBUTES = 7;
+
+	/**
+	 * The feature id for the '<em><b>Lst Function</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCLASS__LST_FUNCTION = 8;
 
 	/**
 	 * The number of structural features of the '<em>MClass</em>' class.
@@ -246,17 +301,35 @@ public interface AbstractsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MCLASS_FEATURE_COUNT = 7;
+	int MCLASS_FEATURE_COUNT = 9;
 
 	/**
-	 * The meta object id for the '{@link abstracts.impl.MRelationshipImpl <em>MRelationship</em>}' class.
+	 * The meta object id for the '{@link abstracts.impl.MAssociationImpl <em>MAssociation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see abstracts.impl.MRelationshipImpl
-	 * @see abstracts.impl.AbstractsPackageImpl#getMRelationship()
+	 * @see abstracts.impl.MAssociationImpl
+	 * @see abstracts.impl.AbstractsPackageImpl#getMAssociation()
 	 * @generated
 	 */
-	int MRELATIONSHIP = 3;
+	int MASSOCIATION = 4;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASSOCIATION__SOURCE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASSOCIATION__TARGET = 1;
 
 	/**
 	 * The feature id for the '<em><b>Relationship Type</b></em>' attribute.
@@ -265,7 +338,7 @@ public interface AbstractsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MRELATIONSHIP__RELATIONSHIP_TYPE = 0;
+	int MASSOCIATION__RELATIONSHIP_TYPE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Multiplicity Source</b></em>' attribute.
@@ -274,7 +347,7 @@ public interface AbstractsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MRELATIONSHIP__MULTIPLICITY_SOURCE = 1;
+	int MASSOCIATION__MULTIPLICITY_SOURCE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Multiplicity Target</b></em>' attribute.
@@ -283,7 +356,7 @@ public interface AbstractsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MRELATIONSHIP__MULTIPLICITY_TARGET = 2;
+	int MASSOCIATION__MULTIPLICITY_TARGET = 4;
 
 	/**
 	 * The feature id for the '<em><b>Source Role</b></em>' attribute.
@@ -292,7 +365,7 @@ public interface AbstractsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MRELATIONSHIP__SOURCE_ROLE = 3;
+	int MASSOCIATION__SOURCE_ROLE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Target Role</b></em>' attribute.
@@ -301,7 +374,7 @@ public interface AbstractsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MRELATIONSHIP__TARGET_ROLE = 4;
+	int MASSOCIATION__TARGET_ROLE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Navegability Source</b></em>' attribute.
@@ -310,7 +383,7 @@ public interface AbstractsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MRELATIONSHIP__NAVEGABILITY_SOURCE = 5;
+	int MASSOCIATION__NAVEGABILITY_SOURCE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Navegability Target</b></em>' attribute.
@@ -319,17 +392,288 @@ public interface AbstractsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MRELATIONSHIP__NAVEGABILITY_TARGET = 6;
+	int MASSOCIATION__NAVEGABILITY_TARGET = 8;
 
 	/**
-	 * The number of structural features of the '<em>MRelationship</em>' class.
+	 * The number of structural features of the '<em>MAssociation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MRELATIONSHIP_FEATURE_COUNT = 7;
+	int MASSOCIATION_FEATURE_COUNT = 9;
 
+	/**
+	 * The meta object id for the '{@link abstracts.impl.MInheritanceImpl <em>MInheritance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see abstracts.impl.MInheritanceImpl
+	 * @see abstracts.impl.AbstractsPackageImpl#getMInheritance()
+	 * @generated
+	 */
+	int MINHERITANCE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINHERITANCE__SOURCE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINHERITANCE__TARGET = 1;
+
+	/**
+	 * The number of structural features of the '<em>MInheritance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINHERITANCE_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link abstracts.impl.MContainmentImpl <em>MContainment</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see abstracts.impl.MContainmentImpl
+	 * @see abstracts.impl.AbstractsPackageImpl#getMContainment()
+	 * @generated
+	 */
+	int MCONTAINMENT = 6;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCONTAINMENT__SOURCE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCONTAINMENT__TARGET = 1;
+
+	/**
+	 * The feature id for the '<em><b>Multiplicity Target</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCONTAINMENT__MULTIPLICITY_TARGET = 2;
+
+	/**
+	 * The feature id for the '<em><b>Source Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCONTAINMENT__SOURCE_ROLE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Target Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCONTAINMENT__TARGET_ROLE = 4;
+
+	/**
+	 * The number of structural features of the '<em>MContainment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCONTAINMENT_FEATURE_COUNT = 5;
+
+	/**
+	 * The meta object id for the '{@link abstracts.impl.MAttributeImpl <em>MAttribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see abstracts.impl.MAttributeImpl
+	 * @see abstracts.impl.AbstractsPackageImpl#getMAttribute()
+	 * @generated
+	 */
+	int MATTRIBUTE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATTRIBUTE__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATTRIBUTE__TYPE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATTRIBUTE__DEFAULT_VALUE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Comments</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATTRIBUTE__COMMENTS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Constant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATTRIBUTE__CONSTANT = 4;
+
+	/**
+	 * The number of structural features of the '<em>MAttribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATTRIBUTE_FEATURE_COUNT = 5;
+
+	/**
+	 * The meta object id for the '{@link abstracts.impl.MFunctionImpl <em>MFunction</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see abstracts.impl.MFunctionImpl
+	 * @see abstracts.impl.AbstractsPackageImpl#getMFunction()
+	 * @generated
+	 */
+	int MFUNCTION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MFUNCTION__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Access Modifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MFUNCTION__ACCESS_MODIFIER = 1;
+
+	/**
+	 * The feature id for the '<em><b>Return Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MFUNCTION__RETURN_TYPE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Semantics</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MFUNCTION__SEMANTICS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Comments</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MFUNCTION__COMMENTS = 4;
+
+	/**
+	 * The number of structural features of the '<em>MFunction</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MFUNCTION_FEATURE_COUNT = 5;
+
+	/**
+	 * Returns the meta object for class '{@link abstracts.ModelFactory <em>Model Factory</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Model Factory</em>'.
+	 * @see abstracts.ModelFactory
+	 * @generated
+	 */
+	EClass getModelFactory();
+
+	/**
+	 * Returns the meta object for the attribute '{@link abstracts.ModelFactory#getNombre <em>Nombre</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nombre</em>'.
+	 * @see abstracts.ModelFactory#getNombre()
+	 * @see #getModelFactory()
+	 * @generated
+	 */
+	EAttribute getModelFactory_Nombre();
+
+	/**
+	 * Returns the meta object for the attribute '{@link abstracts.ModelFactory#getRuta <em>Ruta</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ruta</em>'.
+	 * @see abstracts.ModelFactory#getRuta()
+	 * @see #getModelFactory()
+	 * @generated
+	 */
+	EAttribute getModelFactory_Ruta();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link abstracts.ModelFactory#getLstPackages <em>Lst Packages</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Lst Packages</em>'.
+	 * @see abstracts.ModelFactory#getLstPackages()
+	 * @see #getModelFactory()
+	 * @generated
+	 */
+	EReference getModelFactory_LstPackages();
 
 	/**
 	 * Returns the meta object for class '{@link abstracts.MClassDiagram <em>MClass Diagram</em>}'.
@@ -373,17 +717,6 @@ public interface AbstractsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMClassDiagram_LstMClass();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link abstracts.MClassDiagram#getLstMRelationship <em>Lst MRelationship</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Lst MRelationship</em>'.
-	 * @see abstracts.MClassDiagram#getLstMRelationship()
-	 * @see #getMClassDiagram()
-	 * @generated
-	 */
-	EReference getMClassDiagram_LstMRelationship();
 
 	/**
 	 * Returns the meta object for class '{@link abstracts.MPackage <em>MPackage</em>}'.
@@ -483,28 +816,6 @@ public interface AbstractsPackage extends EPackage {
 	EAttribute getMClass_Comments();
 
 	/**
-	 * Returns the meta object for the attribute '{@link abstracts.MClass#isAbstracts <em>Abstracts</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Abstracts</em>'.
-	 * @see abstracts.MClass#isAbstracts()
-	 * @see #getMClass()
-	 * @generated
-	 */
-	EAttribute getMClass_Abstracts();
-
-	/**
-	 * Returns the meta object for the attribute '{@link abstracts.MClass#getStereoType <em>Stereo Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Stereo Type</em>'.
-	 * @see abstracts.MClass#getStereoType()
-	 * @see #getMClass()
-	 * @generated
-	 */
-	EAttribute getMClass_StereoType();
-
-	/**
 	 * Returns the meta object for the attribute '{@link abstracts.MClass#getPath <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -516,102 +827,395 @@ public interface AbstractsPackage extends EPackage {
 	EAttribute getMClass_Path();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link abstracts.MClass#getLtsMRelationships <em>Lts MRelationships</em>}'.
+	 * Returns the meta object for the containment reference list '{@link abstracts.MClass#getLstMAssoctiation <em>Lst MAssoctiation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Lts MRelationships</em>'.
-	 * @see abstracts.MClass#getLtsMRelationships()
+	 * @return the meta object for the containment reference list '<em>Lst MAssoctiation</em>'.
+	 * @see abstracts.MClass#getLstMAssoctiation()
 	 * @see #getMClass()
 	 * @generated
 	 */
-	EReference getMClass_LtsMRelationships();
+	EReference getMClass_LstMAssoctiation();
 
 	/**
-	 * Returns the meta object for class '{@link abstracts.MRelationship <em>MRelationship</em>}'.
+	 * Returns the meta object for the containment reference list '{@link abstracts.MClass#getLstMInheritance <em>Lst MInheritance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>MRelationship</em>'.
-	 * @see abstracts.MRelationship
+	 * @return the meta object for the containment reference list '<em>Lst MInheritance</em>'.
+	 * @see abstracts.MClass#getLstMInheritance()
+	 * @see #getMClass()
 	 * @generated
 	 */
-	EClass getMRelationship();
+	EReference getMClass_LstMInheritance();
 
 	/**
-	 * Returns the meta object for the attribute '{@link abstracts.MRelationship#getRelationshipType <em>Relationship Type</em>}'.
+	 * Returns the meta object for the containment reference list '{@link abstracts.MClass#getLstMContainment <em>Lst MContainment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Lst MContainment</em>'.
+	 * @see abstracts.MClass#getLstMContainment()
+	 * @see #getMClass()
+	 * @generated
+	 */
+	EReference getMClass_LstMContainment();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link abstracts.MClass#getLstAttributes <em>Lst Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Lst Attributes</em>'.
+	 * @see abstracts.MClass#getLstAttributes()
+	 * @see #getMClass()
+	 * @generated
+	 */
+	EReference getMClass_LstAttributes();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link abstracts.MClass#getLstFunction <em>Lst Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Lst Function</em>'.
+	 * @see abstracts.MClass#getLstFunction()
+	 * @see #getMClass()
+	 * @generated
+	 */
+	EReference getMClass_LstFunction();
+
+	/**
+	 * Returns the meta object for class '{@link abstracts.MAssociation <em>MAssociation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MAssociation</em>'.
+	 * @see abstracts.MAssociation
+	 * @generated
+	 */
+	EClass getMAssociation();
+
+	/**
+	 * Returns the meta object for the reference '{@link abstracts.MAssociation#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see abstracts.MAssociation#getSource()
+	 * @see #getMAssociation()
+	 * @generated
+	 */
+	EReference getMAssociation_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link abstracts.MAssociation#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see abstracts.MAssociation#getTarget()
+	 * @see #getMAssociation()
+	 * @generated
+	 */
+	EReference getMAssociation_Target();
+
+	/**
+	 * Returns the meta object for the attribute '{@link abstracts.MAssociation#getRelationshipType <em>Relationship Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Relationship Type</em>'.
-	 * @see abstracts.MRelationship#getRelationshipType()
-	 * @see #getMRelationship()
+	 * @see abstracts.MAssociation#getRelationshipType()
+	 * @see #getMAssociation()
 	 * @generated
 	 */
-	EAttribute getMRelationship_RelationshipType();
+	EAttribute getMAssociation_RelationshipType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link abstracts.MRelationship#getMultiplicitySource <em>Multiplicity Source</em>}'.
+	 * Returns the meta object for the attribute '{@link abstracts.MAssociation#getMultiplicitySource <em>Multiplicity Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Multiplicity Source</em>'.
-	 * @see abstracts.MRelationship#getMultiplicitySource()
-	 * @see #getMRelationship()
+	 * @see abstracts.MAssociation#getMultiplicitySource()
+	 * @see #getMAssociation()
 	 * @generated
 	 */
-	EAttribute getMRelationship_MultiplicitySource();
+	EAttribute getMAssociation_MultiplicitySource();
 
 	/**
-	 * Returns the meta object for the attribute '{@link abstracts.MRelationship#getMultiplicityTarget <em>Multiplicity Target</em>}'.
+	 * Returns the meta object for the attribute '{@link abstracts.MAssociation#getMultiplicityTarget <em>Multiplicity Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Multiplicity Target</em>'.
-	 * @see abstracts.MRelationship#getMultiplicityTarget()
-	 * @see #getMRelationship()
+	 * @see abstracts.MAssociation#getMultiplicityTarget()
+	 * @see #getMAssociation()
 	 * @generated
 	 */
-	EAttribute getMRelationship_MultiplicityTarget();
+	EAttribute getMAssociation_MultiplicityTarget();
 
 	/**
-	 * Returns the meta object for the attribute '{@link abstracts.MRelationship#getSourceRole <em>Source Role</em>}'.
+	 * Returns the meta object for the attribute '{@link abstracts.MAssociation#getSourceRole <em>Source Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Source Role</em>'.
-	 * @see abstracts.MRelationship#getSourceRole()
-	 * @see #getMRelationship()
+	 * @see abstracts.MAssociation#getSourceRole()
+	 * @see #getMAssociation()
 	 * @generated
 	 */
-	EAttribute getMRelationship_SourceRole();
+	EAttribute getMAssociation_SourceRole();
 
 	/**
-	 * Returns the meta object for the attribute '{@link abstracts.MRelationship#getTargetRole <em>Target Role</em>}'.
+	 * Returns the meta object for the attribute '{@link abstracts.MAssociation#getTargetRole <em>Target Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Target Role</em>'.
-	 * @see abstracts.MRelationship#getTargetRole()
-	 * @see #getMRelationship()
+	 * @see abstracts.MAssociation#getTargetRole()
+	 * @see #getMAssociation()
 	 * @generated
 	 */
-	EAttribute getMRelationship_TargetRole();
+	EAttribute getMAssociation_TargetRole();
 
 	/**
-	 * Returns the meta object for the attribute '{@link abstracts.MRelationship#getNavegabilitySource <em>Navegability Source</em>}'.
+	 * Returns the meta object for the attribute '{@link abstracts.MAssociation#getNavegabilitySource <em>Navegability Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Navegability Source</em>'.
-	 * @see abstracts.MRelationship#getNavegabilitySource()
-	 * @see #getMRelationship()
+	 * @see abstracts.MAssociation#getNavegabilitySource()
+	 * @see #getMAssociation()
 	 * @generated
 	 */
-	EAttribute getMRelationship_NavegabilitySource();
+	EAttribute getMAssociation_NavegabilitySource();
 
 	/**
-	 * Returns the meta object for the attribute '{@link abstracts.MRelationship#getNavegabilityTarget <em>Navegability Target</em>}'.
+	 * Returns the meta object for the attribute '{@link abstracts.MAssociation#getNavegabilityTarget <em>Navegability Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Navegability Target</em>'.
-	 * @see abstracts.MRelationship#getNavegabilityTarget()
-	 * @see #getMRelationship()
+	 * @see abstracts.MAssociation#getNavegabilityTarget()
+	 * @see #getMAssociation()
 	 * @generated
 	 */
-	EAttribute getMRelationship_NavegabilityTarget();
+	EAttribute getMAssociation_NavegabilityTarget();
+
+	/**
+	 * Returns the meta object for class '{@link abstracts.MInheritance <em>MInheritance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MInheritance</em>'.
+	 * @see abstracts.MInheritance
+	 * @generated
+	 */
+	EClass getMInheritance();
+
+	/**
+	 * Returns the meta object for the reference '{@link abstracts.MInheritance#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see abstracts.MInheritance#getSource()
+	 * @see #getMInheritance()
+	 * @generated
+	 */
+	EReference getMInheritance_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link abstracts.MInheritance#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see abstracts.MInheritance#getTarget()
+	 * @see #getMInheritance()
+	 * @generated
+	 */
+	EReference getMInheritance_Target();
+
+	/**
+	 * Returns the meta object for class '{@link abstracts.MContainment <em>MContainment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MContainment</em>'.
+	 * @see abstracts.MContainment
+	 * @generated
+	 */
+	EClass getMContainment();
+
+	/**
+	 * Returns the meta object for the reference '{@link abstracts.MContainment#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see abstracts.MContainment#getSource()
+	 * @see #getMContainment()
+	 * @generated
+	 */
+	EReference getMContainment_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link abstracts.MContainment#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see abstracts.MContainment#getTarget()
+	 * @see #getMContainment()
+	 * @generated
+	 */
+	EReference getMContainment_Target();
+
+	/**
+	 * Returns the meta object for the attribute '{@link abstracts.MContainment#getMultiplicityTarget <em>Multiplicity Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Multiplicity Target</em>'.
+	 * @see abstracts.MContainment#getMultiplicityTarget()
+	 * @see #getMContainment()
+	 * @generated
+	 */
+	EAttribute getMContainment_MultiplicityTarget();
+
+	/**
+	 * Returns the meta object for the attribute '{@link abstracts.MContainment#getSourceRole <em>Source Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Source Role</em>'.
+	 * @see abstracts.MContainment#getSourceRole()
+	 * @see #getMContainment()
+	 * @generated
+	 */
+	EAttribute getMContainment_SourceRole();
+
+	/**
+	 * Returns the meta object for the attribute '{@link abstracts.MContainment#getTargetRole <em>Target Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Target Role</em>'.
+	 * @see abstracts.MContainment#getTargetRole()
+	 * @see #getMContainment()
+	 * @generated
+	 */
+	EAttribute getMContainment_TargetRole();
+
+	/**
+	 * Returns the meta object for class '{@link abstracts.MAttribute <em>MAttribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MAttribute</em>'.
+	 * @see abstracts.MAttribute
+	 * @generated
+	 */
+	EClass getMAttribute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link abstracts.MAttribute#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see abstracts.MAttribute#getName()
+	 * @see #getMAttribute()
+	 * @generated
+	 */
+	EAttribute getMAttribute_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link abstracts.MAttribute#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see abstracts.MAttribute#getType()
+	 * @see #getMAttribute()
+	 * @generated
+	 */
+	EAttribute getMAttribute_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link abstracts.MAttribute#getDefaultValue <em>Default Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Default Value</em>'.
+	 * @see abstracts.MAttribute#getDefaultValue()
+	 * @see #getMAttribute()
+	 * @generated
+	 */
+	EAttribute getMAttribute_DefaultValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link abstracts.MAttribute#getComments <em>Comments</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Comments</em>'.
+	 * @see abstracts.MAttribute#getComments()
+	 * @see #getMAttribute()
+	 * @generated
+	 */
+	EAttribute getMAttribute_Comments();
+
+	/**
+	 * Returns the meta object for the attribute '{@link abstracts.MAttribute#isConstant <em>Constant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Constant</em>'.
+	 * @see abstracts.MAttribute#isConstant()
+	 * @see #getMAttribute()
+	 * @generated
+	 */
+	EAttribute getMAttribute_Constant();
+
+	/**
+	 * Returns the meta object for class '{@link abstracts.MFunction <em>MFunction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MFunction</em>'.
+	 * @see abstracts.MFunction
+	 * @generated
+	 */
+	EClass getMFunction();
+
+	/**
+	 * Returns the meta object for the attribute '{@link abstracts.MFunction#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see abstracts.MFunction#getName()
+	 * @see #getMFunction()
+	 * @generated
+	 */
+	EAttribute getMFunction_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link abstracts.MFunction#getAccessModifier <em>Access Modifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Access Modifier</em>'.
+	 * @see abstracts.MFunction#getAccessModifier()
+	 * @see #getMFunction()
+	 * @generated
+	 */
+	EAttribute getMFunction_AccessModifier();
+
+	/**
+	 * Returns the meta object for the attribute '{@link abstracts.MFunction#getReturnType <em>Return Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Return Type</em>'.
+	 * @see abstracts.MFunction#getReturnType()
+	 * @see #getMFunction()
+	 * @generated
+	 */
+	EAttribute getMFunction_ReturnType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link abstracts.MFunction#getSemantics <em>Semantics</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Semantics</em>'.
+	 * @see abstracts.MFunction#getSemantics()
+	 * @see #getMFunction()
+	 * @generated
+	 */
+	EAttribute getMFunction_Semantics();
+
+	/**
+	 * Returns the meta object for the attribute '{@link abstracts.MFunction#getComments <em>Comments</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Comments</em>'.
+	 * @see abstracts.MFunction#getComments()
+	 * @see #getMFunction()
+	 * @generated
+	 */
+	EAttribute getMFunction_Comments();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -635,6 +1239,40 @@ public interface AbstractsPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
+		/**
+		 * The meta object literal for the '{@link abstracts.impl.ModelFactoryImpl <em>Model Factory</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see abstracts.impl.ModelFactoryImpl
+		 * @see abstracts.impl.AbstractsPackageImpl#getModelFactory()
+		 * @generated
+		 */
+		EClass MODEL_FACTORY = eINSTANCE.getModelFactory();
+
+		/**
+		 * The meta object literal for the '<em><b>Nombre</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MODEL_FACTORY__NOMBRE = eINSTANCE.getModelFactory_Nombre();
+
+		/**
+		 * The meta object literal for the '<em><b>Ruta</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MODEL_FACTORY__RUTA = eINSTANCE.getModelFactory_Ruta();
+
+		/**
+		 * The meta object literal for the '<em><b>Lst Packages</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MODEL_FACTORY__LST_PACKAGES = eINSTANCE.getModelFactory_LstPackages();
+
 		/**
 		 * The meta object literal for the '{@link abstracts.impl.MClassDiagramImpl <em>MClass Diagram</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -668,14 +1306,6 @@ public interface AbstractsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MCLASS_DIAGRAM__LST_MCLASS = eINSTANCE.getMClassDiagram_LstMClass();
-
-		/**
-		 * The meta object literal for the '<em><b>Lst MRelationship</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MCLASS_DIAGRAM__LST_MRELATIONSHIP = eINSTANCE.getMClassDiagram_LstMRelationship();
 
 		/**
 		 * The meta object literal for the '{@link abstracts.impl.MPackageImpl <em>MPackage</em>}' class.
@@ -754,22 +1384,6 @@ public interface AbstractsPackage extends EPackage {
 		EAttribute MCLASS__COMMENTS = eINSTANCE.getMClass_Comments();
 
 		/**
-		 * The meta object literal for the '<em><b>Abstracts</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MCLASS__ABSTRACTS = eINSTANCE.getMClass_Abstracts();
-
-		/**
-		 * The meta object literal for the '<em><b>Stereo Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MCLASS__STEREO_TYPE = eINSTANCE.getMClass_StereoType();
-
-		/**
 		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -778,22 +1392,70 @@ public interface AbstractsPackage extends EPackage {
 		EAttribute MCLASS__PATH = eINSTANCE.getMClass_Path();
 
 		/**
-		 * The meta object literal for the '<em><b>Lts MRelationships</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Lst MAssoctiation</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MCLASS__LTS_MRELATIONSHIPS = eINSTANCE.getMClass_LtsMRelationships();
+		EReference MCLASS__LST_MASSOCTIATION = eINSTANCE.getMClass_LstMAssoctiation();
 
 		/**
-		 * The meta object literal for the '{@link abstracts.impl.MRelationshipImpl <em>MRelationship</em>}' class.
+		 * The meta object literal for the '<em><b>Lst MInheritance</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see abstracts.impl.MRelationshipImpl
-		 * @see abstracts.impl.AbstractsPackageImpl#getMRelationship()
 		 * @generated
 		 */
-		EClass MRELATIONSHIP = eINSTANCE.getMRelationship();
+		EReference MCLASS__LST_MINHERITANCE = eINSTANCE.getMClass_LstMInheritance();
+
+		/**
+		 * The meta object literal for the '<em><b>Lst MContainment</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MCLASS__LST_MCONTAINMENT = eINSTANCE.getMClass_LstMContainment();
+
+		/**
+		 * The meta object literal for the '<em><b>Lst Attributes</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MCLASS__LST_ATTRIBUTES = eINSTANCE.getMClass_LstAttributes();
+
+		/**
+		 * The meta object literal for the '<em><b>Lst Function</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MCLASS__LST_FUNCTION = eINSTANCE.getMClass_LstFunction();
+
+		/**
+		 * The meta object literal for the '{@link abstracts.impl.MAssociationImpl <em>MAssociation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see abstracts.impl.MAssociationImpl
+		 * @see abstracts.impl.AbstractsPackageImpl#getMAssociation()
+		 * @generated
+		 */
+		EClass MASSOCIATION = eINSTANCE.getMAssociation();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MASSOCIATION__SOURCE = eINSTANCE.getMAssociation_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MASSOCIATION__TARGET = eINSTANCE.getMAssociation_Target();
 
 		/**
 		 * The meta object literal for the '<em><b>Relationship Type</b></em>' attribute feature.
@@ -801,7 +1463,7 @@ public interface AbstractsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MRELATIONSHIP__RELATIONSHIP_TYPE = eINSTANCE.getMRelationship_RelationshipType();
+		EAttribute MASSOCIATION__RELATIONSHIP_TYPE = eINSTANCE.getMAssociation_RelationshipType();
 
 		/**
 		 * The meta object literal for the '<em><b>Multiplicity Source</b></em>' attribute feature.
@@ -809,7 +1471,7 @@ public interface AbstractsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MRELATIONSHIP__MULTIPLICITY_SOURCE = eINSTANCE.getMRelationship_MultiplicitySource();
+		EAttribute MASSOCIATION__MULTIPLICITY_SOURCE = eINSTANCE.getMAssociation_MultiplicitySource();
 
 		/**
 		 * The meta object literal for the '<em><b>Multiplicity Target</b></em>' attribute feature.
@@ -817,7 +1479,7 @@ public interface AbstractsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MRELATIONSHIP__MULTIPLICITY_TARGET = eINSTANCE.getMRelationship_MultiplicityTarget();
+		EAttribute MASSOCIATION__MULTIPLICITY_TARGET = eINSTANCE.getMAssociation_MultiplicityTarget();
 
 		/**
 		 * The meta object literal for the '<em><b>Source Role</b></em>' attribute feature.
@@ -825,7 +1487,7 @@ public interface AbstractsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MRELATIONSHIP__SOURCE_ROLE = eINSTANCE.getMRelationship_SourceRole();
+		EAttribute MASSOCIATION__SOURCE_ROLE = eINSTANCE.getMAssociation_SourceRole();
 
 		/**
 		 * The meta object literal for the '<em><b>Target Role</b></em>' attribute feature.
@@ -833,7 +1495,7 @@ public interface AbstractsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MRELATIONSHIP__TARGET_ROLE = eINSTANCE.getMRelationship_TargetRole();
+		EAttribute MASSOCIATION__TARGET_ROLE = eINSTANCE.getMAssociation_TargetRole();
 
 		/**
 		 * The meta object literal for the '<em><b>Navegability Source</b></em>' attribute feature.
@@ -841,7 +1503,7 @@ public interface AbstractsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MRELATIONSHIP__NAVEGABILITY_SOURCE = eINSTANCE.getMRelationship_NavegabilitySource();
+		EAttribute MASSOCIATION__NAVEGABILITY_SOURCE = eINSTANCE.getMAssociation_NavegabilitySource();
 
 		/**
 		 * The meta object literal for the '<em><b>Navegability Target</b></em>' attribute feature.
@@ -849,7 +1511,183 @@ public interface AbstractsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MRELATIONSHIP__NAVEGABILITY_TARGET = eINSTANCE.getMRelationship_NavegabilityTarget();
+		EAttribute MASSOCIATION__NAVEGABILITY_TARGET = eINSTANCE.getMAssociation_NavegabilityTarget();
+
+		/**
+		 * The meta object literal for the '{@link abstracts.impl.MInheritanceImpl <em>MInheritance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see abstracts.impl.MInheritanceImpl
+		 * @see abstracts.impl.AbstractsPackageImpl#getMInheritance()
+		 * @generated
+		 */
+		EClass MINHERITANCE = eINSTANCE.getMInheritance();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MINHERITANCE__SOURCE = eINSTANCE.getMInheritance_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MINHERITANCE__TARGET = eINSTANCE.getMInheritance_Target();
+
+		/**
+		 * The meta object literal for the '{@link abstracts.impl.MContainmentImpl <em>MContainment</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see abstracts.impl.MContainmentImpl
+		 * @see abstracts.impl.AbstractsPackageImpl#getMContainment()
+		 * @generated
+		 */
+		EClass MCONTAINMENT = eINSTANCE.getMContainment();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MCONTAINMENT__SOURCE = eINSTANCE.getMContainment_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MCONTAINMENT__TARGET = eINSTANCE.getMContainment_Target();
+
+		/**
+		 * The meta object literal for the '<em><b>Multiplicity Target</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MCONTAINMENT__MULTIPLICITY_TARGET = eINSTANCE.getMContainment_MultiplicityTarget();
+
+		/**
+		 * The meta object literal for the '<em><b>Source Role</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MCONTAINMENT__SOURCE_ROLE = eINSTANCE.getMContainment_SourceRole();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Role</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MCONTAINMENT__TARGET_ROLE = eINSTANCE.getMContainment_TargetRole();
+
+		/**
+		 * The meta object literal for the '{@link abstracts.impl.MAttributeImpl <em>MAttribute</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see abstracts.impl.MAttributeImpl
+		 * @see abstracts.impl.AbstractsPackageImpl#getMAttribute()
+		 * @generated
+		 */
+		EClass MATTRIBUTE = eINSTANCE.getMAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MATTRIBUTE__NAME = eINSTANCE.getMAttribute_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MATTRIBUTE__TYPE = eINSTANCE.getMAttribute_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MATTRIBUTE__DEFAULT_VALUE = eINSTANCE.getMAttribute_DefaultValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Comments</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MATTRIBUTE__COMMENTS = eINSTANCE.getMAttribute_Comments();
+
+		/**
+		 * The meta object literal for the '<em><b>Constant</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MATTRIBUTE__CONSTANT = eINSTANCE.getMAttribute_Constant();
+
+		/**
+		 * The meta object literal for the '{@link abstracts.impl.MFunctionImpl <em>MFunction</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see abstracts.impl.MFunctionImpl
+		 * @see abstracts.impl.AbstractsPackageImpl#getMFunction()
+		 * @generated
+		 */
+		EClass MFUNCTION = eINSTANCE.getMFunction();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MFUNCTION__NAME = eINSTANCE.getMFunction_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Access Modifier</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MFUNCTION__ACCESS_MODIFIER = eINSTANCE.getMFunction_AccessModifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Return Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MFUNCTION__RETURN_TYPE = eINSTANCE.getMFunction_ReturnType();
+
+		/**
+		 * The meta object literal for the '<em><b>Semantics</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MFUNCTION__SEMANTICS = eINSTANCE.getMFunction_Semantics();
+
+		/**
+		 * The meta object literal for the '<em><b>Comments</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MFUNCTION__COMMENTS = eINSTANCE.getMFunction_Comments();
 
 	}
 

@@ -66,8 +66,6 @@ public class MClassItemProvider
 			addNamePropertyDescriptor(object);
 			addAccessModifierPropertyDescriptor(object);
 			addCommentsPropertyDescriptor(object);
-			addAbstractsPropertyDescriptor(object);
-			addStereoTypePropertyDescriptor(object);
 			addPathPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -140,50 +138,6 @@ public class MClassItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Abstracts feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAbstractsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_MClass_abstracts_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MClass_abstracts_feature", "_UI_MClass_type"),
-				 ConcretePackage.Literals.MCLASS__ABSTRACTS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Stereo Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStereoTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_MClass_stereoType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MClass_stereoType_feature", "_UI_MClass_type"),
-				 ConcretePackage.Literals.MCLASS__STEREO_TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Path feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -217,7 +171,6 @@ public class MClassItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ConcretePackage.Literals.MCLASS__LTS_MRELATIONSHIPS);
 			childrenFeatures.add(ConcretePackage.Literals.MCLASS__LST_MATTRIBUTE);
 			childrenFeatures.add(ConcretePackage.Literals.MCLASS__LST_MFUNCTION);
 		}
@@ -278,12 +231,9 @@ public class MClassItemProvider
 			case ConcretePackage.MCLASS__NAME:
 			case ConcretePackage.MCLASS__ACCESS_MODIFIER:
 			case ConcretePackage.MCLASS__COMMENTS:
-			case ConcretePackage.MCLASS__ABSTRACTS:
-			case ConcretePackage.MCLASS__STEREO_TYPE:
 			case ConcretePackage.MCLASS__PATH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ConcretePackage.MCLASS__LTS_MRELATIONSHIPS:
 			case ConcretePackage.MCLASS__LST_MATTRIBUTE:
 			case ConcretePackage.MCLASS__LST_MFUNCTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -302,11 +252,6 @@ public class MClassItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ConcretePackage.Literals.MCLASS__LTS_MRELATIONSHIPS,
-				 ConcreteFactory.eINSTANCE.createMRelationship()));
 
 		newChildDescriptors.add
 			(createChildParameter

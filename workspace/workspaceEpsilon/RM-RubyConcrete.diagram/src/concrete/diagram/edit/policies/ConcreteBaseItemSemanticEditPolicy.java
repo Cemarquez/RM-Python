@@ -35,9 +35,11 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
 
+import concrete.MAssociation;
 import concrete.MClass;
 import concrete.MClassDiagram;
-import concrete.MRelationship;
+import concrete.MContainment;
+import concrete.MInheritance;
 import concrete.diagram.part.ConcreteDiagramEditorPlugin;
 import concrete.diagram.part.ConcreteVisualIDRegistry;
 import concrete.diagram.providers.ConcreteElementTypes;
@@ -312,21 +314,28 @@ public class ConcreteBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateMRelationship_4001(MClassDiagram container, MClass source, MClass target) {
-			return canExistMRelationship_4001(container, null, source, target);
+		public boolean canCreateMAssociation_4003(MClassDiagram container, MClass source, MClass target) {
+			return canExistMAssociation_4003(container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateMRelationship_4002(MClass container, MClass source, MClass target) {
-			return canExistMRelationship_4002(container, null, source, target);
+		public boolean canCreateMInheritance_4004(MClassDiagram container, MClass source, MClass target) {
+			return canExistMInheritance_4004(container, null, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateMContainment_4005(MClassDiagram container, MClass source, MClass target) {
+			return canExistMContainment_4005(container, null, source, target);
 		}
 
 		/**
 		* @generated
 		*/
-		public boolean canExistMRelationship_4001(MClassDiagram container, MRelationship linkInstance, MClass source,
+		public boolean canExistMAssociation_4003(MClassDiagram container, MAssociation linkInstance, MClass source,
 				MClass target) {
 			return true;
 		}
@@ -334,7 +343,15 @@ public class ConcreteBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		* @generated
 		*/
-		public boolean canExistMRelationship_4002(MClass container, MRelationship linkInstance, MClass source,
+		public boolean canExistMInheritance_4004(MClassDiagram container, MInheritance linkInstance, MClass source,
+				MClass target) {
+			return true;
+		}
+
+		/**
+		* @generated
+		*/
+		public boolean canExistMContainment_4005(MClassDiagram container, MContainment linkInstance, MClass source,
 				MClass target) {
 			return true;
 		}

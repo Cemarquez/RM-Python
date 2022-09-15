@@ -18,16 +18,19 @@ import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 
-import concrete.diagram.edit.commands.MRelationship2CreateCommand;
-import concrete.diagram.edit.commands.MRelationship2ReorientCommand;
-import concrete.diagram.edit.commands.MRelationshipCreateCommand;
-import concrete.diagram.edit.commands.MRelationshipReorientCommand;
+import concrete.diagram.edit.commands.MAssociationCreateCommand;
+import concrete.diagram.edit.commands.MAssociationReorientCommand;
+import concrete.diagram.edit.commands.MContainmentCreateCommand;
+import concrete.diagram.edit.commands.MContainmentReorientCommand;
+import concrete.diagram.edit.commands.MInheritanceCreateCommand;
+import concrete.diagram.edit.commands.MInheritanceReorientCommand;
+import concrete.diagram.edit.parts.MAssociationEditPart;
 import concrete.diagram.edit.parts.MAttributeEditPart;
 import concrete.diagram.edit.parts.MClassMClassLstMAttributeCompartmentEditPart;
 import concrete.diagram.edit.parts.MClassMClassLstMFunctionCompartmentEditPart;
+import concrete.diagram.edit.parts.MContainmentEditPart;
 import concrete.diagram.edit.parts.MFunctionEditPart;
-import concrete.diagram.edit.parts.MRelationship2EditPart;
-import concrete.diagram.edit.parts.MRelationshipEditPart;
+import concrete.diagram.edit.parts.MInheritanceEditPart;
 import concrete.diagram.part.ConcreteVisualIDRegistry;
 import concrete.diagram.providers.ConcreteElementTypes;
 
@@ -52,13 +55,19 @@ public class MClassItemSemanticEditPolicy extends ConcreteBaseItemSemanticEditPo
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (ConcreteVisualIDRegistry.getVisualID(incomingLink) == MRelationshipEditPart.VISUAL_ID) {
+			if (ConcreteVisualIDRegistry.getVisualID(incomingLink) == MAssociationEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if (ConcreteVisualIDRegistry.getVisualID(incomingLink) == MRelationship2EditPart.VISUAL_ID) {
+			if (ConcreteVisualIDRegistry.getVisualID(incomingLink) == MInheritanceEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+			if (ConcreteVisualIDRegistry.getVisualID(incomingLink) == MContainmentEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -67,13 +76,19 @@ public class MClassItemSemanticEditPolicy extends ConcreteBaseItemSemanticEditPo
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (ConcreteVisualIDRegistry.getVisualID(outgoingLink) == MRelationshipEditPart.VISUAL_ID) {
+			if (ConcreteVisualIDRegistry.getVisualID(outgoingLink) == MAssociationEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if (ConcreteVisualIDRegistry.getVisualID(outgoingLink) == MRelationship2EditPart.VISUAL_ID) {
+			if (ConcreteVisualIDRegistry.getVisualID(outgoingLink) == MInheritanceEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+			if (ConcreteVisualIDRegistry.getVisualID(outgoingLink) == MContainmentEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -144,11 +159,14 @@ public class MClassItemSemanticEditPolicy extends ConcreteBaseItemSemanticEditPo
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (ConcreteElementTypes.MRelationship_4001 == req.getElementType()) {
-			return getGEFWrapper(new MRelationshipCreateCommand(req, req.getSource(), req.getTarget()));
+		if (ConcreteElementTypes.MAssociation_4003 == req.getElementType()) {
+			return getGEFWrapper(new MAssociationCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (ConcreteElementTypes.MRelationship_4002 == req.getElementType()) {
-			return getGEFWrapper(new MRelationship2CreateCommand(req, req.getSource(), req.getTarget()));
+		if (ConcreteElementTypes.MInheritance_4004 == req.getElementType()) {
+			return getGEFWrapper(new MInheritanceCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (ConcreteElementTypes.MContainment_4005 == req.getElementType()) {
+			return getGEFWrapper(new MContainmentCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -157,11 +175,14 @@ public class MClassItemSemanticEditPolicy extends ConcreteBaseItemSemanticEditPo
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (ConcreteElementTypes.MRelationship_4001 == req.getElementType()) {
-			return getGEFWrapper(new MRelationshipCreateCommand(req, req.getSource(), req.getTarget()));
+		if (ConcreteElementTypes.MAssociation_4003 == req.getElementType()) {
+			return getGEFWrapper(new MAssociationCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (ConcreteElementTypes.MRelationship_4002 == req.getElementType()) {
-			return getGEFWrapper(new MRelationship2CreateCommand(req, req.getSource(), req.getTarget()));
+		if (ConcreteElementTypes.MInheritance_4004 == req.getElementType()) {
+			return getGEFWrapper(new MInheritanceCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (ConcreteElementTypes.MContainment_4005 == req.getElementType()) {
+			return getGEFWrapper(new MContainmentCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -174,10 +195,12 @@ public class MClassItemSemanticEditPolicy extends ConcreteBaseItemSemanticEditPo
 	 */
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case MRelationshipEditPart.VISUAL_ID:
-			return getGEFWrapper(new MRelationshipReorientCommand(req));
-		case MRelationship2EditPart.VISUAL_ID:
-			return getGEFWrapper(new MRelationship2ReorientCommand(req));
+		case MAssociationEditPart.VISUAL_ID:
+			return getGEFWrapper(new MAssociationReorientCommand(req));
+		case MInheritanceEditPart.VISUAL_ID:
+			return getGEFWrapper(new MInheritanceReorientCommand(req));
+		case MContainmentEditPart.VISUAL_ID:
+			return getGEFWrapper(new MContainmentReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

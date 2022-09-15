@@ -19,19 +19,24 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.graphics.Color;
 
 import concrete.diagram.edit.policies.MClassItemSemanticEditPolicy;
 import concrete.diagram.edit.policies.OpenDiagramEditPolicy;
 import concrete.diagram.part.ConcreteVisualIDRegistry;
+import concrete.diagram.providers.ConcreteElementTypes;
 
 /**
  * @generated
@@ -64,6 +69,8 @@ public class MClassEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected void createDefaultEditPolicies() {
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(ConcreteVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new MClassItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
@@ -282,6 +289,26 @@ public class MClassEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof CreateViewAndElementRequest) {
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
+					.getCreateElementRequestAdapter();
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			if (type == ConcreteElementTypes.MAttribute_3001) {
+				return getChildBySemanticHint(
+						ConcreteVisualIDRegistry.getType(MClassMClassLstMAttributeCompartmentEditPart.VISUAL_ID));
+			}
+			if (type == ConcreteElementTypes.MFunction_3002) {
+				return getChildBySemanticHint(
+						ConcreteVisualIDRegistry.getType(MClassMClassLstMFunctionCompartmentEditPart.VISUAL_ID));
+			}
+		}
+		return super.getTargetEditPart(request);
+	}
+
+	/**
+	* @generated
+	*/
 	protected void handleNotificationEvent(Notification event) {
 		if (event.getNotifier() == getModel()
 				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations().equals(event.getFeature())) {
@@ -314,6 +341,7 @@ public class MClassEditPart extends ShapeNodeEditPart {
 		 */
 		public MClassFigure() {
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
+			this.setBackgroundColor(THIS_BACK);
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
 					getMapMode().DPtoLP(5)));
 			createContents();
@@ -336,12 +364,14 @@ public class MClassEditPart extends ShapeNodeEditPart {
 			fMClassLstMAttributeCompartmentFigure.setOutline(false);
 
 			this.add(fMClassLstMAttributeCompartmentFigure);
+			fMClassLstMAttributeCompartmentFigure.setLayoutManager(new StackLayout());
 
 			fMClassLstMFunctionCompartmentFigure = new RectangleFigure();
 
 			fMClassLstMFunctionCompartmentFigure.setOutline(false);
 
 			this.add(fMClassLstMFunctionCompartmentFigure);
+			fMClassLstMFunctionCompartmentFigure.setLayoutManager(new StackLayout());
 
 		}
 
@@ -367,5 +397,10 @@ public class MClassEditPart extends ShapeNodeEditPart {
 		}
 
 	}
+
+	/**
+	 * @generated
+	 */
+	static final Color THIS_BACK = new Color(null, 255, 216, 208);
 
 }

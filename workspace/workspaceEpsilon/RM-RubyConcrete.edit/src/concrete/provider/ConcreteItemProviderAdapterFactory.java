@@ -72,6 +72,29 @@ public class ConcreteItemProviderAdapterFactory extends ConcreteAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link concrete.ModelFactory} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModelFactoryItemProvider modelFactoryItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link concrete.ModelFactory}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createModelFactoryAdapter() {
+		if (modelFactoryItemProvider == null) {
+			modelFactoryItemProvider = new ModelFactoryItemProvider(this);
+		}
+
+		return modelFactoryItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link concrete.MClassDiagram} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -141,29 +164,6 @@ public class ConcreteItemProviderAdapterFactory extends ConcreteAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link concrete.MRelationship} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MRelationshipItemProvider mRelationshipItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link concrete.MRelationship}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMRelationshipAdapter() {
-		if (mRelationshipItemProvider == null) {
-			mRelationshipItemProvider = new MRelationshipItemProvider(this);
-		}
-
-		return mRelationshipItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link concrete.MAttribute} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -187,6 +187,75 @@ public class ConcreteItemProviderAdapterFactory extends ConcreteAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link concrete.MAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MAssociationItemProvider mAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link concrete.MAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMAssociationAdapter() {
+		if (mAssociationItemProvider == null) {
+			mAssociationItemProvider = new MAssociationItemProvider(this);
+		}
+
+		return mAssociationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link concrete.MInheritance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MInheritanceItemProvider mInheritanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link concrete.MInheritance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMInheritanceAdapter() {
+		if (mInheritanceItemProvider == null) {
+			mInheritanceItemProvider = new MInheritanceItemProvider(this);
+		}
+
+		return mInheritanceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link concrete.MContainment} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MContainmentItemProvider mContainmentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link concrete.MContainment}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMContainmentAdapter() {
+		if (mContainmentItemProvider == null) {
+			mContainmentItemProvider = new MContainmentItemProvider(this);
+		}
+
+		return mContainmentItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link concrete.MFunction} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -207,29 +276,6 @@ public class ConcreteItemProviderAdapterFactory extends ConcreteAdapterFactory i
 		}
 
 		return mFunctionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link concrete.MParameter} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MParameterItemProvider mParameterItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link concrete.MParameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMParameterAdapter() {
-		if (mParameterItemProvider == null) {
-			mParameterItemProvider = new MParameterItemProvider(this);
-		}
-
-		return mParameterItemProvider;
 	}
 
 	/**
@@ -337,13 +383,15 @@ public class ConcreteItemProviderAdapterFactory extends ConcreteAdapterFactory i
 	 */
 	@Override
 	public void dispose() {
+		if (modelFactoryItemProvider != null) modelFactoryItemProvider.dispose();
 		if (mClassDiagramItemProvider != null) mClassDiagramItemProvider.dispose();
 		if (mPackageItemProvider != null) mPackageItemProvider.dispose();
 		if (mClassItemProvider != null) mClassItemProvider.dispose();
-		if (mRelationshipItemProvider != null) mRelationshipItemProvider.dispose();
 		if (mAttributeItemProvider != null) mAttributeItemProvider.dispose();
+		if (mAssociationItemProvider != null) mAssociationItemProvider.dispose();
+		if (mInheritanceItemProvider != null) mInheritanceItemProvider.dispose();
+		if (mContainmentItemProvider != null) mContainmentItemProvider.dispose();
 		if (mFunctionItemProvider != null) mFunctionItemProvider.dispose();
-		if (mParameterItemProvider != null) mParameterItemProvider.dispose();
 	}
 
 }

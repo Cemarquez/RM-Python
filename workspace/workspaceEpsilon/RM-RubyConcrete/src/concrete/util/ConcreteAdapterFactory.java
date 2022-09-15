@@ -68,6 +68,10 @@ public class ConcreteAdapterFactory extends AdapterFactoryImpl {
 	protected ConcreteSwitch<Adapter> modelSwitch =
 		new ConcreteSwitch<Adapter>() {
 			@Override
+			public Adapter caseModelFactory(ModelFactory object) {
+				return createModelFactoryAdapter();
+			}
+			@Override
 			public Adapter caseMClassDiagram(MClassDiagram object) {
 				return createMClassDiagramAdapter();
 			}
@@ -80,20 +84,24 @@ public class ConcreteAdapterFactory extends AdapterFactoryImpl {
 				return createMClassAdapter();
 			}
 			@Override
-			public Adapter caseMRelationship(MRelationship object) {
-				return createMRelationshipAdapter();
-			}
-			@Override
 			public Adapter caseMAttribute(MAttribute object) {
 				return createMAttributeAdapter();
 			}
 			@Override
-			public Adapter caseMFunction(MFunction object) {
-				return createMFunctionAdapter();
+			public Adapter caseMAssociation(MAssociation object) {
+				return createMAssociationAdapter();
 			}
 			@Override
-			public Adapter caseMParameter(MParameter object) {
-				return createMParameterAdapter();
+			public Adapter caseMInheritance(MInheritance object) {
+				return createMInheritanceAdapter();
+			}
+			@Override
+			public Adapter caseMContainment(MContainment object) {
+				return createMContainmentAdapter();
+			}
+			@Override
+			public Adapter caseMFunction(MFunction object) {
+				return createMFunctionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -114,6 +122,20 @@ public class ConcreteAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link concrete.ModelFactory <em>Model Factory</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see concrete.ModelFactory
+	 * @generated
+	 */
+	public Adapter createModelFactoryAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link concrete.MClassDiagram <em>MClass Diagram</em>}'.
@@ -158,20 +180,6 @@ public class ConcreteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link concrete.MRelationship <em>MRelationship</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see concrete.MRelationship
-	 * @generated
-	 */
-	public Adapter createMRelationshipAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link concrete.MAttribute <em>MAttribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -186,6 +194,48 @@ public class ConcreteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link concrete.MAssociation <em>MAssociation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see concrete.MAssociation
+	 * @generated
+	 */
+	public Adapter createMAssociationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link concrete.MInheritance <em>MInheritance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see concrete.MInheritance
+	 * @generated
+	 */
+	public Adapter createMInheritanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link concrete.MContainment <em>MContainment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see concrete.MContainment
+	 * @generated
+	 */
+	public Adapter createMContainmentAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link concrete.MFunction <em>MFunction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -196,20 +246,6 @@ public class ConcreteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMFunctionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link concrete.MParameter <em>MParameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see concrete.MParameter
-	 * @generated
-	 */
-	public Adapter createMParameterAdapter() {
 		return null;
 	}
 

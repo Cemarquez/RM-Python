@@ -22,6 +22,15 @@ public interface AbstractsFactory extends EFactory {
 	AbstractsFactory eINSTANCE = abstracts.impl.AbstractsFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Model Factory</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Model Factory</em>'.
+	 * @generated
+	 */
+	ModelFactory createModelFactory();
+
+	/**
 	 * Returns a new object of class '<em>MClass Diagram</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -49,13 +58,49 @@ public interface AbstractsFactory extends EFactory {
 	MClass createMClass();
 
 	/**
-	 * Returns a new object of class '<em>MRelationship</em>'.
+	 * Returns a new object of class '<em>MAssociation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MRelationship</em>'.
+	 * @return a new object of class '<em>MAssociation</em>'.
 	 * @generated
 	 */
-	MRelationship createMRelationship();
+	MAssociation createMAssociation();
+
+	/**
+	 * Returns a new object of class '<em>MInheritance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MInheritance</em>'.
+	 * @generated
+	 */
+	MInheritance createMInheritance();
+
+	/**
+	 * Returns a new object of class '<em>MContainment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MContainment</em>'.
+	 * @generated
+	 */
+	MContainment createMContainment();
+
+	/**
+	 * Returns a new object of class '<em>MAttribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MAttribute</em>'.
+	 * @generated
+	 */
+	MAttribute createMAttribute();
+
+	/**
+	 * Returns a new object of class '<em>MFunction</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MFunction</em>'.
+	 * @generated
+	 */
+	MFunction createMFunction();
 
 	/**
 	 * Returns the package supported by this factory.

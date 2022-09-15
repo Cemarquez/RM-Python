@@ -28,15 +28,16 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
 
+import concrete.diagram.edit.parts.MAssociationEditPart;
 import concrete.diagram.edit.parts.MAttributeEditPart;
 import concrete.diagram.edit.parts.MClassDiagramEditPart;
 import concrete.diagram.edit.parts.MClassEditPart;
 import concrete.diagram.edit.parts.MClassMClassLstMAttributeCompartmentEditPart;
 import concrete.diagram.edit.parts.MClassMClassLstMFunctionCompartmentEditPart;
+import concrete.diagram.edit.parts.MContainmentEditPart;
 import concrete.diagram.edit.parts.MFunctionEditPart;
+import concrete.diagram.edit.parts.MInheritanceEditPart;
 import concrete.diagram.edit.parts.MPackageEditPart;
-import concrete.diagram.edit.parts.MRelationship2EditPart;
-import concrete.diagram.edit.parts.MRelationshipEditPart;
 import concrete.diagram.part.ConcreteVisualIDRegistry;
 import concrete.diagram.part.Messages;
 
@@ -247,10 +248,13 @@ public class ConcreteNavigatorContentProvider implements ICommonContentProvider 
 					ConcreteVisualIDRegistry.getType(MClassEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					ConcreteVisualIDRegistry.getType(MRelationshipEditPart.VISUAL_ID));
+					ConcreteVisualIDRegistry.getType(MAssociationEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					ConcreteVisualIDRegistry.getType(MRelationship2EditPart.VISUAL_ID));
+					ConcreteVisualIDRegistry.getType(MInheritanceEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					ConcreteVisualIDRegistry.getType(MContainmentEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			if (!links.isEmpty()) {
 				result.add(links);
@@ -279,16 +283,22 @@ public class ConcreteNavigatorContentProvider implements ICommonContentProvider 
 					ConcreteVisualIDRegistry.getType(MFunctionEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					ConcreteVisualIDRegistry.getType(MRelationshipEditPart.VISUAL_ID));
+					ConcreteVisualIDRegistry.getType(MAssociationEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					ConcreteVisualIDRegistry.getType(MRelationshipEditPart.VISUAL_ID));
+					ConcreteVisualIDRegistry.getType(MAssociationEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					ConcreteVisualIDRegistry.getType(MRelationship2EditPart.VISUAL_ID));
+					ConcreteVisualIDRegistry.getType(MInheritanceEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					ConcreteVisualIDRegistry.getType(MRelationship2EditPart.VISUAL_ID));
+					ConcreteVisualIDRegistry.getType(MInheritanceEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					ConcreteVisualIDRegistry.getType(MContainmentEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					ConcreteVisualIDRegistry.getType(MContainmentEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
@@ -299,14 +309,14 @@ public class ConcreteNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case MRelationshipEditPart.VISUAL_ID: {
+		case MAssociationEditPart.VISUAL_ID: {
 			LinkedList<ConcreteAbstractNavigatorItem> result = new LinkedList<ConcreteAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			ConcreteNavigatorGroup target = new ConcreteNavigatorGroup(
-					Messages.NavigatorGroupName_MRelationship_4001_target, "icons/linkTargetNavigatorGroup.gif", //$NON-NLS-1$
+					Messages.NavigatorGroupName_MAssociation_4003_target, "icons/linkTargetNavigatorGroup.gif", //$NON-NLS-1$
 					parentElement);
 			ConcreteNavigatorGroup source = new ConcreteNavigatorGroup(
-					Messages.NavigatorGroupName_MRelationship_4001_source, "icons/linkSourceNavigatorGroup.gif", //$NON-NLS-1$
+					Messages.NavigatorGroupName_MAssociation_4003_source, "icons/linkSourceNavigatorGroup.gif", //$NON-NLS-1$
 					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
@@ -324,14 +334,39 @@ public class ConcreteNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case MRelationship2EditPart.VISUAL_ID: {
+		case MInheritanceEditPart.VISUAL_ID: {
 			LinkedList<ConcreteAbstractNavigatorItem> result = new LinkedList<ConcreteAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			ConcreteNavigatorGroup target = new ConcreteNavigatorGroup(
-					Messages.NavigatorGroupName_MRelationship_4002_target, "icons/linkTargetNavigatorGroup.gif", //$NON-NLS-1$
+					Messages.NavigatorGroupName_MInheritance_4004_target, "icons/linkTargetNavigatorGroup.gif", //$NON-NLS-1$
 					parentElement);
 			ConcreteNavigatorGroup source = new ConcreteNavigatorGroup(
-					Messages.NavigatorGroupName_MRelationship_4002_source, "icons/linkSourceNavigatorGroup.gif", //$NON-NLS-1$
+					Messages.NavigatorGroupName_MInheritance_4004_source, "icons/linkSourceNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					ConcreteVisualIDRegistry.getType(MClassEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					ConcreteVisualIDRegistry.getType(MClassEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case MContainmentEditPart.VISUAL_ID: {
+			LinkedList<ConcreteAbstractNavigatorItem> result = new LinkedList<ConcreteAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			ConcreteNavigatorGroup target = new ConcreteNavigatorGroup(
+					Messages.NavigatorGroupName_MContainment_4005_target, "icons/linkTargetNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
+			ConcreteNavigatorGroup source = new ConcreteNavigatorGroup(
+					Messages.NavigatorGroupName_MContainment_4005_source, "icons/linkSourceNavigatorGroup.gif", //$NON-NLS-1$
 					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),

@@ -4,8 +4,7 @@
 package concrete.diagram.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.MarginBorder;
-import org.eclipse.draw2d.RoundedRectangle;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -110,8 +109,8 @@ public class MAttributeEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof MAttributeNameEditPart) {
-			((MAttributeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureMAttributeLabelFigure());
+		if (childEditPart instanceof MAttributeNameTypeEditPart) {
+			((MAttributeNameTypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureMAttributeLabelFigure());
 			return true;
 		}
 		return false;
@@ -121,7 +120,7 @@ public class MAttributeEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof MAttributeNameEditPart) {
+		if (childEditPart instanceof MAttributeNameTypeEditPart) {
 			return true;
 		}
 		return false;
@@ -158,7 +157,7 @@ public class MAttributeEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(100, 20);
 		return result;
 	}
 
@@ -244,13 +243,13 @@ public class MAttributeEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(ConcreteVisualIDRegistry.getType(MAttributeNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(ConcreteVisualIDRegistry.getType(MAttributeNameTypeEditPart.VISUAL_ID));
 	}
 
 	/**
 	 * @generated
 	 */
-	public class MAttributeFigure extends RoundedRectangle {
+	public class MAttributeFigure extends RectangleFigure {
 
 		/**
 		 * @generated
@@ -261,9 +260,9 @@ public class MAttributeEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		public MAttributeFigure() {
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5)));
+			this.setOutline(false);
+			this.setBackgroundColor(THIS_BACK);
+			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(100), getMapMode().DPtoLP(20)));
 			createContents();
 		}
 
@@ -288,5 +287,10 @@ public class MAttributeEditPart extends ShapeNodeEditPart {
 		}
 
 	}
+
+	/**
+	 * @generated
+	 */
+	static final Color THIS_BACK = new Color(null, 255, 216, 208);
 
 }

@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link abstracts.MRelationship#getTargetRole <em>Target Role</em>}</li>
  *   <li>{@link abstracts.MRelationship#getNavegabilitySource <em>Navegability Source</em>}</li>
  *   <li>{@link abstracts.MRelationship#getNavegabilityTarget <em>Navegability Target</em>}</li>
+ *   <li>{@link abstracts.MRelationship#getSource <em>Source</em>}</li>
+ *   <li>{@link abstracts.MRelationship#getTarget <em>Target</em>}</li>
  * </ul>
  *
  * @see abstracts.AbstractsPackage#getMRelationship()
@@ -180,5 +182,49 @@ public interface MRelationship extends EObject {
 	 * @generated
 	 */
 	void setNavegabilityTarget(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Source</em>' reference.
+	 * @see #setSource(MClass)
+	 * @see abstracts.AbstractsPackage#getMRelationship_Source()
+	 * @model
+	 * @generated
+	 */
+	MClass getSource();
+
+	/**
+	 * Sets the value of the '{@link abstracts.MRelationship#getSource <em>Source</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Source</em>' reference.
+	 * @see #getSource()
+	 * @generated
+	 */
+	void setSource(MClass value);
+
+	/**
+	 * Returns the value of the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Target</em>' reference.
+	 * @see #setTarget(MClass)
+	 * @see abstracts.AbstractsPackage#getMRelationship_Target()
+	 * @model
+	 * @generated
+	 */
+	MClass getTarget();
+
+	/**
+	 * Sets the value of the '{@link abstracts.MRelationship#getTarget <em>Target</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Target</em>' reference.
+	 * @see #getTarget()
+	 * @generated
+	 */
+	void setTarget(MClass value);
 
 } // MRelationship

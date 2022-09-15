@@ -56,16 +56,29 @@ public class ConcreteFactoryImpl extends EFactoryImpl implements ConcreteFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case ConcretePackage.MODEL_FACTORY: return createModelFactory();
 			case ConcretePackage.MCLASS_DIAGRAM: return createMClassDiagram();
 			case ConcretePackage.MPACKAGE: return createMPackage();
 			case ConcretePackage.MCLASS: return createMClass();
-			case ConcretePackage.MRELATIONSHIP: return createMRelationship();
 			case ConcretePackage.MATTRIBUTE: return createMAttribute();
+			case ConcretePackage.MASSOCIATION: return createMAssociation();
+			case ConcretePackage.MINHERITANCE: return createMInheritance();
+			case ConcretePackage.MCONTAINMENT: return createMContainment();
 			case ConcretePackage.MFUNCTION: return createMFunction();
-			case ConcretePackage.MPARAMETER: return createMParameter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ModelFactory createModelFactory() {
+		ModelFactoryImpl modelFactory = new ModelFactoryImpl();
+		return modelFactory;
 	}
 
 	/**
@@ -107,17 +120,6 @@ public class ConcreteFactoryImpl extends EFactoryImpl implements ConcreteFactory
 	 * @generated
 	 */
 	@Override
-	public MRelationship createMRelationship() {
-		MRelationshipImpl mRelationship = new MRelationshipImpl();
-		return mRelationship;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public MAttribute createMAttribute() {
 		MAttributeImpl mAttribute = new MAttributeImpl();
 		return mAttribute;
@@ -129,9 +131,9 @@ public class ConcreteFactoryImpl extends EFactoryImpl implements ConcreteFactory
 	 * @generated
 	 */
 	@Override
-	public MFunction createMFunction() {
-		MFunctionImpl mFunction = new MFunctionImpl();
-		return mFunction;
+	public MAssociation createMAssociation() {
+		MAssociationImpl mAssociation = new MAssociationImpl();
+		return mAssociation;
 	}
 
 	/**
@@ -140,9 +142,31 @@ public class ConcreteFactoryImpl extends EFactoryImpl implements ConcreteFactory
 	 * @generated
 	 */
 	@Override
-	public MParameter createMParameter() {
-		MParameterImpl mParameter = new MParameterImpl();
-		return mParameter;
+	public MInheritance createMInheritance() {
+		MInheritanceImpl mInheritance = new MInheritanceImpl();
+		return mInheritance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MContainment createMContainment() {
+		MContainmentImpl mContainment = new MContainmentImpl();
+		return mContainment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MFunction createMFunction() {
+		MFunctionImpl mFunction = new MFunctionImpl();
+		return mFunction;
 	}
 
 	/**

@@ -66,8 +66,6 @@ public class MClassItemProvider
 			addNamePropertyDescriptor(object);
 			addAccessModifierPropertyDescriptor(object);
 			addCommentsPropertyDescriptor(object);
-			addAbstractsPropertyDescriptor(object);
-			addStereoTypePropertyDescriptor(object);
 			addPathPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -140,50 +138,6 @@ public class MClassItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Abstracts feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAbstractsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_MClass_abstracts_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MClass_abstracts_feature", "_UI_MClass_type"),
-				 AbstractsPackage.Literals.MCLASS__ABSTRACTS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Stereo Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStereoTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_MClass_stereoType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MClass_stereoType_feature", "_UI_MClass_type"),
-				 AbstractsPackage.Literals.MCLASS__STEREO_TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Path feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -217,7 +171,11 @@ public class MClassItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(AbstractsPackage.Literals.MCLASS__LTS_MRELATIONSHIPS);
+			childrenFeatures.add(AbstractsPackage.Literals.MCLASS__LST_MASSOCTIATION);
+			childrenFeatures.add(AbstractsPackage.Literals.MCLASS__LST_MINHERITANCE);
+			childrenFeatures.add(AbstractsPackage.Literals.MCLASS__LST_MCONTAINMENT);
+			childrenFeatures.add(AbstractsPackage.Literals.MCLASS__LST_ATTRIBUTES);
+			childrenFeatures.add(AbstractsPackage.Literals.MCLASS__LST_FUNCTION);
 		}
 		return childrenFeatures;
 	}
@@ -276,12 +234,14 @@ public class MClassItemProvider
 			case AbstractsPackage.MCLASS__NAME:
 			case AbstractsPackage.MCLASS__ACCESS_MODIFIER:
 			case AbstractsPackage.MCLASS__COMMENTS:
-			case AbstractsPackage.MCLASS__ABSTRACTS:
-			case AbstractsPackage.MCLASS__STEREO_TYPE:
 			case AbstractsPackage.MCLASS__PATH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case AbstractsPackage.MCLASS__LTS_MRELATIONSHIPS:
+			case AbstractsPackage.MCLASS__LST_MASSOCTIATION:
+			case AbstractsPackage.MCLASS__LST_MINHERITANCE:
+			case AbstractsPackage.MCLASS__LST_MCONTAINMENT:
+			case AbstractsPackage.MCLASS__LST_ATTRIBUTES:
+			case AbstractsPackage.MCLASS__LST_FUNCTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -301,8 +261,28 @@ public class MClassItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(AbstractsPackage.Literals.MCLASS__LTS_MRELATIONSHIPS,
-				 AbstractsFactory.eINSTANCE.createMRelationship()));
+				(AbstractsPackage.Literals.MCLASS__LST_MASSOCTIATION,
+				 AbstractsFactory.eINSTANCE.createMAssociation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(AbstractsPackage.Literals.MCLASS__LST_MINHERITANCE,
+				 AbstractsFactory.eINSTANCE.createMInheritance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(AbstractsPackage.Literals.MCLASS__LST_MCONTAINMENT,
+				 AbstractsFactory.eINSTANCE.createMContainment()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(AbstractsPackage.Literals.MCLASS__LST_ATTRIBUTES,
+				 AbstractsFactory.eINSTANCE.createMAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(AbstractsPackage.Literals.MCLASS__LST_FUNCTION,
+				 AbstractsFactory.eINSTANCE.createMFunction()));
 	}
 
 	/**

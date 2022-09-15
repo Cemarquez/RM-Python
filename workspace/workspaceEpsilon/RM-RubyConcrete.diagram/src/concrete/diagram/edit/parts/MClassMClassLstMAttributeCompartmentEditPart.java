@@ -4,14 +4,13 @@
 package concrete.diagram.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
-import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableCompartmentEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedTypeConnectionRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
@@ -29,7 +28,7 @@ import concrete.diagram.providers.ConcreteElementTypes;
 /**
  * @generated
  */
-public class MClassMClassLstMAttributeCompartmentEditPart extends ShapeCompartmentEditPart {
+public class MClassMClassLstMAttributeCompartmentEditPart extends ListCompartmentEditPart {
 
 	/**
 	* @generated
@@ -41,6 +40,13 @@ public class MClassMClassLstMAttributeCompartmentEditPart extends ShapeCompartme
 	*/
 	public MClassMClassLstMAttributeCompartmentEditPart(View view) {
 		super(view);
+	}
+
+	/**
+	* @generated
+	*/
+	protected boolean hasModelChildrenChanged(Notification evt) {
+		return false;
 	}
 
 	/**
@@ -64,7 +70,6 @@ public class MClassMClassLstMAttributeCompartmentEditPart extends ShapeCompartme
 	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new MClassMClassLstMAttributeCompartmentItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,

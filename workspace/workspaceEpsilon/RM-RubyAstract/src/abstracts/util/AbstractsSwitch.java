@@ -66,9 +66,9 @@ public class AbstractsSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case AbstractsPackage.MCLASS_DIAGRAM: {
-				MClassDiagram mClassDiagram = (MClassDiagram)theEObject;
-				T result = caseMClassDiagram(mClassDiagram);
+			case AbstractsPackage.MODEL_FACTORY: {
+				ModelFactory modelFactory = (ModelFactory)theEObject;
+				T result = caseModelFactory(modelFactory);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -78,20 +78,65 @@ public class AbstractsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case AbstractsPackage.MCLASS_DIAGRAM: {
+				MClassDiagram mClassDiagram = (MClassDiagram)theEObject;
+				T result = caseMClassDiagram(mClassDiagram);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case AbstractsPackage.MCLASS: {
 				MClass mClass = (MClass)theEObject;
 				T result = caseMClass(mClass);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AbstractsPackage.MRELATIONSHIP: {
-				MRelationship mRelationship = (MRelationship)theEObject;
-				T result = caseMRelationship(mRelationship);
+			case AbstractsPackage.MASSOCIATION: {
+				MAssociation mAssociation = (MAssociation)theEObject;
+				T result = caseMAssociation(mAssociation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AbstractsPackage.MINHERITANCE: {
+				MInheritance mInheritance = (MInheritance)theEObject;
+				T result = caseMInheritance(mInheritance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AbstractsPackage.MCONTAINMENT: {
+				MContainment mContainment = (MContainment)theEObject;
+				T result = caseMContainment(mContainment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AbstractsPackage.MATTRIBUTE: {
+				MAttribute mAttribute = (MAttribute)theEObject;
+				T result = caseMAttribute(mAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AbstractsPackage.MFUNCTION: {
+				MFunction mFunction = (MFunction)theEObject;
+				T result = caseMFunction(mFunction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Factory</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Factory</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelFactory(ModelFactory object) {
+		return null;
 	}
 
 	/**
@@ -140,17 +185,77 @@ public class AbstractsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>MRelationship</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MAssociation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>MRelationship</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MAssociation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMRelationship(MRelationship object) {
+	public T caseMAssociation(MAssociation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>MInheritance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>MInheritance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMInheritance(MInheritance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>MContainment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>MContainment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMContainment(MContainment object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>MAttribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>MAttribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMAttribute(MAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>MFunction</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>MFunction</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMFunction(MFunction object) {
 		return null;
 	}
 

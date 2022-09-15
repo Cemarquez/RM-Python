@@ -18,10 +18,12 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link abstracts.MClass#getName <em>Name</em>}</li>
  *   <li>{@link abstracts.MClass#getAccessModifier <em>Access Modifier</em>}</li>
  *   <li>{@link abstracts.MClass#getComments <em>Comments</em>}</li>
- *   <li>{@link abstracts.MClass#isAbstracts <em>Abstracts</em>}</li>
- *   <li>{@link abstracts.MClass#getStereoType <em>Stereo Type</em>}</li>
  *   <li>{@link abstracts.MClass#getPath <em>Path</em>}</li>
- *   <li>{@link abstracts.MClass#getLtsMRelationships <em>Lts MRelationships</em>}</li>
+ *   <li>{@link abstracts.MClass#getLstMAssoctiation <em>Lst MAssoctiation</em>}</li>
+ *   <li>{@link abstracts.MClass#getLstMInheritance <em>Lst MInheritance</em>}</li>
+ *   <li>{@link abstracts.MClass#getLstMContainment <em>Lst MContainment</em>}</li>
+ *   <li>{@link abstracts.MClass#getLstAttributes <em>Lst Attributes</em>}</li>
+ *   <li>{@link abstracts.MClass#getLstFunction <em>Lst Function</em>}</li>
  * </ul>
  *
  * @see abstracts.AbstractsPackage#getMClass()
@@ -96,50 +98,6 @@ public interface MClass extends EObject {
 	void setComments(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Abstracts</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Abstracts</em>' attribute.
-	 * @see #setAbstracts(boolean)
-	 * @see abstracts.AbstractsPackage#getMClass_Abstracts()
-	 * @model
-	 * @generated
-	 */
-	boolean isAbstracts();
-
-	/**
-	 * Sets the value of the '{@link abstracts.MClass#isAbstracts <em>Abstracts</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Abstracts</em>' attribute.
-	 * @see #isAbstracts()
-	 * @generated
-	 */
-	void setAbstracts(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Stereo Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Stereo Type</em>' attribute.
-	 * @see #setStereoType(String)
-	 * @see abstracts.AbstractsPackage#getMClass_StereoType()
-	 * @model
-	 * @generated
-	 */
-	String getStereoType();
-
-	/**
-	 * Sets the value of the '{@link abstracts.MClass#getStereoType <em>Stereo Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Stereo Type</em>' attribute.
-	 * @see #getStereoType()
-	 * @generated
-	 */
-	void setStereoType(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -162,15 +120,63 @@ public interface MClass extends EObject {
 	void setPath(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Lts MRelationships</b></em>' containment reference list.
-	 * The list contents are of type {@link abstracts.MRelationship}.
+	 * Returns the value of the '<em><b>Lst MAssoctiation</b></em>' containment reference list.
+	 * The list contents are of type {@link abstracts.MAssociation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Lts MRelationships</em>' containment reference list.
-	 * @see abstracts.AbstractsPackage#getMClass_LtsMRelationships()
+	 * @return the value of the '<em>Lst MAssoctiation</em>' containment reference list.
+	 * @see abstracts.AbstractsPackage#getMClass_LstMAssoctiation()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<MRelationship> getLtsMRelationships();
+	EList<MAssociation> getLstMAssoctiation();
+
+	/**
+	 * Returns the value of the '<em><b>Lst MInheritance</b></em>' containment reference list.
+	 * The list contents are of type {@link abstracts.MInheritance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lst MInheritance</em>' containment reference list.
+	 * @see abstracts.AbstractsPackage#getMClass_LstMInheritance()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<MInheritance> getLstMInheritance();
+
+	/**
+	 * Returns the value of the '<em><b>Lst MContainment</b></em>' containment reference list.
+	 * The list contents are of type {@link abstracts.MContainment}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lst MContainment</em>' containment reference list.
+	 * @see abstracts.AbstractsPackage#getMClass_LstMContainment()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<MContainment> getLstMContainment();
+
+	/**
+	 * Returns the value of the '<em><b>Lst Attributes</b></em>' containment reference list.
+	 * The list contents are of type {@link abstracts.MAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lst Attributes</em>' containment reference list.
+	 * @see abstracts.AbstractsPackage#getMClass_LstAttributes()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<MAttribute> getLstAttributes();
+
+	/**
+	 * Returns the value of the '<em><b>Lst Function</b></em>' containment reference list.
+	 * The list contents are of type {@link abstracts.MFunction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lst Function</em>' containment reference list.
+	 * @see abstracts.AbstractsPackage#getMClass_LstFunction()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<MFunction> getLstFunction();
 
 } // MClass

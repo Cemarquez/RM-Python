@@ -12,19 +12,20 @@ import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 
 import concrete.ConcretePackage;
 import concrete.MClassDiagram;
+import concrete.diagram.edit.parts.MAssociationEditPart;
 import concrete.diagram.edit.parts.MAttributeEditPart;
-import concrete.diagram.edit.parts.MAttributeNameEditPart;
+import concrete.diagram.edit.parts.MAttributeNameTypeEditPart;
 import concrete.diagram.edit.parts.MClassDiagramEditPart;
 import concrete.diagram.edit.parts.MClassEditPart;
 import concrete.diagram.edit.parts.MClassMClassLstMAttributeCompartmentEditPart;
 import concrete.diagram.edit.parts.MClassMClassLstMFunctionCompartmentEditPart;
 import concrete.diagram.edit.parts.MClassNameEditPart;
+import concrete.diagram.edit.parts.MContainmentEditPart;
 import concrete.diagram.edit.parts.MFunctionEditPart;
-import concrete.diagram.edit.parts.MFunctionNameEditPart;
+import concrete.diagram.edit.parts.MFunctionNameReturnTypeEditPart;
+import concrete.diagram.edit.parts.MInheritanceEditPart;
 import concrete.diagram.edit.parts.MPackageEditPart;
 import concrete.diagram.edit.parts.MPackageNameEditPart;
-import concrete.diagram.edit.parts.MRelationship2EditPart;
-import concrete.diagram.edit.parts.MRelationshipEditPart;
 
 /**
  * This registry is used to determine which type of visual object should be
@@ -193,12 +194,12 @@ public class ConcreteVisualIDRegistry {
 			}
 			break;
 		case MAttributeEditPart.VISUAL_ID:
-			if (MAttributeNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (MAttributeNameTypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case MFunctionEditPart.VISUAL_ID:
-			if (MFunctionNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (MFunctionNameReturnTypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -223,11 +224,14 @@ public class ConcreteVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (ConcretePackage.eINSTANCE.getMRelationship().isSuperTypeOf(domainElement.eClass())) {
-			return MRelationshipEditPart.VISUAL_ID;
+		if (ConcretePackage.eINSTANCE.getMAssociation().isSuperTypeOf(domainElement.eClass())) {
+			return MAssociationEditPart.VISUAL_ID;
 		}
-		if (ConcretePackage.eINSTANCE.getMRelationship().isSuperTypeOf(domainElement.eClass())) {
-			return MRelationship2EditPart.VISUAL_ID;
+		if (ConcretePackage.eINSTANCE.getMInheritance().isSuperTypeOf(domainElement.eClass())) {
+			return MInheritanceEditPart.VISUAL_ID;
+		}
+		if (ConcretePackage.eINSTANCE.getMContainment().isSuperTypeOf(domainElement.eClass())) {
+			return MContainmentEditPart.VISUAL_ID;
 		}
 		return -1;
 	}

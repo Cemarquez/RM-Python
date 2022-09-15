@@ -66,6 +66,12 @@ public class ConcreteSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case ConcretePackage.MODEL_FACTORY: {
+				ModelFactory modelFactory = (ModelFactory)theEObject;
+				T result = caseModelFactory(modelFactory);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ConcretePackage.MCLASS_DIAGRAM: {
 				MClassDiagram mClassDiagram = (MClassDiagram)theEObject;
 				T result = caseMClassDiagram(mClassDiagram);
@@ -84,15 +90,27 @@ public class ConcreteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ConcretePackage.MRELATIONSHIP: {
-				MRelationship mRelationship = (MRelationship)theEObject;
-				T result = caseMRelationship(mRelationship);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ConcretePackage.MATTRIBUTE: {
 				MAttribute mAttribute = (MAttribute)theEObject;
 				T result = caseMAttribute(mAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ConcretePackage.MASSOCIATION: {
+				MAssociation mAssociation = (MAssociation)theEObject;
+				T result = caseMAssociation(mAssociation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ConcretePackage.MINHERITANCE: {
+				MInheritance mInheritance = (MInheritance)theEObject;
+				T result = caseMInheritance(mInheritance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ConcretePackage.MCONTAINMENT: {
+				MContainment mContainment = (MContainment)theEObject;
+				T result = caseMContainment(mContainment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -102,14 +120,23 @@ public class ConcreteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ConcretePackage.MPARAMETER: {
-				MParameter mParameter = (MParameter)theEObject;
-				T result = caseMParameter(mParameter);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Factory</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Factory</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelFactory(ModelFactory object) {
+		return null;
 	}
 
 	/**
@@ -158,21 +185,6 @@ public class ConcreteSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>MRelationship</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>MRelationship</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMRelationship(MRelationship object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>MAttribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -188,6 +200,51 @@ public class ConcreteSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>MAssociation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>MAssociation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMAssociation(MAssociation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>MInheritance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>MInheritance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMInheritance(MInheritance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>MContainment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>MContainment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMContainment(MContainment object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>MFunction</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -199,21 +256,6 @@ public class ConcreteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseMFunction(MFunction object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>MParameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>MParameter</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMParameter(MParameter object) {
 		return null;
 	}
 

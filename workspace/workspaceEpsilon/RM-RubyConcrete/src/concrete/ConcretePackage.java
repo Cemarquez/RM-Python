@@ -57,6 +57,52 @@ public interface ConcretePackage extends EPackage {
 	ConcretePackage eINSTANCE = concrete.impl.ConcretePackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link concrete.impl.ModelFactoryImpl <em>Model Factory</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see concrete.impl.ModelFactoryImpl
+	 * @see concrete.impl.ConcretePackageImpl#getModelFactory()
+	 * @generated
+	 */
+	int MODEL_FACTORY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Nombre</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_FACTORY__NOMBRE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Ruta</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_FACTORY__RUTA = 1;
+
+	/**
+	 * The feature id for the '<em><b>Lst MDiagrams</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_FACTORY__LST_MDIAGRAMS = 2;
+
+	/**
+	 * The number of structural features of the '<em>Model Factory</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_FACTORY_FEATURE_COUNT = 3;
+
+	/**
 	 * The meta object id for the '{@link concrete.impl.MClassDiagramImpl <em>MClass Diagram</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,7 +110,7 @@ public interface ConcretePackage extends EPackage {
 	 * @see concrete.impl.ConcretePackageImpl#getMClassDiagram()
 	 * @generated
 	 */
-	int MCLASS_DIAGRAM = 0;
+	int MCLASS_DIAGRAM = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -76,13 +122,22 @@ public interface ConcretePackage extends EPackage {
 	int MCLASS_DIAGRAM__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCLASS_DIAGRAM__DESCRIPTION = 1;
+
+	/**
 	 * The feature id for the '<em><b>Lst MPackage</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MCLASS_DIAGRAM__LST_MPACKAGE = 1;
+	int MCLASS_DIAGRAM__LST_MPACKAGE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Lst MClass</b></em>' containment reference list.
@@ -91,16 +146,34 @@ public interface ConcretePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MCLASS_DIAGRAM__LST_MCLASS = 2;
+	int MCLASS_DIAGRAM__LST_MCLASS = 3;
 
 	/**
-	 * The feature id for the '<em><b>Lst MRelationship</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Lst MAssoctiation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MCLASS_DIAGRAM__LST_MRELATIONSHIP = 3;
+	int MCLASS_DIAGRAM__LST_MASSOCTIATION = 4;
+
+	/**
+	 * The feature id for the '<em><b>Lst MInheritance</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCLASS_DIAGRAM__LST_MINHERITANCE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Lst MContainment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCLASS_DIAGRAM__LST_MCONTAINMENT = 6;
 
 	/**
 	 * The number of structural features of the '<em>MClass Diagram</em>' class.
@@ -109,7 +182,7 @@ public interface ConcretePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MCLASS_DIAGRAM_FEATURE_COUNT = 4;
+	int MCLASS_DIAGRAM_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link concrete.impl.MPackageImpl <em>MPackage</em>}' class.
@@ -119,7 +192,7 @@ public interface ConcretePackage extends EPackage {
 	 * @see concrete.impl.ConcretePackageImpl#getMPackage()
 	 * @generated
 	 */
-	int MPACKAGE = 1;
+	int MPACKAGE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -140,31 +213,13 @@ public interface ConcretePackage extends EPackage {
 	int MPACKAGE__PATH = 1;
 
 	/**
-	 * The feature id for the '<em><b>Lst MClass</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MPACKAGE__LST_MCLASS = 2;
-
-	/**
-	 * The feature id for the '<em><b>Lst MPackage</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MPACKAGE__LST_MPACKAGE = 3;
-
-	/**
 	 * The number of structural features of the '<em>MPackage</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MPACKAGE_FEATURE_COUNT = 4;
+	int MPACKAGE_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link concrete.impl.MClassImpl <em>MClass</em>}' class.
@@ -174,7 +229,7 @@ public interface ConcretePackage extends EPackage {
 	 * @see concrete.impl.ConcretePackageImpl#getMClass()
 	 * @generated
 	 */
-	int MCLASS = 2;
+	int MCLASS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -204,40 +259,13 @@ public interface ConcretePackage extends EPackage {
 	int MCLASS__COMMENTS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Abstracts</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MCLASS__ABSTRACTS = 3;
-
-	/**
-	 * The feature id for the '<em><b>Stereo Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MCLASS__STEREO_TYPE = 4;
-
-	/**
 	 * The feature id for the '<em><b>Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MCLASS__PATH = 5;
-
-	/**
-	 * The feature id for the '<em><b>Lts MRelationships</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MCLASS__LTS_MRELATIONSHIPS = 6;
+	int MCLASS__PATH = 3;
 
 	/**
 	 * The feature id for the '<em><b>Lst MAttribute</b></em>' containment reference list.
@@ -246,7 +274,7 @@ public interface ConcretePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MCLASS__LST_MATTRIBUTE = 7;
+	int MCLASS__LST_MATTRIBUTE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Lst MFunction</b></em>' containment reference list.
@@ -255,7 +283,7 @@ public interface ConcretePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MCLASS__LST_MFUNCTION = 8;
+	int MCLASS__LST_MFUNCTION = 5;
 
 	/**
 	 * The number of structural features of the '<em>MClass</em>' class.
@@ -264,107 +292,7 @@ public interface ConcretePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MCLASS_FEATURE_COUNT = 9;
-
-	/**
-	 * The meta object id for the '{@link concrete.impl.MRelationshipImpl <em>MRelationship</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see concrete.impl.MRelationshipImpl
-	 * @see concrete.impl.ConcretePackageImpl#getMRelationship()
-	 * @generated
-	 */
-	int MRELATIONSHIP = 3;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MRELATIONSHIP__SOURCE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MRELATIONSHIP__TARGET = 1;
-
-	/**
-	 * The feature id for the '<em><b>Relationship Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MRELATIONSHIP__RELATIONSHIP_TYPE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Multiplicity Source</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MRELATIONSHIP__MULTIPLICITY_SOURCE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Multiplicity Target</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MRELATIONSHIP__MULTIPLICITY_TARGET = 4;
-
-	/**
-	 * The feature id for the '<em><b>Source Role</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MRELATIONSHIP__SOURCE_ROLE = 5;
-
-	/**
-	 * The feature id for the '<em><b>Target Role</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MRELATIONSHIP__TARGET_ROLE = 6;
-
-	/**
-	 * The feature id for the '<em><b>Navegability Source</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MRELATIONSHIP__NAVEGABILITY_SOURCE = 7;
-
-	/**
-	 * The feature id for the '<em><b>Navegability Target</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MRELATIONSHIP__NAVEGABILITY_TARGET = 8;
-
-	/**
-	 * The number of structural features of the '<em>MRelationship</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MRELATIONSHIP_FEATURE_COUNT = 9;
+	int MCLASS_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link concrete.impl.MAttributeImpl <em>MAttribute</em>}' class.
@@ -386,22 +314,13 @@ public interface ConcretePackage extends EPackage {
 	int MATTRIBUTE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Data Type</b></em>' attribute.
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MATTRIBUTE__DATA_TYPE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Access Modifier</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MATTRIBUTE__ACCESS_MODIFIER = 2;
+	int MATTRIBUTE__TYPE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
@@ -410,7 +329,7 @@ public interface ConcretePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATTRIBUTE__DEFAULT_VALUE = 3;
+	int MATTRIBUTE__DEFAULT_VALUE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -419,7 +338,16 @@ public interface ConcretePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATTRIBUTE__COMMENTS = 4;
+	int MATTRIBUTE__COMMENTS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Constant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATTRIBUTE__CONSTANT = 4;
 
 	/**
 	 * The number of structural features of the '<em>MAttribute</em>' class.
@@ -431,6 +359,207 @@ public interface ConcretePackage extends EPackage {
 	int MATTRIBUTE_FEATURE_COUNT = 5;
 
 	/**
+	 * The meta object id for the '{@link concrete.impl.MAssociationImpl <em>MAssociation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see concrete.impl.MAssociationImpl
+	 * @see concrete.impl.ConcretePackageImpl#getMAssociation()
+	 * @generated
+	 */
+	int MASSOCIATION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASSOCIATION__SOURCE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASSOCIATION__TARGET = 1;
+
+	/**
+	 * The feature id for the '<em><b>Relationship Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASSOCIATION__RELATIONSHIP_TYPE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Multiplicity Source</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASSOCIATION__MULTIPLICITY_SOURCE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Multiplicity Target</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASSOCIATION__MULTIPLICITY_TARGET = 4;
+
+	/**
+	 * The feature id for the '<em><b>Source Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASSOCIATION__SOURCE_ROLE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Target Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASSOCIATION__TARGET_ROLE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Navegability Source</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASSOCIATION__NAVEGABILITY_SOURCE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Navegability Target</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASSOCIATION__NAVEGABILITY_TARGET = 8;
+
+	/**
+	 * The number of structural features of the '<em>MAssociation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASSOCIATION_FEATURE_COUNT = 9;
+
+	/**
+	 * The meta object id for the '{@link concrete.impl.MInheritanceImpl <em>MInheritance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see concrete.impl.MInheritanceImpl
+	 * @see concrete.impl.ConcretePackageImpl#getMInheritance()
+	 * @generated
+	 */
+	int MINHERITANCE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINHERITANCE__SOURCE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINHERITANCE__TARGET = 1;
+
+	/**
+	 * The number of structural features of the '<em>MInheritance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINHERITANCE_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link concrete.impl.MContainmentImpl <em>MContainment</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see concrete.impl.MContainmentImpl
+	 * @see concrete.impl.ConcretePackageImpl#getMContainment()
+	 * @generated
+	 */
+	int MCONTAINMENT = 7;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCONTAINMENT__SOURCE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCONTAINMENT__TARGET = 1;
+
+	/**
+	 * The feature id for the '<em><b>Multiplicity Target</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCONTAINMENT__MULTIPLICITY_TARGET = 2;
+
+	/**
+	 * The feature id for the '<em><b>Source Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCONTAINMENT__SOURCE_ROLE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Target Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCONTAINMENT__TARGET_ROLE = 4;
+
+	/**
+	 * The number of structural features of the '<em>MContainment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCONTAINMENT_FEATURE_COUNT = 5;
+
+	/**
 	 * The meta object id for the '{@link concrete.impl.MFunctionImpl <em>MFunction</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -438,7 +567,7 @@ public interface ConcretePackage extends EPackage {
 	 * @see concrete.impl.ConcretePackageImpl#getMFunction()
 	 * @generated
 	 */
-	int MFUNCTION = 5;
+	int MFUNCTION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -486,60 +615,57 @@ public interface ConcretePackage extends EPackage {
 	int MFUNCTION__COMMENTS = 4;
 
 	/**
-	 * The feature id for the '<em><b>Lst MParameter</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MFUNCTION__LST_MPARAMETER = 5;
-
-	/**
 	 * The number of structural features of the '<em>MFunction</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MFUNCTION_FEATURE_COUNT = 6;
+	int MFUNCTION_FEATURE_COUNT = 5;
+
 
 	/**
-	 * The meta object id for the '{@link concrete.impl.MParameterImpl <em>MParameter</em>}' class.
+	 * Returns the meta object for class '{@link concrete.ModelFactory <em>Model Factory</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see concrete.impl.MParameterImpl
-	 * @see concrete.impl.ConcretePackageImpl#getMParameter()
+	 * @return the meta object for class '<em>Model Factory</em>'.
+	 * @see concrete.ModelFactory
 	 * @generated
 	 */
-	int MPARAMETER = 6;
+	EClass getModelFactory();
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * Returns the meta object for the attribute '{@link concrete.ModelFactory#getNombre <em>Nombre</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nombre</em>'.
+	 * @see concrete.ModelFactory#getNombre()
+	 * @see #getModelFactory()
 	 * @generated
-	 * @ordered
 	 */
-	int MPARAMETER__NAME = 0;
+	EAttribute getModelFactory_Nombre();
 
 	/**
-	 * The feature id for the '<em><b>Data Type</b></em>' attribute.
+	 * Returns the meta object for the attribute '{@link concrete.ModelFactory#getRuta <em>Ruta</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ruta</em>'.
+	 * @see concrete.ModelFactory#getRuta()
+	 * @see #getModelFactory()
 	 * @generated
-	 * @ordered
 	 */
-	int MPARAMETER__DATA_TYPE = 1;
+	EAttribute getModelFactory_Ruta();
 
 	/**
-	 * The number of structural features of the '<em>MParameter</em>' class.
+	 * Returns the meta object for the containment reference list '{@link concrete.ModelFactory#getLstMDiagrams <em>Lst MDiagrams</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Lst MDiagrams</em>'.
+	 * @see concrete.ModelFactory#getLstMDiagrams()
+	 * @see #getModelFactory()
 	 * @generated
-	 * @ordered
 	 */
-	int MPARAMETER_FEATURE_COUNT = 2;
-
+	EReference getModelFactory_LstMDiagrams();
 
 	/**
 	 * Returns the meta object for class '{@link concrete.MClassDiagram <em>MClass Diagram</em>}'.
@@ -561,6 +687,17 @@ public interface ConcretePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMClassDiagram_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link concrete.MClassDiagram#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see concrete.MClassDiagram#getDescription()
+	 * @see #getMClassDiagram()
+	 * @generated
+	 */
+	EAttribute getMClassDiagram_Description();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link concrete.MClassDiagram#getLstMPackage <em>Lst MPackage</em>}'.
@@ -585,15 +722,37 @@ public interface ConcretePackage extends EPackage {
 	EReference getMClassDiagram_LstMClass();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link concrete.MClassDiagram#getLstMRelationship <em>Lst MRelationship</em>}'.
+	 * Returns the meta object for the containment reference list '{@link concrete.MClassDiagram#getLstMAssoctiation <em>Lst MAssoctiation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Lst MRelationship</em>'.
-	 * @see concrete.MClassDiagram#getLstMRelationship()
+	 * @return the meta object for the containment reference list '<em>Lst MAssoctiation</em>'.
+	 * @see concrete.MClassDiagram#getLstMAssoctiation()
 	 * @see #getMClassDiagram()
 	 * @generated
 	 */
-	EReference getMClassDiagram_LstMRelationship();
+	EReference getMClassDiagram_LstMAssoctiation();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link concrete.MClassDiagram#getLstMInheritance <em>Lst MInheritance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Lst MInheritance</em>'.
+	 * @see concrete.MClassDiagram#getLstMInheritance()
+	 * @see #getMClassDiagram()
+	 * @generated
+	 */
+	EReference getMClassDiagram_LstMInheritance();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link concrete.MClassDiagram#getLstMContainment <em>Lst MContainment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Lst MContainment</em>'.
+	 * @see concrete.MClassDiagram#getLstMContainment()
+	 * @see #getMClassDiagram()
+	 * @generated
+	 */
+	EReference getMClassDiagram_LstMContainment();
 
 	/**
 	 * Returns the meta object for class '{@link concrete.MPackage <em>MPackage</em>}'.
@@ -626,28 +785,6 @@ public interface ConcretePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMPackage_Path();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link concrete.MPackage#getLstMClass <em>Lst MClass</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Lst MClass</em>'.
-	 * @see concrete.MPackage#getLstMClass()
-	 * @see #getMPackage()
-	 * @generated
-	 */
-	EReference getMPackage_LstMClass();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link concrete.MPackage#getLstMPackage <em>Lst MPackage</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Lst MPackage</em>'.
-	 * @see concrete.MPackage#getLstMPackage()
-	 * @see #getMPackage()
-	 * @generated
-	 */
-	EReference getMPackage_LstMPackage();
 
 	/**
 	 * Returns the meta object for class '{@link concrete.MClass <em>MClass</em>}'.
@@ -693,28 +830,6 @@ public interface ConcretePackage extends EPackage {
 	EAttribute getMClass_Comments();
 
 	/**
-	 * Returns the meta object for the attribute '{@link concrete.MClass#isAbstracts <em>Abstracts</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Abstracts</em>'.
-	 * @see concrete.MClass#isAbstracts()
-	 * @see #getMClass()
-	 * @generated
-	 */
-	EAttribute getMClass_Abstracts();
-
-	/**
-	 * Returns the meta object for the attribute '{@link concrete.MClass#getStereoType <em>Stereo Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Stereo Type</em>'.
-	 * @see concrete.MClass#getStereoType()
-	 * @see #getMClass()
-	 * @generated
-	 */
-	EAttribute getMClass_StereoType();
-
-	/**
 	 * Returns the meta object for the attribute '{@link concrete.MClass#getPath <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -724,17 +839,6 @@ public interface ConcretePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMClass_Path();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link concrete.MClass#getLtsMRelationships <em>Lts MRelationships</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Lts MRelationships</em>'.
-	 * @see concrete.MClass#getLtsMRelationships()
-	 * @see #getMClass()
-	 * @generated
-	 */
-	EReference getMClass_LtsMRelationships();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link concrete.MClass#getLstMAttribute <em>Lst MAttribute</em>}'.
@@ -759,115 +863,6 @@ public interface ConcretePackage extends EPackage {
 	EReference getMClass_LstMFunction();
 
 	/**
-	 * Returns the meta object for class '{@link concrete.MRelationship <em>MRelationship</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>MRelationship</em>'.
-	 * @see concrete.MRelationship
-	 * @generated
-	 */
-	EClass getMRelationship();
-
-	/**
-	 * Returns the meta object for the reference '{@link concrete.MRelationship#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see concrete.MRelationship#getSource()
-	 * @see #getMRelationship()
-	 * @generated
-	 */
-	EReference getMRelationship_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link concrete.MRelationship#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see concrete.MRelationship#getTarget()
-	 * @see #getMRelationship()
-	 * @generated
-	 */
-	EReference getMRelationship_Target();
-
-	/**
-	 * Returns the meta object for the attribute '{@link concrete.MRelationship#getRelationshipType <em>Relationship Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Relationship Type</em>'.
-	 * @see concrete.MRelationship#getRelationshipType()
-	 * @see #getMRelationship()
-	 * @generated
-	 */
-	EAttribute getMRelationship_RelationshipType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link concrete.MRelationship#getMultiplicitySource <em>Multiplicity Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Multiplicity Source</em>'.
-	 * @see concrete.MRelationship#getMultiplicitySource()
-	 * @see #getMRelationship()
-	 * @generated
-	 */
-	EAttribute getMRelationship_MultiplicitySource();
-
-	/**
-	 * Returns the meta object for the attribute '{@link concrete.MRelationship#getMultiplicityTarget <em>Multiplicity Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Multiplicity Target</em>'.
-	 * @see concrete.MRelationship#getMultiplicityTarget()
-	 * @see #getMRelationship()
-	 * @generated
-	 */
-	EAttribute getMRelationship_MultiplicityTarget();
-
-	/**
-	 * Returns the meta object for the attribute '{@link concrete.MRelationship#getSourceRole <em>Source Role</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Source Role</em>'.
-	 * @see concrete.MRelationship#getSourceRole()
-	 * @see #getMRelationship()
-	 * @generated
-	 */
-	EAttribute getMRelationship_SourceRole();
-
-	/**
-	 * Returns the meta object for the attribute '{@link concrete.MRelationship#getTargetRole <em>Target Role</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Target Role</em>'.
-	 * @see concrete.MRelationship#getTargetRole()
-	 * @see #getMRelationship()
-	 * @generated
-	 */
-	EAttribute getMRelationship_TargetRole();
-
-	/**
-	 * Returns the meta object for the attribute '{@link concrete.MRelationship#getNavegabilitySource <em>Navegability Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Navegability Source</em>'.
-	 * @see concrete.MRelationship#getNavegabilitySource()
-	 * @see #getMRelationship()
-	 * @generated
-	 */
-	EAttribute getMRelationship_NavegabilitySource();
-
-	/**
-	 * Returns the meta object for the attribute '{@link concrete.MRelationship#getNavegabilityTarget <em>Navegability Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Navegability Target</em>'.
-	 * @see concrete.MRelationship#getNavegabilityTarget()
-	 * @see #getMRelationship()
-	 * @generated
-	 */
-	EAttribute getMRelationship_NavegabilityTarget();
-
-	/**
 	 * Returns the meta object for class '{@link concrete.MAttribute <em>MAttribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -889,26 +884,15 @@ public interface ConcretePackage extends EPackage {
 	EAttribute getMAttribute_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link concrete.MAttribute#getDataType <em>Data Type</em>}'.
+	 * Returns the meta object for the attribute '{@link concrete.MAttribute#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Data Type</em>'.
-	 * @see concrete.MAttribute#getDataType()
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see concrete.MAttribute#getType()
 	 * @see #getMAttribute()
 	 * @generated
 	 */
-	EAttribute getMAttribute_DataType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link concrete.MAttribute#getAccessModifier <em>Access Modifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Access Modifier</em>'.
-	 * @see concrete.MAttribute#getAccessModifier()
-	 * @see #getMAttribute()
-	 * @generated
-	 */
-	EAttribute getMAttribute_AccessModifier();
+	EAttribute getMAttribute_Type();
 
 	/**
 	 * Returns the meta object for the attribute '{@link concrete.MAttribute#getDefaultValue <em>Default Value</em>}'.
@@ -931,6 +915,223 @@ public interface ConcretePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMAttribute_Comments();
+
+	/**
+	 * Returns the meta object for the attribute '{@link concrete.MAttribute#isConstant <em>Constant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Constant</em>'.
+	 * @see concrete.MAttribute#isConstant()
+	 * @see #getMAttribute()
+	 * @generated
+	 */
+	EAttribute getMAttribute_Constant();
+
+	/**
+	 * Returns the meta object for class '{@link concrete.MAssociation <em>MAssociation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MAssociation</em>'.
+	 * @see concrete.MAssociation
+	 * @generated
+	 */
+	EClass getMAssociation();
+
+	/**
+	 * Returns the meta object for the reference '{@link concrete.MAssociation#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see concrete.MAssociation#getSource()
+	 * @see #getMAssociation()
+	 * @generated
+	 */
+	EReference getMAssociation_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link concrete.MAssociation#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see concrete.MAssociation#getTarget()
+	 * @see #getMAssociation()
+	 * @generated
+	 */
+	EReference getMAssociation_Target();
+
+	/**
+	 * Returns the meta object for the attribute '{@link concrete.MAssociation#getRelationshipType <em>Relationship Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Relationship Type</em>'.
+	 * @see concrete.MAssociation#getRelationshipType()
+	 * @see #getMAssociation()
+	 * @generated
+	 */
+	EAttribute getMAssociation_RelationshipType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link concrete.MAssociation#getMultiplicitySource <em>Multiplicity Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Multiplicity Source</em>'.
+	 * @see concrete.MAssociation#getMultiplicitySource()
+	 * @see #getMAssociation()
+	 * @generated
+	 */
+	EAttribute getMAssociation_MultiplicitySource();
+
+	/**
+	 * Returns the meta object for the attribute '{@link concrete.MAssociation#getMultiplicityTarget <em>Multiplicity Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Multiplicity Target</em>'.
+	 * @see concrete.MAssociation#getMultiplicityTarget()
+	 * @see #getMAssociation()
+	 * @generated
+	 */
+	EAttribute getMAssociation_MultiplicityTarget();
+
+	/**
+	 * Returns the meta object for the attribute '{@link concrete.MAssociation#getSourceRole <em>Source Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Source Role</em>'.
+	 * @see concrete.MAssociation#getSourceRole()
+	 * @see #getMAssociation()
+	 * @generated
+	 */
+	EAttribute getMAssociation_SourceRole();
+
+	/**
+	 * Returns the meta object for the attribute '{@link concrete.MAssociation#getTargetRole <em>Target Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Target Role</em>'.
+	 * @see concrete.MAssociation#getTargetRole()
+	 * @see #getMAssociation()
+	 * @generated
+	 */
+	EAttribute getMAssociation_TargetRole();
+
+	/**
+	 * Returns the meta object for the attribute '{@link concrete.MAssociation#getNavegabilitySource <em>Navegability Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Navegability Source</em>'.
+	 * @see concrete.MAssociation#getNavegabilitySource()
+	 * @see #getMAssociation()
+	 * @generated
+	 */
+	EAttribute getMAssociation_NavegabilitySource();
+
+	/**
+	 * Returns the meta object for the attribute '{@link concrete.MAssociation#getNavegabilityTarget <em>Navegability Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Navegability Target</em>'.
+	 * @see concrete.MAssociation#getNavegabilityTarget()
+	 * @see #getMAssociation()
+	 * @generated
+	 */
+	EAttribute getMAssociation_NavegabilityTarget();
+
+	/**
+	 * Returns the meta object for class '{@link concrete.MInheritance <em>MInheritance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MInheritance</em>'.
+	 * @see concrete.MInheritance
+	 * @generated
+	 */
+	EClass getMInheritance();
+
+	/**
+	 * Returns the meta object for the reference '{@link concrete.MInheritance#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see concrete.MInheritance#getSource()
+	 * @see #getMInheritance()
+	 * @generated
+	 */
+	EReference getMInheritance_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link concrete.MInheritance#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see concrete.MInheritance#getTarget()
+	 * @see #getMInheritance()
+	 * @generated
+	 */
+	EReference getMInheritance_Target();
+
+	/**
+	 * Returns the meta object for class '{@link concrete.MContainment <em>MContainment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MContainment</em>'.
+	 * @see concrete.MContainment
+	 * @generated
+	 */
+	EClass getMContainment();
+
+	/**
+	 * Returns the meta object for the reference '{@link concrete.MContainment#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see concrete.MContainment#getSource()
+	 * @see #getMContainment()
+	 * @generated
+	 */
+	EReference getMContainment_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link concrete.MContainment#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see concrete.MContainment#getTarget()
+	 * @see #getMContainment()
+	 * @generated
+	 */
+	EReference getMContainment_Target();
+
+	/**
+	 * Returns the meta object for the attribute '{@link concrete.MContainment#getMultiplicityTarget <em>Multiplicity Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Multiplicity Target</em>'.
+	 * @see concrete.MContainment#getMultiplicityTarget()
+	 * @see #getMContainment()
+	 * @generated
+	 */
+	EAttribute getMContainment_MultiplicityTarget();
+
+	/**
+	 * Returns the meta object for the attribute '{@link concrete.MContainment#getSourceRole <em>Source Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Source Role</em>'.
+	 * @see concrete.MContainment#getSourceRole()
+	 * @see #getMContainment()
+	 * @generated
+	 */
+	EAttribute getMContainment_SourceRole();
+
+	/**
+	 * Returns the meta object for the attribute '{@link concrete.MContainment#getTargetRole <em>Target Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Target Role</em>'.
+	 * @see concrete.MContainment#getTargetRole()
+	 * @see #getMContainment()
+	 * @generated
+	 */
+	EAttribute getMContainment_TargetRole();
 
 	/**
 	 * Returns the meta object for class '{@link concrete.MFunction <em>MFunction</em>}'.
@@ -998,49 +1199,6 @@ public interface ConcretePackage extends EPackage {
 	EAttribute getMFunction_Comments();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link concrete.MFunction#getLstMParameter <em>Lst MParameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Lst MParameter</em>'.
-	 * @see concrete.MFunction#getLstMParameter()
-	 * @see #getMFunction()
-	 * @generated
-	 */
-	EReference getMFunction_LstMParameter();
-
-	/**
-	 * Returns the meta object for class '{@link concrete.MParameter <em>MParameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>MParameter</em>'.
-	 * @see concrete.MParameter
-	 * @generated
-	 */
-	EClass getMParameter();
-
-	/**
-	 * Returns the meta object for the attribute '{@link concrete.MParameter#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see concrete.MParameter#getName()
-	 * @see #getMParameter()
-	 * @generated
-	 */
-	EAttribute getMParameter_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link concrete.MParameter#getDataType <em>Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Data Type</em>'.
-	 * @see concrete.MParameter#getDataType()
-	 * @see #getMParameter()
-	 * @generated
-	 */
-	EAttribute getMParameter_DataType();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1063,6 +1221,40 @@ public interface ConcretePackage extends EPackage {
 	 */
 	interface Literals {
 		/**
+		 * The meta object literal for the '{@link concrete.impl.ModelFactoryImpl <em>Model Factory</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see concrete.impl.ModelFactoryImpl
+		 * @see concrete.impl.ConcretePackageImpl#getModelFactory()
+		 * @generated
+		 */
+		EClass MODEL_FACTORY = eINSTANCE.getModelFactory();
+
+		/**
+		 * The meta object literal for the '<em><b>Nombre</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MODEL_FACTORY__NOMBRE = eINSTANCE.getModelFactory_Nombre();
+
+		/**
+		 * The meta object literal for the '<em><b>Ruta</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MODEL_FACTORY__RUTA = eINSTANCE.getModelFactory_Ruta();
+
+		/**
+		 * The meta object literal for the '<em><b>Lst MDiagrams</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MODEL_FACTORY__LST_MDIAGRAMS = eINSTANCE.getModelFactory_LstMDiagrams();
+
+		/**
 		 * The meta object literal for the '{@link concrete.impl.MClassDiagramImpl <em>MClass Diagram</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1081,6 +1273,14 @@ public interface ConcretePackage extends EPackage {
 		EAttribute MCLASS_DIAGRAM__NAME = eINSTANCE.getMClassDiagram_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MCLASS_DIAGRAM__DESCRIPTION = eINSTANCE.getMClassDiagram_Description();
+
+		/**
 		 * The meta object literal for the '<em><b>Lst MPackage</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1097,12 +1297,28 @@ public interface ConcretePackage extends EPackage {
 		EReference MCLASS_DIAGRAM__LST_MCLASS = eINSTANCE.getMClassDiagram_LstMClass();
 
 		/**
-		 * The meta object literal for the '<em><b>Lst MRelationship</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Lst MAssoctiation</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MCLASS_DIAGRAM__LST_MRELATIONSHIP = eINSTANCE.getMClassDiagram_LstMRelationship();
+		EReference MCLASS_DIAGRAM__LST_MASSOCTIATION = eINSTANCE.getMClassDiagram_LstMAssoctiation();
+
+		/**
+		 * The meta object literal for the '<em><b>Lst MInheritance</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MCLASS_DIAGRAM__LST_MINHERITANCE = eINSTANCE.getMClassDiagram_LstMInheritance();
+
+		/**
+		 * The meta object literal for the '<em><b>Lst MContainment</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MCLASS_DIAGRAM__LST_MCONTAINMENT = eINSTANCE.getMClassDiagram_LstMContainment();
 
 		/**
 		 * The meta object literal for the '{@link concrete.impl.MPackageImpl <em>MPackage</em>}' class.
@@ -1129,22 +1345,6 @@ public interface ConcretePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MPACKAGE__PATH = eINSTANCE.getMPackage_Path();
-
-		/**
-		 * The meta object literal for the '<em><b>Lst MClass</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MPACKAGE__LST_MCLASS = eINSTANCE.getMPackage_LstMClass();
-
-		/**
-		 * The meta object literal for the '<em><b>Lst MPackage</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MPACKAGE__LST_MPACKAGE = eINSTANCE.getMPackage_LstMPackage();
 
 		/**
 		 * The meta object literal for the '{@link concrete.impl.MClassImpl <em>MClass</em>}' class.
@@ -1181,36 +1381,12 @@ public interface ConcretePackage extends EPackage {
 		EAttribute MCLASS__COMMENTS = eINSTANCE.getMClass_Comments();
 
 		/**
-		 * The meta object literal for the '<em><b>Abstracts</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MCLASS__ABSTRACTS = eINSTANCE.getMClass_Abstracts();
-
-		/**
-		 * The meta object literal for the '<em><b>Stereo Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MCLASS__STEREO_TYPE = eINSTANCE.getMClass_StereoType();
-
-		/**
 		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute MCLASS__PATH = eINSTANCE.getMClass_Path();
-
-		/**
-		 * The meta object literal for the '<em><b>Lts MRelationships</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MCLASS__LTS_MRELATIONSHIPS = eINSTANCE.getMClass_LtsMRelationships();
 
 		/**
 		 * The meta object literal for the '<em><b>Lst MAttribute</b></em>' containment reference list feature.
@@ -1227,88 +1403,6 @@ public interface ConcretePackage extends EPackage {
 		 * @generated
 		 */
 		EReference MCLASS__LST_MFUNCTION = eINSTANCE.getMClass_LstMFunction();
-
-		/**
-		 * The meta object literal for the '{@link concrete.impl.MRelationshipImpl <em>MRelationship</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see concrete.impl.MRelationshipImpl
-		 * @see concrete.impl.ConcretePackageImpl#getMRelationship()
-		 * @generated
-		 */
-		EClass MRELATIONSHIP = eINSTANCE.getMRelationship();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MRELATIONSHIP__SOURCE = eINSTANCE.getMRelationship_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MRELATIONSHIP__TARGET = eINSTANCE.getMRelationship_Target();
-
-		/**
-		 * The meta object literal for the '<em><b>Relationship Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MRELATIONSHIP__RELATIONSHIP_TYPE = eINSTANCE.getMRelationship_RelationshipType();
-
-		/**
-		 * The meta object literal for the '<em><b>Multiplicity Source</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MRELATIONSHIP__MULTIPLICITY_SOURCE = eINSTANCE.getMRelationship_MultiplicitySource();
-
-		/**
-		 * The meta object literal for the '<em><b>Multiplicity Target</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MRELATIONSHIP__MULTIPLICITY_TARGET = eINSTANCE.getMRelationship_MultiplicityTarget();
-
-		/**
-		 * The meta object literal for the '<em><b>Source Role</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MRELATIONSHIP__SOURCE_ROLE = eINSTANCE.getMRelationship_SourceRole();
-
-		/**
-		 * The meta object literal for the '<em><b>Target Role</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MRELATIONSHIP__TARGET_ROLE = eINSTANCE.getMRelationship_TargetRole();
-
-		/**
-		 * The meta object literal for the '<em><b>Navegability Source</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MRELATIONSHIP__NAVEGABILITY_SOURCE = eINSTANCE.getMRelationship_NavegabilitySource();
-
-		/**
-		 * The meta object literal for the '<em><b>Navegability Target</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MRELATIONSHIP__NAVEGABILITY_TARGET = eINSTANCE.getMRelationship_NavegabilityTarget();
 
 		/**
 		 * The meta object literal for the '{@link concrete.impl.MAttributeImpl <em>MAttribute</em>}' class.
@@ -1329,20 +1423,12 @@ public interface ConcretePackage extends EPackage {
 		EAttribute MATTRIBUTE__NAME = eINSTANCE.getMAttribute_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Type</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MATTRIBUTE__DATA_TYPE = eINSTANCE.getMAttribute_DataType();
-
-		/**
-		 * The meta object literal for the '<em><b>Access Modifier</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MATTRIBUTE__ACCESS_MODIFIER = eINSTANCE.getMAttribute_AccessModifier();
+		EAttribute MATTRIBUTE__TYPE = eINSTANCE.getMAttribute_Type();
 
 		/**
 		 * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.
@@ -1359,6 +1445,172 @@ public interface ConcretePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MATTRIBUTE__COMMENTS = eINSTANCE.getMAttribute_Comments();
+
+		/**
+		 * The meta object literal for the '<em><b>Constant</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MATTRIBUTE__CONSTANT = eINSTANCE.getMAttribute_Constant();
+
+		/**
+		 * The meta object literal for the '{@link concrete.impl.MAssociationImpl <em>MAssociation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see concrete.impl.MAssociationImpl
+		 * @see concrete.impl.ConcretePackageImpl#getMAssociation()
+		 * @generated
+		 */
+		EClass MASSOCIATION = eINSTANCE.getMAssociation();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MASSOCIATION__SOURCE = eINSTANCE.getMAssociation_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MASSOCIATION__TARGET = eINSTANCE.getMAssociation_Target();
+
+		/**
+		 * The meta object literal for the '<em><b>Relationship Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MASSOCIATION__RELATIONSHIP_TYPE = eINSTANCE.getMAssociation_RelationshipType();
+
+		/**
+		 * The meta object literal for the '<em><b>Multiplicity Source</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MASSOCIATION__MULTIPLICITY_SOURCE = eINSTANCE.getMAssociation_MultiplicitySource();
+
+		/**
+		 * The meta object literal for the '<em><b>Multiplicity Target</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MASSOCIATION__MULTIPLICITY_TARGET = eINSTANCE.getMAssociation_MultiplicityTarget();
+
+		/**
+		 * The meta object literal for the '<em><b>Source Role</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MASSOCIATION__SOURCE_ROLE = eINSTANCE.getMAssociation_SourceRole();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Role</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MASSOCIATION__TARGET_ROLE = eINSTANCE.getMAssociation_TargetRole();
+
+		/**
+		 * The meta object literal for the '<em><b>Navegability Source</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MASSOCIATION__NAVEGABILITY_SOURCE = eINSTANCE.getMAssociation_NavegabilitySource();
+
+		/**
+		 * The meta object literal for the '<em><b>Navegability Target</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MASSOCIATION__NAVEGABILITY_TARGET = eINSTANCE.getMAssociation_NavegabilityTarget();
+
+		/**
+		 * The meta object literal for the '{@link concrete.impl.MInheritanceImpl <em>MInheritance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see concrete.impl.MInheritanceImpl
+		 * @see concrete.impl.ConcretePackageImpl#getMInheritance()
+		 * @generated
+		 */
+		EClass MINHERITANCE = eINSTANCE.getMInheritance();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MINHERITANCE__SOURCE = eINSTANCE.getMInheritance_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MINHERITANCE__TARGET = eINSTANCE.getMInheritance_Target();
+
+		/**
+		 * The meta object literal for the '{@link concrete.impl.MContainmentImpl <em>MContainment</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see concrete.impl.MContainmentImpl
+		 * @see concrete.impl.ConcretePackageImpl#getMContainment()
+		 * @generated
+		 */
+		EClass MCONTAINMENT = eINSTANCE.getMContainment();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MCONTAINMENT__SOURCE = eINSTANCE.getMContainment_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MCONTAINMENT__TARGET = eINSTANCE.getMContainment_Target();
+
+		/**
+		 * The meta object literal for the '<em><b>Multiplicity Target</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MCONTAINMENT__MULTIPLICITY_TARGET = eINSTANCE.getMContainment_MultiplicityTarget();
+
+		/**
+		 * The meta object literal for the '<em><b>Source Role</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MCONTAINMENT__SOURCE_ROLE = eINSTANCE.getMContainment_SourceRole();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Role</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MCONTAINMENT__TARGET_ROLE = eINSTANCE.getMContainment_TargetRole();
 
 		/**
 		 * The meta object literal for the '{@link concrete.impl.MFunctionImpl <em>MFunction</em>}' class.
@@ -1409,40 +1661,6 @@ public interface ConcretePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MFUNCTION__COMMENTS = eINSTANCE.getMFunction_Comments();
-
-		/**
-		 * The meta object literal for the '<em><b>Lst MParameter</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MFUNCTION__LST_MPARAMETER = eINSTANCE.getMFunction_LstMParameter();
-
-		/**
-		 * The meta object literal for the '{@link concrete.impl.MParameterImpl <em>MParameter</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see concrete.impl.MParameterImpl
-		 * @see concrete.impl.ConcretePackageImpl#getMParameter()
-		 * @generated
-		 */
-		EClass MPARAMETER = eINSTANCE.getMParameter();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MPARAMETER__NAME = eINSTANCE.getMParameter_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Data Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MPARAMETER__DATA_TYPE = eINSTANCE.getMParameter_DataType();
 
 	}
 

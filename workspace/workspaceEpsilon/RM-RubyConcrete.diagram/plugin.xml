@@ -259,7 +259,7 @@
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Concrete"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,3001,3002"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4003,4004,4005"/>
       </viewProvider>
    </extension>
 
@@ -274,7 +274,7 @@
             <method name="getType()" value="2001,2002,3001,3002"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4001,4002"/>
+            <method name="getType()" value="4003,4004,4005"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
             <method name="getType()" value="5001,5004,5002,5003"/>
@@ -397,22 +397,33 @@
       </metamodel>
       <metamodel nsURI="concrete">
          <metamodelType
-               id="RM-RubyConcrete.diagram.MRelationship_4001"
-               name="%metatype.name.MRelationship_4001"
+               id="RM-RubyConcrete.diagram.MAssociation_4003"
+               name="%metatype.name.MAssociation_4003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="MRelationship"
-               edithelper="concrete.diagram.edit.helpers.MRelationshipEditHelper">
-            <param name="semanticHint" value="4001"/>
+               eclass="MAssociation"
+               edithelper="concrete.diagram.edit.helpers.MAssociationEditHelper">
+            <param name="semanticHint" value="4003"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="concrete">
-         <specializationType
-               id="RM-RubyConcrete.diagram.MRelationship_4002"
-               name="%metatype.name.MRelationship_4002"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="RM-RubyConcrete.diagram.MRelationship_4001"/>
-            <param name="semanticHint" value="4002"/>
-         </specializationType>
+         <metamodelType
+               id="RM-RubyConcrete.diagram.MInheritance_4004"
+               name="%metatype.name.MInheritance_4004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="MInheritance"
+               edithelper="concrete.diagram.edit.helpers.MInheritanceEditHelper">
+            <param name="semanticHint" value="4004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="concrete">
+         <metamodelType
+               id="RM-RubyConcrete.diagram.MContainment_4005"
+               name="%metatype.name.MContainment_4005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="MContainment"
+               edithelper="concrete.diagram.edit.helpers.MContainmentEditHelper">
+            <param name="semanticHint" value="4005"/>
+         </metamodelType>
       </metamodel>
    </extension>
 
@@ -431,8 +442,9 @@
          <elementType ref="RM-RubyConcrete.diagram.MClass_2002"/>
          <elementType ref="RM-RubyConcrete.diagram.MAttribute_3001"/>
          <elementType ref="RM-RubyConcrete.diagram.MFunction_3002"/>
-         <elementType ref="RM-RubyConcrete.diagram.MRelationship_4001"/>
-         <elementType ref="RM-RubyConcrete.diagram.MRelationship_4002"/>
+         <elementType ref="RM-RubyConcrete.diagram.MAssociation_4003"/>
+         <elementType ref="RM-RubyConcrete.diagram.MInheritance_4004"/>
+         <elementType ref="RM-RubyConcrete.diagram.MContainment_4005"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

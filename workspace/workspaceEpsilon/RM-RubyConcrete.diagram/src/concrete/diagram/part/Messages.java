@@ -296,12 +296,32 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String MRelationship1CreationTool_title;
+	public static String MAssociation1CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String MRelationship1CreationTool_desc;
+	public static String MAssociation1CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String MContainment2CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String MContainment2CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String MInheritance3CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String MInheritance3CreationTool_desc;
 
 	/**
 	* @generated
@@ -336,22 +356,32 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_MRelationship_4001_target;
+	public static String NavigatorGroupName_MAssociation_4003_target;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_MRelationship_4001_source;
+	public static String NavigatorGroupName_MAssociation_4003_source;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_MRelationship_4002_target;
+	public static String NavigatorGroupName_MInheritance_4004_target;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_MRelationship_4002_source;
+	public static String NavigatorGroupName_MInheritance_4004_source;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_MContainment_4005_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_MContainment_4005_source;
 
 	/**
 	* @generated

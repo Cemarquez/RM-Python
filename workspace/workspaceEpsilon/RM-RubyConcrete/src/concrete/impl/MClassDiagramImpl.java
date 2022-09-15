@@ -3,10 +3,12 @@
 package concrete.impl;
 
 import concrete.ConcretePackage;
+import concrete.MAssociation;
 import concrete.MClass;
 import concrete.MClassDiagram;
+import concrete.MContainment;
+import concrete.MInheritance;
 import concrete.MPackage;
-import concrete.MRelationship;
 
 import java.util.Collection;
 
@@ -33,9 +35,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link concrete.impl.MClassDiagramImpl#getName <em>Name</em>}</li>
+ *   <li>{@link concrete.impl.MClassDiagramImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link concrete.impl.MClassDiagramImpl#getLstMPackage <em>Lst MPackage</em>}</li>
  *   <li>{@link concrete.impl.MClassDiagramImpl#getLstMClass <em>Lst MClass</em>}</li>
- *   <li>{@link concrete.impl.MClassDiagramImpl#getLstMRelationship <em>Lst MRelationship</em>}</li>
+ *   <li>{@link concrete.impl.MClassDiagramImpl#getLstMAssoctiation <em>Lst MAssoctiation</em>}</li>
+ *   <li>{@link concrete.impl.MClassDiagramImpl#getLstMInheritance <em>Lst MInheritance</em>}</li>
+ *   <li>{@link concrete.impl.MClassDiagramImpl#getLstMContainment <em>Lst MContainment</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,6 +67,26 @@ public class MClassDiagramImpl extends EObjectImpl implements MClassDiagram {
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
 	 * The cached value of the '{@link #getLstMPackage() <em>Lst MPackage</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -82,14 +107,34 @@ public class MClassDiagramImpl extends EObjectImpl implements MClassDiagram {
 	protected EList<MClass> lstMClass;
 
 	/**
-	 * The cached value of the '{@link #getLstMRelationship() <em>Lst MRelationship</em>}' containment reference list.
+	 * The cached value of the '{@link #getLstMAssoctiation() <em>Lst MAssoctiation</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLstMRelationship()
+	 * @see #getLstMAssoctiation()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MRelationship> lstMRelationship;
+	protected EList<MAssociation> lstMAssoctiation;
+
+	/**
+	 * The cached value of the '{@link #getLstMInheritance() <em>Lst MInheritance</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLstMInheritance()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MInheritance> lstMInheritance;
+
+	/**
+	 * The cached value of the '{@link #getLstMContainment() <em>Lst MContainment</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLstMContainment()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MContainment> lstMContainment;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,6 +184,29 @@ public class MClassDiagramImpl extends EObjectImpl implements MClassDiagram {
 	 * @generated
 	 */
 	@Override
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDescription(String newDescription) {
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConcretePackage.MCLASS_DIAGRAM__DESCRIPTION, oldDescription, description));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<MPackage> getLstMPackage() {
 		if (lstMPackage == null) {
 			lstMPackage = new EObjectContainmentEList<MPackage>(MPackage.class, this, ConcretePackage.MCLASS_DIAGRAM__LST_MPACKAGE);
@@ -165,11 +233,37 @@ public class MClassDiagramImpl extends EObjectImpl implements MClassDiagram {
 	 * @generated
 	 */
 	@Override
-	public EList<MRelationship> getLstMRelationship() {
-		if (lstMRelationship == null) {
-			lstMRelationship = new EObjectContainmentEList<MRelationship>(MRelationship.class, this, ConcretePackage.MCLASS_DIAGRAM__LST_MRELATIONSHIP);
+	public EList<MAssociation> getLstMAssoctiation() {
+		if (lstMAssoctiation == null) {
+			lstMAssoctiation = new EObjectContainmentEList<MAssociation>(MAssociation.class, this, ConcretePackage.MCLASS_DIAGRAM__LST_MASSOCTIATION);
 		}
-		return lstMRelationship;
+		return lstMAssoctiation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<MInheritance> getLstMInheritance() {
+		if (lstMInheritance == null) {
+			lstMInheritance = new EObjectContainmentEList<MInheritance>(MInheritance.class, this, ConcretePackage.MCLASS_DIAGRAM__LST_MINHERITANCE);
+		}
+		return lstMInheritance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<MContainment> getLstMContainment() {
+		if (lstMContainment == null) {
+			lstMContainment = new EObjectContainmentEList<MContainment>(MContainment.class, this, ConcretePackage.MCLASS_DIAGRAM__LST_MCONTAINMENT);
+		}
+		return lstMContainment;
 	}
 
 	/**
@@ -184,8 +278,12 @@ public class MClassDiagramImpl extends EObjectImpl implements MClassDiagram {
 				return ((InternalEList<?>)getLstMPackage()).basicRemove(otherEnd, msgs);
 			case ConcretePackage.MCLASS_DIAGRAM__LST_MCLASS:
 				return ((InternalEList<?>)getLstMClass()).basicRemove(otherEnd, msgs);
-			case ConcretePackage.MCLASS_DIAGRAM__LST_MRELATIONSHIP:
-				return ((InternalEList<?>)getLstMRelationship()).basicRemove(otherEnd, msgs);
+			case ConcretePackage.MCLASS_DIAGRAM__LST_MASSOCTIATION:
+				return ((InternalEList<?>)getLstMAssoctiation()).basicRemove(otherEnd, msgs);
+			case ConcretePackage.MCLASS_DIAGRAM__LST_MINHERITANCE:
+				return ((InternalEList<?>)getLstMInheritance()).basicRemove(otherEnd, msgs);
+			case ConcretePackage.MCLASS_DIAGRAM__LST_MCONTAINMENT:
+				return ((InternalEList<?>)getLstMContainment()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -200,12 +298,18 @@ public class MClassDiagramImpl extends EObjectImpl implements MClassDiagram {
 		switch (featureID) {
 			case ConcretePackage.MCLASS_DIAGRAM__NAME:
 				return getName();
+			case ConcretePackage.MCLASS_DIAGRAM__DESCRIPTION:
+				return getDescription();
 			case ConcretePackage.MCLASS_DIAGRAM__LST_MPACKAGE:
 				return getLstMPackage();
 			case ConcretePackage.MCLASS_DIAGRAM__LST_MCLASS:
 				return getLstMClass();
-			case ConcretePackage.MCLASS_DIAGRAM__LST_MRELATIONSHIP:
-				return getLstMRelationship();
+			case ConcretePackage.MCLASS_DIAGRAM__LST_MASSOCTIATION:
+				return getLstMAssoctiation();
+			case ConcretePackage.MCLASS_DIAGRAM__LST_MINHERITANCE:
+				return getLstMInheritance();
+			case ConcretePackage.MCLASS_DIAGRAM__LST_MCONTAINMENT:
+				return getLstMContainment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -222,6 +326,9 @@ public class MClassDiagramImpl extends EObjectImpl implements MClassDiagram {
 			case ConcretePackage.MCLASS_DIAGRAM__NAME:
 				setName((String)newValue);
 				return;
+			case ConcretePackage.MCLASS_DIAGRAM__DESCRIPTION:
+				setDescription((String)newValue);
+				return;
 			case ConcretePackage.MCLASS_DIAGRAM__LST_MPACKAGE:
 				getLstMPackage().clear();
 				getLstMPackage().addAll((Collection<? extends MPackage>)newValue);
@@ -230,9 +337,17 @@ public class MClassDiagramImpl extends EObjectImpl implements MClassDiagram {
 				getLstMClass().clear();
 				getLstMClass().addAll((Collection<? extends MClass>)newValue);
 				return;
-			case ConcretePackage.MCLASS_DIAGRAM__LST_MRELATIONSHIP:
-				getLstMRelationship().clear();
-				getLstMRelationship().addAll((Collection<? extends MRelationship>)newValue);
+			case ConcretePackage.MCLASS_DIAGRAM__LST_MASSOCTIATION:
+				getLstMAssoctiation().clear();
+				getLstMAssoctiation().addAll((Collection<? extends MAssociation>)newValue);
+				return;
+			case ConcretePackage.MCLASS_DIAGRAM__LST_MINHERITANCE:
+				getLstMInheritance().clear();
+				getLstMInheritance().addAll((Collection<? extends MInheritance>)newValue);
+				return;
+			case ConcretePackage.MCLASS_DIAGRAM__LST_MCONTAINMENT:
+				getLstMContainment().clear();
+				getLstMContainment().addAll((Collection<? extends MContainment>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -249,14 +364,23 @@ public class MClassDiagramImpl extends EObjectImpl implements MClassDiagram {
 			case ConcretePackage.MCLASS_DIAGRAM__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case ConcretePackage.MCLASS_DIAGRAM__DESCRIPTION:
+				setDescription(DESCRIPTION_EDEFAULT);
+				return;
 			case ConcretePackage.MCLASS_DIAGRAM__LST_MPACKAGE:
 				getLstMPackage().clear();
 				return;
 			case ConcretePackage.MCLASS_DIAGRAM__LST_MCLASS:
 				getLstMClass().clear();
 				return;
-			case ConcretePackage.MCLASS_DIAGRAM__LST_MRELATIONSHIP:
-				getLstMRelationship().clear();
+			case ConcretePackage.MCLASS_DIAGRAM__LST_MASSOCTIATION:
+				getLstMAssoctiation().clear();
+				return;
+			case ConcretePackage.MCLASS_DIAGRAM__LST_MINHERITANCE:
+				getLstMInheritance().clear();
+				return;
+			case ConcretePackage.MCLASS_DIAGRAM__LST_MCONTAINMENT:
+				getLstMContainment().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -272,12 +396,18 @@ public class MClassDiagramImpl extends EObjectImpl implements MClassDiagram {
 		switch (featureID) {
 			case ConcretePackage.MCLASS_DIAGRAM__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ConcretePackage.MCLASS_DIAGRAM__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case ConcretePackage.MCLASS_DIAGRAM__LST_MPACKAGE:
 				return lstMPackage != null && !lstMPackage.isEmpty();
 			case ConcretePackage.MCLASS_DIAGRAM__LST_MCLASS:
 				return lstMClass != null && !lstMClass.isEmpty();
-			case ConcretePackage.MCLASS_DIAGRAM__LST_MRELATIONSHIP:
-				return lstMRelationship != null && !lstMRelationship.isEmpty();
+			case ConcretePackage.MCLASS_DIAGRAM__LST_MASSOCTIATION:
+				return lstMAssoctiation != null && !lstMAssoctiation.isEmpty();
+			case ConcretePackage.MCLASS_DIAGRAM__LST_MINHERITANCE:
+				return lstMInheritance != null && !lstMInheritance.isEmpty();
+			case ConcretePackage.MCLASS_DIAGRAM__LST_MCONTAINMENT:
+				return lstMContainment != null && !lstMContainment.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -294,6 +424,8 @@ public class MClassDiagramImpl extends EObjectImpl implements MClassDiagram {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", description: ");
+		result.append(description);
 		result.append(')');
 		return result.toString();
 	}

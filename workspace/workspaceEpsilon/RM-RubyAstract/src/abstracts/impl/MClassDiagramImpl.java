@@ -6,7 +6,6 @@ import abstracts.AbstractsPackage;
 import abstracts.MClass;
 import abstracts.MClassDiagram;
 import abstracts.MPackage;
-import abstracts.MRelationship;
 
 import java.util.Collection;
 
@@ -35,7 +34,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link abstracts.impl.MClassDiagramImpl#getName <em>Name</em>}</li>
  *   <li>{@link abstracts.impl.MClassDiagramImpl#getLstMPackage <em>Lst MPackage</em>}</li>
  *   <li>{@link abstracts.impl.MClassDiagramImpl#getLstMClass <em>Lst MClass</em>}</li>
- *   <li>{@link abstracts.impl.MClassDiagramImpl#getLstMRelationship <em>Lst MRelationship</em>}</li>
  * </ul>
  *
  * @generated
@@ -80,16 +78,6 @@ public class MClassDiagramImpl extends EObjectImpl implements MClassDiagram {
 	 * @ordered
 	 */
 	protected EList<MClass> lstMClass;
-
-	/**
-	 * The cached value of the '{@link #getLstMRelationship() <em>Lst MRelationship</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLstMRelationship()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<MRelationship> lstMRelationship;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,27 +153,12 @@ public class MClassDiagramImpl extends EObjectImpl implements MClassDiagram {
 	 * @generated
 	 */
 	@Override
-	public EList<MRelationship> getLstMRelationship() {
-		if (lstMRelationship == null) {
-			lstMRelationship = new EObjectContainmentEList<MRelationship>(MRelationship.class, this, AbstractsPackage.MCLASS_DIAGRAM__LST_MRELATIONSHIP);
-		}
-		return lstMRelationship;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case AbstractsPackage.MCLASS_DIAGRAM__LST_MPACKAGE:
 				return ((InternalEList<?>)getLstMPackage()).basicRemove(otherEnd, msgs);
 			case AbstractsPackage.MCLASS_DIAGRAM__LST_MCLASS:
 				return ((InternalEList<?>)getLstMClass()).basicRemove(otherEnd, msgs);
-			case AbstractsPackage.MCLASS_DIAGRAM__LST_MRELATIONSHIP:
-				return ((InternalEList<?>)getLstMRelationship()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -204,8 +177,6 @@ public class MClassDiagramImpl extends EObjectImpl implements MClassDiagram {
 				return getLstMPackage();
 			case AbstractsPackage.MCLASS_DIAGRAM__LST_MCLASS:
 				return getLstMClass();
-			case AbstractsPackage.MCLASS_DIAGRAM__LST_MRELATIONSHIP:
-				return getLstMRelationship();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -230,10 +201,6 @@ public class MClassDiagramImpl extends EObjectImpl implements MClassDiagram {
 				getLstMClass().clear();
 				getLstMClass().addAll((Collection<? extends MClass>)newValue);
 				return;
-			case AbstractsPackage.MCLASS_DIAGRAM__LST_MRELATIONSHIP:
-				getLstMRelationship().clear();
-				getLstMRelationship().addAll((Collection<? extends MRelationship>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -255,9 +222,6 @@ public class MClassDiagramImpl extends EObjectImpl implements MClassDiagram {
 			case AbstractsPackage.MCLASS_DIAGRAM__LST_MCLASS:
 				getLstMClass().clear();
 				return;
-			case AbstractsPackage.MCLASS_DIAGRAM__LST_MRELATIONSHIP:
-				getLstMRelationship().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -276,8 +240,6 @@ public class MClassDiagramImpl extends EObjectImpl implements MClassDiagram {
 				return lstMPackage != null && !lstMPackage.isEmpty();
 			case AbstractsPackage.MCLASS_DIAGRAM__LST_MCLASS:
 				return lstMClass != null && !lstMClass.isEmpty();
-			case AbstractsPackage.MCLASS_DIAGRAM__LST_MRELATIONSHIP:
-				return lstMRelationship != null && !lstMRelationship.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

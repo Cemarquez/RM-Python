@@ -4,23 +4,13 @@ package concrete.impl;
 
 import concrete.ConcretePackage;
 import concrete.MFunction;
-import concrete.MParameter;
-
-import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +25,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link concrete.impl.MFunctionImpl#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link concrete.impl.MFunctionImpl#getSemantics <em>Semantics</em>}</li>
  *   <li>{@link concrete.impl.MFunctionImpl#getComments <em>Comments</em>}</li>
- *   <li>{@link concrete.impl.MFunctionImpl#getLstMParameter <em>Lst MParameter</em>}</li>
  * </ul>
  *
  * @generated
@@ -140,16 +129,6 @@ public class MFunctionImpl extends EObjectImpl implements MFunction {
 	 * @ordered
 	 */
 	protected String comments = COMMENTS_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getLstMParameter() <em>Lst MParameter</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLstMParameter()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<MParameter> lstMParameter;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -291,33 +270,6 @@ public class MFunctionImpl extends EObjectImpl implements MFunction {
 	 * @generated
 	 */
 	@Override
-	public EList<MParameter> getLstMParameter() {
-		if (lstMParameter == null) {
-			lstMParameter = new EObjectContainmentEList<MParameter>(MParameter.class, this, ConcretePackage.MFUNCTION__LST_MPARAMETER);
-		}
-		return lstMParameter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ConcretePackage.MFUNCTION__LST_MPARAMETER:
-				return ((InternalEList<?>)getLstMParameter()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ConcretePackage.MFUNCTION__NAME:
@@ -330,8 +282,6 @@ public class MFunctionImpl extends EObjectImpl implements MFunction {
 				return getSemantics();
 			case ConcretePackage.MFUNCTION__COMMENTS:
 				return getComments();
-			case ConcretePackage.MFUNCTION__LST_MPARAMETER:
-				return getLstMParameter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -341,7 +291,6 @@ public class MFunctionImpl extends EObjectImpl implements MFunction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -359,10 +308,6 @@ public class MFunctionImpl extends EObjectImpl implements MFunction {
 				return;
 			case ConcretePackage.MFUNCTION__COMMENTS:
 				setComments((String)newValue);
-				return;
-			case ConcretePackage.MFUNCTION__LST_MPARAMETER:
-				getLstMParameter().clear();
-				getLstMParameter().addAll((Collection<? extends MParameter>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -391,9 +336,6 @@ public class MFunctionImpl extends EObjectImpl implements MFunction {
 			case ConcretePackage.MFUNCTION__COMMENTS:
 				setComments(COMMENTS_EDEFAULT);
 				return;
-			case ConcretePackage.MFUNCTION__LST_MPARAMETER:
-				getLstMParameter().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -416,8 +358,6 @@ public class MFunctionImpl extends EObjectImpl implements MFunction {
 				return SEMANTICS_EDEFAULT == null ? semantics != null : !SEMANTICS_EDEFAULT.equals(semantics);
 			case ConcretePackage.MFUNCTION__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
-			case ConcretePackage.MFUNCTION__LST_MPARAMETER:
-				return lstMParameter != null && !lstMParameter.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
