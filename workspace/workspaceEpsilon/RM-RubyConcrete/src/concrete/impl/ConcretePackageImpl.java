@@ -688,6 +688,16 @@ public class ConcretePackageImpl extends EPackageImpl implements ConcretePackage
 	 * @generated
 	 */
 	@Override
+	public EAttribute getMFunction_Parameters() {
+		return (EAttribute)mFunctionEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ConcreteFactory getConcreteFactory() {
 		return (ConcreteFactory)getEFactoryInstance();
 	}
@@ -772,6 +782,7 @@ public class ConcretePackageImpl extends EPackageImpl implements ConcretePackage
 		createEAttribute(mFunctionEClass, MFUNCTION__RETURN_TYPE);
 		createEAttribute(mFunctionEClass, MFUNCTION__SEMANTICS);
 		createEAttribute(mFunctionEClass, MFUNCTION__COMMENTS);
+		createEAttribute(mFunctionEClass, MFUNCTION__PARAMETERS);
 	}
 
 	/**
@@ -865,6 +876,7 @@ public class ConcretePackageImpl extends EPackageImpl implements ConcretePackage
 		initEAttribute(getMFunction_ReturnType(), ecorePackage.getEString(), "returnType", null, 0, 1, MFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMFunction_Semantics(), ecorePackage.getEString(), "semantics", null, 0, 1, MFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMFunction_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, MFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMFunction_Parameters(), ecorePackage.getEString(), "parameters", null, 0, 1, MFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -952,10 +964,10 @@ public class ConcretePackageImpl extends EPackageImpl implements ConcretePackage
 		  (mFunctionEClass,
 		   source,
 		   new String[] {
-			   "label", "name,returnType",
+			   "label", "name,parameters,returnType",
 			   "figure", "rectangle",
 			   "label.icon", "false",
-			   "label.pattern", "{0}() : {1}",
+			   "label.pattern", "{0}({1}) : {2}",
 			   "color", "255,216,208",
 			   "tool.description", "A\u00f1ade una funci\u00f3n a una clase"
 		   });

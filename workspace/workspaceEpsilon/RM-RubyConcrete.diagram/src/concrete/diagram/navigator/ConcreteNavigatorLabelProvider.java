@@ -32,6 +32,7 @@ import concrete.diagram.edit.parts.MClassNameEditPart;
 import concrete.diagram.edit.parts.MContainmentEditPart;
 import concrete.diagram.edit.parts.MFunctionEditPart;
 import concrete.diagram.edit.parts.MFunctionNameReturnTypeEditPart;
+import concrete.diagram.edit.parts.MFunctionNameReturnTypeParameterEditPart;
 import concrete.diagram.edit.parts.MInheritanceEditPart;
 import concrete.diagram.edit.parts.MPackageEditPart;
 import concrete.diagram.edit.parts.MPackageNameEditPart;
@@ -262,7 +263,7 @@ public class ConcreteNavigatorLabelProvider extends LabelProvider
 	private String getMFunction_3002Text(View view) {
 		IParser parser = ConcreteParserProvider.getParser(ConcreteElementTypes.MFunction_3002,
 				view.getElement() != null ? view.getElement() : view,
-				ConcreteVisualIDRegistry.getType(MFunctionNameReturnTypeEditPart.VISUAL_ID));
+				ConcreteVisualIDRegistry.getType(MFunctionNameReturnTypeParameterEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());

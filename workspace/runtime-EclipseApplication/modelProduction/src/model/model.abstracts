@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="ASCII"?>
 <abstract:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:abstract="abstract">
-  <lstPackages name="empresa" path="">
-    <lstMPackage name="empleado" path="empresa/">
-      <lstMClass name="Empleado" accessModifier="public" path="empresa/empleado"/>
-      <lstMPackage name="pagos" path="empresa/empleado/">
-        <lstMClass name="Planilla" path="empresa/empleado/pagos"/>
-      </lstMPackage>
+  <lstPackages name="Persona" path="">
+    <lstMClass name="Persona" path="Persona"/>
+    <lstMClass name="PersonaFactory" path="Persona"/>
+  </lstPackages>
+  <lstPackages name="Animales" path="">
+    <lstMClass name="Mascota" path="Animales"/>
+    <lstMPackage name="Mascotas" path="Animales/">
+      <lstMClass name="Perro" path="Animales/Mascotas"/>
     </lstMPackage>
   </lstPackages>
 </abstract:ModelFactory>

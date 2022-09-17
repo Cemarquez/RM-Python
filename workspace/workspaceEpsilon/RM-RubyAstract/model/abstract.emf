@@ -75,6 +75,7 @@ class MFunction{
 	attr String returnType;
 	attr String semantics;
 	attr String comments;
+	attr String parameters;
 	
 }
 

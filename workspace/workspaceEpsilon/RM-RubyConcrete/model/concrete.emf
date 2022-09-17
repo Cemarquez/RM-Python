@@ -39,7 +39,7 @@ class MClass{
 	val MFunction[*] lstMFunction; 
 }
 
-@gmf.node(label="name,type", figure="rectangle",label.icon="false", label.pattern="{0} : {1}", color = "255,216,208",tool.description="Añade un atributo a una clase")
+@gmf.node(label="name,type", figure="rectangle",label.icon="false", label.pattern="{0}:{1}", color = "255,216,208",tool.description="Añade un atributo a una clase")
 class MAttribute{
 	attr String name;
 	attr String type;
@@ -77,13 +77,14 @@ class MContainment{
 	attr String targetRole;
 }
 
-@gmf.node(label="name,returnType", figure="rectangle",label.icon="false", label.pattern="{0}() : {1}", color = "255,216,208", tool.description="Añade una función a una clase")
+@gmf.node(label="name,parameters,returnType", figure="rectangle",label.icon="false", label.pattern="{0}({1}):{2}", color = "255,216,208", tool.description="Añade una función a una clase")
 class MFunction{
 	attr String name;
 	attr String accessModifier; 
 	attr String returnType;
 	attr String semantics;
 	attr String comments;
+	attr String parameters;
 	
 }
 

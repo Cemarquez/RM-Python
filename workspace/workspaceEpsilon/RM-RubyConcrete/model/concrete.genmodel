@@ -66,6 +66,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MFunction/returnType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MFunction/semantics"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MFunction/comments"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MFunction/parameters"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

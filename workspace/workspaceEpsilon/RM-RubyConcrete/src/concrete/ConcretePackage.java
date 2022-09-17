@@ -615,13 +615,22 @@ public interface ConcretePackage extends EPackage {
 	int MFUNCTION__COMMENTS = 4;
 
 	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MFUNCTION__PARAMETERS = 5;
+
+	/**
 	 * The number of structural features of the '<em>MFunction</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MFUNCTION_FEATURE_COUNT = 5;
+	int MFUNCTION_FEATURE_COUNT = 6;
 
 
 	/**
@@ -1199,6 +1208,17 @@ public interface ConcretePackage extends EPackage {
 	EAttribute getMFunction_Comments();
 
 	/**
+	 * Returns the meta object for the attribute '{@link concrete.MFunction#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Parameters</em>'.
+	 * @see concrete.MFunction#getParameters()
+	 * @see #getMFunction()
+	 * @generated
+	 */
+	EAttribute getMFunction_Parameters();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1661,6 +1681,14 @@ public interface ConcretePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MFUNCTION__COMMENTS = eINSTANCE.getMFunction_Comments();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MFUNCTION__PARAMETERS = eINSTANCE.getMFunction_Parameters();
 
 	}
 

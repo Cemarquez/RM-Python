@@ -698,6 +698,16 @@ public class AbstractsPackageImpl extends EPackageImpl implements AbstractsPacka
 	 * @generated
 	 */
 	@Override
+	public EAttribute getMFunction_Parameters() {
+		return (EAttribute)mFunctionEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public AbstractsFactory getAbstractsFactory() {
 		return (AbstractsFactory)getEFactoryInstance();
 	}
@@ -783,6 +793,7 @@ public class AbstractsPackageImpl extends EPackageImpl implements AbstractsPacka
 		createEAttribute(mFunctionEClass, MFUNCTION__RETURN_TYPE);
 		createEAttribute(mFunctionEClass, MFUNCTION__SEMANTICS);
 		createEAttribute(mFunctionEClass, MFUNCTION__COMMENTS);
+		createEAttribute(mFunctionEClass, MFUNCTION__PARAMETERS);
 	}
 
 	/**
@@ -877,6 +888,7 @@ public class AbstractsPackageImpl extends EPackageImpl implements AbstractsPacka
 		initEAttribute(getMFunction_ReturnType(), ecorePackage.getEString(), "returnType", null, 0, 1, MFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMFunction_Semantics(), ecorePackage.getEString(), "semantics", null, 0, 1, MFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMFunction_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, MFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMFunction_Parameters(), ecorePackage.getEString(), "parameters", null, 0, 1, MFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

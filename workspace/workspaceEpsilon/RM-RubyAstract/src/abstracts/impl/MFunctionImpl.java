@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link abstracts.impl.MFunctionImpl#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link abstracts.impl.MFunctionImpl#getSemantics <em>Semantics</em>}</li>
  *   <li>{@link abstracts.impl.MFunctionImpl#getComments <em>Comments</em>}</li>
+ *   <li>{@link abstracts.impl.MFunctionImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @generated
@@ -129,6 +130,26 @@ public class MFunctionImpl extends EObjectImpl implements MFunction {
 	 * @ordered
 	 */
 	protected String comments = COMMENTS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getParameters() <em>Parameters</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PARAMETERS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected String parameters = PARAMETERS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -270,6 +291,29 @@ public class MFunctionImpl extends EObjectImpl implements MFunction {
 	 * @generated
 	 */
 	@Override
+	public String getParameters() {
+		return parameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setParameters(String newParameters) {
+		String oldParameters = parameters;
+		parameters = newParameters;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractsPackage.MFUNCTION__PARAMETERS, oldParameters, parameters));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case AbstractsPackage.MFUNCTION__NAME:
@@ -282,6 +326,8 @@ public class MFunctionImpl extends EObjectImpl implements MFunction {
 				return getSemantics();
 			case AbstractsPackage.MFUNCTION__COMMENTS:
 				return getComments();
+			case AbstractsPackage.MFUNCTION__PARAMETERS:
+				return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -308,6 +354,9 @@ public class MFunctionImpl extends EObjectImpl implements MFunction {
 				return;
 			case AbstractsPackage.MFUNCTION__COMMENTS:
 				setComments((String)newValue);
+				return;
+			case AbstractsPackage.MFUNCTION__PARAMETERS:
+				setParameters((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -336,6 +385,9 @@ public class MFunctionImpl extends EObjectImpl implements MFunction {
 			case AbstractsPackage.MFUNCTION__COMMENTS:
 				setComments(COMMENTS_EDEFAULT);
 				return;
+			case AbstractsPackage.MFUNCTION__PARAMETERS:
+				setParameters(PARAMETERS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -358,6 +410,8 @@ public class MFunctionImpl extends EObjectImpl implements MFunction {
 				return SEMANTICS_EDEFAULT == null ? semantics != null : !SEMANTICS_EDEFAULT.equals(semantics);
 			case AbstractsPackage.MFUNCTION__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
+			case AbstractsPackage.MFUNCTION__PARAMETERS:
+				return PARAMETERS_EDEFAULT == null ? parameters != null : !PARAMETERS_EDEFAULT.equals(parameters);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -382,6 +436,8 @@ public class MFunctionImpl extends EObjectImpl implements MFunction {
 		result.append(semantics);
 		result.append(", comments: ");
 		result.append(comments);
+		result.append(", parameters: ");
+		result.append(parameters);
 		result.append(')');
 		return result.toString();
 	}

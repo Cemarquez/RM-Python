@@ -67,6 +67,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstract.ecore#//MFunction/returnType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstract.ecore#//MFunction/semantics"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstract.ecore#//MFunction/comments"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstract.ecore#//MFunction/parameters"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -23,6 +23,7 @@ import concrete.diagram.edit.parts.MClassNameEditPart;
 import concrete.diagram.edit.parts.MContainmentEditPart;
 import concrete.diagram.edit.parts.MFunctionEditPart;
 import concrete.diagram.edit.parts.MFunctionNameReturnTypeEditPart;
+import concrete.diagram.edit.parts.MFunctionNameReturnTypeParameterEditPart;
 import concrete.diagram.edit.parts.MInheritanceEditPart;
 import concrete.diagram.edit.parts.MPackageEditPart;
 import concrete.diagram.edit.parts.MPackageNameEditPart;
@@ -199,7 +200,7 @@ public class ConcreteVisualIDRegistry {
 			}
 			break;
 		case MFunctionEditPart.VISUAL_ID:
-			if (MFunctionNameReturnTypeEditPart.VISUAL_ID == nodeVisualID) {
+			if (MFunctionNameReturnTypeParameterEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
