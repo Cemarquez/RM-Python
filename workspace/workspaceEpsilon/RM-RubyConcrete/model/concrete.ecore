@@ -120,10 +120,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MFunction">
     <eAnnotations source="gmf.node">
-      <details key="label" value="name,returnType"/>
+      <details key="label" value="name,parameters,returnType"/>
       <details key="figure" value="rectangle"/>
       <details key="label.icon" value="false"/>
-      <details key="label.pattern" value="{0}() : {1}"/>
+      <details key="label.pattern" value="{0}({1}) : {2}"/>
       <details key="color" value="255,216,208"/>
       <details key="tool.description" value="Añade una función a una clase"/>
     </eAnnotations>
@@ -132,5 +132,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="semantics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comments" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameters" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

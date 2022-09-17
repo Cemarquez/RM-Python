@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link abstracts.MFunction#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link abstracts.MFunction#getSemantics <em>Semantics</em>}</li>
  *   <li>{@link abstracts.MFunction#getComments <em>Comments</em>}</li>
+ *   <li>{@link abstracts.MFunction#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @see abstracts.AbstractsPackage#getMFunction()
@@ -136,5 +137,27 @@ public interface MFunction extends EObject {
 	 * @generated
 	 */
 	void setComments(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parameters</em>' attribute.
+	 * @see #setParameters(String)
+	 * @see abstracts.AbstractsPackage#getMFunction_Parameters()
+	 * @model
+	 * @generated
+	 */
+	String getParameters();
+
+	/**
+	 * Sets the value of the '{@link abstracts.MFunction#getParameters <em>Parameters</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parameters</em>' attribute.
+	 * @see #getParameters()
+	 * @generated
+	 */
+	void setParameters(String value);
 
 } // MFunction

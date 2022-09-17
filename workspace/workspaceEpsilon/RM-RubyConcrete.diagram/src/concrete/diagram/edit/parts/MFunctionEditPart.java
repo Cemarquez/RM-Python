@@ -109,8 +109,8 @@ public class MFunctionEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof MFunctionNameReturnTypeEditPart) {
-			((MFunctionNameReturnTypeEditPart) childEditPart)
+		if (childEditPart instanceof MFunctionNameReturnTypeParameterEditPart) {
+			((MFunctionNameReturnTypeParameterEditPart) childEditPart)
 					.setLabel(getPrimaryShape().getFigureMFunctionLabelFigure());
 			return true;
 		}
@@ -121,7 +121,7 @@ public class MFunctionEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof MFunctionNameReturnTypeEditPart) {
+		if (childEditPart instanceof MFunctionNameReturnTypeParameterEditPart) {
 			return true;
 		}
 		return false;
@@ -244,7 +244,8 @@ public class MFunctionEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(ConcreteVisualIDRegistry.getType(MFunctionNameReturnTypeEditPart.VISUAL_ID));
+		return getChildBySemanticHint(
+				ConcreteVisualIDRegistry.getType(MFunctionNameReturnTypeParameterEditPart.VISUAL_ID));
 	}
 
 	/**

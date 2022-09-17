@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<abstract:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:abstract="abstract">
+  <lstPackages name="Persona" path=""/>
+  <lstPackages name="Animales" path="">
+    <lstMPackage name="Mascotas" path="Animales/"/>
+  </lstPackages>
+</abstract:ModelFactory>

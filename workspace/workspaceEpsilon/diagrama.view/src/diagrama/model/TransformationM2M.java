@@ -21,11 +21,16 @@ public class TransformationM2M {
 		
 		for(concrete.MClassDiagram dConcreta : modelFactoryConcreta.getLstMDiagrams()) {
 			//crear los paquetes
+			System.out.println("Paquetes: ");
 			for(concrete.MPackage p : dConcreta.getLstMPackage()) {
+				System.out.println(p.getPath()+p.getName());
 				crearPaquete(p);
 			}
 			
+			System.out.println();
+			System.out.println("Clases: ");
 			for(concrete.MClass c : dConcreta.getLstMClass()) {
+				System.out.println(c.getPath());
 				crearClase(c);
 			}
 			
@@ -37,14 +42,12 @@ public class TransformationM2M {
 	
 	private void crearClase(concrete.MClass c) {
 		String path = c.getPath();
-		abstracts.MPackage p = buscarPaquete(path, modelFactoryAbstracta.getLstPackages().get(0));
+		abstracts.MPackage p = buscarPaqueteParent(path);
 		abstracts.MClass cl = buscarClase(path, c.getName(), p);
 		if(cl==null) {
 			abstracts.MClass newClass = AbstractsFactory.eINSTANCE.createMClass();
 			newClass.setPath(c.getPath());
 			newClass.setName(c.getName());
-			newClass.setStereoType(c.getStereoType());
-			newClass.setAbstracts(c.isAbstracts());
 			newClass.setComments(c.getComments());
 			newClass.setAccessModifier(c.getAccessModifier());
 			p.getLstMClass().add(newClass);
@@ -52,19 +55,23 @@ public class TransformationM2M {
 		
 	}
 
-	private abstracts.MClass buscarClase(String path, String name, abstracts.MPackage mp) {
-		for(abstracts.MClass c : mp.getLstMClass()) {
-			if(c.getName().equals(name) && c.getPath().equals(path)) {
-				return c;
+	
+	private abstracts.MPackage buscarPaqueteParent(String path){
+		abstracts.MPackage mpF = null;
+		for(abstracts.MPackage mp : modelFactoryAbstracta.getLstPackages()) {
+			if(mp.getName().equals(path)) {
+				return mp;
+			}else {
+				mpF = buscarPaquete(path, mp);
 			}
+			if(mpF!=null) 
+				return mpF;
 		}
-		
 		return null;
 	}
-
-		
 	private abstracts.MPackage buscarPaquete(String path, abstracts.MPackage parent) {
 		for (abstracts.MPackage p : parent.getLstMPackage()) {
+			System.out.println(p.getPath() + p.getName());
 			if((p.getPath()+p.getName()).equals(path)) {
 				return p;
 			}
@@ -81,16 +88,32 @@ public class TransformationM2M {
 	
 	}
 	
+	
+	private abstracts.MClass buscarClase(String path, String name, abstracts.MPackage mp) {
+		for(abstracts.MClass c : mp.getLstMClass()) {
+			if(c.getName().equals(name) && c.getPath().equals(path)) {
+				return c;
+			}
+		}
+		
+		return null;
+	}
+
+		
+	
 
 	
 	private void crearPaquete(concrete.MPackage paquete) {
 		String ruta = "";
+		String[] split = null;
 		if(paquete.getPath()==null) {
 			ruta = paquete.getName();
+			split = new String[1];
+			split[0] = ruta;
 		}else {
 			ruta = paquete.getPath()+paquete.getName();
+			split = ruta.split("/");
 		}
-		String[] split = ruta.split("/");
 		abstracts.MPackage paqueteParent = null;
 		
 		String nuevaRuta="";

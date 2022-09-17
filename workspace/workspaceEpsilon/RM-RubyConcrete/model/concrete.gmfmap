@@ -80,15 +80,17 @@
               href="concrete.ecore#//MFunction"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
-              viewPattern="{0}() : {1}"
-              editorPattern="{0}() : {1}"
-              editPattern="{0}() : {1}">
+              viewPattern="{0}({1}) : {2}"
+              editorPattern="{0}({1}) : {2}"
+              editPattern="{0}({1}) : {2}">
             <diagramLabel
                 href="concrete.gmfgraph#MFunctionLabel"/>
             <features
                 href="concrete.ecore#//MFunction/name"/>
             <features
                 href="concrete.ecore#//MFunction/returnType"/>
+            <features
+                href="concrete.ecore#//MFunction/parameters"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"

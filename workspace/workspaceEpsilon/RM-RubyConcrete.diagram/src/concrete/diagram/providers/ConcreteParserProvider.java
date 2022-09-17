@@ -20,6 +20,7 @@ import concrete.ConcretePackage;
 import concrete.diagram.edit.parts.MAttributeNameTypeEditPart;
 import concrete.diagram.edit.parts.MClassNameEditPart;
 import concrete.diagram.edit.parts.MFunctionNameReturnTypeEditPart;
+import concrete.diagram.edit.parts.MFunctionNameReturnTypeParameterEditPart;
 import concrete.diagram.edit.parts.MPackageNameEditPart;
 import concrete.diagram.parsers.MessageFormatParser;
 import concrete.diagram.part.ConcreteVisualIDRegistry;
@@ -87,22 +88,23 @@ public class ConcreteParserProvider extends AbstractProvider implements IParserP
 	/**
 	* @generated
 	*/
-	private IParser mFunctionNameReturnType_5003Parser;
+	private IParser mFunctionNameReturnTypeParameters_5003Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getMFunctionNameReturnType_5003Parser() {
-		if (mFunctionNameReturnType_5003Parser == null) {
+	private IParser getMFunctionNameReturnTypeParameters_5003Parser() {
+		if (mFunctionNameReturnTypeParameters_5003Parser == null) {
 			EAttribute[] features = new EAttribute[] { ConcretePackage.eINSTANCE.getMFunction_Name(),
-					ConcretePackage.eINSTANCE.getMFunction_ReturnType() };
+					ConcretePackage.eINSTANCE.getMFunction_ReturnType(),
+					ConcretePackage.eINSTANCE.getMFunction_Parameters() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			parser.setViewPattern("{0}() : {1}"); //$NON-NLS-1$
-			parser.setEditorPattern("{0}() : {1}"); //$NON-NLS-1$
-			parser.setEditPattern("{0}() : {1}"); //$NON-NLS-1$
-			mFunctionNameReturnType_5003Parser = parser;
+			parser.setViewPattern("{0}({1}) : {2}"); //$NON-NLS-1$
+			parser.setEditorPattern("{0}({1}) : {2}"); //$NON-NLS-1$
+			parser.setEditPattern("{0}({1}) : {2}"); //$NON-NLS-1$
+			mFunctionNameReturnTypeParameters_5003Parser = parser;
 		}
-		return mFunctionNameReturnType_5003Parser;
+		return mFunctionNameReturnTypeParameters_5003Parser;
 	}
 
 	/**
@@ -116,8 +118,8 @@ public class ConcreteParserProvider extends AbstractProvider implements IParserP
 			return getMClassName_5004Parser();
 		case MAttributeNameTypeEditPart.VISUAL_ID:
 			return getMAttributeNameType_5002Parser();
-		case MFunctionNameReturnTypeEditPart.VISUAL_ID:
-			return getMFunctionNameReturnType_5003Parser();
+		case MFunctionNameReturnTypeParameterEditPart.VISUAL_ID:
+			return getMFunctionNameReturnTypeParameters_5003Parser();
 		}
 		return null;
 	}

@@ -40,12 +40,13 @@
         <containmentMetaFeature href="concrete.genmodel#//concrete/MClass/lstMFunction"/>
         <childMetaFeature href="concrete.genmodel#//concrete/MClass/lstMFunction"/>
       </modelFacet>
-      <labels visualID="5003" editPartClassName="MFunctionNameReturnTypeEditPart" itemSemanticEditPolicyClassName="MFunctionNameReturnTypeItemSemanticEditPolicy">
+      <labels visualID="5003" editPartClassName="MFunctionNameReturnTypeParameterEditPart" itemSemanticEditPolicyClassName="MFunctionNameReturnTypeParameterItemSemanticEditPolicy">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureMFunctionLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0" viewPattern="{0}() : {1}" editorPattern="{0}() : {1}" editPattern="{0}() : {1}">
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0" viewPattern="{0}({1}) : {2}" editorPattern="{0}({1}) : {2}" editPattern="{0}({1}) : {2}">
           <metaFeatures href="concrete.genmodel#//concrete/MFunction/name"/>
           <metaFeatures href="concrete.genmodel#//concrete/MFunction/returnType"/>
+          <metaFeatures href="concrete.genmodel#//concrete/MFunction/parameters"/>
         </modelFacet>
       </labels>
     </childNodes>

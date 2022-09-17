@@ -65,6 +65,7 @@ public class MFunctionItemProvider
 			addReturnTypePropertyDescriptor(object);
 			addSemanticsPropertyDescriptor(object);
 			addCommentsPropertyDescriptor(object);
+			addParametersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -180,6 +181,28 @@ public class MFunctionItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Parameters feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParametersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MFunction_parameters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MFunction_parameters_feature", "_UI_MFunction_type"),
+				 AbstractsPackage.Literals.MFUNCTION__PARAMETERS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns MFunction.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -222,6 +245,7 @@ public class MFunctionItemProvider
 			case AbstractsPackage.MFUNCTION__RETURN_TYPE:
 			case AbstractsPackage.MFUNCTION__SEMANTICS:
 			case AbstractsPackage.MFUNCTION__COMMENTS:
+			case AbstractsPackage.MFUNCTION__PARAMETERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

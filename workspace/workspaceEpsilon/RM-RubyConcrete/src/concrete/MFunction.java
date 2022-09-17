@@ -18,10 +18,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link concrete.MFunction#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link concrete.MFunction#getSemantics <em>Semantics</em>}</li>
  *   <li>{@link concrete.MFunction#getComments <em>Comments</em>}</li>
+ *   <li>{@link concrete.MFunction#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @see concrete.ConcretePackage#getMFunction()
- * @model annotation="gmf.node label='name,returnType' figure='rectangle' label.icon='false' label.pattern='{0}() : {1}' color='255,216,208' tool.description='A\361ade una funci\363n a una clase'"
+ * @model annotation="gmf.node label='name,parameters,returnType' figure='rectangle' label.icon='false' label.pattern='{0}({1}) : {2}' color='255,216,208' tool.description='A\361ade una funci\363n a una clase'"
  * @generated
  */
 public interface MFunction extends EObject {
@@ -134,5 +135,27 @@ public interface MFunction extends EObject {
 	 * @generated
 	 */
 	void setComments(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parameters</em>' attribute.
+	 * @see #setParameters(String)
+	 * @see concrete.ConcretePackage#getMFunction_Parameters()
+	 * @model
+	 * @generated
+	 */
+	String getParameters();
+
+	/**
+	 * Sets the value of the '{@link concrete.MFunction#getParameters <em>Parameters</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parameters</em>' attribute.
+	 * @see #getParameters()
+	 * @generated
+	 */
+	void setParameters(String value);
 
 } // MFunction
