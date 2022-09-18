@@ -2,7 +2,9 @@
 <abstract:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:abstract="abstract">
   <lstPackages name="Persona" path="">
     <lstMClass name="Persona" path="Persona"/>
-    <lstMClass name="PersonaFactory" path="Persona"/>
+    <lstMClass name="PersonaFactory" path="Persona">
+      <lstFunction name="eliminarPersona" returnType="void"/>
+    </lstMClass>
   </lstPackages>
   <lstPackages name="Animales" path="">
     <lstMClass name="Mascota" path="Animales"/>

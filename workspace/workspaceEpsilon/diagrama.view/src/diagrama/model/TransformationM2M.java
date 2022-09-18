@@ -1,8 +1,10 @@
 package diagrama.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import abstracts.AbstractsFactory;
+import abstracts.MFunction;
 import abstracts.MPackage;
 import concrete.MClass;
 
@@ -21,16 +23,11 @@ public class TransformationM2M {
 		
 		for(concrete.MClassDiagram dConcreta : modelFactoryConcreta.getLstMDiagrams()) {
 			//crear los paquetes
-			System.out.println("Paquetes: ");
 			for(concrete.MPackage p : dConcreta.getLstMPackage()) {
-				System.out.println(p.getPath()+p.getName());
 				crearPaquete(p);
 			}
 			
-			System.out.println();
-			System.out.println("Clases: ");
 			for(concrete.MClass c : dConcreta.getLstMClass()) {
-				System.out.println(c.getPath());
 				crearClase(c);
 			}
 			
@@ -50,11 +47,58 @@ public class TransformationM2M {
 			newClass.setName(c.getName());
 			newClass.setComments(c.getComments());
 			newClass.setAccessModifier(c.getAccessModifier());
+			newClass.getLstFunction().addAll(crearFunciones(c));
+			newClass.getLstAttributes().addAll(crearAtributos(c));
 			p.getLstMClass().add(newClass);
 		}
 		
 	}
 
+	private List<abstracts.MFunction> crearFunciones(concrete.MClass cClass){
+		List<abstracts.MFunction> funciones = new ArrayList<>();
+		for(concrete.MFunction f : cClass.getLstMFunction()) {
+			abstracts.MFunction newFunction = AbstractsFactory.eINSTANCE.createMFunction();
+			newFunction.setAccessModifier(f.getAccessModifier());
+			newFunction.setComments(f.getComments());
+			newFunction.setName(f.getName());
+			newFunction.setParameters(f.getParameters());
+			newFunction.setReturnType(f.getReturnType());
+			newFunction.setSemantics(f.getSemantics());
+			funciones.add(newFunction);
+		}
+		return funciones;
+	}
+	
+	private void crearAssociation(concrete.MAssociation relacion) {
+		abstracts.MPackage pSource = buscarPaqueteParent(relacion.getSource().getPath());
+		abstracts.MClass clSource = buscarClase(relacion.getSource().getPath(), relacion.getSource().getName(), pSource);
+		
+		abstracts.MPackage pTarget = buscarPaqueteParent(relacion.getSource().getPath());
+		abstracts.MClass clTarget = buscarClase(relacion.getTarget().getPath(), relacion.getTarget().getName(), pTarget);
+		
+		
+	}
+	
+	
+	private abstracts.MAssociation obtenerAssociation(abstracts.MClass source, abstracts.MClass target){
+		for(abstracts.MAssociation a : modelFactoryAbstracta.get)
+		return null;
+	}
+	
+	private List<abstracts.MAttribute> crearAtributos(concrete.MClass cClass){
+		List<abstracts.MAttribute> atributos = new ArrayList<>();
+		for(concrete.MAttribute a : cClass.getLstMAttribute()) {
+			abstracts.MAttribute newAttribute = AbstractsFactory.eINSTANCE.createMAttribute();
+			newAttribute.setComments(a.getComments());
+			newAttribute.setConstant(a.isConstant());
+			newAttribute.setDefaultValue(a.getDefaultValue());
+			newAttribute.setName(a.getName());
+			newAttribute.setType(a.getType());
+			atributos.add(newAttribute);
+		}
+		
+		return atributos;
+	}
 	
 	private abstracts.MPackage buscarPaqueteParent(String path){
 		abstracts.MPackage mpF = null;
