@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="ASCII"?>
-<abstract:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:abstract="abstract" lstAllClass="//@lstPackages.0/@lstMClass.0 //@lstPackages.1/@lstMClass.0 //@lstPackages.1/@lstMPackage.0/@lstMClass.0 //@lstPackages.0/@lstMClass.1 //@lstPackages.0/@lstMClass.2" lstAllPackage="//@lstPackages.0 //@lstPackages.1 //@lstPackages.1/@lstMPackage.0">
-  <lstPackages name="Persona" path="">
-    <lstMClass name="Persona" path="Persona"/>
-    <lstMClass name="PersonaFactory" path="Persona">
-      <lstFunction name="eliminarPersona" returnType="void"/>
+<abstract:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:abstract="abstract" lstAllClass="//@lstPackages.0/@lstMClass.0 //@lstPackages.0/@lstMClass.1 //@lstPackages.0/@lstMClass.2 //@lstPackages.1/@lstMClass.0 //@lstPackages.1/@lstMClass.1" lstAllPackage="//@lstPackages.0 //@lstPackages.1">
+  <lstPackages name="person" path="">
+    <lstMClass name="Person" comments="Esta es la clase padre" path="person">
+      <lstAttributes name="name"/>
+      <lstAttributes name="phoneNumber"/>
+      <lstAttributes name="emailAddress"/>
+      <lstAttributes name="address" removeToInit="true"/>
+      <lstFunction name="addAdrdess" comments="" parameters="address"/>
     </lstMClass>
-    <lstMClass name="Empleado" path="Persona">
-      <lstAttributes name="nombre" type="String" comments=""/>
-      <lstFunction name="calcularPagos" returnType="void" parameters="int plata"/>
+    <lstMClass name="Professor" path="person">
+      <lstMInheritance source="//@lstPackages.0/@lstMClass.1" target="//@lstPackages.0/@lstMClass.0"/>
+      <lstAttributes name="salary"/>
+    </lstMClass>
+    <lstMClass name="Student" path="person">
+      <lstMInheritance source="//@lstPackages.0/@lstMClass.2" target="//@lstPackages.0/@lstMClass.0"/>
+      <lstAttributes name="studentNumber"/>
+      <lstAttributes name="averageMark"/>
     </lstMClass>
   </lstPackages>
-  <lstPackages name="Animales" path="">
-    <lstMClass name="Mascota" path="Animales"/>
-    <lstMPackage name="Mascotas" path="Animales/">
-      <lstMClass name="Perro" path="Animales/Mascotas"/>
-    </lstMPackage>
+  <lstPackages name="register" path="">
+    <lstMClass name="Address" path="register">
+      <lstAttributes name="street"/>
+      <lstAttributes name="city"/>
+      <lstAttributes name="state"/>
+      <lstAttributes name="postalcode"/>
+      <lstAttributes name="country"/>
+    </lstMClass>
+    <lstMClass name="AddressFactory" comments="Factory class" path="register">
+      <lstMContainment source="//@lstPackages.1/@lstMClass.1" target="//@lstPackages.1/@lstMClass.0" multiplicityTarget="n" sourceRole="lstAddress" targetRole="lstAddress"/>
+    </lstMClass>
   </lstPackages>
 </abstract:ModelFactory>

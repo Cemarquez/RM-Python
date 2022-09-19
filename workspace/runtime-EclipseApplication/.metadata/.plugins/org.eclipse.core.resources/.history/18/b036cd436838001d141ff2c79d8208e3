@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<abstract:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:abstract="abstract" lstAllClass="//@lstPackages.0/@lstMClass.0 //@lstPackages.0/@lstMClass.1 //@lstPackages.0/@lstMClass.2 //@lstPackages.1/@lstMClass.0" lstAllPackage="//@lstPackages.0 //@lstPackages.1">
+  <lstPackages name="person" path="">
+    <lstMClass name="Person" comments="Esta es la clase padre" path="person">
+      <lstAttributes name="name"/>
+      <lstAttributes name="phoneNumber"/>
+      <lstAttributes name="emailAddress"/>
+      <lstAttributes name="address" removeToInit="true"/>
+      <lstFunction name="addAdrdess" comments="" parameters="address"/>
+    </lstMClass>
+    <lstMClass name="Professor" path="person">
+      <lstMInheritance source="//@lstPackages.0/@lstMClass.1" target="//@lstPackages.0/@lstMClass.0"/>
+      <lstAttributes name="salary"/>
+    </lstMClass>
+    <lstMClass name="Student" path="person">
+      <lstMInheritance source="//@lstPackages.0/@lstMClass.2" target="//@lstPackages.0/@lstMClass.0"/>
+      <lstAttributes name="studentNumber"/>
+      <lstAttributes name="averageMark"/>
+    </lstMClass>
+  </lstPackages>
+  <lstPackages name="register" path="">
+    <lstMClass name="Address" path="register">
+      <lstAttributes name="street"/>
+      <lstAttributes name="city"/>
+      <lstAttributes name="state"/>
+      <lstAttributes name="postalcode"/>
+      <lstAttributes name="country"/>
+    </lstMClass>
+  </lstPackages>
+</abstract:ModelFactory>

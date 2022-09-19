@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<concrete:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:concrete="concrete">
+  <lstMDiagrams>
+    <lstMPackage name="person"/>
+    <lstMPackage name="register"/>
+    <lstMClass name="Person" comments="Esta es la clase padre" path="person">
+      <lstMAttribute name="name"/>
+      <lstMAttribute name="phoneNumber"/>
+      <lstMAttribute name="emailAddress"/>
+      <lstMAttribute name="address" removeToInit="true"/>
+      <lstMFunction name="addAdrdess" comments="" parameters="address"/>
+    </lstMClass>
+    <lstMClass name="Professor" path="person">
+      <lstMAttribute name="salary"/>
+    </lstMClass>
+  </lstMDiagrams>
+</concrete:ModelFactory>

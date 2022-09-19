@@ -67,8 +67,7 @@ public class MAssociationItemProvider
 			addMultiplicityTargetPropertyDescriptor(object);
 			addSourceRolePropertyDescriptor(object);
 			addTargetRolePropertyDescriptor(object);
-			addNavegabilitySourcePropertyDescriptor(object);
-			addNavegabilityTargetPropertyDescriptor(object);
+			addBidirectionalPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -228,45 +227,23 @@ public class MAssociationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Navegability Source feature.
+	 * This adds a property descriptor for the Bidirectional feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNavegabilitySourcePropertyDescriptor(Object object) {
+	protected void addBidirectionalPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_MAssociation_navegabilitySource_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MAssociation_navegabilitySource_feature", "_UI_MAssociation_type"),
-				 AbstractsPackage.Literals.MASSOCIATION__NAVEGABILITY_SOURCE,
+				 getString("_UI_MAssociation_bidirectional_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MAssociation_bidirectional_feature", "_UI_MAssociation_type"),
+				 AbstractsPackage.Literals.MASSOCIATION__BIDIRECTIONAL,
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Navegability Target feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNavegabilityTargetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_MAssociation_navegabilityTarget_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MAssociation_navegabilityTarget_feature", "_UI_MAssociation_type"),
-				 AbstractsPackage.Literals.MASSOCIATION__NAVEGABILITY_TARGET,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -314,8 +291,7 @@ public class MAssociationItemProvider
 			case AbstractsPackage.MASSOCIATION__MULTIPLICITY_TARGET:
 			case AbstractsPackage.MASSOCIATION__SOURCE_ROLE:
 			case AbstractsPackage.MASSOCIATION__TARGET_ROLE:
-			case AbstractsPackage.MASSOCIATION__NAVEGABILITY_SOURCE:
-			case AbstractsPackage.MASSOCIATION__NAVEGABILITY_TARGET:
+			case AbstractsPackage.MASSOCIATION__BIDIRECTIONAL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

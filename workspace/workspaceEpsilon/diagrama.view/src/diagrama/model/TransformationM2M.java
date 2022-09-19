@@ -32,9 +32,17 @@ public class TransformationM2M {
 			}
 			
 			for(concrete.MAssociation r : dConcreta.getLstMAssoctiation() ) {
-//				crearAssociation(r);
+				crearAssociation(r);
 			}
 			
+			for(concrete.MInheritance r : dConcreta.getLstMInheritance() ) {
+//				crearAssociation(r);
+				crearHerencia(r);
+			}
+			
+			for(concrete.MContainment c : dConcreta.getLstMContainment()) {
+				crearContainment(c);
+			}
 			
 		}
 		
@@ -67,14 +75,24 @@ public class TransformationM2M {
 			newFunction.setComments(f.getComments());
 			newFunction.setName(f.getName());
 			newFunction.setParameters(f.getParameters());
-			newFunction.setReturnType(f.getReturnType());
 			newFunction.setSemantics(f.getSemantics());
 			funciones.add(newFunction);
 		}
 		return funciones;
 	}
 	
-	
+	private void crearHerencia(concrete.MInheritance relacion) {
+		abstracts.MPackage pSource = buscarPaqueteParent(relacion.getSource().getPath());
+		abstracts.MClass clSource = buscarClase(relacion.getSource().getPath(), relacion.getSource().getName(), pSource);
+		
+		abstracts.MPackage pTarget = buscarPaqueteParent(relacion.getSource().getPath());
+		abstracts.MClass clTarget = buscarClase(relacion.getTarget().getPath(), relacion.getTarget().getName(), pTarget);
+		
+		abstracts.MInheritance h = AbstractsFactory.eINSTANCE.createMInheritance();
+		h.setSource(clSource);
+		h.setTarget(clTarget);
+		clSource.getLstMInheritance().add(h);
+	}
 	
 	private void crearAssociation(concrete.MAssociation relacion) {
 		abstracts.MPackage pSource = buscarPaqueteParent(relacion.getSource().getPath());
@@ -86,37 +104,42 @@ public class TransformationM2M {
 		abstracts.MAssociation anewS = AbstractsFactory.eINSTANCE.createMAssociation();
 		anewS.setMultiplicitySource(relacion.getMultiplicitySource());
 		anewS.setMultiplicityTarget(relacion.getMultiplicityTarget());
-		anewS.setNavegabilitySource(relacion.getNavegabilitySource());
-		anewS.setNavegabilityTarget(relacion.getNavegabilityTarget());
 		anewS.setSource(clSource);
 		anewS.setTarget(clTarget);
 		anewS.setSourceRole(relacion.getSourceRole());
 		anewS.setTargetRole(relacion.getTargetRole());
-		
 		clSource.getLstMAssoctiation().add(anewS);
 		
-		if(relacion.getNavegabilityTarget().equals("true")) {
+		if(relacion.isBidirectional()) {
 			abstracts.MAssociation anewT = AbstractsFactory.eINSTANCE.createMAssociation();
 			anewT.setMultiplicitySource(relacion.getMultiplicityTarget());
 			anewT.setMultiplicityTarget(relacion.getMultiplicitySource());
-			anewT.setNavegabilitySource(relacion.getNavegabilityTarget());
-			anewT.setNavegabilityTarget(relacion.getNavegabilitySource());
 			anewT.setSource(clTarget);
 			anewT.setTarget(clSource);
 			anewT.setSourceRole(relacion.getTargetRole());
 			anewT.setTargetRole(relacion.getSourceRole());
 			clTarget.getLstMAssoctiation().add(anewT);
-		}else {
-			clTarget.getLstMAssoctiation().add(anewS);
 		}
+	
 		
 		
 	}
 	
-	
-	private abstracts.MAssociation obtenerAssociation(abstracts.MClass source, abstracts.MClass target){
-//		for(abstracts.MAssociation a : modelFactoryAbstracta.get)
-		return null;
+	private void crearContainment(concrete.MContainment relacion) {
+		abstracts.MPackage pSource = buscarPaqueteParent(relacion.getSource().getPath());
+		abstracts.MClass clSource = buscarClase(relacion.getSource().getPath(), relacion.getSource().getName(), pSource);
+		
+		abstracts.MPackage pTarget = buscarPaqueteParent(relacion.getSource().getPath());
+		abstracts.MClass clTarget = buscarClase(relacion.getTarget().getPath(), relacion.getTarget().getName(), pTarget);
+		
+		abstracts.MContainment anewS = AbstractsFactory.eINSTANCE.createMContainment();
+		anewS.setSource(clTarget);
+		anewS.setTarget(clSource);
+		anewS.setMultiplicityTarget(relacion.getMultiplicityTarget());
+		anewS.setSourceRole(relacion.getSourceRole());
+		anewS.setTargetRole(relacion.getSourceRole());
+		clTarget.getLstMContainment().add(anewS);
+		
 	}
 	
 	private List<abstracts.MAttribute> crearAtributos(concrete.MClass cClass){
@@ -127,7 +150,7 @@ public class TransformationM2M {
 			newAttribute.setConstant(a.isConstant());
 			newAttribute.setDefaultValue(a.getDefaultValue());
 			newAttribute.setName(a.getName());
-			newAttribute.setType(a.getType());
+			newAttribute.setRemoveToInit(a.isRemoveToInit());
 			atributos.add(newAttribute);
 		}
 		

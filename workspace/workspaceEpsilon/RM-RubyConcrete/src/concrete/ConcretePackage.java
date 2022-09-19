@@ -314,22 +314,13 @@ public interface ConcretePackage extends EPackage {
 	int MATTRIBUTE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MATTRIBUTE__TYPE = 1;
-
-	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MATTRIBUTE__DEFAULT_VALUE = 2;
+	int MATTRIBUTE__DEFAULT_VALUE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -338,7 +329,7 @@ public interface ConcretePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATTRIBUTE__COMMENTS = 3;
+	int MATTRIBUTE__COMMENTS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Constant</b></em>' attribute.
@@ -347,7 +338,16 @@ public interface ConcretePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATTRIBUTE__CONSTANT = 4;
+	int MATTRIBUTE__CONSTANT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Remove To Init</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATTRIBUTE__REMOVE_TO_INIT = 4;
 
 	/**
 	 * The number of structural features of the '<em>MAttribute</em>' class.
@@ -432,22 +432,13 @@ public interface ConcretePackage extends EPackage {
 	int MASSOCIATION__TARGET_ROLE = 6;
 
 	/**
-	 * The feature id for the '<em><b>Navegability Source</b></em>' attribute.
+	 * The feature id for the '<em><b>Bidirectional</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MASSOCIATION__NAVEGABILITY_SOURCE = 7;
-
-	/**
-	 * The feature id for the '<em><b>Navegability Target</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MASSOCIATION__NAVEGABILITY_TARGET = 8;
+	int MASSOCIATION__BIDIRECTIONAL = 7;
 
 	/**
 	 * The number of structural features of the '<em>MAssociation</em>' class.
@@ -456,7 +447,7 @@ public interface ConcretePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MASSOCIATION_FEATURE_COUNT = 9;
+	int MASSOCIATION_FEATURE_COUNT = 8;
 
 	/**
 	 * The meta object id for the '{@link concrete.impl.MInheritanceImpl <em>MInheritance</em>}' class.
@@ -588,22 +579,13 @@ public interface ConcretePackage extends EPackage {
 	int MFUNCTION__ACCESS_MODIFIER = 1;
 
 	/**
-	 * The feature id for the '<em><b>Return Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MFUNCTION__RETURN_TYPE = 2;
-
-	/**
 	 * The feature id for the '<em><b>Semantics</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MFUNCTION__SEMANTICS = 3;
+	int MFUNCTION__SEMANTICS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -612,7 +594,7 @@ public interface ConcretePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MFUNCTION__COMMENTS = 4;
+	int MFUNCTION__COMMENTS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' attribute.
@@ -621,7 +603,7 @@ public interface ConcretePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MFUNCTION__PARAMETERS = 5;
+	int MFUNCTION__PARAMETERS = 4;
 
 	/**
 	 * The number of structural features of the '<em>MFunction</em>' class.
@@ -630,7 +612,7 @@ public interface ConcretePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MFUNCTION_FEATURE_COUNT = 6;
+	int MFUNCTION_FEATURE_COUNT = 5;
 
 
 	/**
@@ -893,17 +875,6 @@ public interface ConcretePackage extends EPackage {
 	EAttribute getMAttribute_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link concrete.MAttribute#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see concrete.MAttribute#getType()
-	 * @see #getMAttribute()
-	 * @generated
-	 */
-	EAttribute getMAttribute_Type();
-
-	/**
 	 * Returns the meta object for the attribute '{@link concrete.MAttribute#getDefaultValue <em>Default Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -935,6 +906,17 @@ public interface ConcretePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMAttribute_Constant();
+
+	/**
+	 * Returns the meta object for the attribute '{@link concrete.MAttribute#isRemoveToInit <em>Remove To Init</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Remove To Init</em>'.
+	 * @see concrete.MAttribute#isRemoveToInit()
+	 * @see #getMAttribute()
+	 * @generated
+	 */
+	EAttribute getMAttribute_RemoveToInit();
 
 	/**
 	 * Returns the meta object for class '{@link concrete.MAssociation <em>MAssociation</em>}'.
@@ -1024,26 +1006,15 @@ public interface ConcretePackage extends EPackage {
 	EAttribute getMAssociation_TargetRole();
 
 	/**
-	 * Returns the meta object for the attribute '{@link concrete.MAssociation#getNavegabilitySource <em>Navegability Source</em>}'.
+	 * Returns the meta object for the attribute '{@link concrete.MAssociation#isBidirectional <em>Bidirectional</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Navegability Source</em>'.
-	 * @see concrete.MAssociation#getNavegabilitySource()
+	 * @return the meta object for the attribute '<em>Bidirectional</em>'.
+	 * @see concrete.MAssociation#isBidirectional()
 	 * @see #getMAssociation()
 	 * @generated
 	 */
-	EAttribute getMAssociation_NavegabilitySource();
-
-	/**
-	 * Returns the meta object for the attribute '{@link concrete.MAssociation#getNavegabilityTarget <em>Navegability Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Navegability Target</em>'.
-	 * @see concrete.MAssociation#getNavegabilityTarget()
-	 * @see #getMAssociation()
-	 * @generated
-	 */
-	EAttribute getMAssociation_NavegabilityTarget();
+	EAttribute getMAssociation_Bidirectional();
 
 	/**
 	 * Returns the meta object for class '{@link concrete.MInheritance <em>MInheritance</em>}'.
@@ -1173,17 +1144,6 @@ public interface ConcretePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMFunction_AccessModifier();
-
-	/**
-	 * Returns the meta object for the attribute '{@link concrete.MFunction#getReturnType <em>Return Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Return Type</em>'.
-	 * @see concrete.MFunction#getReturnType()
-	 * @see #getMFunction()
-	 * @generated
-	 */
-	EAttribute getMFunction_ReturnType();
 
 	/**
 	 * Returns the meta object for the attribute '{@link concrete.MFunction#getSemantics <em>Semantics</em>}'.
@@ -1443,14 +1403,6 @@ public interface ConcretePackage extends EPackage {
 		EAttribute MATTRIBUTE__NAME = eINSTANCE.getMAttribute_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MATTRIBUTE__TYPE = eINSTANCE.getMAttribute_Type();
-
-		/**
 		 * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1473,6 +1425,14 @@ public interface ConcretePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MATTRIBUTE__CONSTANT = eINSTANCE.getMAttribute_Constant();
+
+		/**
+		 * The meta object literal for the '<em><b>Remove To Init</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MATTRIBUTE__REMOVE_TO_INIT = eINSTANCE.getMAttribute_RemoveToInit();
 
 		/**
 		 * The meta object literal for the '{@link concrete.impl.MAssociationImpl <em>MAssociation</em>}' class.
@@ -1541,20 +1501,12 @@ public interface ConcretePackage extends EPackage {
 		EAttribute MASSOCIATION__TARGET_ROLE = eINSTANCE.getMAssociation_TargetRole();
 
 		/**
-		 * The meta object literal for the '<em><b>Navegability Source</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Bidirectional</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MASSOCIATION__NAVEGABILITY_SOURCE = eINSTANCE.getMAssociation_NavegabilitySource();
-
-		/**
-		 * The meta object literal for the '<em><b>Navegability Target</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MASSOCIATION__NAVEGABILITY_TARGET = eINSTANCE.getMAssociation_NavegabilityTarget();
+		EAttribute MASSOCIATION__BIDIRECTIONAL = eINSTANCE.getMAssociation_Bidirectional();
 
 		/**
 		 * The meta object literal for the '{@link concrete.impl.MInheritanceImpl <em>MInheritance</em>}' class.
@@ -1657,14 +1609,6 @@ public interface ConcretePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MFUNCTION__ACCESS_MODIFIER = eINSTANCE.getMFunction_AccessModifier();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MFUNCTION__RETURN_TYPE = eINSTANCE.getMFunction_ReturnType();
 
 		/**
 		 * The meta object literal for the '<em><b>Semantics</b></em>' attribute feature.

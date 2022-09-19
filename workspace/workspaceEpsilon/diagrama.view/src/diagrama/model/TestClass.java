@@ -5,15 +5,12 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class TestClass {
 	    public static void main(String[] args){
-	        JFileChooser chooser = new JFileChooser();
-	        FileNameExtensionFilter filter = new FileNameExtensionFilter(
-	                "JPG & GIF Images", "jpg", "gif");
-	        chooser.setFileFilter(filter);
-	        int returnVal = chooser.showOpenDialog(null);
-	        if(returnVal == JFileChooser.APPROVE_OPTION) {
-	            System.out.println("You chose to open this file: " +
-	                    chooser.getSelectedFile().getName());
-	        }
+	    String constructor ="amigo, ";
+	    System.out.println(constructor.charAt(constructor.length()-2));
+	    System.out.println(replaceLast(constructor, ",", " "));
 	    }
 	
+	    public static String replaceLast(String text, String regex, String replacement) {
+	        return text.replaceFirst("(?s)(.*)" + regex, "$1" + replacement);
+	    }
 }

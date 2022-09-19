@@ -14,6 +14,7 @@ import concrete.ConcretePackage;
 import concrete.MClassDiagram;
 import concrete.diagram.edit.parts.MAssociationEditPart;
 import concrete.diagram.edit.parts.MAttributeEditPart;
+import concrete.diagram.edit.parts.MAttributeNameEditPart;
 import concrete.diagram.edit.parts.MAttributeNameTypeEditPart;
 import concrete.diagram.edit.parts.MClassDiagramEditPart;
 import concrete.diagram.edit.parts.MClassEditPart;
@@ -22,6 +23,7 @@ import concrete.diagram.edit.parts.MClassMClassLstMFunctionCompartmentEditPart;
 import concrete.diagram.edit.parts.MClassNameEditPart;
 import concrete.diagram.edit.parts.MContainmentEditPart;
 import concrete.diagram.edit.parts.MFunctionEditPart;
+import concrete.diagram.edit.parts.MFunctionNameParametersEditPart;
 import concrete.diagram.edit.parts.MFunctionNameReturnTypeEditPart;
 import concrete.diagram.edit.parts.MFunctionNameReturnTypeParameterEditPart;
 import concrete.diagram.edit.parts.MInheritanceEditPart;
@@ -195,12 +197,12 @@ public class ConcreteVisualIDRegistry {
 			}
 			break;
 		case MAttributeEditPart.VISUAL_ID:
-			if (MAttributeNameTypeEditPart.VISUAL_ID == nodeVisualID) {
+			if (MAttributeNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case MFunctionEditPart.VISUAL_ID:
-			if (MFunctionNameReturnTypeParameterEditPart.VISUAL_ID == nodeVisualID) {
+			if (MFunctionNameParametersEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

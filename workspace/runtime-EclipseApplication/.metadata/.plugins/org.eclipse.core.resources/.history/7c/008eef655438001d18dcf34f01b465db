@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<abstract:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:abstract="abstract" lstAllClass="//@lstPackages.0/@lstMClass.0" lstAllPackage="//@lstPackages.0 //@lstPackages.1">
+  <lstPackages name="person" path="">
+    <lstMClass name="Person" path="person"/>
+  </lstPackages>
+  <lstPackages name="register" path=""/>
+</abstract:ModelFactory>

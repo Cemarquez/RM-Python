@@ -109,8 +109,8 @@ public class MAttributeEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof MAttributeNameTypeEditPart) {
-			((MAttributeNameTypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureMAttributeLabelFigure());
+		if (childEditPart instanceof MAttributeNameEditPart) {
+			((MAttributeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureMAttributeLabelFigure());
 			return true;
 		}
 		return false;
@@ -120,7 +120,7 @@ public class MAttributeEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof MAttributeNameTypeEditPart) {
+		if (childEditPart instanceof MAttributeNameEditPart) {
 			return true;
 		}
 		return false;
@@ -243,7 +243,7 @@ public class MAttributeEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(ConcreteVisualIDRegistry.getType(MAttributeNameTypeEditPart.VISUAL_ID));
+		return getChildBySemanticHint(ConcreteVisualIDRegistry.getType(MAttributeNameEditPart.VISUAL_ID));
 	}
 
 	/**

@@ -45,8 +45,6 @@ class MAssociation{
 	attr String multiplicityTarget;
 	attr String sourceRole;
 	attr String targetRole;
-	attr String navegabilitySource;
-	attr String navegabilityTarget;
 }
 class MInheritance{
 	ref MClass source;
@@ -64,17 +62,15 @@ class MContainment{
 
 class MAttribute{
 	attr String name;
-	attr String type;
 	attr String defaultValue;
 	attr String comments;
 	attr boolean constant;
-	
+	attr boolean removeToInit;
 }
 
 class MFunction{
 	attr String name;
 	attr String accessModifier; 
-	attr String returnType;
 	attr String semantics;
 	attr String comments;
 	attr String parameters;

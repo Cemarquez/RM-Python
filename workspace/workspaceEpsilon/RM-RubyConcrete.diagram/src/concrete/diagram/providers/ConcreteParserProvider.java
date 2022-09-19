@@ -17,8 +17,10 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 
 import concrete.ConcretePackage;
+import concrete.diagram.edit.parts.MAttributeNameEditPart;
 import concrete.diagram.edit.parts.MAttributeNameTypeEditPart;
 import concrete.diagram.edit.parts.MClassNameEditPart;
+import concrete.diagram.edit.parts.MFunctionNameParametersEditPart;
 import concrete.diagram.edit.parts.MFunctionNameReturnTypeEditPart;
 import concrete.diagram.edit.parts.MFunctionNameReturnTypeParameterEditPart;
 import concrete.diagram.edit.parts.MPackageNameEditPart;
@@ -67,44 +69,42 @@ public class ConcreteParserProvider extends AbstractProvider implements IParserP
 	/**
 	* @generated
 	*/
-	private IParser mAttributeNameType_5002Parser;
+	private IParser mAttributeName_5002Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getMAttributeNameType_5002Parser() {
-		if (mAttributeNameType_5002Parser == null) {
-			EAttribute[] features = new EAttribute[] { ConcretePackage.eINSTANCE.getMAttribute_Name(),
-					ConcretePackage.eINSTANCE.getMAttribute_Type() };
+	private IParser getMAttributeName_5002Parser() {
+		if (mAttributeName_5002Parser == null) {
+			EAttribute[] features = new EAttribute[] { ConcretePackage.eINSTANCE.getMAttribute_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			parser.setViewPattern("{0} : {1}"); //$NON-NLS-1$
-			parser.setEditorPattern("{0} : {1}"); //$NON-NLS-1$
-			parser.setEditPattern("{0} : {1}"); //$NON-NLS-1$
-			mAttributeNameType_5002Parser = parser;
+			parser.setViewPattern("{0}"); //$NON-NLS-1$
+			parser.setEditorPattern("{0}"); //$NON-NLS-1$
+			parser.setEditPattern("{0}"); //$NON-NLS-1$
+			mAttributeName_5002Parser = parser;
 		}
-		return mAttributeNameType_5002Parser;
+		return mAttributeName_5002Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser mFunctionNameReturnTypeParameters_5003Parser;
+	private IParser mFunctionNameParameters_5003Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getMFunctionNameReturnTypeParameters_5003Parser() {
-		if (mFunctionNameReturnTypeParameters_5003Parser == null) {
+	private IParser getMFunctionNameParameters_5003Parser() {
+		if (mFunctionNameParameters_5003Parser == null) {
 			EAttribute[] features = new EAttribute[] { ConcretePackage.eINSTANCE.getMFunction_Name(),
-					ConcretePackage.eINSTANCE.getMFunction_ReturnType(),
 					ConcretePackage.eINSTANCE.getMFunction_Parameters() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			parser.setViewPattern("{0}({1}) : {2}"); //$NON-NLS-1$
-			parser.setEditorPattern("{0}({1}) : {2}"); //$NON-NLS-1$
-			parser.setEditPattern("{0}({1}) : {2}"); //$NON-NLS-1$
-			mFunctionNameReturnTypeParameters_5003Parser = parser;
+			parser.setViewPattern("{0}({1})"); //$NON-NLS-1$
+			parser.setEditorPattern("{0}({1})"); //$NON-NLS-1$
+			parser.setEditPattern("{0}({1})"); //$NON-NLS-1$
+			mFunctionNameParameters_5003Parser = parser;
 		}
-		return mFunctionNameReturnTypeParameters_5003Parser;
+		return mFunctionNameParameters_5003Parser;
 	}
 
 	/**
@@ -116,10 +116,10 @@ public class ConcreteParserProvider extends AbstractProvider implements IParserP
 			return getMPackageName_5001Parser();
 		case MClassNameEditPart.VISUAL_ID:
 			return getMClassName_5004Parser();
-		case MAttributeNameTypeEditPart.VISUAL_ID:
-			return getMAttributeNameType_5002Parser();
-		case MFunctionNameReturnTypeParameterEditPart.VISUAL_ID:
-			return getMFunctionNameReturnTypeParameters_5003Parser();
+		case MAttributeNameEditPart.VISUAL_ID:
+			return getMAttributeName_5002Parser();
+		case MFunctionNameParametersEditPart.VISUAL_ID:
+			return getMFunctionNameParameters_5003Parser();
 		}
 		return null;
 	}

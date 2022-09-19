@@ -7,6 +7,7 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import abstracts.MClass;
+import abstracts.MInheritance;
 
 public class TransformationM2T {
 	private abstracts.ModelFactory modelFactoryAbstracta;
@@ -21,12 +22,15 @@ public class TransformationM2T {
 		
 		String mensaje = "Se ha realziado la transformación M2T";
 		chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-		
+		String nombreProyecto ="RubyGeneration";
 		int returnVal = chooser.showOpenDialog(null);
 	    if(returnVal == JFileChooser.APPROVE_OPTION) {
 	    	File f =  chooser.getSelectedFile();
+	    	limpiarTexto(f.getPath()+"/"+nombreProyecto);
+	    	f = new File(f.getPath()+"/"+nombreProyecto);
 	    	System.out.println("Creacion de paquetes:");
 	    	crearCarpetas(f.getPath());
+	    	
 	    	System.out.println();
 	    	System.out.println("Creacion de clases:");
 			for (abstracts.MClass cl : modelFactoryAbstracta.getLstAllClass()) {
@@ -45,28 +49,139 @@ public class TransformationM2T {
 	
 	private String crearClase(String path, MClass cl) {
 		StringBuilder textoCodigo = new StringBuilder();
-		textoCodigo.append("class "+cl.getName() + "\n");
-		if(!cl.getLstAttributes().isEmpty()) {
-			String attr ="attr_accessor ";
-			for(int i=0;i<cl.getLstAttributes().size();i++) {
-				abstracts.MAttribute a = cl.getLstAttributes().get(i);
-				if(i<cl.getLstAttributes().size()-1) {
-					attr += ":" + a.getName() + ", ";
-				}else {
-					attr += ":" + a.getName();
-				}
-			}
-			
-			textoCodigo.append(attr +"\n");
+		MClass classTarget = obtenerHerencia(cl);
+		textoCodigo.append("=begin\n");
+		if(cl.getComments() == null) {
+			textoCodigo.append("Auto-generated code");
+		}else {
+			textoCodigo.append(cl.getComments());
+		}
+		
+		textoCodigo.append("\n=end\n");
+		
+		if(classTarget!=null) {
+			textoCodigo.append("class "+cl.getName() + " < "+classTarget.getName()+"\n");
+		}else {
+			textoCodigo.append("class "+cl.getName() + "\n");
 		}
 		
 		
+		//Creación de atributos
+		textoCodigo.append(crearAtributos(cl)+"\n");
 		
+		
+		//Creación de constructor
+		textoCodigo.append(crearConstructor(cl, classTarget) +"\n");
+		
+		//Creación de funciones
+		textoCodigo.append(crearFunciones(cl));
+		
+		
+		textoCodigo.append("end");
 		
 		guardarArchivo(textoCodigo.toString(), path, cl.getPath()+"/"+cl.getName());
 		
 		return "Se ha generado la clase "+cl.getName();
 		
+	}
+	
+	private MClass obtenerHerencia(MClass cl) {
+		for(MInheritance h : cl.getLstMInheritance()) {
+			if(h.getSource().getPath().equals(cl.getPath()) && h.getSource().getName().equals(cl.getName())) {
+				return h.getTarget();
+			}
+		}
+		
+		return null;
+	}
+	
+	private String crearFunciones(abstracts.MClass cl) {
+		String funciones = "";
+		for(abstracts.MFunction mf : cl.getLstFunction()) {
+			funciones += "\tdef "+mf.getName()+"("+mf.getParameters()+")"+"\n";
+			if(mf.getSemantics()==null) {
+				funciones += "\t\t" + "#TODO Auto-generated method stub"+"\n";
+			}else {
+
+				funciones += "\t\t" + mf.getSemantics()+"\n";
+			}
+			funciones+= "\tend\n";
+		}
+		return funciones;
+	}
+	
+	
+
+	private String crearConstructor(abstracts.MClass cl, abstracts.MClass clTarget ) {
+		String constructor ="\tdef initialize(";
+		if(!cl.getLstAttributes().isEmpty() || clTarget!=null) {
+			String semantic = "\t\tsuper(";
+			
+			//Herencia
+			if(clTarget!=null)
+			for(int i=0;i<clTarget.getLstAttributes().size();i++) {
+				abstracts.MAttribute a = clTarget.getLstAttributes().get(i); 
+				if(!a.isRemoveToInit()) {
+					constructor += a.getName() + ", ";
+					if(i<clTarget.getLstAttributes().size()-2) {
+						semantic += a.getName() + ", ";
+						
+					}else {
+						semantic += a.getName();
+					}
+				}
+				
+			}
+			semantic+=") \n";
+			
+			//Propios
+			for(int i=0;i<cl.getLstAttributes().size();i++) {
+				abstracts.MAttribute a = cl.getLstAttributes().get(i); 
+				if(!a.isRemoveToInit()) {
+					semantic+= "\t\tself."+a.getName() +" = " + a.getName() +"\n";
+					if(i<cl.getLstAttributes().size()-1) {
+						constructor += a.getName() + ", ";
+					}else {
+						constructor += a.getName();
+					}
+				}
+			}
+			
+			
+			if(constructor.charAt(constructor.length()-2) ==',') {
+				constructor = replaceLast(constructor, ", ", "");
+			}
+			
+			constructor+=") \n";
+			constructor+= semantic +"\n";
+
+		}else {
+			constructor+=") \n\t\tsuper(); \n";
+		}
+		
+		return constructor +"\tend \n";
+	}
+
+	public String replaceLast(String text, String regex, String replacement) {
+        return text.replaceFirst("(?s)(.*)" + regex, "$1" + replacement);
+    }
+	private String crearAtributos(abstracts.MClass cl) {
+		//Creación de atributos
+		String attr ="";
+				if(!cl.getLstAttributes().isEmpty()) {
+					attr ="\tattr_accessor ";
+					for(int i=0;i<cl.getLstAttributes().size();i++) {
+						abstracts.MAttribute a = cl.getLstAttributes().get(i);
+						if(i<cl.getLstAttributes().size()-1) {
+							attr += ":" + a.getName() + ", ";
+						}else {
+							attr += ":" + a.getName();
+						}
+					}
+					attr+="\n";
+		
+				}
+				return attr;
 	}
 	
 	private void guardarArchivo(String cadena, String ruta , String nombre) {
@@ -96,11 +211,23 @@ public class TransformationM2T {
 	private void crearCarpetas(String parentPath) {
 		for(abstracts.MPackage mp : modelFactoryAbstracta.getLstAllPackage()) {
 			File f = new File(parentPath+"/"+mp.getPath()+"/"+mp.getName());
-			System.out.println(f.getPath());
 			if(!f.exists()) {
 				f.mkdirs();
 				System.out.println("creada la carpeta: " + f.getName());
 			}
 		}
+	}
+	
+	private void limpiarTexto(String sDirectorio) {
+		File f = new File(sDirectorio);
+		if(!f.exists()) {
+			f.mkdirs();
+		}else {
+			if (f.delete())
+				 System.out.println("Proyecto limpiado!");
+				else
+				 System.out.println("No se pudo limpiar!");
+		}
+	
 	}
 }

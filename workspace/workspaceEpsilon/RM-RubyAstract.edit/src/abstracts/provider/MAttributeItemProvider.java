@@ -61,10 +61,10 @@ public class MAttributeItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
 			addDefaultValuePropertyDescriptor(object);
 			addCommentsPropertyDescriptor(object);
 			addConstantPropertyDescriptor(object);
+			addRemoveToInitPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -83,28 +83,6 @@ public class MAttributeItemProvider
 				 getString("_UI_MAttribute_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_MAttribute_name_feature", "_UI_MAttribute_type"),
 				 AbstractsPackage.Literals.MATTRIBUTE__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_MAttribute_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MAttribute_type_feature", "_UI_MAttribute_type"),
-				 AbstractsPackage.Literals.MATTRIBUTE__TYPE,
 				 true,
 				 false,
 				 false,
@@ -180,6 +158,28 @@ public class MAttributeItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Remove To Init feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRemoveToInitPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MAttribute_removeToInit_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MAttribute_removeToInit_feature", "_UI_MAttribute_type"),
+				 AbstractsPackage.Literals.MATTRIBUTE__REMOVE_TO_INIT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns MAttribute.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -218,10 +218,10 @@ public class MAttributeItemProvider
 
 		switch (notification.getFeatureID(MAttribute.class)) {
 			case AbstractsPackage.MATTRIBUTE__NAME:
-			case AbstractsPackage.MATTRIBUTE__TYPE:
 			case AbstractsPackage.MATTRIBUTE__DEFAULT_VALUE:
 			case AbstractsPackage.MATTRIBUTE__COMMENTS:
 			case AbstractsPackage.MATTRIBUTE__CONSTANT:
+			case AbstractsPackage.MATTRIBUTE__REMOVE_TO_INIT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

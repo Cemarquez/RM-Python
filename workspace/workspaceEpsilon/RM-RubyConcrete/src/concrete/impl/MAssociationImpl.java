@@ -29,8 +29,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link concrete.impl.MAssociationImpl#getMultiplicityTarget <em>Multiplicity Target</em>}</li>
  *   <li>{@link concrete.impl.MAssociationImpl#getSourceRole <em>Source Role</em>}</li>
  *   <li>{@link concrete.impl.MAssociationImpl#getTargetRole <em>Target Role</em>}</li>
- *   <li>{@link concrete.impl.MAssociationImpl#getNavegabilitySource <em>Navegability Source</em>}</li>
- *   <li>{@link concrete.impl.MAssociationImpl#getNavegabilityTarget <em>Navegability Target</em>}</li>
+ *   <li>{@link concrete.impl.MAssociationImpl#isBidirectional <em>Bidirectional</em>}</li>
  * </ul>
  *
  * @generated
@@ -157,44 +156,24 @@ public class MAssociationImpl extends EObjectImpl implements MAssociation {
 	protected String targetRole = TARGET_ROLE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getNavegabilitySource() <em>Navegability Source</em>}' attribute.
+	 * The default value of the '{@link #isBidirectional() <em>Bidirectional</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNavegabilitySource()
+	 * @see #isBidirectional()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAVEGABILITY_SOURCE_EDEFAULT = null;
+	protected static final boolean BIDIRECTIONAL_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #getNavegabilitySource() <em>Navegability Source</em>}' attribute.
+	 * The cached value of the '{@link #isBidirectional() <em>Bidirectional</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNavegabilitySource()
+	 * @see #isBidirectional()
 	 * @generated
 	 * @ordered
 	 */
-	protected String navegabilitySource = NAVEGABILITY_SOURCE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNavegabilityTarget() <em>Navegability Target</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNavegabilityTarget()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAVEGABILITY_TARGET_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNavegabilityTarget() <em>Navegability Target</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNavegabilityTarget()
-	 * @generated
-	 * @ordered
-	 */
-	protected String navegabilityTarget = NAVEGABILITY_TARGET_EDEFAULT;
+	protected boolean bidirectional = BIDIRECTIONAL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -416,8 +395,8 @@ public class MAssociationImpl extends EObjectImpl implements MAssociation {
 	 * @generated
 	 */
 	@Override
-	public String getNavegabilitySource() {
-		return navegabilitySource;
+	public boolean isBidirectional() {
+		return bidirectional;
 	}
 
 	/**
@@ -426,34 +405,11 @@ public class MAssociationImpl extends EObjectImpl implements MAssociation {
 	 * @generated
 	 */
 	@Override
-	public void setNavegabilitySource(String newNavegabilitySource) {
-		String oldNavegabilitySource = navegabilitySource;
-		navegabilitySource = newNavegabilitySource;
+	public void setBidirectional(boolean newBidirectional) {
+		boolean oldBidirectional = bidirectional;
+		bidirectional = newBidirectional;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConcretePackage.MASSOCIATION__NAVEGABILITY_SOURCE, oldNavegabilitySource, navegabilitySource));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getNavegabilityTarget() {
-		return navegabilityTarget;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setNavegabilityTarget(String newNavegabilityTarget) {
-		String oldNavegabilityTarget = navegabilityTarget;
-		navegabilityTarget = newNavegabilityTarget;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConcretePackage.MASSOCIATION__NAVEGABILITY_TARGET, oldNavegabilityTarget, navegabilityTarget));
+			eNotify(new ENotificationImpl(this, Notification.SET, ConcretePackage.MASSOCIATION__BIDIRECTIONAL, oldBidirectional, bidirectional));
 	}
 
 	/**
@@ -480,10 +436,8 @@ public class MAssociationImpl extends EObjectImpl implements MAssociation {
 				return getSourceRole();
 			case ConcretePackage.MASSOCIATION__TARGET_ROLE:
 				return getTargetRole();
-			case ConcretePackage.MASSOCIATION__NAVEGABILITY_SOURCE:
-				return getNavegabilitySource();
-			case ConcretePackage.MASSOCIATION__NAVEGABILITY_TARGET:
-				return getNavegabilityTarget();
+			case ConcretePackage.MASSOCIATION__BIDIRECTIONAL:
+				return isBidirectional();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -517,11 +471,8 @@ public class MAssociationImpl extends EObjectImpl implements MAssociation {
 			case ConcretePackage.MASSOCIATION__TARGET_ROLE:
 				setTargetRole((String)newValue);
 				return;
-			case ConcretePackage.MASSOCIATION__NAVEGABILITY_SOURCE:
-				setNavegabilitySource((String)newValue);
-				return;
-			case ConcretePackage.MASSOCIATION__NAVEGABILITY_TARGET:
-				setNavegabilityTarget((String)newValue);
+			case ConcretePackage.MASSOCIATION__BIDIRECTIONAL:
+				setBidirectional((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -556,11 +507,8 @@ public class MAssociationImpl extends EObjectImpl implements MAssociation {
 			case ConcretePackage.MASSOCIATION__TARGET_ROLE:
 				setTargetRole(TARGET_ROLE_EDEFAULT);
 				return;
-			case ConcretePackage.MASSOCIATION__NAVEGABILITY_SOURCE:
-				setNavegabilitySource(NAVEGABILITY_SOURCE_EDEFAULT);
-				return;
-			case ConcretePackage.MASSOCIATION__NAVEGABILITY_TARGET:
-				setNavegabilityTarget(NAVEGABILITY_TARGET_EDEFAULT);
+			case ConcretePackage.MASSOCIATION__BIDIRECTIONAL:
+				setBidirectional(BIDIRECTIONAL_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -588,10 +536,8 @@ public class MAssociationImpl extends EObjectImpl implements MAssociation {
 				return SOURCE_ROLE_EDEFAULT == null ? sourceRole != null : !SOURCE_ROLE_EDEFAULT.equals(sourceRole);
 			case ConcretePackage.MASSOCIATION__TARGET_ROLE:
 				return TARGET_ROLE_EDEFAULT == null ? targetRole != null : !TARGET_ROLE_EDEFAULT.equals(targetRole);
-			case ConcretePackage.MASSOCIATION__NAVEGABILITY_SOURCE:
-				return NAVEGABILITY_SOURCE_EDEFAULT == null ? navegabilitySource != null : !NAVEGABILITY_SOURCE_EDEFAULT.equals(navegabilitySource);
-			case ConcretePackage.MASSOCIATION__NAVEGABILITY_TARGET:
-				return NAVEGABILITY_TARGET_EDEFAULT == null ? navegabilityTarget != null : !NAVEGABILITY_TARGET_EDEFAULT.equals(navegabilityTarget);
+			case ConcretePackage.MASSOCIATION__BIDIRECTIONAL:
+				return bidirectional != BIDIRECTIONAL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -616,10 +562,8 @@ public class MAssociationImpl extends EObjectImpl implements MAssociation {
 		result.append(sourceRole);
 		result.append(", targetRole: ");
 		result.append(targetRole);
-		result.append(", navegabilitySource: ");
-		result.append(navegabilitySource);
-		result.append(", navegabilityTarget: ");
-		result.append(navegabilityTarget);
+		result.append(", bidirectional: ");
+		result.append(bidirectional);
 		result.append(')');
 		return result.toString();
 	}

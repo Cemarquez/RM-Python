@@ -15,14 +15,13 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link concrete.MFunction#getName <em>Name</em>}</li>
  *   <li>{@link concrete.MFunction#getAccessModifier <em>Access Modifier</em>}</li>
- *   <li>{@link concrete.MFunction#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link concrete.MFunction#getSemantics <em>Semantics</em>}</li>
  *   <li>{@link concrete.MFunction#getComments <em>Comments</em>}</li>
  *   <li>{@link concrete.MFunction#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @see concrete.ConcretePackage#getMFunction()
- * @model annotation="gmf.node label='name,parameters,returnType' figure='rectangle' label.icon='false' label.pattern='{0}({1}) : {2}' color='255,216,208' tool.description='A\361ade una funci\363n a una clase'"
+ * @model annotation="gmf.node label='name,parameters' figure='rectangle' label.icon='false' label.pattern='{0}({1})' color='255,216,208' tool.description='A\361ade una funci\363n a una clase'"
  * @generated
  */
 public interface MFunction extends EObject {
@@ -69,28 +68,6 @@ public interface MFunction extends EObject {
 	 * @generated
 	 */
 	void setAccessModifier(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Return Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Return Type</em>' attribute.
-	 * @see #setReturnType(String)
-	 * @see concrete.ConcretePackage#getMFunction_ReturnType()
-	 * @model
-	 * @generated
-	 */
-	String getReturnType();
-
-	/**
-	 * Sets the value of the '{@link concrete.MFunction#getReturnType <em>Return Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Return Type</em>' attribute.
-	 * @see #getReturnType()
-	 * @generated
-	 */
-	void setReturnType(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Semantics</b></em>' attribute.

@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <ul>
  *   <li>{@link concrete.impl.MFunctionImpl#getName <em>Name</em>}</li>
  *   <li>{@link concrete.impl.MFunctionImpl#getAccessModifier <em>Access Modifier</em>}</li>
- *   <li>{@link concrete.impl.MFunctionImpl#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link concrete.impl.MFunctionImpl#getSemantics <em>Semantics</em>}</li>
  *   <li>{@link concrete.impl.MFunctionImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link concrete.impl.MFunctionImpl#getParameters <em>Parameters</em>}</li>
@@ -70,26 +69,6 @@ public class MFunctionImpl extends EObjectImpl implements MFunction {
 	 * @ordered
 	 */
 	protected String accessModifier = ACCESS_MODIFIER_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getReturnType() <em>Return Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RETURN_TYPE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReturnType() <em>Return Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnType()
-	 * @generated
-	 * @ordered
-	 */
-	protected String returnType = RETURN_TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getSemantics() <em>Semantics</em>}' attribute.
@@ -222,29 +201,6 @@ public class MFunctionImpl extends EObjectImpl implements MFunction {
 	 * @generated
 	 */
 	@Override
-	public String getReturnType() {
-		return returnType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setReturnType(String newReturnType) {
-		String oldReturnType = returnType;
-		returnType = newReturnType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConcretePackage.MFUNCTION__RETURN_TYPE, oldReturnType, returnType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String getSemantics() {
 		return semantics;
 	}
@@ -320,8 +276,6 @@ public class MFunctionImpl extends EObjectImpl implements MFunction {
 				return getName();
 			case ConcretePackage.MFUNCTION__ACCESS_MODIFIER:
 				return getAccessModifier();
-			case ConcretePackage.MFUNCTION__RETURN_TYPE:
-				return getReturnType();
 			case ConcretePackage.MFUNCTION__SEMANTICS:
 				return getSemantics();
 			case ConcretePackage.MFUNCTION__COMMENTS:
@@ -345,9 +299,6 @@ public class MFunctionImpl extends EObjectImpl implements MFunction {
 				return;
 			case ConcretePackage.MFUNCTION__ACCESS_MODIFIER:
 				setAccessModifier((String)newValue);
-				return;
-			case ConcretePackage.MFUNCTION__RETURN_TYPE:
-				setReturnType((String)newValue);
 				return;
 			case ConcretePackage.MFUNCTION__SEMANTICS:
 				setSemantics((String)newValue);
@@ -376,9 +327,6 @@ public class MFunctionImpl extends EObjectImpl implements MFunction {
 			case ConcretePackage.MFUNCTION__ACCESS_MODIFIER:
 				setAccessModifier(ACCESS_MODIFIER_EDEFAULT);
 				return;
-			case ConcretePackage.MFUNCTION__RETURN_TYPE:
-				setReturnType(RETURN_TYPE_EDEFAULT);
-				return;
 			case ConcretePackage.MFUNCTION__SEMANTICS:
 				setSemantics(SEMANTICS_EDEFAULT);
 				return;
@@ -404,8 +352,6 @@ public class MFunctionImpl extends EObjectImpl implements MFunction {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ConcretePackage.MFUNCTION__ACCESS_MODIFIER:
 				return ACCESS_MODIFIER_EDEFAULT == null ? accessModifier != null : !ACCESS_MODIFIER_EDEFAULT.equals(accessModifier);
-			case ConcretePackage.MFUNCTION__RETURN_TYPE:
-				return RETURN_TYPE_EDEFAULT == null ? returnType != null : !RETURN_TYPE_EDEFAULT.equals(returnType);
 			case ConcretePackage.MFUNCTION__SEMANTICS:
 				return SEMANTICS_EDEFAULT == null ? semantics != null : !SEMANTICS_EDEFAULT.equals(semantics);
 			case ConcretePackage.MFUNCTION__COMMENTS:
@@ -430,8 +376,6 @@ public class MFunctionImpl extends EObjectImpl implements MFunction {
 		result.append(name);
 		result.append(", accessModifier: ");
 		result.append(accessModifier);
-		result.append(", returnType: ");
-		result.append(returnType);
 		result.append(", semantics: ");
 		result.append(semantics);
 		result.append(", comments: ");

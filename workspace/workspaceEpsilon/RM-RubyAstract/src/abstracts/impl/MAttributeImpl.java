@@ -21,10 +21,10 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link abstracts.impl.MAttributeImpl#getName <em>Name</em>}</li>
- *   <li>{@link abstracts.impl.MAttributeImpl#getType <em>Type</em>}</li>
  *   <li>{@link abstracts.impl.MAttributeImpl#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link abstracts.impl.MAttributeImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link abstracts.impl.MAttributeImpl#isConstant <em>Constant</em>}</li>
+ *   <li>{@link abstracts.impl.MAttributeImpl#isRemoveToInit <em>Remove To Init</em>}</li>
  * </ul>
  *
  * @generated
@@ -49,26 +49,6 @@ public class MAttributeImpl extends EObjectImpl implements MAttribute {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TYPE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected String type = TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDefaultValue() <em>Default Value</em>}' attribute.
@@ -131,6 +111,26 @@ public class MAttributeImpl extends EObjectImpl implements MAttribute {
 	protected boolean constant = CONSTANT_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #isRemoveToInit() <em>Remove To Init</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isRemoveToInit()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean REMOVE_TO_INIT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isRemoveToInit() <em>Remove To Init</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isRemoveToInit()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean removeToInit = REMOVE_TO_INIT_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -170,29 +170,6 @@ public class MAttributeImpl extends EObjectImpl implements MAttribute {
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AbstractsPackage.MATTRIBUTE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getType() {
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setType(String newType) {
-		String oldType = type;
-		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractsPackage.MATTRIBUTE__TYPE, oldType, type));
 	}
 
 	/**
@@ -270,18 +247,41 @@ public class MAttributeImpl extends EObjectImpl implements MAttribute {
 	 * @generated
 	 */
 	@Override
+	public boolean isRemoveToInit() {
+		return removeToInit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRemoveToInit(boolean newRemoveToInit) {
+		boolean oldRemoveToInit = removeToInit;
+		removeToInit = newRemoveToInit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractsPackage.MATTRIBUTE__REMOVE_TO_INIT, oldRemoveToInit, removeToInit));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case AbstractsPackage.MATTRIBUTE__NAME:
 				return getName();
-			case AbstractsPackage.MATTRIBUTE__TYPE:
-				return getType();
 			case AbstractsPackage.MATTRIBUTE__DEFAULT_VALUE:
 				return getDefaultValue();
 			case AbstractsPackage.MATTRIBUTE__COMMENTS:
 				return getComments();
 			case AbstractsPackage.MATTRIBUTE__CONSTANT:
 				return isConstant();
+			case AbstractsPackage.MATTRIBUTE__REMOVE_TO_INIT:
+				return isRemoveToInit();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -297,9 +297,6 @@ public class MAttributeImpl extends EObjectImpl implements MAttribute {
 			case AbstractsPackage.MATTRIBUTE__NAME:
 				setName((String)newValue);
 				return;
-			case AbstractsPackage.MATTRIBUTE__TYPE:
-				setType((String)newValue);
-				return;
 			case AbstractsPackage.MATTRIBUTE__DEFAULT_VALUE:
 				setDefaultValue((String)newValue);
 				return;
@@ -308,6 +305,9 @@ public class MAttributeImpl extends EObjectImpl implements MAttribute {
 				return;
 			case AbstractsPackage.MATTRIBUTE__CONSTANT:
 				setConstant((Boolean)newValue);
+				return;
+			case AbstractsPackage.MATTRIBUTE__REMOVE_TO_INIT:
+				setRemoveToInit((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -324,9 +324,6 @@ public class MAttributeImpl extends EObjectImpl implements MAttribute {
 			case AbstractsPackage.MATTRIBUTE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case AbstractsPackage.MATTRIBUTE__TYPE:
-				setType(TYPE_EDEFAULT);
-				return;
 			case AbstractsPackage.MATTRIBUTE__DEFAULT_VALUE:
 				setDefaultValue(DEFAULT_VALUE_EDEFAULT);
 				return;
@@ -335,6 +332,9 @@ public class MAttributeImpl extends EObjectImpl implements MAttribute {
 				return;
 			case AbstractsPackage.MATTRIBUTE__CONSTANT:
 				setConstant(CONSTANT_EDEFAULT);
+				return;
+			case AbstractsPackage.MATTRIBUTE__REMOVE_TO_INIT:
+				setRemoveToInit(REMOVE_TO_INIT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -350,14 +350,14 @@ public class MAttributeImpl extends EObjectImpl implements MAttribute {
 		switch (featureID) {
 			case AbstractsPackage.MATTRIBUTE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case AbstractsPackage.MATTRIBUTE__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case AbstractsPackage.MATTRIBUTE__DEFAULT_VALUE:
 				return DEFAULT_VALUE_EDEFAULT == null ? defaultValue != null : !DEFAULT_VALUE_EDEFAULT.equals(defaultValue);
 			case AbstractsPackage.MATTRIBUTE__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
 			case AbstractsPackage.MATTRIBUTE__CONSTANT:
 				return constant != CONSTANT_EDEFAULT;
+			case AbstractsPackage.MATTRIBUTE__REMOVE_TO_INIT:
+				return removeToInit != REMOVE_TO_INIT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -374,14 +374,14 @@ public class MAttributeImpl extends EObjectImpl implements MAttribute {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", type: ");
-		result.append(type);
 		result.append(", defaultValue: ");
 		result.append(defaultValue);
 		result.append(", comments: ");
 		result.append(comments);
 		result.append(", constant: ");
 		result.append(constant);
+		result.append(", removeToInit: ");
+		result.append(removeToInit);
 		result.append(')');
 		return result.toString();
 	}
