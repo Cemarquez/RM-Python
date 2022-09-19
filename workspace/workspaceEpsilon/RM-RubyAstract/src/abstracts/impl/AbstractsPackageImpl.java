@@ -488,18 +488,8 @@ public class AbstractsPackageImpl extends EPackageImpl implements AbstractsPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMAssociation_NavegabilitySource() {
+	public EAttribute getMAssociation_Bidirectional() {
 		return (EAttribute)mAssociationEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getMAssociation_NavegabilityTarget() {
-		return (EAttribute)mAssociationEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -618,7 +608,7 @@ public class AbstractsPackageImpl extends EPackageImpl implements AbstractsPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMAttribute_Type() {
+	public EAttribute getMAttribute_DefaultValue() {
 		return (EAttribute)mAttributeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -628,7 +618,7 @@ public class AbstractsPackageImpl extends EPackageImpl implements AbstractsPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMAttribute_DefaultValue() {
+	public EAttribute getMAttribute_Comments() {
 		return (EAttribute)mAttributeEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -638,7 +628,7 @@ public class AbstractsPackageImpl extends EPackageImpl implements AbstractsPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMAttribute_Comments() {
+	public EAttribute getMAttribute_Constant() {
 		return (EAttribute)mAttributeEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -648,7 +638,7 @@ public class AbstractsPackageImpl extends EPackageImpl implements AbstractsPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMAttribute_Constant() {
+	public EAttribute getMAttribute_RemoveToInit() {
 		return (EAttribute)mAttributeEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -688,7 +678,7 @@ public class AbstractsPackageImpl extends EPackageImpl implements AbstractsPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMFunction_ReturnType() {
+	public EAttribute getMFunction_Semantics() {
 		return (EAttribute)mFunctionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -698,7 +688,7 @@ public class AbstractsPackageImpl extends EPackageImpl implements AbstractsPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMFunction_Semantics() {
+	public EAttribute getMFunction_Comments() {
 		return (EAttribute)mFunctionEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -708,18 +698,8 @@ public class AbstractsPackageImpl extends EPackageImpl implements AbstractsPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMFunction_Comments() {
-		return (EAttribute)mFunctionEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getMFunction_Parameters() {
-		return (EAttribute)mFunctionEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)mFunctionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -788,8 +768,7 @@ public class AbstractsPackageImpl extends EPackageImpl implements AbstractsPacka
 		createEAttribute(mAssociationEClass, MASSOCIATION__MULTIPLICITY_TARGET);
 		createEAttribute(mAssociationEClass, MASSOCIATION__SOURCE_ROLE);
 		createEAttribute(mAssociationEClass, MASSOCIATION__TARGET_ROLE);
-		createEAttribute(mAssociationEClass, MASSOCIATION__NAVEGABILITY_SOURCE);
-		createEAttribute(mAssociationEClass, MASSOCIATION__NAVEGABILITY_TARGET);
+		createEAttribute(mAssociationEClass, MASSOCIATION__BIDIRECTIONAL);
 
 		mInheritanceEClass = createEClass(MINHERITANCE);
 		createEReference(mInheritanceEClass, MINHERITANCE__SOURCE);
@@ -804,15 +783,14 @@ public class AbstractsPackageImpl extends EPackageImpl implements AbstractsPacka
 
 		mAttributeEClass = createEClass(MATTRIBUTE);
 		createEAttribute(mAttributeEClass, MATTRIBUTE__NAME);
-		createEAttribute(mAttributeEClass, MATTRIBUTE__TYPE);
 		createEAttribute(mAttributeEClass, MATTRIBUTE__DEFAULT_VALUE);
 		createEAttribute(mAttributeEClass, MATTRIBUTE__COMMENTS);
 		createEAttribute(mAttributeEClass, MATTRIBUTE__CONSTANT);
+		createEAttribute(mAttributeEClass, MATTRIBUTE__REMOVE_TO_INIT);
 
 		mFunctionEClass = createEClass(MFUNCTION);
 		createEAttribute(mFunctionEClass, MFUNCTION__NAME);
 		createEAttribute(mFunctionEClass, MFUNCTION__ACCESS_MODIFIER);
-		createEAttribute(mFunctionEClass, MFUNCTION__RETURN_TYPE);
 		createEAttribute(mFunctionEClass, MFUNCTION__SEMANTICS);
 		createEAttribute(mFunctionEClass, MFUNCTION__COMMENTS);
 		createEAttribute(mFunctionEClass, MFUNCTION__PARAMETERS);
@@ -885,8 +863,7 @@ public class AbstractsPackageImpl extends EPackageImpl implements AbstractsPacka
 		initEAttribute(getMAssociation_MultiplicityTarget(), ecorePackage.getEString(), "multiplicityTarget", null, 0, 1, MAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMAssociation_SourceRole(), ecorePackage.getEString(), "sourceRole", null, 0, 1, MAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMAssociation_TargetRole(), ecorePackage.getEString(), "targetRole", null, 0, 1, MAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMAssociation_NavegabilitySource(), ecorePackage.getEString(), "navegabilitySource", null, 0, 1, MAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMAssociation_NavegabilityTarget(), ecorePackage.getEString(), "navegabilityTarget", null, 0, 1, MAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMAssociation_Bidirectional(), ecorePackage.getEBoolean(), "bidirectional", null, 0, 1, MAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mInheritanceEClass, MInheritance.class, "MInheritance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMInheritance_Source(), this.getMClass(), null, "source", null, 0, 1, MInheritance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -901,15 +878,14 @@ public class AbstractsPackageImpl extends EPackageImpl implements AbstractsPacka
 
 		initEClass(mAttributeEClass, MAttribute.class, "MAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, MAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMAttribute_Type(), ecorePackage.getEString(), "type", null, 0, 1, MAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMAttribute_DefaultValue(), ecorePackage.getEString(), "defaultValue", null, 0, 1, MAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMAttribute_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, MAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMAttribute_Constant(), ecorePackage.getEBoolean(), "constant", null, 0, 1, MAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMAttribute_RemoveToInit(), ecorePackage.getEBoolean(), "removeToInit", null, 0, 1, MAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mFunctionEClass, MFunction.class, "MFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMFunction_Name(), ecorePackage.getEString(), "name", null, 0, 1, MFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMFunction_AccessModifier(), ecorePackage.getEString(), "accessModifier", null, 0, 1, MFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMFunction_ReturnType(), ecorePackage.getEString(), "returnType", null, 0, 1, MFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMFunction_Semantics(), ecorePackage.getEString(), "semantics", null, 0, 1, MFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMFunction_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, MFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMFunction_Parameters(), ecorePackage.getEString(), "parameters", null, 0, 1, MFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

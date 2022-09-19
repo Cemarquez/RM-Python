@@ -25,12 +25,14 @@ import concrete.MClassDiagram;
 import concrete.MContainment;
 import concrete.diagram.edit.parts.MAssociationEditPart;
 import concrete.diagram.edit.parts.MAttributeEditPart;
+import concrete.diagram.edit.parts.MAttributeNameEditPart;
 import concrete.diagram.edit.parts.MAttributeNameTypeEditPart;
 import concrete.diagram.edit.parts.MClassDiagramEditPart;
 import concrete.diagram.edit.parts.MClassEditPart;
 import concrete.diagram.edit.parts.MClassNameEditPart;
 import concrete.diagram.edit.parts.MContainmentEditPart;
 import concrete.diagram.edit.parts.MFunctionEditPart;
+import concrete.diagram.edit.parts.MFunctionNameParametersEditPart;
 import concrete.diagram.edit.parts.MFunctionNameReturnTypeEditPart;
 import concrete.diagram.edit.parts.MFunctionNameReturnTypeParameterEditPart;
 import concrete.diagram.edit.parts.MInheritanceEditPart;
@@ -247,7 +249,7 @@ public class ConcreteNavigatorLabelProvider extends LabelProvider
 	private String getMAttribute_3001Text(View view) {
 		IParser parser = ConcreteParserProvider.getParser(ConcreteElementTypes.MAttribute_3001,
 				view.getElement() != null ? view.getElement() : view,
-				ConcreteVisualIDRegistry.getType(MAttributeNameTypeEditPart.VISUAL_ID));
+				ConcreteVisualIDRegistry.getType(MAttributeNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
@@ -263,7 +265,7 @@ public class ConcreteNavigatorLabelProvider extends LabelProvider
 	private String getMFunction_3002Text(View view) {
 		IParser parser = ConcreteParserProvider.getParser(ConcreteElementTypes.MFunction_3002,
 				view.getElement() != null ? view.getElement() : view,
-				ConcreteVisualIDRegistry.getType(MFunctionNameReturnTypeParameterEditPart.VISUAL_ID));
+				ConcreteVisualIDRegistry.getType(MFunctionNameParametersEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());

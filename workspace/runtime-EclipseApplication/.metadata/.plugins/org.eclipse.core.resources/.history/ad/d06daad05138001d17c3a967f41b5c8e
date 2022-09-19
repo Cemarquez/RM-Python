@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:concrete="concrete" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_73bOUDUGEe2XuqCgk0tE6w" type="Concrete" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_MHlIYDhPEe2hxJLt-I_avQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_MHlvcDhPEe2hxJLt-I_avQ" type="5001"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_MHlIYThPEe2hxJLt-I_avQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_MHlIYjhPEe2hxJLt-I_avQ" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_MHlIYzhPEe2hxJLt-I_avQ"/>
+    <element xmi:type="concrete:MPackage" href="model.concrete#//@lstMDiagrams.0/@lstMPackage.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MHlIZDhPEe2hxJLt-I_avQ" x="84" y="554"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_OdfP0DhPEe2hxJLt-I_avQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Odf24DhPEe2hxJLt-I_avQ" type="5001"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_OdfP0ThPEe2hxJLt-I_avQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_OdfP0jhPEe2hxJLt-I_avQ" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_OdfP0zhPEe2hxJLt-I_avQ"/>
+    <element xmi:type="concrete:MPackage" href="model.concrete#//@lstMDiagrams.0/@lstMPackage.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OdfP1DhPEe2hxJLt-I_avQ" x="190" y="555"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_XcLCEDhPEe2hxJLt-I_avQ" type="2002">
+    <children xmi:type="notation:DecorationNode" xmi:id="_XcLCFjhPEe2hxJLt-I_avQ" type="5004"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_XcLCFzhPEe2hxJLt-I_avQ" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_XcLCGDhPEe2hxJLt-I_avQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_XcLCGThPEe2hxJLt-I_avQ"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_XcLCGjhPEe2hxJLt-I_avQ" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_XcLCGzhPEe2hxJLt-I_avQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_XcLCHDhPEe2hxJLt-I_avQ"/>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_XcLCEThPEe2hxJLt-I_avQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_XcLCEjhPEe2hxJLt-I_avQ" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_XcLCEzhPEe2hxJLt-I_avQ"/>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_XcLCFDhPEe2hxJLt-I_avQ"/>
+    <element xmi:type="concrete:MClass" href="model.concrete#//@lstMDiagrams.0/@lstMClass.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XcLCFThPEe2hxJLt-I_avQ" x="86" y="249"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_73bOUTUGEe2XuqCgk0tE6w"/>
+  <element xmi:type="concrete:MClassDiagram" href="model.concrete#//@lstMDiagrams.0"/>
+</notation:Diagram>

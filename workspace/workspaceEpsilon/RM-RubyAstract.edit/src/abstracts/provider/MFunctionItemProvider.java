@@ -62,7 +62,6 @@ public class MFunctionItemProvider
 
 			addNamePropertyDescriptor(object);
 			addAccessModifierPropertyDescriptor(object);
-			addReturnTypePropertyDescriptor(object);
 			addSemanticsPropertyDescriptor(object);
 			addCommentsPropertyDescriptor(object);
 			addParametersPropertyDescriptor(object);
@@ -106,28 +105,6 @@ public class MFunctionItemProvider
 				 getString("_UI_MFunction_accessModifier_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_MFunction_accessModifier_feature", "_UI_MFunction_type"),
 				 AbstractsPackage.Literals.MFUNCTION__ACCESS_MODIFIER,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Return Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addReturnTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_MFunction_returnType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MFunction_returnType_feature", "_UI_MFunction_type"),
-				 AbstractsPackage.Literals.MFUNCTION__RETURN_TYPE,
 				 true,
 				 false,
 				 false,
@@ -242,7 +219,6 @@ public class MFunctionItemProvider
 		switch (notification.getFeatureID(MFunction.class)) {
 			case AbstractsPackage.MFUNCTION__NAME:
 			case AbstractsPackage.MFUNCTION__ACCESS_MODIFIER:
-			case AbstractsPackage.MFUNCTION__RETURN_TYPE:
 			case AbstractsPackage.MFUNCTION__SEMANTICS:
 			case AbstractsPackage.MFUNCTION__COMMENTS:
 			case AbstractsPackage.MFUNCTION__PARAMETERS:

@@ -20,8 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link concrete.MAssociation#getMultiplicityTarget <em>Multiplicity Target</em>}</li>
  *   <li>{@link concrete.MAssociation#getSourceRole <em>Source Role</em>}</li>
  *   <li>{@link concrete.MAssociation#getTargetRole <em>Target Role</em>}</li>
- *   <li>{@link concrete.MAssociation#getNavegabilitySource <em>Navegability Source</em>}</li>
- *   <li>{@link concrete.MAssociation#getNavegabilityTarget <em>Navegability Target</em>}</li>
+ *   <li>{@link concrete.MAssociation#isBidirectional <em>Bidirectional</em>}</li>
  * </ul>
  *
  * @see concrete.ConcretePackage#getMAssociation()
@@ -184,47 +183,25 @@ public interface MAssociation extends EObject {
 	void setTargetRole(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Navegability Source</b></em>' attribute.
+	 * Returns the value of the '<em><b>Bidirectional</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Navegability Source</em>' attribute.
-	 * @see #setNavegabilitySource(String)
-	 * @see concrete.ConcretePackage#getMAssociation_NavegabilitySource()
+	 * @return the value of the '<em>Bidirectional</em>' attribute.
+	 * @see #setBidirectional(boolean)
+	 * @see concrete.ConcretePackage#getMAssociation_Bidirectional()
 	 * @model
 	 * @generated
 	 */
-	String getNavegabilitySource();
+	boolean isBidirectional();
 
 	/**
-	 * Sets the value of the '{@link concrete.MAssociation#getNavegabilitySource <em>Navegability Source</em>}' attribute.
+	 * Sets the value of the '{@link concrete.MAssociation#isBidirectional <em>Bidirectional</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Navegability Source</em>' attribute.
-	 * @see #getNavegabilitySource()
+	 * @param value the new value of the '<em>Bidirectional</em>' attribute.
+	 * @see #isBidirectional()
 	 * @generated
 	 */
-	void setNavegabilitySource(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Navegability Target</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Navegability Target</em>' attribute.
-	 * @see #setNavegabilityTarget(String)
-	 * @see concrete.ConcretePackage#getMAssociation_NavegabilityTarget()
-	 * @model
-	 * @generated
-	 */
-	String getNavegabilityTarget();
-
-	/**
-	 * Sets the value of the '{@link concrete.MAssociation#getNavegabilityTarget <em>Navegability Target</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Navegability Target</em>' attribute.
-	 * @see #getNavegabilityTarget()
-	 * @generated
-	 */
-	void setNavegabilityTarget(String value);
+	void setBidirectional(boolean value);
 
 } // MAssociation

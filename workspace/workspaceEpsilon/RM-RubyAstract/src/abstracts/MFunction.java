@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link abstracts.MFunction#getName <em>Name</em>}</li>
  *   <li>{@link abstracts.MFunction#getAccessModifier <em>Access Modifier</em>}</li>
- *   <li>{@link abstracts.MFunction#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link abstracts.MFunction#getSemantics <em>Semantics</em>}</li>
  *   <li>{@link abstracts.MFunction#getComments <em>Comments</em>}</li>
  *   <li>{@link abstracts.MFunction#getParameters <em>Parameters</em>}</li>
@@ -71,28 +70,6 @@ public interface MFunction extends EObject {
 	 * @generated
 	 */
 	void setAccessModifier(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Return Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Return Type</em>' attribute.
-	 * @see #setReturnType(String)
-	 * @see abstracts.AbstractsPackage#getMFunction_ReturnType()
-	 * @model
-	 * @generated
-	 */
-	String getReturnType();
-
-	/**
-	 * Sets the value of the '{@link abstracts.MFunction#getReturnType <em>Return Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Return Type</em>' attribute.
-	 * @see #getReturnType()
-	 * @generated
-	 */
-	void setReturnType(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Semantics</b></em>' attribute.

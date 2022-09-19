@@ -1,21 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <concrete:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:concrete="concrete">
   <lstMDiagrams>
-    <lstMPackage name="Persona" path=""/>
-    <lstMPackage name="Animales" path=""/>
-    <lstMPackage name="Mascotas" path="Animales/"/>
-    <lstMClass name="Persona" path="Persona"/>
-    <lstMClass name="Mascota" path="Animales"/>
-    <lstMClass name="Perro" path="Animales/Mascotas"/>
-    <lstMClass name="PersonaFactory" path="Persona">
-      <lstMFunction name="eliminarPersona" returnType="void"/>
+    <lstMPackage name="person"/>
+    <lstMPackage name="register"/>
+    <lstMClass name="Person" comments="Esta es la clase padre" path="person">
+      <lstMAttribute name="name"/>
+      <lstMAttribute name="phoneNumber"/>
+      <lstMAttribute name="emailAddress"/>
+      <lstMAttribute name="address" removeToInit="true"/>
+      <lstMFunction name="addAdrdess" comments="" parameters="address"/>
     </lstMClass>
-    <lstMClass name="Empleado" path="Persona">
-      <lstMAttribute name="nombre" type="String" comments=""/>
-      <lstMFunction name="calcularPagos" returnType="void" parameters="int plata"/>
+    <lstMClass name="Professor" path="person">
+      <lstMAttribute name="salary"/>
     </lstMClass>
-    <lstMAssoctiation source="//@lstMDiagrams.0/@lstMClass.0" target="//@lstMDiagrams.0/@lstMClass.1"/>
-    <lstMInheritance source="//@lstMDiagrams.0/@lstMClass.2" target="//@lstMDiagrams.0/@lstMClass.1"/>
-    <lstMContainment source="//@lstMDiagrams.0/@lstMClass.0" target="//@lstMDiagrams.0/@lstMClass.3"/>
+    <lstMClass name="Student" path="person">
+      <lstMAttribute name="studentNumber"/>
+      <lstMAttribute name="averageMark"/>
+    </lstMClass>
+    <lstMClass name="Address" path="register">
+      <lstMAttribute name="street"/>
+      <lstMAttribute name="city"/>
+      <lstMAttribute name="state"/>
+      <lstMAttribute name="postalcode"/>
+      <lstMAttribute name="country"/>
+    </lstMClass>
+    <lstMClass name="AddressFactory" comments="Factory class" path="register"/>
+    <lstMInheritance source="//@lstMDiagrams.0/@lstMClass.1" target="//@lstMDiagrams.0/@lstMClass.0"/>
+    <lstMInheritance source="//@lstMDiagrams.0/@lstMClass.2" target="//@lstMDiagrams.0/@lstMClass.0"/>
+    <lstMContainment source="//@lstMDiagrams.0/@lstMClass.3" target="//@lstMDiagrams.0/@lstMClass.4" multiplicityTarget="n" sourceRole="lstAddress" targetRole="theAddressFactory"/>
   </lstMDiagrams>
 </concrete:ModelFactory>

@@ -14,14 +14,14 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link concrete.MAttribute#getName <em>Name</em>}</li>
- *   <li>{@link concrete.MAttribute#getType <em>Type</em>}</li>
  *   <li>{@link concrete.MAttribute#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link concrete.MAttribute#getComments <em>Comments</em>}</li>
  *   <li>{@link concrete.MAttribute#isConstant <em>Constant</em>}</li>
+ *   <li>{@link concrete.MAttribute#isRemoveToInit <em>Remove To Init</em>}</li>
  * </ul>
  *
  * @see concrete.ConcretePackage#getMAttribute()
- * @model annotation="gmf.node label='name,type' figure='rectangle' label.icon='false' label.pattern='{0} : {1}' color='255,216,208' tool.description='A\361ade un atributo a una clase'"
+ * @model annotation="gmf.node label='name' figure='rectangle' label.icon='false' label.pattern='{0}' color='255,216,208' tool.description='A\361ade un atributo a una clase'"
  * @generated
  */
 public interface MAttribute extends EObject {
@@ -46,28 +46,6 @@ public interface MAttribute extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see #setType(String)
-	 * @see concrete.ConcretePackage#getMAttribute_Type()
-	 * @model
-	 * @generated
-	 */
-	String getType();
-
-	/**
-	 * Sets the value of the '{@link concrete.MAttribute#getType <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see #getType()
-	 * @generated
-	 */
-	void setType(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Default Value</b></em>' attribute.
@@ -134,5 +112,27 @@ public interface MAttribute extends EObject {
 	 * @generated
 	 */
 	void setConstant(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Remove To Init</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Remove To Init</em>' attribute.
+	 * @see #setRemoveToInit(boolean)
+	 * @see concrete.ConcretePackage#getMAttribute_RemoveToInit()
+	 * @model
+	 * @generated
+	 */
+	boolean isRemoveToInit();
+
+	/**
+	 * Sets the value of the '{@link concrete.MAttribute#isRemoveToInit <em>Remove To Init</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Remove To Init</em>' attribute.
+	 * @see #isRemoveToInit()
+	 * @generated
+	 */
+	void setRemoveToInit(boolean value);
 
 } // MAttribute

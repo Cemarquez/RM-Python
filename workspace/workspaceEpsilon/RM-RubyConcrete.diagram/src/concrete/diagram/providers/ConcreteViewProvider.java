@@ -45,6 +45,7 @@ import org.eclipse.swt.graphics.FontData;
 
 import concrete.diagram.edit.parts.MAssociationEditPart;
 import concrete.diagram.edit.parts.MAttributeEditPart;
+import concrete.diagram.edit.parts.MAttributeNameEditPart;
 import concrete.diagram.edit.parts.MAttributeNameTypeEditPart;
 import concrete.diagram.edit.parts.MClassDiagramEditPart;
 import concrete.diagram.edit.parts.MClassEditPart;
@@ -53,6 +54,7 @@ import concrete.diagram.edit.parts.MClassMClassLstMFunctionCompartmentEditPart;
 import concrete.diagram.edit.parts.MClassNameEditPart;
 import concrete.diagram.edit.parts.MContainmentEditPart;
 import concrete.diagram.edit.parts.MFunctionEditPart;
+import concrete.diagram.edit.parts.MFunctionNameParametersEditPart;
 import concrete.diagram.edit.parts.MFunctionNameReturnTypeEditPart;
 import concrete.diagram.edit.parts.MFunctionNameReturnTypeParameterEditPart;
 import concrete.diagram.edit.parts.MInheritanceEditPart;
@@ -350,7 +352,7 @@ public class ConcreteViewProvider extends AbstractProvider implements IViewProvi
 					IPreferenceConstants.PREF_FONT_COLOR);
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
-		Node label5002 = createLabel(node, ConcreteVisualIDRegistry.getType(MAttributeNameTypeEditPart.VISUAL_ID));
+		Node label5002 = createLabel(node, ConcreteVisualIDRegistry.getType(MAttributeNameEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -385,8 +387,7 @@ public class ConcreteViewProvider extends AbstractProvider implements IViewProvi
 					IPreferenceConstants.PREF_FONT_COLOR);
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
-		Node label5003 = createLabel(node,
-				ConcreteVisualIDRegistry.getType(MFunctionNameReturnTypeParameterEditPart.VISUAL_ID));
+		Node label5003 = createLabel(node, ConcreteVisualIDRegistry.getType(MFunctionNameParametersEditPart.VISUAL_ID));
 		return node;
 	}
 

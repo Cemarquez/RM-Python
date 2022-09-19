@@ -33,10 +33,10 @@
     </genClasses>
     <genClasses ecoreClass="concrete.ecore#//MAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAttribute/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAttribute/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAttribute/defaultValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAttribute/comments"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAttribute/constant"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAttribute/removeToInit"/>
     </genClasses>
     <genClasses ecoreClass="concrete.ecore#//MAssociation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concrete.ecore#//MAssociation/source"/>
@@ -46,8 +46,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAssociation/multiplicityTarget"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAssociation/sourceRole"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAssociation/targetRole"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAssociation/navegabilitySource"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAssociation/navegabilityTarget"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MAssociation/bidirectional"/>
     </genClasses>
     <genClasses ecoreClass="concrete.ecore#//MInheritance">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concrete.ecore#//MInheritance/source"/>
@@ -63,7 +62,6 @@
     <genClasses ecoreClass="concrete.ecore#//MFunction">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MFunction/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MFunction/accessModifier"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MFunction/returnType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MFunction/semantics"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MFunction/comments"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concrete.ecore#//MFunction/parameters"/>
