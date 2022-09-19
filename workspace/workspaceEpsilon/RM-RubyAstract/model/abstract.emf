@@ -6,6 +6,8 @@ class ModelFactory{
 	attr String nombre;
 	attr String ruta;
 	val MPackage[*] lstPackages;
+	ref MClass[*] lstAllClass;
+	ref MPackage[*] lstAllPackage;
 }
 
 class MPackage{

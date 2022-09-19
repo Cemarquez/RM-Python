@@ -57,7 +57,7 @@ public class Generador extends ViewPart {
 		
 		Group grpGeneracinDeModelo2M = new Group(parent, SWT.NONE);
 		grpGeneracinDeModelo2M.setText("Generaci\u00F3n de modelo a modelo");
-		grpGeneracinDeModelo2M.setBounds(10, 10, 562, 120);
+		grpGeneracinDeModelo2M.setBounds(10, 10, 562, 74);
 		
 		Button btnGenerateM2M = new Button(grpGeneracinDeModelo2M, SWT.NONE);
 		
@@ -68,20 +68,27 @@ public class Generador extends ViewPart {
 				mfm.generarModelToModel();
 			}
 		});
-		btnGenerateM2M.setBounds(116, 45, 334, 38);
+		btnGenerateM2M.setBounds(116, 23, 334, 38);
 		btnGenerateM2M.setText("Generate M2M");
 		
 		Group grpGeneracinDeModelo2T = new Group(parent, SWT.NONE);
 		grpGeneracinDeModelo2T.setText("Generaci\u00F3n de modelo a texto");
-		grpGeneracinDeModelo2T.setBounds(10, 137, 562, 120);
+		grpGeneracinDeModelo2T.setBounds(10, 90, 562, 79);
 		
 		btnGenerateM2T = new Button(grpGeneracinDeModelo2T, SWT.NONE);
+		btnGenerateM2T.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				ModelFactoryModel mfm = ModelFactoryModel.getInstance();
+				mfm.generarModelToText();
+			}
+		});
 		btnGenerateM2T.setText("Generate M2T");
-		btnGenerateM2T.setBounds(116, 45, 334, 38);
+		btnGenerateM2T.setBounds(116, 26, 334, 38);
 		
 		Group grpLimpiarProduccin = new Group(parent, SWT.NONE);
 		grpLimpiarProduccin.setText("Limpiar producci\u00F3n");
-		grpLimpiarProduccin.setBounds(10, 260, 562, 120);
+		grpLimpiarProduccin.setBounds(10, 175, 562, 79);
 		
 		Button btnLimpiar = new Button(grpLimpiarProduccin, SWT.NONE);
 		btnLimpiar.addSelectionListener(new SelectionAdapter() {
@@ -92,7 +99,7 @@ public class Generador extends ViewPart {
 			}
 		});
 		btnLimpiar.setText("Limpiar");
-		btnLimpiar.setBounds(116, 45, 334, 38);
+		btnLimpiar.setBounds(115, 22, 334, 38);
 		
 	}
 

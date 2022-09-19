@@ -65,6 +65,8 @@ public class ModelFactoryItemProvider
 
 			addNombrePropertyDescriptor(object);
 			addRutaPropertyDescriptor(object);
+			addLstAllClassPropertyDescriptor(object);
+			addLstAllPackagePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -109,6 +111,50 @@ public class ModelFactoryItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Lst All Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLstAllClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ModelFactory_lstAllClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ModelFactory_lstAllClass_feature", "_UI_ModelFactory_type"),
+				 AbstractsPackage.Literals.MODEL_FACTORY__LST_ALL_CLASS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Lst All Package feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLstAllPackagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ModelFactory_lstAllPackage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ModelFactory_lstAllPackage_feature", "_UI_ModelFactory_type"),
+				 AbstractsPackage.Literals.MODEL_FACTORY__LST_ALL_PACKAGE,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

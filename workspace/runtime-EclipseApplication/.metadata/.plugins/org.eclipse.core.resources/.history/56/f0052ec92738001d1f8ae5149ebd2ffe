@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<abstract:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:abstract="abstract" lstAllClass="//@lstPackages.0/@lstMClass.0 //@lstPackages.1/@lstMClass.0 //@lstPackages.1/@lstMPackage.0/@lstMClass.0 //@lstPackages.0/@lstMClass.1 //@lstPackages.0/@lstMClass.2" lstAllPackage="//@lstPackages.0 //@lstPackages.1 //@lstPackages.1/@lstMPackage.0">
+<abstract:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:abstract="abstract">
   <lstPackages name="Persona" path="">
     <lstMClass name="Persona" path="Persona"/>
     <lstMClass name="PersonaFactory" path="Persona">

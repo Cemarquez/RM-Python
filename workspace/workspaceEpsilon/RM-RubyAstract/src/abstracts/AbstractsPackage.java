@@ -94,13 +94,31 @@ public interface AbstractsPackage extends EPackage {
 	int MODEL_FACTORY__LST_PACKAGES = 2;
 
 	/**
+	 * The feature id for the '<em><b>Lst All Class</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_FACTORY__LST_ALL_CLASS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Lst All Package</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_FACTORY__LST_ALL_PACKAGE = 4;
+
+	/**
 	 * The number of structural features of the '<em>Model Factory</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_FACTORY_FEATURE_COUNT = 3;
+	int MODEL_FACTORY_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link abstracts.impl.MClassDiagramImpl <em>MClass Diagram</em>}' class.
@@ -683,6 +701,28 @@ public interface AbstractsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getModelFactory_LstPackages();
+
+	/**
+	 * Returns the meta object for the reference list '{@link abstracts.ModelFactory#getLstAllClass <em>Lst All Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Lst All Class</em>'.
+	 * @see abstracts.ModelFactory#getLstAllClass()
+	 * @see #getModelFactory()
+	 * @generated
+	 */
+	EReference getModelFactory_LstAllClass();
+
+	/**
+	 * Returns the meta object for the reference list '{@link abstracts.ModelFactory#getLstAllPackage <em>Lst All Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Lst All Package</em>'.
+	 * @see abstracts.ModelFactory#getLstAllPackage()
+	 * @see #getModelFactory()
+	 * @generated
+	 */
+	EReference getModelFactory_LstAllPackage();
 
 	/**
 	 * Returns the meta object for class '{@link abstracts.MClassDiagram <em>MClass Diagram</em>}'.
@@ -1292,6 +1332,22 @@ public interface AbstractsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MODEL_FACTORY__LST_PACKAGES = eINSTANCE.getModelFactory_LstPackages();
+
+		/**
+		 * The meta object literal for the '<em><b>Lst All Class</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MODEL_FACTORY__LST_ALL_CLASS = eINSTANCE.getModelFactory_LstAllClass();
+
+		/**
+		 * The meta object literal for the '<em><b>Lst All Package</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MODEL_FACTORY__LST_ALL_PACKAGE = eINSTANCE.getModelFactory_LstAllPackage();
 
 		/**
 		 * The meta object literal for the '{@link abstracts.impl.MClassDiagramImpl <em>MClass Diagram</em>}' class.
