@@ -10,7 +10,7 @@
     <lstMClass name="PersonaFactory" path="Persona">
       <lstMFunction name="eliminarPersona" returnType="void"/>
     </lstMClass>
-    <lstMClass name="Empleado" path="Persona">
+    <lstMClass name="Empleado">
       <lstMAttribute name="nombre" type="String" comments=""/>
       <lstMFunction name="calcularPagos" returnType="void" parameters="int plata"/>
     </lstMClass>

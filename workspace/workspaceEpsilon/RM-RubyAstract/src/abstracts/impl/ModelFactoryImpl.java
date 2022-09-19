@@ -3,6 +3,7 @@
 package abstracts.impl;
 
 import abstracts.AbstractsPackage;
+import abstracts.MClass;
 import abstracts.MPackage;
 import abstracts.ModelFactory;
 
@@ -20,6 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -33,6 +35,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link abstracts.impl.ModelFactoryImpl#getNombre <em>Nombre</em>}</li>
  *   <li>{@link abstracts.impl.ModelFactoryImpl#getRuta <em>Ruta</em>}</li>
  *   <li>{@link abstracts.impl.ModelFactoryImpl#getLstPackages <em>Lst Packages</em>}</li>
+ *   <li>{@link abstracts.impl.ModelFactoryImpl#getLstAllClass <em>Lst All Class</em>}</li>
+ *   <li>{@link abstracts.impl.ModelFactoryImpl#getLstAllPackage <em>Lst All Package</em>}</li>
  * </ul>
  *
  * @generated
@@ -87,6 +91,26 @@ public class ModelFactoryImpl extends EObjectImpl implements ModelFactory {
 	 * @ordered
 	 */
 	protected EList<MPackage> lstPackages;
+
+	/**
+	 * The cached value of the '{@link #getLstAllClass() <em>Lst All Class</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLstAllClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MClass> lstAllClass;
+
+	/**
+	 * The cached value of the '{@link #getLstAllPackage() <em>Lst All Package</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLstAllPackage()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MPackage> lstAllPackage;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,6 +196,32 @@ public class ModelFactoryImpl extends EObjectImpl implements ModelFactory {
 	 * @generated
 	 */
 	@Override
+	public EList<MClass> getLstAllClass() {
+		if (lstAllClass == null) {
+			lstAllClass = new EObjectResolvingEList<MClass>(MClass.class, this, AbstractsPackage.MODEL_FACTORY__LST_ALL_CLASS);
+		}
+		return lstAllClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<MPackage> getLstAllPackage() {
+		if (lstAllPackage == null) {
+			lstAllPackage = new EObjectResolvingEList<MPackage>(MPackage.class, this, AbstractsPackage.MODEL_FACTORY__LST_ALL_PACKAGE);
+		}
+		return lstAllPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case AbstractsPackage.MODEL_FACTORY__LST_PACKAGES:
@@ -194,6 +244,10 @@ public class ModelFactoryImpl extends EObjectImpl implements ModelFactory {
 				return getRuta();
 			case AbstractsPackage.MODEL_FACTORY__LST_PACKAGES:
 				return getLstPackages();
+			case AbstractsPackage.MODEL_FACTORY__LST_ALL_CLASS:
+				return getLstAllClass();
+			case AbstractsPackage.MODEL_FACTORY__LST_ALL_PACKAGE:
+				return getLstAllPackage();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -217,6 +271,14 @@ public class ModelFactoryImpl extends EObjectImpl implements ModelFactory {
 				getLstPackages().clear();
 				getLstPackages().addAll((Collection<? extends MPackage>)newValue);
 				return;
+			case AbstractsPackage.MODEL_FACTORY__LST_ALL_CLASS:
+				getLstAllClass().clear();
+				getLstAllClass().addAll((Collection<? extends MClass>)newValue);
+				return;
+			case AbstractsPackage.MODEL_FACTORY__LST_ALL_PACKAGE:
+				getLstAllPackage().clear();
+				getLstAllPackage().addAll((Collection<? extends MPackage>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -238,6 +300,12 @@ public class ModelFactoryImpl extends EObjectImpl implements ModelFactory {
 			case AbstractsPackage.MODEL_FACTORY__LST_PACKAGES:
 				getLstPackages().clear();
 				return;
+			case AbstractsPackage.MODEL_FACTORY__LST_ALL_CLASS:
+				getLstAllClass().clear();
+				return;
+			case AbstractsPackage.MODEL_FACTORY__LST_ALL_PACKAGE:
+				getLstAllPackage().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -256,6 +324,10 @@ public class ModelFactoryImpl extends EObjectImpl implements ModelFactory {
 				return RUTA_EDEFAULT == null ? ruta != null : !RUTA_EDEFAULT.equals(ruta);
 			case AbstractsPackage.MODEL_FACTORY__LST_PACKAGES:
 				return lstPackages != null && !lstPackages.isEmpty();
+			case AbstractsPackage.MODEL_FACTORY__LST_ALL_CLASS:
+				return lstAllClass != null && !lstAllClass.isEmpty();
+			case AbstractsPackage.MODEL_FACTORY__LST_ALL_PACKAGE:
+				return lstAllPackage != null && !lstAllPackage.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

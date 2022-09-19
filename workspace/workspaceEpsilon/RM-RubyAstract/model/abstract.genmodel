@@ -9,6 +9,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstract.ecore#//ModelFactory/nombre"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstract.ecore#//ModelFactory/ruta"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference abstract.ecore#//ModelFactory/lstPackages"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference abstract.ecore#//ModelFactory/lstAllClass"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference abstract.ecore#//ModelFactory/lstAllPackage"/>
     </genClasses>
     <genClasses ecoreClass="abstract.ecore#//MPackage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstract.ecore#//MPackage/name"/>

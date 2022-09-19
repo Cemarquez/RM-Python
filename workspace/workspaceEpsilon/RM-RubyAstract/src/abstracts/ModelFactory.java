@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link abstracts.ModelFactory#getNombre <em>Nombre</em>}</li>
  *   <li>{@link abstracts.ModelFactory#getRuta <em>Ruta</em>}</li>
  *   <li>{@link abstracts.ModelFactory#getLstPackages <em>Lst Packages</em>}</li>
+ *   <li>{@link abstracts.ModelFactory#getLstAllClass <em>Lst All Class</em>}</li>
+ *   <li>{@link abstracts.ModelFactory#getLstAllPackage <em>Lst All Package</em>}</li>
  * </ul>
  *
  * @see abstracts.AbstractsPackage#getModelFactory()
@@ -80,5 +82,29 @@ public interface ModelFactory extends EObject {
 	 * @generated
 	 */
 	EList<MPackage> getLstPackages();
+
+	/**
+	 * Returns the value of the '<em><b>Lst All Class</b></em>' reference list.
+	 * The list contents are of type {@link abstracts.MClass}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lst All Class</em>' reference list.
+	 * @see abstracts.AbstractsPackage#getModelFactory_LstAllClass()
+	 * @model
+	 * @generated
+	 */
+	EList<MClass> getLstAllClass();
+
+	/**
+	 * Returns the value of the '<em><b>Lst All Package</b></em>' reference list.
+	 * The list contents are of type {@link abstracts.MPackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lst All Package</em>' reference list.
+	 * @see abstracts.AbstractsPackage#getModelFactory_LstAllPackage()
+	 * @model
+	 * @generated
+	 */
+	EList<MPackage> getLstAllPackage();
 
 } // ModelFactory

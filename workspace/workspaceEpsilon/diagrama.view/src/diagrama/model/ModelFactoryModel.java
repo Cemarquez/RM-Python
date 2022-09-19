@@ -107,6 +107,14 @@ public class ModelFactoryModel {
 		
 	}
 
+
+	public void generarModelToText() {
+		modelFactoryAbstracta = cargarAbstracta();
+		TransformationM2T tM2T = new TransformationM2T(modelFactoryAbstracta);
+		tM2T.transformarM2T();
+		
+	}
+
 }
 	
 

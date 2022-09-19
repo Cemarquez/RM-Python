@@ -10,6 +10,10 @@
     <lstMClass name="PersonaFactory" path="Persona">
       <lstMFunction name="eliminarPersona" returnType="void"/>
     </lstMClass>
+    <lstMClass name="Empleado" path="Persona">
+      <lstMAttribute name="nombre" type="String" comments=""/>
+      <lstMFunction name="calcularPagos" returnType="void" parameters="int plata"/>
+    </lstMClass>
     <lstMAssoctiation source="//@lstMDiagrams.0/@lstMClass.0" target="//@lstMDiagrams.0/@lstMClass.1"/>
     <lstMInheritance source="//@lstMDiagrams.0/@lstMClass.2" target="//@lstMDiagrams.0/@lstMClass.1"/>
     <lstMContainment source="//@lstMDiagrams.0/@lstMClass.0" target="//@lstMDiagrams.0/@lstMClass.3"/>

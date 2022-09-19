@@ -31,6 +31,10 @@ public class TransformationM2M {
 				crearClase(c);
 			}
 			
+			for(concrete.MAssociation r : dConcreta.getLstMAssoctiation() ) {
+//				crearAssociation(r);
+			}
+			
 			
 		}
 		
@@ -50,6 +54,7 @@ public class TransformationM2M {
 			newClass.getLstFunction().addAll(crearFunciones(c));
 			newClass.getLstAttributes().addAll(crearAtributos(c));
 			p.getLstMClass().add(newClass);
+			modelFactoryAbstracta.getLstAllClass().add(newClass);
 		}
 		
 	}
@@ -69,6 +74,8 @@ public class TransformationM2M {
 		return funciones;
 	}
 	
+	
+	
 	private void crearAssociation(concrete.MAssociation relacion) {
 		abstracts.MPackage pSource = buscarPaqueteParent(relacion.getSource().getPath());
 		abstracts.MClass clSource = buscarClase(relacion.getSource().getPath(), relacion.getSource().getName(), pSource);
@@ -76,12 +83,39 @@ public class TransformationM2M {
 		abstracts.MPackage pTarget = buscarPaqueteParent(relacion.getSource().getPath());
 		abstracts.MClass clTarget = buscarClase(relacion.getTarget().getPath(), relacion.getTarget().getName(), pTarget);
 		
+		abstracts.MAssociation anewS = AbstractsFactory.eINSTANCE.createMAssociation();
+		anewS.setMultiplicitySource(relacion.getMultiplicitySource());
+		anewS.setMultiplicityTarget(relacion.getMultiplicityTarget());
+		anewS.setNavegabilitySource(relacion.getNavegabilitySource());
+		anewS.setNavegabilityTarget(relacion.getNavegabilityTarget());
+		anewS.setSource(clSource);
+		anewS.setTarget(clTarget);
+		anewS.setSourceRole(relacion.getSourceRole());
+		anewS.setTargetRole(relacion.getTargetRole());
+		
+		clSource.getLstMAssoctiation().add(anewS);
+		
+		if(relacion.getNavegabilityTarget().equals("true")) {
+			abstracts.MAssociation anewT = AbstractsFactory.eINSTANCE.createMAssociation();
+			anewT.setMultiplicitySource(relacion.getMultiplicityTarget());
+			anewT.setMultiplicityTarget(relacion.getMultiplicitySource());
+			anewT.setNavegabilitySource(relacion.getNavegabilityTarget());
+			anewT.setNavegabilityTarget(relacion.getNavegabilitySource());
+			anewT.setSource(clTarget);
+			anewT.setTarget(clSource);
+			anewT.setSourceRole(relacion.getTargetRole());
+			anewT.setTargetRole(relacion.getSourceRole());
+			clTarget.getLstMAssoctiation().add(anewT);
+		}else {
+			clTarget.getLstMAssoctiation().add(anewS);
+		}
+		
 		
 	}
 	
 	
 	private abstracts.MAssociation obtenerAssociation(abstracts.MClass source, abstracts.MClass target){
-		for(abstracts.MAssociation a : modelFactoryAbstracta.get)
+//		for(abstracts.MAssociation a : modelFactoryAbstracta.get)
 		return null;
 	}
 	
@@ -115,7 +149,6 @@ public class TransformationM2M {
 	}
 	private abstracts.MPackage buscarPaquete(String path, abstracts.MPackage parent) {
 		for (abstracts.MPackage p : parent.getLstMPackage()) {
-			System.out.println(p.getPath() + p.getName());
 			if((p.getPath()+p.getName()).equals(path)) {
 				return p;
 			}
@@ -184,6 +217,7 @@ public class TransformationM2M {
 			nuevoPackage.setName(nombrePaquete);
 			nuevoPackage.setPath(nuevaRuta);
 			modelFactoryAbstracta.getLstPackages().add(nuevoPackage);
+			modelFactoryAbstracta.getLstAllPackage().add(nuevoPackage);
 			return nuevoPackage;
 
 		}else {
@@ -201,6 +235,7 @@ public class TransformationM2M {
 		nuevoPackage.setName(nombrePaquete);
 		nuevoPackage.setPath(nuevaRuta);
 		paqueteParent.getLstMPackage().add(nuevoPackage);
+		modelFactoryAbstracta.getLstAllPackage().add(nuevoPackage);
 		return nuevoPackage;
 	}
 	
