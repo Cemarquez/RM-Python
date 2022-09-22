@@ -43,14 +43,6 @@
         <element xmi:type="concrete:MAttribute" href="model.concrete#//@lstMDiagrams.0/@lstMClass.0/@lstMAttribute.2"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tfSCBDhREe2MN4uCjBA4nQ"/>
       </children>
-      <children xmi:type="notation:Node" xmi:id="_v_c4sDhREe2MN4uCjBA4nQ" type="3001">
-        <children xmi:type="notation:DecorationNode" xmi:id="_v_c4tThREe2MN4uCjBA4nQ" type="5002"/>
-        <styles xmi:type="notation:DescriptionStyle" xmi:id="_v_c4sThREe2MN4uCjBA4nQ"/>
-        <styles xmi:type="notation:FontStyle" xmi:id="_v_c4sjhREe2MN4uCjBA4nQ" fontName="Segoe UI"/>
-        <styles xmi:type="notation:LineStyle" xmi:id="_v_c4szhREe2MN4uCjBA4nQ"/>
-        <element xmi:type="concrete:MAttribute" href="model.concrete#//@lstMDiagrams.0/@lstMClass.0/@lstMAttribute.3"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_v_c4tDhREe2MN4uCjBA4nQ"/>
-      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_XcLCGDhPEe2hxJLt-I_avQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_XcLCGThPEe2hxJLt-I_avQ"/>
     </children>
@@ -191,6 +183,14 @@
   <children xmi:type="notation:Node" xmi:id="_BA928DhoEe2nJt6maRBo_w" type="2002">
     <children xmi:type="notation:DecorationNode" xmi:id="_BA-eADhoEe2nJt6maRBo_w" type="5004"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_BA-eAThoEe2nJt6maRBo_w" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_aS8uEDoUEe2d7-ztLAtCSw" type="3001">
+        <children xmi:type="notation:DecorationNode" xmi:id="_aS8uFToUEe2d7-ztLAtCSw" type="5002"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_aS8uEToUEe2d7-ztLAtCSw"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_aS8uEjoUEe2d7-ztLAtCSw" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_aS8uEzoUEe2d7-ztLAtCSw"/>
+        <element xmi:type="concrete:MAttribute" href="model.concrete#//@lstMDiagrams.0/@lstMClass.4/@lstMAttribute.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aS8uFDoUEe2d7-ztLAtCSw"/>
+      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_BA-eAjhoEe2nJt6maRBo_w"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_BA-eAzhoEe2nJt6maRBo_w"/>
     </children>
@@ -230,5 +230,13 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ExPqozhoEe2nJt6maRBo_w" points="[27, 2, -155, -12]$[178, 6, -4, -8]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ExSG4DhoEe2nJt6maRBo_w" id="(0.775,0.08974358974358974)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ExSG4ThoEe2nJt6maRBo_w" id="(0.4090909090909091,0.13333333333333333)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_19k0UDoPEe23vOuqNRNl2A" type="4003" source="_XcLCEDhPEe2hxJLt-I_avQ" target="_ETlOUDhUEe2AB6BvJwGqRg">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_19k0UToPEe23vOuqNRNl2A"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_19k0UjoPEe23vOuqNRNl2A" fontName="Segoe UI"/>
+    <element xmi:type="concrete:MAssociation" href="model.concrete#//@lstMDiagrams.0/@lstMAssoctiation.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_19k0UzoPEe23vOuqNRNl2A" points="[4, 136, 0, -75]$[-9, 194, -13, -17]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_19oesDoPEe23vOuqNRNl2A" id="(0.09090909090909091,0.04225352112676056)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_19oesToPEe23vOuqNRNl2A" id="(0.11666666666666667,0.10897435897435898)"/>
   </edges>
 </notation:Diagram>

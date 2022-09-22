@@ -7,7 +7,8 @@
       <lstMAttribute name="name"/>
       <lstMAttribute name="phoneNumber"/>
       <lstMAttribute name="emailAddress"/>
-      <lstMFunction name="addAdrdess" comments="Metodo que añade una direccion a la persona" parameters="address"/>
+      <lstMAttribute name="address" removeToInit="true"/>
+      <lstMFunction name="addAdrdess" comments="" parameters="address"/>
     </lstMClass>
     <lstMClass name="Professor" path="person">
       <lstMAttribute name="salary"/>
@@ -23,10 +24,8 @@
       <lstMAttribute name="postalcode"/>
       <lstMAttribute name="country"/>
     </lstMClass>
-    <lstMClass name="AddressFactory" comments="Factory class" path="register">
-      <lstMAttribute name="totalAddress" defaultValue=""/>
-    </lstMClass>
-    <lstMAssoctiation source="//@lstMDiagrams.0/@lstMClass.0" target="//@lstMDiagrams.0/@lstMClass.3" relationshipType="" multiplicitySource="1" multiplicityTarget="1" sourceRole="thePerson" targetRole="theAddress"/>
+    <lstMClass name="AddressFactory" comments="Factory class" path="register"/>
+    <lstMAssoctiation source="//@lstMDiagrams.0/@lstMClass.0" target="//@lstMDiagrams.0/@lstMClass.3" multiplicitySource="" sourceRole="thePerson" targetRole="theAddress"/>
     <lstMInheritance source="//@lstMDiagrams.0/@lstMClass.1" target="//@lstMDiagrams.0/@lstMClass.0"/>
     <lstMInheritance source="//@lstMDiagrams.0/@lstMClass.2" target="//@lstMDiagrams.0/@lstMClass.0"/>
     <lstMContainment source="//@lstMDiagrams.0/@lstMClass.3" target="//@lstMDiagrams.0/@lstMClass.4" multiplicityTarget="n" sourceRole="lstAddress" targetRole="theAddressFactory"/>

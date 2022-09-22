@@ -6,7 +6,7 @@
       <lstAttributes name="name"/>
       <lstAttributes name="phoneNumber"/>
       <lstAttributes name="emailAddress"/>
-      <lstFunction name="addAdrdess" comments="Metodo que a&#xf1;ade una direccion a la persona" parameters="address"/>
+      <lstFunction name="addAdrdess" comments="" parameters="address"/>
     </lstMClass>
     <lstMClass name="Professor" path="person">
       <lstMInheritance source="//@lstPackages.0/@lstMClass.1" target="//@lstPackages.0/@lstMClass.0"/>
@@ -28,7 +28,6 @@
     </lstMClass>
     <lstMClass name="AddressFactory" comments="Factory class" path="register">
       <lstMContainment source="//@lstPackages.1/@lstMClass.0" target="//@lstPackages.1/@lstMClass.1" multiplicityTarget="n" sourceRole="lstAddress" targetRole="theAddressFactory"/>
-      <lstAttributes name="totalAddress" defaultValue=""/>
     </lstMClass>
   </lstPackages>
 </abstract:ModelFactory>

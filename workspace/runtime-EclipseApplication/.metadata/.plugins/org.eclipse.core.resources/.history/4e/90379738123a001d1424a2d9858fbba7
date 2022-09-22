@@ -2,11 +2,12 @@
 <abstract:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:abstract="abstract" lstAllClass="//@lstPackages.0/@lstMClass.0 //@lstPackages.0/@lstMClass.1 //@lstPackages.0/@lstMClass.2 //@lstPackages.1/@lstMClass.0 //@lstPackages.1/@lstMClass.1" lstAllPackage="//@lstPackages.0 //@lstPackages.1">
   <lstPackages name="person" path="">
     <lstMClass name="Person" comments="Esta es la clase padre" path="person">
-      <lstMAssoctiation source="//@lstPackages.0/@lstMClass.0" target="//@lstPackages.1/@lstMClass.0" multiplicitySource="1" multiplicityTarget="1" sourceRole="thePerson" targetRole="theAddress"/>
+      <lstMAssoctiation source="//@lstPackages.0/@lstMClass.0" multiplicitySource="1" multiplicityTarget="1" sourceRole="thePerson" targetRole="theAddress"/>
       <lstAttributes name="name"/>
       <lstAttributes name="phoneNumber"/>
       <lstAttributes name="emailAddress"/>
-      <lstFunction name="addAdrdess" comments="Metodo que a&#xf1;ade una direccion a la persona" parameters="address"/>
+      <lstAttributes name="address" removeToInit="true"/>
+      <lstFunction name="addAdrdess" comments="" parameters="address"/>
     </lstMClass>
     <lstMClass name="Professor" path="person">
       <lstMInheritance source="//@lstPackages.0/@lstMClass.1" target="//@lstPackages.0/@lstMClass.0"/>
@@ -27,8 +28,7 @@
       <lstAttributes name="country"/>
     </lstMClass>
     <lstMClass name="AddressFactory" comments="Factory class" path="register">
-      <lstMContainment source="//@lstPackages.1/@lstMClass.0" target="//@lstPackages.1/@lstMClass.1" multiplicityTarget="n" sourceRole="lstAddress" targetRole="theAddressFactory"/>
-      <lstAttributes name="totalAddress" defaultValue=""/>
+      <lstMContainment source="//@lstPackages.1/@lstMClass.1" target="//@lstPackages.1/@lstMClass.0" multiplicityTarget="n" sourceRole="lstAddress" targetRole="lstAddress"/>
     </lstMClass>
   </lstPackages>
 </abstract:ModelFactory>

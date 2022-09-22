@@ -7,7 +7,7 @@
       <lstMAttribute name="name"/>
       <lstMAttribute name="phoneNumber"/>
       <lstMAttribute name="emailAddress"/>
-      <lstMFunction name="addAdrdess" comments="Metodo que añade una direccion a la persona" parameters="address"/>
+      <lstMFunction name="addAdrdess" comments="" parameters="address"/>
     </lstMClass>
     <lstMClass name="Professor" path="person">
       <lstMAttribute name="salary"/>

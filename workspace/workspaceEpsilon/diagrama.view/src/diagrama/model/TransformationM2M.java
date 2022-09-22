@@ -85,7 +85,7 @@ public class TransformationM2M {
 		abstracts.MPackage pSource = buscarPaqueteParent(relacion.getSource().getPath());
 		abstracts.MClass clSource = buscarClase(relacion.getSource().getPath(), relacion.getSource().getName(), pSource);
 		
-		abstracts.MPackage pTarget = buscarPaqueteParent(relacion.getSource().getPath());
+		abstracts.MPackage pTarget = buscarPaqueteParent(relacion.getTarget().getPath());
 		abstracts.MClass clTarget = buscarClase(relacion.getTarget().getPath(), relacion.getTarget().getName(), pTarget);
 		
 		abstracts.MInheritance h = AbstractsFactory.eINSTANCE.createMInheritance();
@@ -98,7 +98,7 @@ public class TransformationM2M {
 		abstracts.MPackage pSource = buscarPaqueteParent(relacion.getSource().getPath());
 		abstracts.MClass clSource = buscarClase(relacion.getSource().getPath(), relacion.getSource().getName(), pSource);
 		
-		abstracts.MPackage pTarget = buscarPaqueteParent(relacion.getSource().getPath());
+		abstracts.MPackage pTarget = buscarPaqueteParent(relacion.getTarget().getPath());
 		abstracts.MClass clTarget = buscarClase(relacion.getTarget().getPath(), relacion.getTarget().getName(), pTarget);
 		
 		abstracts.MAssociation anewS = AbstractsFactory.eINSTANCE.createMAssociation();
@@ -129,15 +129,15 @@ public class TransformationM2M {
 		abstracts.MPackage pSource = buscarPaqueteParent(relacion.getSource().getPath());
 		abstracts.MClass clSource = buscarClase(relacion.getSource().getPath(), relacion.getSource().getName(), pSource);
 		
-		abstracts.MPackage pTarget = buscarPaqueteParent(relacion.getSource().getPath());
+		abstracts.MPackage pTarget = buscarPaqueteParent(relacion.getTarget().getPath());
 		abstracts.MClass clTarget = buscarClase(relacion.getTarget().getPath(), relacion.getTarget().getName(), pTarget);
 		
 		abstracts.MContainment anewS = AbstractsFactory.eINSTANCE.createMContainment();
-		anewS.setSource(clTarget);
-		anewS.setTarget(clSource);
+		anewS.setSource(clSource);
+		anewS.setTarget(clTarget);
 		anewS.setMultiplicityTarget(relacion.getMultiplicityTarget());
 		anewS.setSourceRole(relacion.getSourceRole());
-		anewS.setTargetRole(relacion.getSourceRole());
+		anewS.setTargetRole(relacion.getTargetRole());
 		clTarget.getLstMContainment().add(anewS);
 		
 	}
