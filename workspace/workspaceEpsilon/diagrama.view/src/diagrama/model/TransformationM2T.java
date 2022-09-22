@@ -7,6 +7,7 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import abstracts.MClass;
+import abstracts.MContainment;
 import abstracts.MInheritance;
 
 public class TransformationM2T {
@@ -73,11 +74,19 @@ public class TransformationM2T {
 		//Creación de constructor
 		textoCodigo.append(crearConstructor(cl, classTarget) +"\n");
 		
+		if(!cl.getLstMContainment().isEmpty()) {
+			textoCodigo.append(crearConstructorVacio() +"\n");
+			textoCodigo.append(crearContainment(cl) +"\n");
+		}
+		
 		//Creación de funciones
 		textoCodigo.append(crearFunciones(cl));
 		
 		
+		
 		textoCodigo.append("end");
+		
+		
 		
 		guardarArchivo(textoCodigo.toString(), path, cl.getPath()+"/"+cl.getName());
 		
@@ -95,9 +104,61 @@ public class TransformationM2T {
 		return null;
 	}
 	
+	private String crearAtributos(abstracts.MClass cl) {
+		//Creación de atributos
+		String attr ="";
+				if(!cl.getLstAttributes().isEmpty()) {
+					attr ="\tattr_accessor ";
+					for(int i=0;i<cl.getLstAttributes().size();i++) {
+						abstracts.MAttribute a = cl.getLstAttributes().get(i);
+						if(i<cl.getLstAttributes().size()-1) {
+							attr += ":" + a.getName() + ", ";
+						}else {
+							attr += ":" + a.getName();
+						}
+					}
+					
+					for(int i=0;i<cl.getLstMContainment().size();i++) {
+						abstracts.MContainment mc = cl.getLstMContainment().get(i);
+							attr += ", :" + mc.getSourceRole();
+					}
+					
+					for(int i=0;i<cl.getLstMAssoctiation().size();i++) {
+						abstracts.MAssociation ma = cl.getLstMAssoctiation().get(i);
+						attr += ", :" + ma.getTargetRole();
+						
+					}
+					attr+="\n";
+		
+				}
+				return attr;
+	}
+	
+	private String crearContainment(abstracts.MClass cl) {
+		String cont="";
+		for(MContainment c : cl.getLstMContainment()) {
+			cont+= "\tdef create"+c.getSource().getName() + "()\n";
+			cont+= "\t\treturn " + c.getSource().getName()+".new()\n" ;
+			cont+= "\tend\n";
+		}
+		
+		return cont;
+	}
+	
+	private String crearConstructorVacio() {
+		String constructor ="\tdef initialize()\n";
+		constructor +="\t\tsuper()\n";
+		constructor +="\tend\n";
+		
+		return constructor;
+	}
 	private String crearFunciones(abstracts.MClass cl) {
 		String funciones = "";
+		
 		for(abstracts.MFunction mf : cl.getLstFunction()) {
+			if(mf.getComments()!=null) 
+				funciones += "\t#"+ mf.getComments() +"\n";
+				
 			funciones += "\tdef "+mf.getName()+"("+mf.getParameters()+")"+"\n";
 			if(mf.getSemantics()==null) {
 				funciones += "\t\t" + "#TODO Auto-generated method stub"+"\n";
@@ -123,7 +184,7 @@ public class TransformationM2T {
 				abstracts.MAttribute a = clTarget.getLstAttributes().get(i); 
 				if(!a.isRemoveToInit()) {
 					constructor += a.getName() + ", ";
-					if(i<clTarget.getLstAttributes().size()-2) {
+					if(i<clTarget.getLstAttributes().size()-1) {
 						semantic += a.getName() + ", ";
 						
 					}else {
@@ -165,24 +226,7 @@ public class TransformationM2T {
 	public String replaceLast(String text, String regex, String replacement) {
         return text.replaceFirst("(?s)(.*)" + regex, "$1" + replacement);
     }
-	private String crearAtributos(abstracts.MClass cl) {
-		//Creación de atributos
-		String attr ="";
-				if(!cl.getLstAttributes().isEmpty()) {
-					attr ="\tattr_accessor ";
-					for(int i=0;i<cl.getLstAttributes().size();i++) {
-						abstracts.MAttribute a = cl.getLstAttributes().get(i);
-						if(i<cl.getLstAttributes().size()-1) {
-							attr += ":" + a.getName() + ", ";
-						}else {
-							attr += ":" + a.getName();
-						}
-					}
-					attr+="\n";
-		
-				}
-				return attr;
-	}
+
 	
 	private void guardarArchivo(String cadena, String ruta , String nombre) {
 		try
