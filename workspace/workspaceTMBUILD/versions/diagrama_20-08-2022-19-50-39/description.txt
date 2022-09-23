@@ -1,4 +1,0 @@
-Date    : 20-08-2022-19-50-39
-Project : diagrama
-Owner : null
-Developer : null
