@@ -23,8 +23,6 @@ class MClassDiagram{
 	val MClass[*] lstMClass;
 }
 
-
-
 class MClass{
 	attr String name;
 	attr String accessModifier;

@@ -19,6 +19,10 @@ public class TransformationM2T {
 		this.modelFactoryAbstracta = modelFactoryAbstracta;
 	}
 	
+	/**
+	 * Método principal que llama a los demás
+	 * @return
+	 */
 	public String transformarM2T() {
 		
 		String mensaje = "Se ha realziado la transformación M2T";
@@ -47,7 +51,12 @@ public class TransformationM2T {
 		return mensaje;
 	}
 	
-	
+	/**
+	 * Método que crea una clase, con sus atributos, funciones, relaciones y guarda el archivo.
+	 * @param path
+	 * @param cl
+	 * @return
+	 */
 	private String crearClase(String path, MClass cl) {
 		StringBuilder textoCodigo = new StringBuilder();
 		MClass classTarget = obtenerHerencia(cl);
@@ -94,6 +103,11 @@ public class TransformationM2T {
 		
 	}
 	
+	/**
+	 * Método que verifica la existencia de una herencia en la clase
+	 * @param cl
+	 * @return
+	 */
 	private MClass obtenerHerencia(MClass cl) {
 		for(MInheritance h : cl.getLstMInheritance()) {
 			if(h.getSource().getPath().equals(cl.getPath()) && h.getSource().getName().equals(cl.getName())) {
@@ -104,6 +118,11 @@ public class TransformationM2T {
 		return null;
 	}
 	
+	/**
+	 * Método que crea los atributos de una clase
+	 * @param cl
+	 * @return
+	 */
 	private String crearAtributos(abstracts.MClass cl) {
 		//Creación de atributos
 		String attr ="";
@@ -134,6 +153,11 @@ public class TransformationM2T {
 				return attr;
 	}
 	
+	/**
+	 * Método que crea la relación de containment de una clase
+	 * @param cl
+	 * @return
+	 */
 	private String crearContainment(abstracts.MClass cl) {
 		String cont="";
 		for(MContainment c : cl.getLstMContainment()) {
@@ -145,6 +169,10 @@ public class TransformationM2T {
 		return cont;
 	}
 	
+	/**
+	 * Método que genera un constructor vacío
+	 * @return
+	 */
 	private String crearConstructorVacio() {
 		String constructor ="\tdef initialize()\n";
 		constructor +="\t\tsuper()\n";
@@ -152,6 +180,11 @@ public class TransformationM2T {
 		
 		return constructor;
 	}
+	/**
+	 * Método que crea las funciones de una clase
+	 * @param cl
+	 * @return
+	 */
 	private String crearFunciones(abstracts.MClass cl) {
 		String funciones = "";
 		
@@ -172,7 +205,12 @@ public class TransformationM2T {
 	}
 	
 	
-
+	/**
+	 * Método que verifica la herencia y crea el constructor de la clase
+	 * @param cl
+	 * @param clTarget
+	 * @return
+	 */
 	private String crearConstructor(abstracts.MClass cl, abstracts.MClass clTarget ) {
 		String constructor ="\tdef initialize(";
 		if(!cl.getLstAttributes().isEmpty() || clTarget!=null) {
@@ -222,12 +260,25 @@ public class TransformationM2T {
 		
 		return constructor +"\tend \n";
 	}
-
+	
+	/**
+	 * Método que remplaza la última ocurrencia de un String
+	 * @param text
+	 * @param regex
+	 * @param replacement
+	 * @return
+	 */
 	public String replaceLast(String text, String regex, String replacement) {
         return text.replaceFirst("(?s)(.*)" + regex, "$1" + replacement);
     }
 
 	
+	/**
+	 * Método que guarda el archivo en una ruta especificada
+	 * @param cadena
+	 * @param ruta
+	 * @param nombre
+	 */
 	private void guardarArchivo(String cadena, String ruta , String nombre) {
 		try
 		{
@@ -251,7 +302,10 @@ public class TransformationM2T {
 
 	}
 
-
+	/**
+	 * Método que crea las carpetas
+	 * @param parentPath
+	 */
 	private void crearCarpetas(String parentPath) {
 		for(abstracts.MPackage mp : modelFactoryAbstracta.getLstAllPackage()) {
 			File f = new File(parentPath+"/"+mp.getPath()+"/"+mp.getName());

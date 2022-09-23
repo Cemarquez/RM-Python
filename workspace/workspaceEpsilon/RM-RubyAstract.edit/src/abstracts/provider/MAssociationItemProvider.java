@@ -67,7 +67,6 @@ public class MAssociationItemProvider
 			addMultiplicityTargetPropertyDescriptor(object);
 			addSourceRolePropertyDescriptor(object);
 			addTargetRolePropertyDescriptor(object);
-			addBidirectionalPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -227,28 +226,6 @@ public class MAssociationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Bidirectional feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addBidirectionalPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_MAssociation_bidirectional_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MAssociation_bidirectional_feature", "_UI_MAssociation_type"),
-				 AbstractsPackage.Literals.MASSOCIATION__BIDIRECTIONAL,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This returns MAssociation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -291,7 +268,6 @@ public class MAssociationItemProvider
 			case AbstractsPackage.MASSOCIATION__MULTIPLICITY_TARGET:
 			case AbstractsPackage.MASSOCIATION__SOURCE_ROLE:
 			case AbstractsPackage.MASSOCIATION__TARGET_ROLE:
-			case AbstractsPackage.MASSOCIATION__BIDIRECTIONAL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

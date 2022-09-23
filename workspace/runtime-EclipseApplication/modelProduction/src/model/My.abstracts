@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<abstract:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:abstract="abstract">
+  <lstPackages>
+    <lstMPackage>
+      <lstMClass>
+        <lstMInheritance source="//@lstPackages.0/@lstMPackage.0/@lstMClass.0" target="//@lstPackages.0/@lstMPackage.0/@lstMClass.1"/>
+        <lstAttributes/>
+        <lstFunction/>
+      </lstMClass>
+      <lstMClass>
+        <lstAttributes/>
+      </lstMClass>
+    </lstMPackage>
+  </lstPackages>
+</abstract:ModelFactory>

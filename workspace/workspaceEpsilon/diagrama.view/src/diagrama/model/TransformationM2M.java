@@ -4,20 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 import abstracts.AbstractsFactory;
-import abstracts.MFunction;
-import abstracts.MPackage;
-import concrete.MClass;
 
 public class TransformationM2M {
 	private abstracts.ModelFactory modelFactoryAbstracta;
 	private concrete.ModelFactory modelFactoryConcreta;
 	
+	/**
+	 * Método constructor
+	 * @param modelFactoryConcreta
+	 * @param modelFactoryAbstracta
+	 */
 	public TransformationM2M(concrete.ModelFactory modelFactoryConcreta, abstracts.ModelFactory modelFactoryAbstracta) {
 		super();
 		this.modelFactoryAbstracta = modelFactoryAbstracta;
 		this.modelFactoryConcreta = modelFactoryConcreta;
 	}
 	
+	/**
+	 * Método principal, desde el cual se llama a los demás
+	 * @return
+	 */
 	public String transformarM2M() {
 		String mensaje = "Se ha realziado la transformación M2M";
 		
@@ -49,6 +55,10 @@ public class TransformationM2M {
 		return mensaje;
 	}
 	
+	/**
+	 * Método que verifica la existencia de una clase, crea una copia de tipo abstracto y la guarda
+	 * @param c clase concreta
+	 */
 	private void crearClase(concrete.MClass c) {
 		String path = c.getPath();
 		abstracts.MPackage p = buscarPaqueteParent(path);
@@ -67,6 +77,10 @@ public class TransformationM2M {
 		
 	}
 
+	/**
+	 * Método que verifica la existencia de una funcion, crea una copia de tipo abstracto y la guarda
+	 * @param c clase concreta
+	 */
 	private List<abstracts.MFunction> crearFunciones(concrete.MClass cClass){
 		List<abstracts.MFunction> funciones = new ArrayList<>();
 		for(concrete.MFunction f : cClass.getLstMFunction()) {
@@ -81,6 +95,10 @@ public class TransformationM2M {
 		return funciones;
 	}
 	
+	/**
+	 * Método que verifica la existencia de una relación de tipo herencia, crea una copia de tipo abstracto y la guarda
+	 * @param c clase concreta
+	 */
 	private void crearHerencia(concrete.MInheritance relacion) {
 		abstracts.MPackage pSource = buscarPaqueteParent(relacion.getSource().getPath());
 		abstracts.MClass clSource = buscarClase(relacion.getSource().getPath(), relacion.getSource().getName(), pSource);
@@ -94,6 +112,10 @@ public class TransformationM2M {
 		clSource.getLstMInheritance().add(h);
 	}
 	
+	/**
+	 * Método que verifica la existencia de una relación de tipo asociación, crea una copia de tipo abstracto y la guarda
+	 * @param c clase concreta
+	 */
 	private void crearAssociation(concrete.MAssociation relacion) {
 		abstracts.MPackage pSource = buscarPaqueteParent(relacion.getSource().getPath());
 		abstracts.MClass clSource = buscarClase(relacion.getSource().getPath(), relacion.getSource().getName(), pSource);
@@ -125,6 +147,10 @@ public class TransformationM2M {
 		
 	}
 	
+	/**
+	 * Método que verifica la existencia de una relación de tipo containment, crea una copia de tipo abstracto y la guarda
+	 * @param c clase concreta
+	 */
 	private void crearContainment(concrete.MContainment relacion) {
 		abstracts.MPackage pSource = buscarPaqueteParent(relacion.getSource().getPath());
 		abstracts.MClass clSource = buscarClase(relacion.getSource().getPath(), relacion.getSource().getName(), pSource);
@@ -142,6 +168,10 @@ public class TransformationM2M {
 		
 	}
 	
+	/**
+	 * Método que verifica la existencia de un atributo, crea una copia de tipo abstracto y la guarda
+	 * @param c clase concreta
+	 */
 	private List<abstracts.MAttribute> crearAtributos(concrete.MClass cClass){
 		List<abstracts.MAttribute> atributos = new ArrayList<>();
 		for(concrete.MAttribute a : cClass.getLstMAttribute()) {
@@ -157,6 +187,10 @@ public class TransformationM2M {
 		return atributos;
 	}
 	
+	/**
+	 * Método que verifica la existencia de un paquete dentro de la sintaxis abstracta 
+	 * @param path
+	 */
 	private abstracts.MPackage buscarPaqueteParent(String path){
 		abstracts.MPackage mpF = null;
 		for(abstracts.MPackage mp : modelFactoryAbstracta.getLstPackages()) {
@@ -170,6 +204,11 @@ public class TransformationM2M {
 		}
 		return null;
 	}
+	
+	/**
+	 * Método que verifica la existencia de un paquete dentro de la sintaxis abstracta 
+	 * @param path, parent
+	 */
 	private abstracts.MPackage buscarPaquete(String path, abstracts.MPackage parent) {
 		for (abstracts.MPackage p : parent.getLstMPackage()) {
 			if((p.getPath()+p.getName()).equals(path)) {
@@ -188,7 +227,13 @@ public class TransformationM2M {
 	
 	}
 	
-	
+	/**
+	 * Método que verifica la existencia de una clase dentro de la sintaxis abstracta
+	 * @param path
+	 * @param name
+	 * @param mp
+	 * @return
+	 */
 	private abstracts.MClass buscarClase(String path, String name, abstracts.MPackage mp) {
 		for(abstracts.MClass c : mp.getLstMClass()) {
 			if(c.getName().equals(name) && c.getPath().equals(path)) {
@@ -202,7 +247,10 @@ public class TransformationM2M {
 		
 	
 
-	
+	/**
+	 * Método que verifica la existencia de un paquete, crea una copia de tipo abstracto y la guarda
+	 * @param paquete
+	 */
 	private void crearPaquete(concrete.MPackage paquete) {
 		String ruta = "";
 		String[] split = null;

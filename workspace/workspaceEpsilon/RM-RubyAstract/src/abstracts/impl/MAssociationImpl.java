@@ -29,7 +29,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link abstracts.impl.MAssociationImpl#getMultiplicityTarget <em>Multiplicity Target</em>}</li>
  *   <li>{@link abstracts.impl.MAssociationImpl#getSourceRole <em>Source Role</em>}</li>
  *   <li>{@link abstracts.impl.MAssociationImpl#getTargetRole <em>Target Role</em>}</li>
- *   <li>{@link abstracts.impl.MAssociationImpl#isBidirectional <em>Bidirectional</em>}</li>
  * </ul>
  *
  * @generated
@@ -154,26 +153,6 @@ public class MAssociationImpl extends EObjectImpl implements MAssociation {
 	 * @ordered
 	 */
 	protected String targetRole = TARGET_ROLE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isBidirectional() <em>Bidirectional</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isBidirectional()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean BIDIRECTIONAL_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isBidirectional() <em>Bidirectional</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isBidirectional()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean bidirectional = BIDIRECTIONAL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -395,29 +374,6 @@ public class MAssociationImpl extends EObjectImpl implements MAssociation {
 	 * @generated
 	 */
 	@Override
-	public boolean isBidirectional() {
-		return bidirectional;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setBidirectional(boolean newBidirectional) {
-		boolean oldBidirectional = bidirectional;
-		bidirectional = newBidirectional;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractsPackage.MASSOCIATION__BIDIRECTIONAL, oldBidirectional, bidirectional));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case AbstractsPackage.MASSOCIATION__SOURCE:
@@ -436,8 +392,6 @@ public class MAssociationImpl extends EObjectImpl implements MAssociation {
 				return getSourceRole();
 			case AbstractsPackage.MASSOCIATION__TARGET_ROLE:
 				return getTargetRole();
-			case AbstractsPackage.MASSOCIATION__BIDIRECTIONAL:
-				return isBidirectional();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -470,9 +424,6 @@ public class MAssociationImpl extends EObjectImpl implements MAssociation {
 				return;
 			case AbstractsPackage.MASSOCIATION__TARGET_ROLE:
 				setTargetRole((String)newValue);
-				return;
-			case AbstractsPackage.MASSOCIATION__BIDIRECTIONAL:
-				setBidirectional((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -507,9 +458,6 @@ public class MAssociationImpl extends EObjectImpl implements MAssociation {
 			case AbstractsPackage.MASSOCIATION__TARGET_ROLE:
 				setTargetRole(TARGET_ROLE_EDEFAULT);
 				return;
-			case AbstractsPackage.MASSOCIATION__BIDIRECTIONAL:
-				setBidirectional(BIDIRECTIONAL_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -536,8 +484,6 @@ public class MAssociationImpl extends EObjectImpl implements MAssociation {
 				return SOURCE_ROLE_EDEFAULT == null ? sourceRole != null : !SOURCE_ROLE_EDEFAULT.equals(sourceRole);
 			case AbstractsPackage.MASSOCIATION__TARGET_ROLE:
 				return TARGET_ROLE_EDEFAULT == null ? targetRole != null : !TARGET_ROLE_EDEFAULT.equals(targetRole);
-			case AbstractsPackage.MASSOCIATION__BIDIRECTIONAL:
-				return bidirectional != BIDIRECTIONAL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -562,8 +508,6 @@ public class MAssociationImpl extends EObjectImpl implements MAssociation {
 		result.append(sourceRole);
 		result.append(", targetRole: ");
 		result.append(targetRole);
-		result.append(", bidirectional: ");
-		result.append(bidirectional);
 		result.append(')');
 		return result.toString();
 	}

@@ -395,22 +395,13 @@ public interface AbstractsPackage extends EPackage {
 	int MASSOCIATION__TARGET_ROLE = 6;
 
 	/**
-	 * The feature id for the '<em><b>Bidirectional</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MASSOCIATION__BIDIRECTIONAL = 7;
-
-	/**
 	 * The number of structural features of the '<em>MAssociation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MASSOCIATION_FEATURE_COUNT = 8;
+	int MASSOCIATION_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link abstracts.impl.MInheritanceImpl <em>MInheritance</em>}' class.
@@ -1000,17 +991,6 @@ public interface AbstractsPackage extends EPackage {
 	EAttribute getMAssociation_TargetRole();
 
 	/**
-	 * Returns the meta object for the attribute '{@link abstracts.MAssociation#isBidirectional <em>Bidirectional</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Bidirectional</em>'.
-	 * @see abstracts.MAssociation#isBidirectional()
-	 * @see #getMAssociation()
-	 * @generated
-	 */
-	EAttribute getMAssociation_Bidirectional();
-
-	/**
 	 * Returns the meta object for class '{@link abstracts.MInheritance <em>MInheritance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1532,14 +1512,6 @@ public interface AbstractsPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MASSOCIATION__TARGET_ROLE = eINSTANCE.getMAssociation_TargetRole();
-
-		/**
-		 * The meta object literal for the '<em><b>Bidirectional</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MASSOCIATION__BIDIRECTIONAL = eINSTANCE.getMAssociation_Bidirectional();
 
 		/**
 		 * The meta object literal for the '{@link abstracts.impl.MInheritanceImpl <em>MInheritance</em>}' class.

@@ -488,16 +488,6 @@ public class AbstractsPackageImpl extends EPackageImpl implements AbstractsPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMAssociation_Bidirectional() {
-		return (EAttribute)mAssociationEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getMInheritance() {
 		return mInheritanceEClass;
 	}
@@ -768,7 +758,6 @@ public class AbstractsPackageImpl extends EPackageImpl implements AbstractsPacka
 		createEAttribute(mAssociationEClass, MASSOCIATION__MULTIPLICITY_TARGET);
 		createEAttribute(mAssociationEClass, MASSOCIATION__SOURCE_ROLE);
 		createEAttribute(mAssociationEClass, MASSOCIATION__TARGET_ROLE);
-		createEAttribute(mAssociationEClass, MASSOCIATION__BIDIRECTIONAL);
 
 		mInheritanceEClass = createEClass(MINHERITANCE);
 		createEReference(mInheritanceEClass, MINHERITANCE__SOURCE);
@@ -863,7 +852,6 @@ public class AbstractsPackageImpl extends EPackageImpl implements AbstractsPacka
 		initEAttribute(getMAssociation_MultiplicityTarget(), ecorePackage.getEString(), "multiplicityTarget", null, 0, 1, MAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMAssociation_SourceRole(), ecorePackage.getEString(), "sourceRole", null, 0, 1, MAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMAssociation_TargetRole(), ecorePackage.getEString(), "targetRole", null, 0, 1, MAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMAssociation_Bidirectional(), ecorePackage.getEBoolean(), "bidirectional", null, 0, 1, MAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mInheritanceEClass, MInheritance.class, "MInheritance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMInheritance_Source(), this.getMClass(), null, "source", null, 0, 1, MInheritance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

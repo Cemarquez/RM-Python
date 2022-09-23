@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link abstracts.MAssociation#getMultiplicityTarget <em>Multiplicity Target</em>}</li>
  *   <li>{@link abstracts.MAssociation#getSourceRole <em>Source Role</em>}</li>
  *   <li>{@link abstracts.MAssociation#getTargetRole <em>Target Role</em>}</li>
- *   <li>{@link abstracts.MAssociation#isBidirectional <em>Bidirectional</em>}</li>
  * </ul>
  *
  * @see abstracts.AbstractsPackage#getMAssociation()
@@ -181,27 +180,5 @@ public interface MAssociation extends EObject {
 	 * @generated
 	 */
 	void setTargetRole(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Bidirectional</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Bidirectional</em>' attribute.
-	 * @see #setBidirectional(boolean)
-	 * @see abstracts.AbstractsPackage#getMAssociation_Bidirectional()
-	 * @model
-	 * @generated
-	 */
-	boolean isBidirectional();
-
-	/**
-	 * Sets the value of the '{@link abstracts.MAssociation#isBidirectional <em>Bidirectional</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Bidirectional</em>' attribute.
-	 * @see #isBidirectional()
-	 * @generated
-	 */
-	void setBidirectional(boolean value);
 
 } // MAssociation

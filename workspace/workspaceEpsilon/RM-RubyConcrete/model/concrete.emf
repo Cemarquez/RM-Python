@@ -52,7 +52,6 @@ class MAttribute{
 class MAssociation{
 	ref MClass source;
 	ref MClass target;
-	attr String relationshipType;
 	attr String multiplicitySource;
 	attr String multiplicityTarget;
 	attr String sourceRole;
