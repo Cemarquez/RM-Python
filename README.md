@@ -2,5 +2,5 @@
 
 Resonance Metamodel Ruby
 
-EMD diagram class project
+MDE project for ruby, developed with eugenia epsilon
 
